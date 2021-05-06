@@ -22,19 +22,6 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             customiseDesign();
-            DateTime Now = DateTime.Now;
-            int year = int.Parse(Now.ToString("yyyy"));
-            string month = Now.ToString("MMMM");
-            int min_year = year - 20;
-            int max_year = year + 20;
-            int item_year = min_year;
-            while (item_year < max_year)
-            {
-                ddmYear.Items.Add(item_year.ToString());
-                item_year += 1;
-            }
-            ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
-            ddmYear.SelectedIndex = 20;
         }
         private void customiseDesign()
         {
@@ -118,7 +105,37 @@ namespace IOOP_Assignment
 
         private void Librarian_Menu_Load(object sender, EventArgs e)
         {
-           using (ReservationSystemEntities db = new ReservationSystemEntities())
+            //Dropdown for monthly utilization report
+            DateTime Now = DateTime.Now;
+            int year = int.Parse(Now.ToString("yyyy"));
+            string month = Now.ToString("MMMM");
+            int min_year = year - 20;
+            int max_year = year + 20;
+            int item_year = min_year;
+            while (item_year < max_year)
+            {
+                ddmYear.Items.Add(item_year.ToString());
+                item_year += 1;
+            }
+            ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
+            ddmYear.SelectedIndex = 20;
+            //Displays at Overview
+            con.Open();
+            SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{Now.ToString("d/MMMM/yyyy")}'", con);
+            lblReservationTdy.Text = sql.ExecuteScalar().ToString();
+            SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con);
+            lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
+            SqlCommand sql3 = new SqlCommand("Select count(RequestID) from [dbo].[Request]", con);
+            lblUnattendReq.Text = sql3.ExecuteScalar().ToString();
+            //Username
+            SqlCommand sql4 = new SqlCommand($"Select Name from [dbo].[User] where Email='{User.loginEmail}'", con);
+            User.name = sql4.ExecuteScalar().ToString();
+            lblNameL1.Text = User.name;
+            lblNameL2.Text = User.name;
+            lblNameL3.Text = User.name;
+            lblNameL4.Text = User.name;
+            con.Close();
+            using (ReservationSystemEntities db = new ReservationSystemEntities())
             {
                 var data = db.GetPastReservation();
                 LineSeries line = new LineSeries() { DataLabels = true, Values = new ChartValues<int>(), LabelPoint
