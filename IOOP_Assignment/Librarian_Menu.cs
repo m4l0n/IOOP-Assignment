@@ -15,6 +15,46 @@ namespace IOOP_Assignment
         public Librarian_Menu()
         {
             InitializeComponent();
+            customiseDesign();
+        }
+        private void customiseDesign()
+        {
+            panelReportSubMenu.Visible = false;
+        }
+        private void hideSubMenu()
+        {
+            if (panelReportSubMenu.Visible == true)
+                panelReportSubMenu.Visible = false;
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelReportSubMenu);
+        }
+
+
+        private void monthlyReportButton_Click(object sender, EventArgs e)
+        {
+            //Code...
+            hideSubMenu();
+        }
+
+        private void dailyReportBtn_Click(object sender, EventArgs e)
+        {
+            //Code...
+            hideSubMenu();
         }
     }
 }
