@@ -56,5 +56,15 @@ namespace IOOP_Assignment
             //Code...
             hideSubMenu();
         }
+
+        private void overviewPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
