@@ -87,7 +87,7 @@ namespace IOOP_Assignment
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(271, 630);
+            this.bunifuPanel1.Size = new System.Drawing.Size(271, 598);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // panelReportSubMenu
@@ -479,7 +479,7 @@ namespace IOOP_Assignment
             this.bunifuButton1.BackColor1 = System.Drawing.SystemColors.ControlLight;
             this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
             this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.ButtonText = "Overview";
+            this.bunifuButton1.ButtonText = "Dashboard";
             this.bunifuButton1.ButtonTextMarginLeft = 0;
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
@@ -597,7 +597,7 @@ namespace IOOP_Assignment
             this.changesPage.PageName = "overviewPage";
             this.changesPage.PageTitle = "Overview";
             this.changesPage.SelectedIndex = 0;
-            this.changesPage.Size = new System.Drawing.Size(866, 593);
+            this.changesPage.Size = new System.Drawing.Size(877, 593);
             this.changesPage.TabIndex = 9;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -632,7 +632,7 @@ namespace IOOP_Assignment
             this.overviewPage.Location = new System.Drawing.Point(4, 4);
             this.overviewPage.Name = "overviewPage";
             this.overviewPage.Padding = new System.Windows.Forms.Padding(3);
-            this.overviewPage.Size = new System.Drawing.Size(858, 567);
+            this.overviewPage.Size = new System.Drawing.Size(869, 567);
             this.overviewPage.TabIndex = 0;
             this.overviewPage.Text = "Overview";
             // 
@@ -646,9 +646,9 @@ namespace IOOP_Assignment
             this.overviewLabel.Location = new System.Drawing.Point(29, 3);
             this.overviewLabel.Name = "overviewLabel";
             this.overviewLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.overviewLabel.Size = new System.Drawing.Size(108, 36);
+            this.overviewLabel.Size = new System.Drawing.Size(130, 36);
             this.overviewLabel.TabIndex = 17;
-            this.overviewLabel.Text = "Overview";
+            this.overviewLabel.Text = "Dashboard";
             this.overviewLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.overviewLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -755,9 +755,6 @@ namespace IOOP_Assignment
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuPictureBox1.AutoSizeHeight = true;
             this.bunifuPictureBox1.BorderRadius = 18;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
@@ -795,7 +792,7 @@ namespace IOOP_Assignment
             this.Changes.Location = new System.Drawing.Point(4, 4);
             this.Changes.Name = "Changes";
             this.Changes.Padding = new System.Windows.Forms.Padding(3);
-            this.Changes.Size = new System.Drawing.Size(858, 567);
+            this.Changes.Size = new System.Drawing.Size(869, 567);
             this.Changes.TabIndex = 1;
             this.Changes.Text = "Changes";
             // 
@@ -805,7 +802,7 @@ namespace IOOP_Assignment
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(858, 567);
+            this.tabPage1.Size = new System.Drawing.Size(869, 567);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Reports";
             // 
@@ -815,7 +812,7 @@ namespace IOOP_Assignment
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(858, 567);
+            this.tabPage2.Size = new System.Drawing.Size(869, 567);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -825,7 +822,7 @@ namespace IOOP_Assignment
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(858, 567);
+            this.tabPage3.Size = new System.Drawing.Size(869, 567);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -874,7 +871,7 @@ namespace IOOP_Assignment
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1165, 630);
+            this.ClientSize = new System.Drawing.Size(1144, 598);
             this.Controls.Add(this.changesPage);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
