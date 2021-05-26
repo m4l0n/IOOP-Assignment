@@ -709,7 +709,7 @@ namespace IOOP_Assignment
             this.bunifuShapes2.FillColor = System.Drawing.Color.Transparent;
             this.bunifuShapes2.FillShape = true;
             this.bunifuShapes2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bunifuShapes2.Location = new System.Drawing.Point(323, 76);
+            this.bunifuShapes2.Location = new System.Drawing.Point(315, 76);
             this.bunifuShapes2.Name = "bunifuShapes2";
             this.bunifuShapes2.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Rectangle;
             this.bunifuShapes2.Sides = 5;
@@ -755,6 +755,7 @@ namespace IOOP_Assignment
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
             this.bunifuPictureBox1.BorderRadius = 18;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
@@ -830,7 +831,7 @@ namespace IOOP_Assignment
             // 
             this.bunifuFormDock1.AllowFormDragging = true;
             this.bunifuFormDock1.AllowFormDropShadow = true;
-            this.bunifuFormDock1.AllowFormResizing = true;
+            this.bunifuFormDock1.AllowFormResizing = false;
             this.bunifuFormDock1.AllowHidingBottomRegion = true;
             this.bunifuFormDock1.AllowOpacityChangesWhileDragging = false;
             this.bunifuFormDock1.BorderOptions.BottomBorder.BorderColor = System.Drawing.Color.Silver;
