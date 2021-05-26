@@ -347,7 +347,7 @@ namespace IOOP_Assignment
             this.bunifuButton3.IdleIconLeftImage = null;
             this.bunifuButton3.IdleIconRightImage = null;
             this.bunifuButton3.IndicateFocus = false;
-            this.bunifuButton3.Location = new System.Drawing.Point(374, 452);
+            this.bunifuButton3.Location = new System.Drawing.Point(367, 444);
             this.bunifuButton3.Name = "bunifuButton3";
             this.bunifuButton3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.OnDisabledState.BorderRadius = 1;
@@ -398,7 +398,7 @@ namespace IOOP_Assignment
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.bunifuLabel5.Location = new System.Drawing.Point(249, 455);
+            this.bunifuLabel5.Location = new System.Drawing.Point(242, 448);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(124, 15);

@@ -54,7 +54,7 @@ namespace IOOP_Assignment
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(259, 587);
+            this.bunifuPanel1.Size = new System.Drawing.Size(259, 565);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // bunifuButton1
@@ -176,7 +176,7 @@ namespace IOOP_Assignment
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1060, 587);
+            this.ClientSize = new System.Drawing.Size(1032, 565);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Student_Menu";
