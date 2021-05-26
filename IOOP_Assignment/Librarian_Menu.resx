@@ -120,8 +120,8 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQ8AAAJTCAYAAAAWi5MvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAdoSURBVHhe7daxTcRAAEVBh5RBSEgpVwIhZVyn1q3dB9g6
+        iVBORw0KGgoAAAANSUhEUgAAAQ8AAAJ2CAYAAABB6geqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAfRSURBVHhe7daxTcRAAEVBh5RBSEgpVwIhZVyn1q3dB9g6
         S0hghO6Rzpcm2d34aSczs39tnufnZVmuAL/ZOvFyJOO+dV1ft4sPgL+MMS5HOqZpO9ircvoQ4JvrkQ7x
         AB4iHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
         HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
@@ -152,8 +152,10 @@
         HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
         HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
         HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
-        HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkDyFY8xxuXkAcAPt9vt/UjHfdvB23ax/0AATu3hmOf56ciGmdmj
-        m6ZP5JhmKqFRVHAAAAAASUVORK5CYII=
+        HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
+        HkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAiHkAi
+        HkAiHkAiHkDyFY8xxuXkAcAPt9vt/UjHfdvB23ax/0AATu3hmOf56ciGmdmjm6ZPAibC4tAAxG8AAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="panelReportSubMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

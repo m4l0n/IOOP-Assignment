@@ -30,14 +30,15 @@ namespace IOOP_Assignment
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Librarian_Menu));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelReportSubMenu = new Bunifu.UI.WinForms.BunifuPanel();
+            this.dailyReportBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.monthlyReportButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.reportBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -59,7 +60,6 @@ namespace IOOP_Assignment
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dailyReportBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
@@ -87,7 +87,7 @@ namespace IOOP_Assignment
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(271, 595);
+            this.bunifuPanel1.Size = new System.Drawing.Size(271, 630);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // panelReportSubMenu
@@ -105,6 +105,96 @@ namespace IOOP_Assignment
             this.panelReportSubMenu.ShowBorders = true;
             this.panelReportSubMenu.Size = new System.Drawing.Size(262, 101);
             this.panelReportSubMenu.TabIndex = 12;
+            // 
+            // dailyReportBtn
+            // 
+            this.dailyReportBtn.AllowAnimations = true;
+            this.dailyReportBtn.AllowMouseEffects = true;
+            this.dailyReportBtn.AllowToggling = false;
+            this.dailyReportBtn.AnimationSpeed = 200;
+            this.dailyReportBtn.AutoGenerateColors = false;
+            this.dailyReportBtn.AutoRoundBorders = false;
+            this.dailyReportBtn.AutoSizeLeftIcon = true;
+            this.dailyReportBtn.AutoSizeRightIcon = true;
+            this.dailyReportBtn.BackColor = System.Drawing.Color.Transparent;
+            this.dailyReportBtn.BackColor1 = System.Drawing.SystemColors.ControlLight;
+            this.dailyReportBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dailyReportBtn.BackgroundImage")));
+            this.dailyReportBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.dailyReportBtn.ButtonText = "Daily Reservation Report";
+            this.dailyReportBtn.ButtonTextMarginLeft = 0;
+            this.dailyReportBtn.ColorContrastOnClick = 45;
+            this.dailyReportBtn.ColorContrastOnHover = 45;
+            this.dailyReportBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.dailyReportBtn.CustomizableEdges = borderEdges1;
+            this.dailyReportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.dailyReportBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.dailyReportBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.dailyReportBtn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.dailyReportBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.dailyReportBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dailyReportBtn.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dailyReportBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.dailyReportBtn.IconLeftPadding = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.dailyReportBtn.IconMarginLeft = 11;
+            this.dailyReportBtn.IconPadding = 10;
+            this.dailyReportBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dailyReportBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.dailyReportBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.dailyReportBtn.IconSize = 25;
+            this.dailyReportBtn.IdleBorderColor = System.Drawing.SystemColors.ControlLight;
+            this.dailyReportBtn.IdleBorderRadius = 1;
+            this.dailyReportBtn.IdleBorderThickness = 1;
+            this.dailyReportBtn.IdleFillColor = System.Drawing.SystemColors.ControlLight;
+            this.dailyReportBtn.IdleIconLeftImage = null;
+            this.dailyReportBtn.IdleIconRightImage = null;
+            this.dailyReportBtn.IndicateFocus = false;
+            this.dailyReportBtn.Location = new System.Drawing.Point(-3, 0);
+            this.dailyReportBtn.Name = "dailyReportBtn";
+            this.dailyReportBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.dailyReportBtn.OnDisabledState.BorderRadius = 1;
+            this.dailyReportBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.dailyReportBtn.OnDisabledState.BorderThickness = 1;
+            this.dailyReportBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.dailyReportBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.dailyReportBtn.OnDisabledState.IconLeftImage = null;
+            this.dailyReportBtn.OnDisabledState.IconRightImage = null;
+            this.dailyReportBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dailyReportBtn.onHoverState.BorderRadius = 1;
+            this.dailyReportBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.dailyReportBtn.onHoverState.BorderThickness = 1;
+            this.dailyReportBtn.onHoverState.FillColor = System.Drawing.Color.MediumTurquoise;
+            this.dailyReportBtn.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.dailyReportBtn.onHoverState.IconLeftImage = null;
+            this.dailyReportBtn.onHoverState.IconRightImage = null;
+            this.dailyReportBtn.OnIdleState.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.dailyReportBtn.OnIdleState.BorderRadius = 1;
+            this.dailyReportBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.dailyReportBtn.OnIdleState.BorderThickness = 1;
+            this.dailyReportBtn.OnIdleState.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.dailyReportBtn.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportBtn.OnIdleState.IconLeftImage = null;
+            this.dailyReportBtn.OnIdleState.IconRightImage = null;
+            this.dailyReportBtn.OnPressedState.BorderColor = System.Drawing.Color.DarkTurquoise;
+            this.dailyReportBtn.OnPressedState.BorderRadius = 1;
+            this.dailyReportBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.dailyReportBtn.OnPressedState.BorderThickness = 1;
+            this.dailyReportBtn.OnPressedState.FillColor = System.Drawing.Color.DarkTurquoise;
+            this.dailyReportBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.dailyReportBtn.OnPressedState.IconLeftImage = null;
+            this.dailyReportBtn.OnPressedState.IconRightImage = null;
+            this.dailyReportBtn.Size = new System.Drawing.Size(265, 51);
+            this.dailyReportBtn.TabIndex = 14;
+            this.dailyReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dailyReportBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dailyReportBtn.TextMarginLeft = 0;
+            this.dailyReportBtn.TextPadding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.dailyReportBtn.UseDefaultRadiusAndThickness = true;
+            this.dailyReportBtn.Click += new System.EventHandler(this.dailyReportBtn_Click);
             // 
             // monthlyReportButton
             // 
@@ -705,7 +795,7 @@ namespace IOOP_Assignment
             this.Changes.Location = new System.Drawing.Point(4, 4);
             this.Changes.Name = "Changes";
             this.Changes.Padding = new System.Windows.Forms.Padding(3);
-            this.Changes.Size = new System.Drawing.Size(864, 556);
+            this.Changes.Size = new System.Drawing.Size(858, 567);
             this.Changes.TabIndex = 1;
             this.Changes.Text = "Changes";
             // 
@@ -715,7 +805,7 @@ namespace IOOP_Assignment
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(864, 556);
+            this.tabPage1.Size = new System.Drawing.Size(858, 567);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Reports";
             // 
@@ -725,7 +815,7 @@ namespace IOOP_Assignment
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(864, 556);
+            this.tabPage2.Size = new System.Drawing.Size(858, 567);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -735,99 +825,9 @@ namespace IOOP_Assignment
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(864, 556);
+            this.tabPage3.Size = new System.Drawing.Size(858, 567);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "tabPage3";
-            // 
-            // dailyReportBtn
-            // 
-            this.dailyReportBtn.AllowAnimations = true;
-            this.dailyReportBtn.AllowMouseEffects = true;
-            this.dailyReportBtn.AllowToggling = false;
-            this.dailyReportBtn.AnimationSpeed = 200;
-            this.dailyReportBtn.AutoGenerateColors = false;
-            this.dailyReportBtn.AutoRoundBorders = false;
-            this.dailyReportBtn.AutoSizeLeftIcon = true;
-            this.dailyReportBtn.AutoSizeRightIcon = true;
-            this.dailyReportBtn.BackColor = System.Drawing.Color.Transparent;
-            this.dailyReportBtn.BackColor1 = System.Drawing.SystemColors.ControlLight;
-            this.dailyReportBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dailyReportBtn.BackgroundImage")));
-            this.dailyReportBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dailyReportBtn.ButtonText = "Daily Reservation Report";
-            this.dailyReportBtn.ButtonTextMarginLeft = 0;
-            this.dailyReportBtn.ColorContrastOnClick = 45;
-            this.dailyReportBtn.ColorContrastOnHover = 45;
-            this.dailyReportBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.dailyReportBtn.CustomizableEdges = borderEdges1;
-            this.dailyReportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.dailyReportBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dailyReportBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dailyReportBtn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dailyReportBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.dailyReportBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dailyReportBtn.ForeColor = System.Drawing.Color.Black;
-            this.dailyReportBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dailyReportBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.dailyReportBtn.IconLeftPadding = new System.Windows.Forms.Padding(40, 3, 3, 3);
-            this.dailyReportBtn.IconMarginLeft = 11;
-            this.dailyReportBtn.IconPadding = 10;
-            this.dailyReportBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dailyReportBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.dailyReportBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.dailyReportBtn.IconSize = 25;
-            this.dailyReportBtn.IdleBorderColor = System.Drawing.SystemColors.ControlLight;
-            this.dailyReportBtn.IdleBorderRadius = 1;
-            this.dailyReportBtn.IdleBorderThickness = 1;
-            this.dailyReportBtn.IdleFillColor = System.Drawing.SystemColors.ControlLight;
-            this.dailyReportBtn.IdleIconLeftImage = null;
-            this.dailyReportBtn.IdleIconRightImage = null;
-            this.dailyReportBtn.IndicateFocus = false;
-            this.dailyReportBtn.Location = new System.Drawing.Point(-3, 0);
-            this.dailyReportBtn.Name = "dailyReportBtn";
-            this.dailyReportBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dailyReportBtn.OnDisabledState.BorderRadius = 1;
-            this.dailyReportBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dailyReportBtn.OnDisabledState.BorderThickness = 1;
-            this.dailyReportBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dailyReportBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dailyReportBtn.OnDisabledState.IconLeftImage = null;
-            this.dailyReportBtn.OnDisabledState.IconRightImage = null;
-            this.dailyReportBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dailyReportBtn.onHoverState.BorderRadius = 1;
-            this.dailyReportBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dailyReportBtn.onHoverState.BorderThickness = 1;
-            this.dailyReportBtn.onHoverState.FillColor = System.Drawing.Color.MediumTurquoise;
-            this.dailyReportBtn.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.dailyReportBtn.onHoverState.IconLeftImage = null;
-            this.dailyReportBtn.onHoverState.IconRightImage = null;
-            this.dailyReportBtn.OnIdleState.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.dailyReportBtn.OnIdleState.BorderRadius = 1;
-            this.dailyReportBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dailyReportBtn.OnIdleState.BorderThickness = 1;
-            this.dailyReportBtn.OnIdleState.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.dailyReportBtn.OnIdleState.ForeColor = System.Drawing.Color.Black;
-            this.dailyReportBtn.OnIdleState.IconLeftImage = null;
-            this.dailyReportBtn.OnIdleState.IconRightImage = null;
-            this.dailyReportBtn.OnPressedState.BorderColor = System.Drawing.Color.DarkTurquoise;
-            this.dailyReportBtn.OnPressedState.BorderRadius = 1;
-            this.dailyReportBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dailyReportBtn.OnPressedState.BorderThickness = 1;
-            this.dailyReportBtn.OnPressedState.FillColor = System.Drawing.Color.DarkTurquoise;
-            this.dailyReportBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.dailyReportBtn.OnPressedState.IconLeftImage = null;
-            this.dailyReportBtn.OnPressedState.IconRightImage = null;
-            this.dailyReportBtn.Size = new System.Drawing.Size(265, 51);
-            this.dailyReportBtn.TabIndex = 14;
-            this.dailyReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dailyReportBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.dailyReportBtn.TextMarginLeft = 0;
-            this.dailyReportBtn.TextPadding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.dailyReportBtn.UseDefaultRadiusAndThickness = true;
-            this.dailyReportBtn.Click += new System.EventHandler(this.dailyReportBtn_Click);
             // 
             // bunifuFormDock1
             // 
@@ -874,7 +874,7 @@ namespace IOOP_Assignment
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1132, 595);
+            this.ClientSize = new System.Drawing.Size(1165, 630);
             this.Controls.Add(this.changesPage);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
