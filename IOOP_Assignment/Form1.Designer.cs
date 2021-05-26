@@ -206,7 +206,7 @@ namespace IOOP_Assignment
             this.loginPage.Location = new System.Drawing.Point(4, 4);
             this.loginPage.Name = "loginPage";
             this.loginPage.Padding = new System.Windows.Forms.Padding(3);
-            this.loginPage.Size = new System.Drawing.Size(423, 466);
+            this.loginPage.Size = new System.Drawing.Size(423, 491);
             this.loginPage.TabIndex = 2;
             this.loginPage.Text = "Login";
             // 
@@ -347,7 +347,7 @@ namespace IOOP_Assignment
             this.bunifuButton3.IdleIconLeftImage = null;
             this.bunifuButton3.IdleIconRightImage = null;
             this.bunifuButton3.IndicateFocus = false;
-            this.bunifuButton3.Location = new System.Drawing.Point(367, 444);
+            this.bunifuButton3.Location = new System.Drawing.Point(378, 477);
             this.bunifuButton3.Name = "bunifuButton3";
             this.bunifuButton3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.OnDisabledState.BorderRadius = 1;
@@ -398,7 +398,7 @@ namespace IOOP_Assignment
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.bunifuLabel5.Location = new System.Drawing.Point(242, 448);
+            this.bunifuLabel5.Location = new System.Drawing.Point(253, 481);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(124, 15);
@@ -640,7 +640,7 @@ namespace IOOP_Assignment
             this.bunifuPictureBox2.BorderRadius = 50;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(199, 17);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(199, 29);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(100, 100);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -654,15 +654,15 @@ namespace IOOP_Assignment
             this.bunifuPages1.AllowTransitions = true;
             this.bunifuPages1.Controls.Add(this.loginPage);
             this.bunifuPages1.Controls.Add(this.regPage);
-            this.bunifuPages1.Location = new System.Drawing.Point(495, 12);
+            this.bunifuPages1.Location = new System.Drawing.Point(504, 16);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.loginPage;
-            this.bunifuPages1.PageIndex = 0;
-            this.bunifuPages1.PageName = "loginPage";
-            this.bunifuPages1.PageTitle = "Login";
+            this.bunifuPages1.Page = this.regPage;
+            this.bunifuPages1.PageIndex = 1;
+            this.bunifuPages1.PageName = "regPage";
+            this.bunifuPages1.PageTitle = "Registration";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(431, 492);
+            this.bunifuPages1.Size = new System.Drawing.Size(431, 517);
             this.bunifuPages1.TabIndex = 5;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -698,7 +698,7 @@ namespace IOOP_Assignment
             this.regPage.Location = new System.Drawing.Point(4, 4);
             this.regPage.Name = "regPage";
             this.regPage.Padding = new System.Windows.Forms.Padding(3);
-            this.regPage.Size = new System.Drawing.Size(423, 466);
+            this.regPage.Size = new System.Drawing.Size(423, 491);
             this.regPage.TabIndex = 4;
             this.regPage.Text = "Registration";
             // 
@@ -913,7 +913,7 @@ namespace IOOP_Assignment
             this.bunifuButton4.IdleIconLeftImage = null;
             this.bunifuButton4.IdleIconRightImage = null;
             this.bunifuButton4.IndicateFocus = false;
-            this.bunifuButton4.Location = new System.Drawing.Point(390, 452);
+            this.bunifuButton4.Location = new System.Drawing.Point(395, 476);
             this.bunifuButton4.Name = "bunifuButton4";
             this.bunifuButton4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.OnDisabledState.BorderRadius = 1;
@@ -964,7 +964,7 @@ namespace IOOP_Assignment
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.bunifuLabel6.Location = new System.Drawing.Point(250, 455);
+            this.bunifuLabel6.Location = new System.Drawing.Point(255, 479);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel6.Size = new System.Drawing.Size(138, 15);
