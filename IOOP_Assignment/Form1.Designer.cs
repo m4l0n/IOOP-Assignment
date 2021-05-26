@@ -126,7 +126,7 @@ namespace IOOP_Assignment
             this.bunifuPictureBox1.BorderRadius = 265;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(2, 33);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(2, 46);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(531, 531);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +188,7 @@ namespace IOOP_Assignment
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(493, 492);
+            this.bunifuPanel1.Size = new System.Drawing.Size(493, 518);
             this.bunifuPanel1.TabIndex = 4;
             // 
             // loginPage
@@ -1300,7 +1300,7 @@ namespace IOOP_Assignment
             this.bunifuImageButton1.FadeWhenInactive = false;
             this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ActiveImage = null;
+            this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.ImageLocation = null;
             this.bunifuImageButton1.ImageMargin = 10;
             this.bunifuImageButton1.ImageSize = new System.Drawing.Size(16, 19);
@@ -1317,7 +1317,7 @@ namespace IOOP_Assignment
             this.bunifuImageButton1.TabIndex = 24;
             this.bunifuImageButton1.ToolTipText = "";
             this.bunifuImageButton1.WaitOnLoad = false;
-            this.bunifuImageButton1.ImageMargin = 10;
+            this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.ZoomSpeed = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
@@ -1395,7 +1395,7 @@ namespace IOOP_Assignment
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(927, 492);
+            this.ClientSize = new System.Drawing.Size(939, 518);
             this.Controls.Add(this.bunifuPages1);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
