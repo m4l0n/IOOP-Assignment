@@ -92,11 +92,11 @@ namespace IOOP_Assignment
         {
             if (showPwToggle.Checked)
             {
-                passwordTxtBox.UseSystemPasswordChar = true;
+                passwordTxtBox.PasswordChar = '\0';
             }
             else
             {
-                passwordTxtBox.UseSystemPasswordChar = false;
+                passwordTxtBox.PasswordChar = '●';
             }
         }
     }

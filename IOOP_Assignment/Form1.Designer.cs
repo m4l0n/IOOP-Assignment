@@ -555,7 +555,7 @@ namespace IOOP_Assignment
             this.passwordTxtBox.TextMarginLeft = 5;
             this.passwordTxtBox.TextMarginTop = 0;
             this.passwordTxtBox.TextPlaceholder = "Password";
-            this.passwordTxtBox.UseSystemPasswordChar = true;
+            this.passwordTxtBox.UseSystemPasswordChar = false;
             this.passwordTxtBox.WordWrap = true;
             // 
             // emailTxtBox
@@ -657,10 +657,10 @@ namespace IOOP_Assignment
             this.bunifuPages1.Location = new System.Drawing.Point(504, 16);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.regPage;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "regPage";
-            this.bunifuPages1.PageTitle = "Registration";
+            this.bunifuPages1.Page = this.loginPage;
+            this.bunifuPages1.PageIndex = 0;
+            this.bunifuPages1.PageName = "loginPage";
+            this.bunifuPages1.PageTitle = "Login";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(431, 517);
             this.bunifuPages1.TabIndex = 5;
