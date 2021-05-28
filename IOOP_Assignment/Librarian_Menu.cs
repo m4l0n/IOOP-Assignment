@@ -47,12 +47,14 @@ namespace IOOP_Assignment
 
         private void monthlyReportButton_Click(object sender, EventArgs e)
         {
+            bunifuPages2.PageIndex = 3;
             //Code...
             hideSubMenu();
         }
 
         private void dailyReportBtn_Click(object sender, EventArgs e)
         {
+            bunifuPages2.PageIndex = 2;
             //Code...
             hideSubMenu();
         }
@@ -70,6 +72,21 @@ namespace IOOP_Assignment
         private void changesPage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.PageIndex = 0;
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.PageIndex = 1;
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.PageIndex = 4;
         }
     }
 }
