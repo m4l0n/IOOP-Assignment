@@ -76,5 +76,10 @@ namespace IOOP_Assignment
         {
             
         }
+
+        private void reservationChart_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
+        }
     }
 }
