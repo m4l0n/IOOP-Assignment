@@ -119,5 +119,28 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void totalUsersInfoButton_Click(object sender, EventArgs e)
+        {
+            bunifuSnackbar1.Show(this, "This card shows the total users registered in the system.",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 4000);
+        }
+
+        private void resInfoButton_Click(object sender, EventArgs e)
+        {
+            bunifuSnackbar1.Show(this, "This card shows the total reservations being made today.",
+                Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 4000);
+        }
+
+        private void requestInfoButton_Click(object sender, EventArgs e)
+        {
+            bunifuSnackbar1.Show(this, "This card shows the total unattended requests for reservation changes.",
+                Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 4000);
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
