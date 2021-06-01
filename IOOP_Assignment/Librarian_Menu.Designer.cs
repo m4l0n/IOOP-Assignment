@@ -615,7 +615,7 @@ namespace IOOP_Assignment
             this.bunifuPages2.Controls.Add(this.changesPage);
             this.bunifuPages2.Controls.Add(this.dailyReportPage);
             this.bunifuPages2.Controls.Add(this.monthlyReportPage);
-            this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
+            this.bunifuPages2.Location = new System.Drawing.Point(266, 12);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
             this.bunifuPages2.Page = this.overviewPage;
@@ -623,7 +623,7 @@ namespace IOOP_Assignment
             this.bunifuPages2.PageName = "overviewPage";
             this.bunifuPages2.PageTitle = "Overview";
             this.bunifuPages2.SelectedIndex = 0;
-            this.bunifuPages2.Size = new System.Drawing.Size(898, 616);
+            this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -657,7 +657,7 @@ namespace IOOP_Assignment
             this.overviewPage.Location = new System.Drawing.Point(4, 4);
             this.overviewPage.Name = "overviewPage";
             this.overviewPage.Padding = new System.Windows.Forms.Padding(3);
-            this.overviewPage.Size = new System.Drawing.Size(890, 590);
+            this.overviewPage.Size = new System.Drawing.Size(890, 592);
             this.overviewPage.TabIndex = 0;
             this.overviewPage.Text = "Overview";
             // 
@@ -669,7 +669,7 @@ namespace IOOP_Assignment
             this.bunifuPictureBox1.BorderRadius = 22;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(750, -11);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(750, -10);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(45, 45);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
