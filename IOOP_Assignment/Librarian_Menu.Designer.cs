@@ -36,6 +36,14 @@ namespace IOOP_Assignment
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelReportSubMenu = new Bunifu.UI.WinForms.BunifuPanel();
             this.dailyReportBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -67,6 +75,24 @@ namespace IOOP_Assignment
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dailyReportPage = new System.Windows.Forms.TabPage();
+            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.ClmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearchDaily = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuLabel25 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel24 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel23 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel22 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel21 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.cbdDaphne = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbdCedar = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbdBlackThorn = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbdAmber = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuShadowPanel6 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuLabel16 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -74,6 +100,26 @@ namespace IOOP_Assignment
             this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.monthlyReportPage = new System.Windows.Forms.TabPage();
+            this.ddmYear = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.ddmMonth = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearchMonthly = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel28 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel29 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel30 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel31 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.cbmDaphne = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbmCedar = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbmBlackThorn = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbmAmber = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.bunifuShadowPanel7 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox4 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -99,9 +145,11 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
             this.dailyReportPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.bunifuShadowPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
             this.monthlyReportPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).BeginInit();
             this.bunifuShadowPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -630,10 +678,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.overviewPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "overviewPage";
-            this.bunifuPages2.PageTitle = "Overview";
+            this.bunifuPages2.Page = this.monthlyReportPage;
+            this.bunifuPages2.PageIndex = 3;
+            this.bunifuPages2.PageName = "monthlyReportPage";
+            this.bunifuPages2.PageTitle = "Monthly Report";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -1026,6 +1074,19 @@ namespace IOOP_Assignment
             // dailyReportPage
             // 
             this.dailyReportPage.BackColor = System.Drawing.Color.White;
+            this.dailyReportPage.Controls.Add(this.bunifuDataGridView1);
+            this.dailyReportPage.Controls.Add(this.btnSearchDaily);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel25);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel24);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel23);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel22);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel21);
+            this.dailyReportPage.Controls.Add(this.bunifuLabel20);
+            this.dailyReportPage.Controls.Add(this.cbdDaphne);
+            this.dailyReportPage.Controls.Add(this.cbdCedar);
+            this.dailyReportPage.Controls.Add(this.cbdBlackThorn);
+            this.dailyReportPage.Controls.Add(this.cbdAmber);
+            this.dailyReportPage.Controls.Add(this.bunifuDatePicker1);
             this.dailyReportPage.Controls.Add(this.bunifuShadowPanel6);
             this.dailyReportPage.Controls.Add(this.bunifuLabel11);
             this.dailyReportPage.Controls.Add(this.bunifuLabel15);
@@ -1035,6 +1096,519 @@ namespace IOOP_Assignment
             this.dailyReportPage.Size = new System.Drawing.Size(890, 592);
             this.dailyReportPage.TabIndex = 2;
             this.dailyReportPage.Text = "Daily Report";
+            // 
+            // bunifuDataGridView1
+            // 
+            this.bunifuDataGridView1.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bunifuDataGridView1.ColumnHeadersHeight = 40;
+            this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClmName,
+            this.clmID,
+            this.clmType,
+            this.clmDate,
+            this.clmSession});
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.Name = null;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
+            this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(29, 226);
+            this.bunifuDataGridView1.Name = "bunifuDataGridView1";
+            this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowTemplate.Height = 40;
+            this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(841, 343);
+            this.bunifuDataGridView1.TabIndex = 44;
+            this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // ClmName
+            // 
+            this.ClmName.HeaderText = "Name";
+            this.ClmName.Name = "ClmName";
+            // 
+            // clmID
+            // 
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            // 
+            // clmType
+            // 
+            this.clmType.HeaderText = "Type of Room";
+            this.clmType.Name = "clmType";
+            // 
+            // clmDate
+            // 
+            this.clmDate.HeaderText = "Date";
+            this.clmDate.Name = "clmDate";
+            // 
+            // clmSession
+            // 
+            this.clmSession.HeaderText = "Session";
+            this.clmSession.Name = "clmSession";
+            // 
+            // btnSearchDaily
+            // 
+            this.btnSearchDaily.AllowAnimations = true;
+            this.btnSearchDaily.AllowMouseEffects = true;
+            this.btnSearchDaily.AllowToggling = false;
+            this.btnSearchDaily.AnimationSpeed = 200;
+            this.btnSearchDaily.AutoGenerateColors = false;
+            this.btnSearchDaily.AutoRoundBorders = false;
+            this.btnSearchDaily.AutoSizeLeftIcon = true;
+            this.btnSearchDaily.AutoSizeRightIcon = true;
+            this.btnSearchDaily.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchDaily.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnSearchDaily.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchDaily.BackgroundImage")));
+            this.btnSearchDaily.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchDaily.ButtonText = "Search";
+            this.btnSearchDaily.ButtonTextMarginLeft = 0;
+            this.btnSearchDaily.ColorContrastOnClick = 45;
+            this.btnSearchDaily.ColorContrastOnHover = 45;
+            this.btnSearchDaily.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnSearchDaily.CustomizableEdges = borderEdges6;
+            this.btnSearchDaily.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearchDaily.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSearchDaily.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSearchDaily.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSearchDaily.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSearchDaily.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchDaily.ForeColor = System.Drawing.Color.White;
+            this.btnSearchDaily.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchDaily.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearchDaily.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSearchDaily.IconMarginLeft = 11;
+            this.btnSearchDaily.IconPadding = 10;
+            this.btnSearchDaily.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearchDaily.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearchDaily.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSearchDaily.IconSize = 25;
+            this.btnSearchDaily.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchDaily.IdleBorderRadius = 1;
+            this.btnSearchDaily.IdleBorderThickness = 1;
+            this.btnSearchDaily.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchDaily.IdleIconLeftImage = null;
+            this.btnSearchDaily.IdleIconRightImage = null;
+            this.btnSearchDaily.IndicateFocus = false;
+            this.btnSearchDaily.Location = new System.Drawing.Point(763, 171);
+            this.btnSearchDaily.Name = "btnSearchDaily";
+            this.btnSearchDaily.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSearchDaily.OnDisabledState.BorderRadius = 1;
+            this.btnSearchDaily.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchDaily.OnDisabledState.BorderThickness = 1;
+            this.btnSearchDaily.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSearchDaily.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSearchDaily.OnDisabledState.IconLeftImage = null;
+            this.btnSearchDaily.OnDisabledState.IconRightImage = null;
+            this.btnSearchDaily.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSearchDaily.onHoverState.BorderRadius = 1;
+            this.btnSearchDaily.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchDaily.onHoverState.BorderThickness = 1;
+            this.btnSearchDaily.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSearchDaily.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchDaily.onHoverState.IconLeftImage = null;
+            this.btnSearchDaily.onHoverState.IconRightImage = null;
+            this.btnSearchDaily.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchDaily.OnIdleState.BorderRadius = 1;
+            this.btnSearchDaily.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchDaily.OnIdleState.BorderThickness = 1;
+            this.btnSearchDaily.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchDaily.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchDaily.OnIdleState.IconLeftImage = null;
+            this.btnSearchDaily.OnIdleState.IconRightImage = null;
+            this.btnSearchDaily.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSearchDaily.OnPressedState.BorderRadius = 1;
+            this.btnSearchDaily.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchDaily.OnPressedState.BorderThickness = 1;
+            this.btnSearchDaily.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSearchDaily.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchDaily.OnPressedState.IconLeftImage = null;
+            this.btnSearchDaily.OnPressedState.IconRightImage = null;
+            this.btnSearchDaily.Size = new System.Drawing.Size(107, 30);
+            this.btnSearchDaily.TabIndex = 43;
+            this.btnSearchDaily.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearchDaily.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearchDaily.TextMarginLeft = 0;
+            this.btnSearchDaily.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnSearchDaily.UseDefaultRadiusAndThickness = true;
+            // 
+            // bunifuLabel25
+            // 
+            this.bunifuLabel25.AllowParentOverrides = false;
+            this.bunifuLabel25.AutoEllipsis = false;
+            this.bunifuLabel25.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel25.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel25.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel25.Location = new System.Drawing.Point(400, 148);
+            this.bunifuLabel25.Name = "bunifuLabel25";
+            this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel25.Size = new System.Drawing.Size(41, 15);
+            this.bunifuLabel25.TabIndex = 42;
+            this.bunifuLabel25.Text = "Daphne";
+            this.bunifuLabel25.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel25.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel24
+            // 
+            this.bunifuLabel24.AllowParentOverrides = false;
+            this.bunifuLabel24.AutoEllipsis = false;
+            this.bunifuLabel24.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel24.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel24.Location = new System.Drawing.Point(336, 148);
+            this.bunifuLabel24.Name = "bunifuLabel24";
+            this.bunifuLabel24.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel24.Size = new System.Drawing.Size(31, 15);
+            this.bunifuLabel24.TabIndex = 41;
+            this.bunifuLabel24.Text = "Cedar";
+            this.bunifuLabel24.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel24.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel23
+            // 
+            this.bunifuLabel23.AllowParentOverrides = false;
+            this.bunifuLabel23.AutoEllipsis = false;
+            this.bunifuLabel23.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel23.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel23.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel23.Location = new System.Drawing.Point(244, 148);
+            this.bunifuLabel23.Name = "bunifuLabel23";
+            this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel23.Size = new System.Drawing.Size(59, 15);
+            this.bunifuLabel23.TabIndex = 40;
+            this.bunifuLabel23.Text = "BlackThorn";
+            this.bunifuLabel23.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel23.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel22
+            // 
+            this.bunifuLabel22.AllowParentOverrides = false;
+            this.bunifuLabel22.AutoEllipsis = false;
+            this.bunifuLabel22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel22.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel22.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel22.Location = new System.Drawing.Point(171, 148);
+            this.bunifuLabel22.Name = "bunifuLabel22";
+            this.bunifuLabel22.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel22.Size = new System.Drawing.Size(36, 15);
+            this.bunifuLabel22.TabIndex = 39;
+            this.bunifuLabel22.Text = "Amber";
+            this.bunifuLabel22.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel22.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel21
+            // 
+            this.bunifuLabel21.AllowParentOverrides = false;
+            this.bunifuLabel21.AutoEllipsis = false;
+            this.bunifuLabel21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel21.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel21.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel21.Location = new System.Drawing.Point(29, 148);
+            this.bunifuLabel21.Name = "bunifuLabel21";
+            this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel21.Size = new System.Drawing.Size(63, 15);
+            this.bunifuLabel21.TabIndex = 38;
+            this.bunifuLabel21.Text = "Room Type:";
+            this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel20
+            // 
+            this.bunifuLabel20.AllowParentOverrides = false;
+            this.bunifuLabel20.AutoEllipsis = false;
+            this.bunifuLabel20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel20.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel20.Location = new System.Drawing.Point(29, 88);
+            this.bunifuLabel20.Name = "bunifuLabel20";
+            this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel20.Size = new System.Drawing.Size(27, 15);
+            this.bunifuLabel20.TabIndex = 37;
+            this.bunifuLabel20.Text = "Date:";
+            this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // cbdDaphne
+            // 
+            this.cbdDaphne.AllowBindingControlAnimation = true;
+            this.cbdDaphne.AllowBindingControlColorChanges = false;
+            this.cbdDaphne.AllowBindingControlLocation = true;
+            this.cbdDaphne.AllowCheckBoxAnimation = false;
+            this.cbdDaphne.AllowCheckmarkAnimation = true;
+            this.cbdDaphne.AllowOnHoverStates = true;
+            this.cbdDaphne.AutoCheck = true;
+            this.cbdDaphne.BackColor = System.Drawing.Color.Transparent;
+            this.cbdDaphne.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbdDaphne.BackgroundImage")));
+            this.cbdDaphne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbdDaphne.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbdDaphne.BorderRadius = 12;
+            this.cbdDaphne.Checked = false;
+            this.cbdDaphne.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbdDaphne.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbdDaphne.CustomCheckmarkImage = null;
+            this.cbdDaphne.Location = new System.Drawing.Point(373, 144);
+            this.cbdDaphne.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbdDaphne.Name = "cbdDaphne";
+            this.cbdDaphne.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbdDaphne.OnCheck.BorderRadius = 12;
+            this.cbdDaphne.OnCheck.BorderThickness = 2;
+            this.cbdDaphne.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbdDaphne.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdDaphne.OnCheck.CheckmarkThickness = 2;
+            this.cbdDaphne.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbdDaphne.OnDisable.BorderRadius = 12;
+            this.cbdDaphne.OnDisable.BorderThickness = 2;
+            this.cbdDaphne.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdDaphne.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbdDaphne.OnDisable.CheckmarkThickness = 2;
+            this.cbdDaphne.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdDaphne.OnHoverChecked.BorderRadius = 12;
+            this.cbdDaphne.OnHoverChecked.BorderThickness = 2;
+            this.cbdDaphne.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdDaphne.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdDaphne.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbdDaphne.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdDaphne.OnHoverUnchecked.BorderRadius = 12;
+            this.cbdDaphne.OnHoverUnchecked.BorderThickness = 1;
+            this.cbdDaphne.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdDaphne.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbdDaphne.OnUncheck.BorderRadius = 12;
+            this.cbdDaphne.OnUncheck.BorderThickness = 1;
+            this.cbdDaphne.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdDaphne.Size = new System.Drawing.Size(21, 21);
+            this.cbdDaphne.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbdDaphne.TabIndex = 36;
+            this.cbdDaphne.ThreeState = false;
+            this.cbdDaphne.ToolTipText = null;
+            // 
+            // cbdCedar
+            // 
+            this.cbdCedar.AllowBindingControlAnimation = true;
+            this.cbdCedar.AllowBindingControlColorChanges = false;
+            this.cbdCedar.AllowBindingControlLocation = true;
+            this.cbdCedar.AllowCheckBoxAnimation = false;
+            this.cbdCedar.AllowCheckmarkAnimation = true;
+            this.cbdCedar.AllowOnHoverStates = true;
+            this.cbdCedar.AutoCheck = true;
+            this.cbdCedar.BackColor = System.Drawing.Color.Transparent;
+            this.cbdCedar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbdCedar.BackgroundImage")));
+            this.cbdCedar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbdCedar.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbdCedar.BorderRadius = 12;
+            this.cbdCedar.Checked = false;
+            this.cbdCedar.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbdCedar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbdCedar.CustomCheckmarkImage = null;
+            this.cbdCedar.Location = new System.Drawing.Point(309, 143);
+            this.cbdCedar.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbdCedar.Name = "cbdCedar";
+            this.cbdCedar.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbdCedar.OnCheck.BorderRadius = 12;
+            this.cbdCedar.OnCheck.BorderThickness = 2;
+            this.cbdCedar.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbdCedar.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdCedar.OnCheck.CheckmarkThickness = 2;
+            this.cbdCedar.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbdCedar.OnDisable.BorderRadius = 12;
+            this.cbdCedar.OnDisable.BorderThickness = 2;
+            this.cbdCedar.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdCedar.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbdCedar.OnDisable.CheckmarkThickness = 2;
+            this.cbdCedar.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdCedar.OnHoverChecked.BorderRadius = 12;
+            this.cbdCedar.OnHoverChecked.BorderThickness = 2;
+            this.cbdCedar.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdCedar.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdCedar.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbdCedar.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdCedar.OnHoverUnchecked.BorderRadius = 12;
+            this.cbdCedar.OnHoverUnchecked.BorderThickness = 1;
+            this.cbdCedar.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdCedar.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbdCedar.OnUncheck.BorderRadius = 12;
+            this.cbdCedar.OnUncheck.BorderThickness = 1;
+            this.cbdCedar.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdCedar.Size = new System.Drawing.Size(21, 21);
+            this.cbdCedar.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbdCedar.TabIndex = 35;
+            this.cbdCedar.ThreeState = false;
+            this.cbdCedar.ToolTipText = null;
+            // 
+            // cbdBlackThorn
+            // 
+            this.cbdBlackThorn.AllowBindingControlAnimation = true;
+            this.cbdBlackThorn.AllowBindingControlColorChanges = false;
+            this.cbdBlackThorn.AllowBindingControlLocation = true;
+            this.cbdBlackThorn.AllowCheckBoxAnimation = false;
+            this.cbdBlackThorn.AllowCheckmarkAnimation = true;
+            this.cbdBlackThorn.AllowOnHoverStates = true;
+            this.cbdBlackThorn.AutoCheck = true;
+            this.cbdBlackThorn.BackColor = System.Drawing.Color.Transparent;
+            this.cbdBlackThorn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbdBlackThorn.BackgroundImage")));
+            this.cbdBlackThorn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbdBlackThorn.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbdBlackThorn.BorderRadius = 12;
+            this.cbdBlackThorn.Checked = false;
+            this.cbdBlackThorn.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbdBlackThorn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbdBlackThorn.CustomCheckmarkImage = null;
+            this.cbdBlackThorn.Location = new System.Drawing.Point(217, 144);
+            this.cbdBlackThorn.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbdBlackThorn.Name = "cbdBlackThorn";
+            this.cbdBlackThorn.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbdBlackThorn.OnCheck.BorderRadius = 12;
+            this.cbdBlackThorn.OnCheck.BorderThickness = 2;
+            this.cbdBlackThorn.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbdBlackThorn.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdBlackThorn.OnCheck.CheckmarkThickness = 2;
+            this.cbdBlackThorn.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbdBlackThorn.OnDisable.BorderRadius = 12;
+            this.cbdBlackThorn.OnDisable.BorderThickness = 2;
+            this.cbdBlackThorn.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdBlackThorn.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbdBlackThorn.OnDisable.CheckmarkThickness = 2;
+            this.cbdBlackThorn.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdBlackThorn.OnHoverChecked.BorderRadius = 12;
+            this.cbdBlackThorn.OnHoverChecked.BorderThickness = 2;
+            this.cbdBlackThorn.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdBlackThorn.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdBlackThorn.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbdBlackThorn.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdBlackThorn.OnHoverUnchecked.BorderRadius = 12;
+            this.cbdBlackThorn.OnHoverUnchecked.BorderThickness = 1;
+            this.cbdBlackThorn.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdBlackThorn.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbdBlackThorn.OnUncheck.BorderRadius = 12;
+            this.cbdBlackThorn.OnUncheck.BorderThickness = 1;
+            this.cbdBlackThorn.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdBlackThorn.Size = new System.Drawing.Size(21, 21);
+            this.cbdBlackThorn.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbdBlackThorn.TabIndex = 34;
+            this.cbdBlackThorn.ThreeState = false;
+            this.cbdBlackThorn.ToolTipText = null;
+            // 
+            // cbdAmber
+            // 
+            this.cbdAmber.AllowBindingControlAnimation = true;
+            this.cbdAmber.AllowBindingControlColorChanges = false;
+            this.cbdAmber.AllowBindingControlLocation = true;
+            this.cbdAmber.AllowCheckBoxAnimation = false;
+            this.cbdAmber.AllowCheckmarkAnimation = true;
+            this.cbdAmber.AllowOnHoverStates = true;
+            this.cbdAmber.AutoCheck = true;
+            this.cbdAmber.BackColor = System.Drawing.Color.Transparent;
+            this.cbdAmber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbdAmber.BackgroundImage")));
+            this.cbdAmber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbdAmber.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbdAmber.BorderRadius = 12;
+            this.cbdAmber.Checked = false;
+            this.cbdAmber.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbdAmber.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbdAmber.CustomCheckmarkImage = null;
+            this.cbdAmber.Location = new System.Drawing.Point(144, 144);
+            this.cbdAmber.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbdAmber.Name = "cbdAmber";
+            this.cbdAmber.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbdAmber.OnCheck.BorderRadius = 12;
+            this.cbdAmber.OnCheck.BorderThickness = 2;
+            this.cbdAmber.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbdAmber.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdAmber.OnCheck.CheckmarkThickness = 2;
+            this.cbdAmber.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbdAmber.OnDisable.BorderRadius = 12;
+            this.cbdAmber.OnDisable.BorderThickness = 2;
+            this.cbdAmber.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdAmber.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbdAmber.OnDisable.CheckmarkThickness = 2;
+            this.cbdAmber.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdAmber.OnHoverChecked.BorderRadius = 12;
+            this.cbdAmber.OnHoverChecked.BorderThickness = 2;
+            this.cbdAmber.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdAmber.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbdAmber.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbdAmber.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbdAmber.OnHoverUnchecked.BorderRadius = 12;
+            this.cbdAmber.OnHoverUnchecked.BorderThickness = 1;
+            this.cbdAmber.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdAmber.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbdAmber.OnUncheck.BorderRadius = 12;
+            this.cbdAmber.OnUncheck.BorderThickness = 1;
+            this.cbdAmber.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbdAmber.Size = new System.Drawing.Size(21, 21);
+            this.cbdAmber.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbdAmber.TabIndex = 33;
+            this.cbdAmber.ThreeState = false;
+            this.cbdAmber.ToolTipText = null;
+            this.cbdAmber.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.bunifuCheckBox1_CheckedChanged);
+            // 
+            // bunifuDatePicker1
+            // 
+            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDatePicker1.BorderRadius = 1;
+            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
+            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.DisplayWeekNumbers = false;
+            this.bunifuDatePicker1.DPHeight = 0;
+            this.bunifuDatePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.bunifuDatePicker1.FillDatePicker = false;
+            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
+            this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.bunifuDatePicker1.LeftTextMargin = 5;
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(144, 79);
+            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
+            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(297, 32);
+            this.bunifuDatePicker1.TabIndex = 32;
+            this.bunifuDatePicker1.Value = new System.DateTime(2021, 6, 1, 13, 31, 0, 0);
             // 
             // bunifuShadowPanel6
             // 
@@ -1149,6 +1723,21 @@ namespace IOOP_Assignment
             // monthlyReportPage
             // 
             this.monthlyReportPage.BackColor = System.Drawing.Color.White;
+            this.monthlyReportPage.Controls.Add(this.ddmYear);
+            this.monthlyReportPage.Controls.Add(this.ddmMonth);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel32);
+            this.monthlyReportPage.Controls.Add(this.bunifuDataGridView2);
+            this.monthlyReportPage.Controls.Add(this.btnSearchMonthly);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel26);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel27);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel28);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel29);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel30);
+            this.monthlyReportPage.Controls.Add(this.bunifuLabel31);
+            this.monthlyReportPage.Controls.Add(this.cbmDaphne);
+            this.monthlyReportPage.Controls.Add(this.cbmCedar);
+            this.monthlyReportPage.Controls.Add(this.cbmBlackThorn);
+            this.monthlyReportPage.Controls.Add(this.cbmAmber);
             this.monthlyReportPage.Controls.Add(this.bunifuShadowPanel7);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel12);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel13);
@@ -1158,6 +1747,602 @@ namespace IOOP_Assignment
             this.monthlyReportPage.Size = new System.Drawing.Size(890, 592);
             this.monthlyReportPage.TabIndex = 3;
             this.monthlyReportPage.Text = "Monthly Report";
+            this.monthlyReportPage.Click += new System.EventHandler(this.monthlyReportPage_Click);
+            // 
+            // ddmYear
+            // 
+            this.ddmYear.BackColor = System.Drawing.Color.Transparent;
+            this.ddmYear.BackgroundColor = System.Drawing.Color.White;
+            this.ddmYear.BorderColor = System.Drawing.Color.Silver;
+            this.ddmYear.BorderRadius = 1;
+            this.ddmYear.Color = System.Drawing.Color.Silver;
+            this.ddmYear.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.ddmYear.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddmYear.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ddmYear.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddmYear.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ddmYear.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.ddmYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ddmYear.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.ddmYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddmYear.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddmYear.FillDropDown = true;
+            this.ddmYear.FillIndicator = false;
+            this.ddmYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ddmYear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ddmYear.ForeColor = System.Drawing.Color.Black;
+            this.ddmYear.FormattingEnabled = true;
+            this.ddmYear.Icon = null;
+            this.ddmYear.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddmYear.IndicatorColor = System.Drawing.Color.Gray;
+            this.ddmYear.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddmYear.IntegralHeight = false;
+            this.ddmYear.ItemBackColor = System.Drawing.Color.White;
+            this.ddmYear.ItemBorderColor = System.Drawing.Color.White;
+            this.ddmYear.ItemForeColor = System.Drawing.Color.Black;
+            this.ddmYear.ItemHeight = 26;
+            this.ddmYear.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.ddmYear.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.ddmYear.ItemTopMargin = 3;
+            this.ddmYear.Location = new System.Drawing.Point(360, 75);
+            this.ddmYear.Name = "ddmYear";
+            this.ddmYear.Size = new System.Drawing.Size(165, 32);
+            this.ddmYear.TabIndex = 62;
+            this.ddmYear.Text = null;
+            this.ddmYear.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddmYear.TextLeftMargin = 5;
+            // 
+            // ddmMonth
+            // 
+            this.ddmMonth.BackColor = System.Drawing.Color.Transparent;
+            this.ddmMonth.BackgroundColor = System.Drawing.Color.White;
+            this.ddmMonth.BorderColor = System.Drawing.Color.Silver;
+            this.ddmMonth.BorderRadius = 1;
+            this.ddmMonth.Color = System.Drawing.Color.Silver;
+            this.ddmMonth.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.ddmMonth.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddmMonth.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ddmMonth.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddmMonth.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ddmMonth.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.ddmMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ddmMonth.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.ddmMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddmMonth.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddmMonth.FillDropDown = true;
+            this.ddmMonth.FillIndicator = false;
+            this.ddmMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ddmMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ddmMonth.ForeColor = System.Drawing.Color.Black;
+            this.ddmMonth.FormattingEnabled = true;
+            this.ddmMonth.Icon = null;
+            this.ddmMonth.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddmMonth.IndicatorColor = System.Drawing.Color.Gray;
+            this.ddmMonth.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddmMonth.IntegralHeight = false;
+            this.ddmMonth.ItemBackColor = System.Drawing.Color.White;
+            this.ddmMonth.ItemBorderColor = System.Drawing.Color.White;
+            this.ddmMonth.ItemForeColor = System.Drawing.Color.Black;
+            this.ddmMonth.ItemHeight = 26;
+            this.ddmMonth.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.ddmMonth.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.ddmMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.ddmMonth.ItemTopMargin = 3;
+            this.ddmMonth.Location = new System.Drawing.Point(128, 75);
+            this.ddmMonth.Name = "ddmMonth";
+            this.ddmMonth.Size = new System.Drawing.Size(165, 32);
+            this.ddmMonth.TabIndex = 61;
+            this.ddmMonth.Text = null;
+            this.ddmMonth.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddmMonth.TextLeftMargin = 5;
+            // 
+            // bunifuLabel32
+            // 
+            this.bunifuLabel32.AllowParentOverrides = false;
+            this.bunifuLabel32.AutoEllipsis = false;
+            this.bunifuLabel32.CursorType = null;
+            this.bunifuLabel32.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel32.Location = new System.Drawing.Point(328, 81);
+            this.bunifuLabel32.Name = "bunifuLabel32";
+            this.bunifuLabel32.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel32.Size = new System.Drawing.Size(26, 15);
+            this.bunifuLabel32.TabIndex = 58;
+            this.bunifuLabel32.Text = "Year:";
+            this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel32.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuDataGridView2
+            // 
+            this.bunifuDataGridView2.AllowCustomTheming = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.bunifuDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.bunifuDataGridView2.ColumnHeadersHeight = 40;
+            this.bunifuDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.Name = null;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.bunifuDataGridView2.EnableHeadersVisualStyles = false;
+            this.bunifuDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView2.HeaderBgColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView2.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.Location = new System.Drawing.Point(29, 226);
+            this.bunifuDataGridView2.Name = "bunifuDataGridView2";
+            this.bunifuDataGridView2.RowHeadersVisible = false;
+            this.bunifuDataGridView2.RowTemplate.Height = 40;
+            this.bunifuDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuDataGridView2.Size = new System.Drawing.Size(841, 344);
+            this.bunifuDataGridView2.TabIndex = 57;
+            this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Type of Room";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Session";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // btnSearchMonthly
+            // 
+            this.btnSearchMonthly.AllowAnimations = true;
+            this.btnSearchMonthly.AllowMouseEffects = true;
+            this.btnSearchMonthly.AllowToggling = false;
+            this.btnSearchMonthly.AnimationSpeed = 200;
+            this.btnSearchMonthly.AutoGenerateColors = false;
+            this.btnSearchMonthly.AutoRoundBorders = false;
+            this.btnSearchMonthly.AutoSizeLeftIcon = true;
+            this.btnSearchMonthly.AutoSizeRightIcon = true;
+            this.btnSearchMonthly.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchMonthly.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnSearchMonthly.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchMonthly.BackgroundImage")));
+            this.btnSearchMonthly.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchMonthly.ButtonText = "Search";
+            this.btnSearchMonthly.ButtonTextMarginLeft = 0;
+            this.btnSearchMonthly.ColorContrastOnClick = 45;
+            this.btnSearchMonthly.ColorContrastOnHover = 45;
+            this.btnSearchMonthly.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnSearchMonthly.CustomizableEdges = borderEdges7;
+            this.btnSearchMonthly.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearchMonthly.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSearchMonthly.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSearchMonthly.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSearchMonthly.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSearchMonthly.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchMonthly.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMonthly.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchMonthly.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearchMonthly.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSearchMonthly.IconMarginLeft = 11;
+            this.btnSearchMonthly.IconPadding = 10;
+            this.btnSearchMonthly.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearchMonthly.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearchMonthly.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSearchMonthly.IconSize = 25;
+            this.btnSearchMonthly.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchMonthly.IdleBorderRadius = 1;
+            this.btnSearchMonthly.IdleBorderThickness = 1;
+            this.btnSearchMonthly.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchMonthly.IdleIconLeftImage = null;
+            this.btnSearchMonthly.IdleIconRightImage = null;
+            this.btnSearchMonthly.IndicateFocus = false;
+            this.btnSearchMonthly.Location = new System.Drawing.Point(763, 171);
+            this.btnSearchMonthly.Name = "btnSearchMonthly";
+            this.btnSearchMonthly.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSearchMonthly.OnDisabledState.BorderRadius = 1;
+            this.btnSearchMonthly.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchMonthly.OnDisabledState.BorderThickness = 1;
+            this.btnSearchMonthly.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSearchMonthly.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSearchMonthly.OnDisabledState.IconLeftImage = null;
+            this.btnSearchMonthly.OnDisabledState.IconRightImage = null;
+            this.btnSearchMonthly.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSearchMonthly.onHoverState.BorderRadius = 1;
+            this.btnSearchMonthly.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchMonthly.onHoverState.BorderThickness = 1;
+            this.btnSearchMonthly.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSearchMonthly.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMonthly.onHoverState.IconLeftImage = null;
+            this.btnSearchMonthly.onHoverState.IconRightImage = null;
+            this.btnSearchMonthly.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchMonthly.OnIdleState.BorderRadius = 1;
+            this.btnSearchMonthly.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchMonthly.OnIdleState.BorderThickness = 1;
+            this.btnSearchMonthly.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchMonthly.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMonthly.OnIdleState.IconLeftImage = null;
+            this.btnSearchMonthly.OnIdleState.IconRightImage = null;
+            this.btnSearchMonthly.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSearchMonthly.OnPressedState.BorderRadius = 1;
+            this.btnSearchMonthly.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearchMonthly.OnPressedState.BorderThickness = 1;
+            this.btnSearchMonthly.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSearchMonthly.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMonthly.OnPressedState.IconLeftImage = null;
+            this.btnSearchMonthly.OnPressedState.IconRightImage = null;
+            this.btnSearchMonthly.Size = new System.Drawing.Size(107, 30);
+            this.btnSearchMonthly.TabIndex = 56;
+            this.btnSearchMonthly.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearchMonthly.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearchMonthly.TextMarginLeft = 0;
+            this.btnSearchMonthly.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnSearchMonthly.UseDefaultRadiusAndThickness = true;
+            // 
+            // bunifuLabel26
+            // 
+            this.bunifuLabel26.AllowParentOverrides = false;
+            this.bunifuLabel26.AutoEllipsis = false;
+            this.bunifuLabel26.CursorType = null;
+            this.bunifuLabel26.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel26.Location = new System.Drawing.Point(399, 144);
+            this.bunifuLabel26.Name = "bunifuLabel26";
+            this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel26.Size = new System.Drawing.Size(41, 15);
+            this.bunifuLabel26.TabIndex = 55;
+            this.bunifuLabel26.Text = "Daphne";
+            this.bunifuLabel26.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel26.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel27
+            // 
+            this.bunifuLabel27.AllowParentOverrides = false;
+            this.bunifuLabel27.AutoEllipsis = false;
+            this.bunifuLabel27.CursorType = null;
+            this.bunifuLabel27.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel27.Location = new System.Drawing.Point(335, 144);
+            this.bunifuLabel27.Name = "bunifuLabel27";
+            this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel27.Size = new System.Drawing.Size(31, 15);
+            this.bunifuLabel27.TabIndex = 54;
+            this.bunifuLabel27.Text = "Cedar";
+            this.bunifuLabel27.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel27.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel28
+            // 
+            this.bunifuLabel28.AllowParentOverrides = false;
+            this.bunifuLabel28.AutoEllipsis = false;
+            this.bunifuLabel28.CursorType = null;
+            this.bunifuLabel28.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel28.Location = new System.Drawing.Point(234, 144);
+            this.bunifuLabel28.Name = "bunifuLabel28";
+            this.bunifuLabel28.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel28.Size = new System.Drawing.Size(59, 15);
+            this.bunifuLabel28.TabIndex = 53;
+            this.bunifuLabel28.Text = "BlackThorn";
+            this.bunifuLabel28.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel28.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel29
+            // 
+            this.bunifuLabel29.AllowParentOverrides = false;
+            this.bunifuLabel29.AutoEllipsis = false;
+            this.bunifuLabel29.CursorType = null;
+            this.bunifuLabel29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel29.Location = new System.Drawing.Point(155, 144);
+            this.bunifuLabel29.Name = "bunifuLabel29";
+            this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel29.Size = new System.Drawing.Size(36, 15);
+            this.bunifuLabel29.TabIndex = 52;
+            this.bunifuLabel29.Text = "Amber";
+            this.bunifuLabel29.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel29.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel30
+            // 
+            this.bunifuLabel30.AllowParentOverrides = false;
+            this.bunifuLabel30.AutoEllipsis = false;
+            this.bunifuLabel30.CursorType = null;
+            this.bunifuLabel30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel30.Location = new System.Drawing.Point(29, 144);
+            this.bunifuLabel30.Name = "bunifuLabel30";
+            this.bunifuLabel30.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel30.Size = new System.Drawing.Size(63, 15);
+            this.bunifuLabel30.TabIndex = 51;
+            this.bunifuLabel30.Text = "Room Type:";
+            this.bunifuLabel30.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel30.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel31
+            // 
+            this.bunifuLabel31.AllowParentOverrides = false;
+            this.bunifuLabel31.AutoEllipsis = false;
+            this.bunifuLabel31.CursorType = null;
+            this.bunifuLabel31.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel31.Location = new System.Drawing.Point(29, 81);
+            this.bunifuLabel31.Name = "bunifuLabel31";
+            this.bunifuLabel31.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel31.Size = new System.Drawing.Size(39, 15);
+            this.bunifuLabel31.TabIndex = 50;
+            this.bunifuLabel31.Text = "Month:";
+            this.bunifuLabel31.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel31.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // cbmDaphne
+            // 
+            this.cbmDaphne.AllowBindingControlAnimation = true;
+            this.cbmDaphne.AllowBindingControlColorChanges = false;
+            this.cbmDaphne.AllowBindingControlLocation = true;
+            this.cbmDaphne.AllowCheckBoxAnimation = false;
+            this.cbmDaphne.AllowCheckmarkAnimation = true;
+            this.cbmDaphne.AllowOnHoverStates = true;
+            this.cbmDaphne.AutoCheck = true;
+            this.cbmDaphne.BackColor = System.Drawing.Color.Transparent;
+            this.cbmDaphne.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbmDaphne.BackgroundImage")));
+            this.cbmDaphne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbmDaphne.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbmDaphne.BorderRadius = 12;
+            this.cbmDaphne.Checked = false;
+            this.cbmDaphne.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbmDaphne.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmDaphne.CustomCheckmarkImage = null;
+            this.cbmDaphne.Location = new System.Drawing.Point(372, 139);
+            this.cbmDaphne.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbmDaphne.Name = "cbmDaphne";
+            this.cbmDaphne.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbmDaphne.OnCheck.BorderRadius = 12;
+            this.cbmDaphne.OnCheck.BorderThickness = 2;
+            this.cbmDaphne.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbmDaphne.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmDaphne.OnCheck.CheckmarkThickness = 2;
+            this.cbmDaphne.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbmDaphne.OnDisable.BorderRadius = 12;
+            this.cbmDaphne.OnDisable.BorderThickness = 2;
+            this.cbmDaphne.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmDaphne.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbmDaphne.OnDisable.CheckmarkThickness = 2;
+            this.cbmDaphne.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmDaphne.OnHoverChecked.BorderRadius = 12;
+            this.cbmDaphne.OnHoverChecked.BorderThickness = 2;
+            this.cbmDaphne.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmDaphne.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmDaphne.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbmDaphne.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmDaphne.OnHoverUnchecked.BorderRadius = 12;
+            this.cbmDaphne.OnHoverUnchecked.BorderThickness = 1;
+            this.cbmDaphne.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmDaphne.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbmDaphne.OnUncheck.BorderRadius = 12;
+            this.cbmDaphne.OnUncheck.BorderThickness = 1;
+            this.cbmDaphne.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmDaphne.Size = new System.Drawing.Size(21, 21);
+            this.cbmDaphne.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbmDaphne.TabIndex = 49;
+            this.cbmDaphne.ThreeState = false;
+            this.cbmDaphne.ToolTipText = null;
+            // 
+            // cbmCedar
+            // 
+            this.cbmCedar.AllowBindingControlAnimation = true;
+            this.cbmCedar.AllowBindingControlColorChanges = false;
+            this.cbmCedar.AllowBindingControlLocation = true;
+            this.cbmCedar.AllowCheckBoxAnimation = false;
+            this.cbmCedar.AllowCheckmarkAnimation = true;
+            this.cbmCedar.AllowOnHoverStates = true;
+            this.cbmCedar.AutoCheck = true;
+            this.cbmCedar.BackColor = System.Drawing.Color.Transparent;
+            this.cbmCedar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbmCedar.BackgroundImage")));
+            this.cbmCedar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbmCedar.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbmCedar.BorderRadius = 12;
+            this.cbmCedar.Checked = false;
+            this.cbmCedar.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbmCedar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmCedar.CustomCheckmarkImage = null;
+            this.cbmCedar.Location = new System.Drawing.Point(308, 139);
+            this.cbmCedar.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbmCedar.Name = "cbmCedar";
+            this.cbmCedar.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbmCedar.OnCheck.BorderRadius = 12;
+            this.cbmCedar.OnCheck.BorderThickness = 2;
+            this.cbmCedar.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbmCedar.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmCedar.OnCheck.CheckmarkThickness = 2;
+            this.cbmCedar.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbmCedar.OnDisable.BorderRadius = 12;
+            this.cbmCedar.OnDisable.BorderThickness = 2;
+            this.cbmCedar.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmCedar.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbmCedar.OnDisable.CheckmarkThickness = 2;
+            this.cbmCedar.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmCedar.OnHoverChecked.BorderRadius = 12;
+            this.cbmCedar.OnHoverChecked.BorderThickness = 2;
+            this.cbmCedar.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmCedar.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmCedar.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbmCedar.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmCedar.OnHoverUnchecked.BorderRadius = 12;
+            this.cbmCedar.OnHoverUnchecked.BorderThickness = 1;
+            this.cbmCedar.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmCedar.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbmCedar.OnUncheck.BorderRadius = 12;
+            this.cbmCedar.OnUncheck.BorderThickness = 1;
+            this.cbmCedar.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmCedar.Size = new System.Drawing.Size(21, 21);
+            this.cbmCedar.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbmCedar.TabIndex = 48;
+            this.cbmCedar.ThreeState = false;
+            this.cbmCedar.ToolTipText = null;
+            // 
+            // cbmBlackThorn
+            // 
+            this.cbmBlackThorn.AllowBindingControlAnimation = true;
+            this.cbmBlackThorn.AllowBindingControlColorChanges = false;
+            this.cbmBlackThorn.AllowBindingControlLocation = true;
+            this.cbmBlackThorn.AllowCheckBoxAnimation = false;
+            this.cbmBlackThorn.AllowCheckmarkAnimation = true;
+            this.cbmBlackThorn.AllowOnHoverStates = true;
+            this.cbmBlackThorn.AutoCheck = true;
+            this.cbmBlackThorn.BackColor = System.Drawing.Color.Transparent;
+            this.cbmBlackThorn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbmBlackThorn.BackgroundImage")));
+            this.cbmBlackThorn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbmBlackThorn.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbmBlackThorn.BorderRadius = 12;
+            this.cbmBlackThorn.Checked = false;
+            this.cbmBlackThorn.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbmBlackThorn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmBlackThorn.CustomCheckmarkImage = null;
+            this.cbmBlackThorn.Location = new System.Drawing.Point(206, 139);
+            this.cbmBlackThorn.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbmBlackThorn.Name = "cbmBlackThorn";
+            this.cbmBlackThorn.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbmBlackThorn.OnCheck.BorderRadius = 12;
+            this.cbmBlackThorn.OnCheck.BorderThickness = 2;
+            this.cbmBlackThorn.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbmBlackThorn.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmBlackThorn.OnCheck.CheckmarkThickness = 2;
+            this.cbmBlackThorn.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbmBlackThorn.OnDisable.BorderRadius = 12;
+            this.cbmBlackThorn.OnDisable.BorderThickness = 2;
+            this.cbmBlackThorn.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmBlackThorn.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbmBlackThorn.OnDisable.CheckmarkThickness = 2;
+            this.cbmBlackThorn.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmBlackThorn.OnHoverChecked.BorderRadius = 12;
+            this.cbmBlackThorn.OnHoverChecked.BorderThickness = 2;
+            this.cbmBlackThorn.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmBlackThorn.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmBlackThorn.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbmBlackThorn.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmBlackThorn.OnHoverUnchecked.BorderRadius = 12;
+            this.cbmBlackThorn.OnHoverUnchecked.BorderThickness = 1;
+            this.cbmBlackThorn.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmBlackThorn.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbmBlackThorn.OnUncheck.BorderRadius = 12;
+            this.cbmBlackThorn.OnUncheck.BorderThickness = 1;
+            this.cbmBlackThorn.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmBlackThorn.Size = new System.Drawing.Size(21, 21);
+            this.cbmBlackThorn.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbmBlackThorn.TabIndex = 47;
+            this.cbmBlackThorn.ThreeState = false;
+            this.cbmBlackThorn.ToolTipText = null;
+            // 
+            // cbmAmber
+            // 
+            this.cbmAmber.AllowBindingControlAnimation = true;
+            this.cbmAmber.AllowBindingControlColorChanges = false;
+            this.cbmAmber.AllowBindingControlLocation = true;
+            this.cbmAmber.AllowCheckBoxAnimation = false;
+            this.cbmAmber.AllowCheckmarkAnimation = true;
+            this.cbmAmber.AllowOnHoverStates = true;
+            this.cbmAmber.AutoCheck = true;
+            this.cbmAmber.BackColor = System.Drawing.Color.Transparent;
+            this.cbmAmber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbmAmber.BackgroundImage")));
+            this.cbmAmber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbmAmber.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbmAmber.BorderRadius = 12;
+            this.cbmAmber.Checked = false;
+            this.cbmAmber.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbmAmber.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmAmber.CustomCheckmarkImage = null;
+            this.cbmAmber.Location = new System.Drawing.Point(128, 139);
+            this.cbmAmber.MinimumSize = new System.Drawing.Size(17, 17);
+            this.cbmAmber.Name = "cbmAmber";
+            this.cbmAmber.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cbmAmber.OnCheck.BorderRadius = 12;
+            this.cbmAmber.OnCheck.BorderThickness = 2;
+            this.cbmAmber.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.cbmAmber.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmAmber.OnCheck.CheckmarkThickness = 2;
+            this.cbmAmber.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbmAmber.OnDisable.BorderRadius = 12;
+            this.cbmAmber.OnDisable.BorderThickness = 2;
+            this.cbmAmber.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmAmber.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbmAmber.OnDisable.CheckmarkThickness = 2;
+            this.cbmAmber.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmAmber.OnHoverChecked.BorderRadius = 12;
+            this.cbmAmber.OnHoverChecked.BorderThickness = 2;
+            this.cbmAmber.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmAmber.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbmAmber.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbmAmber.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbmAmber.OnHoverUnchecked.BorderRadius = 12;
+            this.cbmAmber.OnHoverUnchecked.BorderThickness = 1;
+            this.cbmAmber.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmAmber.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbmAmber.OnUncheck.BorderRadius = 12;
+            this.cbmAmber.OnUncheck.BorderThickness = 1;
+            this.cbmAmber.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbmAmber.Size = new System.Drawing.Size(21, 21);
+            this.cbmAmber.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbmAmber.TabIndex = 46;
+            this.cbmAmber.ThreeState = false;
+            this.cbmAmber.ToolTipText = null;
             // 
             // bunifuShadowPanel7
             // 
@@ -1412,11 +2597,13 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
             this.dailyReportPage.ResumeLayout(false);
             this.dailyReportPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.bunifuShadowPanel6.ResumeLayout(false);
             this.bunifuShadowPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
             this.monthlyReportPage.ResumeLayout(false);
             this.monthlyReportPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).EndInit();
             this.bunifuShadowPanel7.ResumeLayout(false);
             this.bunifuShadowPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).EndInit();
@@ -1476,5 +2663,43 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox4;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel18;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSession;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchDaily;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel25;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel24;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel23;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel22;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel21;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbdDaphne;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbdCedar;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbdBlackThorn;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbdAmber;
+        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchMonthly;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel26;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel27;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel28;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel29;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel30;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel31;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbmDaphne;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbmCedar;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbmBlackThorn;
+        private Bunifu.UI.WinForms.BunifuCheckBox cbmAmber;
+        private Bunifu.UI.WinForms.BunifuDropdown ddmYear;
+        private Bunifu.UI.WinForms.BunifuDropdown ddmMonth;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel32;
     }
 }

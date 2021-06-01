@@ -16,6 +16,19 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             customiseDesign();
+            DateTime Now = DateTime.Now;
+            int year = int.Parse(Now.ToString("yyyy"));
+            string month = Now.ToString("MMMM");
+            int min_year = year - 20;
+            int max_year = year + 20;
+            int item_year = min_year;
+            while (item_year < max_year)
+            {
+                ddmYear.Items.Add(item_year.ToString());
+                item_year += 1;
+            }
+            ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
+            ddmYear.SelectedIndex = 20;
         }
         private void customiseDesign()
         {
@@ -84,11 +97,6 @@ namespace IOOP_Assignment
             bunifuPages2.PageIndex = 1;
         }
 
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.PageIndex = 4;
-        }
-
         private void bunifuShapes1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -100,6 +108,16 @@ namespace IOOP_Assignment
             {
                 this.WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void monthlyReportPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCheckBox1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+
         }
     }
 }
