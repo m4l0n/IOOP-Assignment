@@ -85,5 +85,15 @@ namespace IOOP_Assignment
                 this.WindowState = FormWindowState.Minimized;
             }
         }
+
+        private void bunifuLabel19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
