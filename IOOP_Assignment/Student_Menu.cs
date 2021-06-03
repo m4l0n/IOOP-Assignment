@@ -95,5 +95,10 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
