@@ -16,7 +16,20 @@ namespace IOOP_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Librarian_Menu());
+            Form1 f1 = new Form1();
+            DialogResult dr = f1.ShowDialog();
+            if (dr == DialogResult.OK && f1.UserRole == "Student")
+            {
+                Application.Run(new Student_Menu());
+            }
+            else if (dr == DialogResult.OK && f1.UserRole == "Librarian")
+            {
+                Application.Run(new Librarian_Menu());
+            }
+            else
+            {
+                MessageBox.Show("Role not found!");
+            }
         }
     }
 }

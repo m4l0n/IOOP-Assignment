@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment
 {
-    public class ValidationVariables
+    public class User
     {
         public string name { get; set; }
         public string tpNumber { get; set; }
@@ -15,5 +15,6 @@ namespace IOOP_Assignment
         public string confPass { get; set; }
         public string loginEmail { get; set; }
         public string loginPass { get; set; }
+
     }
 }

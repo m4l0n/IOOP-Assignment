@@ -26,7 +26,8 @@ namespace IOOP_Assignment
                     "Amber",
                     "A01",
                     "5",
-                    "24 May 2021, 08:00 p.m.",
+                    "24 May 2021",
+                    "8:00 p.m.",
                     "2 hours",
                 });
             resDataGridView.Rows.Add(
@@ -36,7 +37,8 @@ namespace IOOP_Assignment
                     "Blackthorn",
                     "B02",
                     "3",
-                    "27 May 2021, 10:00 a.m.",
+                    "27 May 2021",
+                    "10:00 a.m.",
                     "1 hour",
                 });
             resDataGridView.Rows.Add(
@@ -46,16 +48,18 @@ namespace IOOP_Assignment
                     "Cedar",
                     "C03",
                     "2",
-                    "30 June 2021, 08:30 a.m.",
+                    "30 June 2021",
+                    "08:30 a.m.",
                     "3 hours",
                 });
             resDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["resID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["roomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["roomNumber"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["numStudents"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["dateTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            resDataGridView.Columns["length"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colRoomNumber"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colStudentNum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            resDataGridView.Columns["colDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)

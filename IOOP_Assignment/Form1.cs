@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +16,21 @@ namespace IOOP_Assignment
 {
     public partial class Form1 : Form
     {
+        private string userRole;
+        
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+        public string UserRole { get => userRole; set => userRole = value; }
+
         public Form1()
         {
             InitializeComponent();
+            lblInvalidLogin.Hide();
         }
 
         private void regButton_Click(object sender, EventArgs e)
         {
-            ValidationVariables registration = new ValidationVariables();
+            User registration = new User();
 
             registration.name = nameTxtBox.Text;
             registration.tpNumber = tpTxtBox.Text;
@@ -63,9 +72,21 @@ namespace IOOP_Assignment
                 "Password Format", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        private void showPwToggle_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
-            ValidationVariables login = new ValidationVariables();
+            if (showPwToggle.Checked)
+            {
+                passwordTxtBox.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordTxtBox.PasswordChar = '●';
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            User login = new User();
 
             login.loginEmail = emailTxtBox.Text;
             login.loginPass = passwordTxtBox.Text;
@@ -73,7 +94,7 @@ namespace IOOP_Assignment
             //Validate Login Details
             LoginValidator validator = new LoginValidator();
             ValidationResult result = validator.Validate(login);
-
+            con.Open();
             if (!result.IsValid)
             {
                 foreach (ValidationFailure failure in result.Errors)
@@ -84,19 +105,22 @@ namespace IOOP_Assignment
             }
             else
             {
-                MessageBox.Show("Operation Completed!");
-            }
-        }
+                SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + login.loginEmail 
+                    + "' and Password='" + login.loginPass + "'", con);
+                int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
-        private void showPwToggle_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
-        {
-            if (showPwToggle.Checked)
-            {
-                passwordTxtBox.PasswordChar = '\0';
-            }
-            else
-            {
-                passwordTxtBox.PasswordChar = '●';
+                if (count > 0)
+                {
+                    SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '" 
+                        + login.loginEmail + "'", con);
+                    UserRole = cmd2.ExecuteScalar().ToString();
+                    lblInvalidLogin.Hide();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                    lblInvalidLogin.Show();
+                con.Close();
             }
         }
     }
