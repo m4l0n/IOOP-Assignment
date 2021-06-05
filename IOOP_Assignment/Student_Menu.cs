@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ namespace IOOP_Assignment
 {
     public partial class Student_Menu : Form
     {
+
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         public Student_Menu()
         {
             InitializeComponent();
@@ -62,47 +66,49 @@ namespace IOOP_Assignment
             resDataGridView.Columns["colDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        private void Student_Menu_Load(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(0);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" + User.loginEmail + "'", con);
+            User.name = cmd.ExecuteScalar().ToString();
+            lblName.Text = User.name;
+            SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='" 
+                + User.loginEmail + "'", con);
+            User.tpNumber = cmd2.ExecuteScalar().ToString();
+            SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
+                + User.tpNumber + "'", con);
+            int activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
+            lblHi.Text = "Hi " + User.name + ",";
+            lblActiveRes.Text = activeReservation.ToString();
+            con.Close();
         }
 
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.SetPage(1);
-        }
-
-        private void reportBtn_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.SetPage(2);
-        }
-
-        private void bunifuShapes1_Click(object sender, EventArgs e)
+        private void shapeClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void bunifuShapes2_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.SetPage(0);
+        }
+
+        private void btnRoomRes_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.SetPage(1);
+        }
+
+        private void btnEditRes_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.SetPage(2);
+        }
+
+        private void shapeMinimize_Click(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Minimized;
             }
-        }
-
-        private void bunifuLabel19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

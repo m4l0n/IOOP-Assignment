@@ -18,11 +18,11 @@ namespace IOOP_Assignment
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f1 = new Form1();
             DialogResult dr = f1.ShowDialog();
-            if (dr == DialogResult.OK && f1.UserRole == "Student")
+            if (dr == DialogResult.OK && User.userRole == "Student")
             {
                 Application.Run(new Student_Menu());
             }
-            else if (dr == DialogResult.OK && f1.UserRole == "Librarian")
+            else if (dr == DialogResult.OK && User.userRole == "Librarian")
             {
                 Application.Run(new Librarian_Menu());
             }
