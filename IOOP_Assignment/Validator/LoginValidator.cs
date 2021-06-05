@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment.Validator
 {
-    public class LoginValidator : AbstractValidator<ValidationVariables>
+    public class LoginValidator : AbstractValidator<User>
     {
         public LoginValidator()
         {

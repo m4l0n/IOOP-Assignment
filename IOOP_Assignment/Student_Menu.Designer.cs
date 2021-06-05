@@ -35,9 +35,6 @@ namespace IOOP_Assignment
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -69,6 +66,9 @@ namespace IOOP_Assignment
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.reportBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -77,14 +77,6 @@ namespace IOOP_Assignment
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuPages2 = new Bunifu.UI.WinForms.BunifuPages();
             this.dashboardPage = new System.Windows.Forms.TabPage();
-            this.resDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overviewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -197,11 +189,20 @@ namespace IOOP_Assignment
             this.bunifuShapes1 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuShapes2 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
+            this.resDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.bunifuShadowPanel6 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPages2.SuspendLayout();
             this.dashboardPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resDataGridView)).BeginInit();
             this.bunifuShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.bunifuShadowPanel1.SuspendLayout();
@@ -221,6 +222,8 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.tablePreviewRoom)).BeginInit();
             this.formPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableNewRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resDataGridView)).BeginInit();
+            this.bunifuShadowPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -578,7 +581,7 @@ namespace IOOP_Assignment
             // 
             // dashboardPage
             // 
-            this.dashboardPage.Controls.Add(this.resDataGridView);
+            this.dashboardPage.Controls.Add(this.bunifuShadowPanel6);
             this.dashboardPage.Controls.Add(this.bunifuShadowPanel2);
             this.dashboardPage.Controls.Add(this.bunifuShadowPanel1);
             this.dashboardPage.Controls.Add(this.bunifuLabel6);
@@ -590,142 +593,6 @@ namespace IOOP_Assignment
             this.dashboardPage.TabIndex = 0;
             this.dashboardPage.Text = "Dashboard";
             this.dashboardPage.UseVisualStyleBackColor = true;
-            // 
-            // resDataGridView
-            // 
-            this.resDataGridView.AllowCustomTheming = false;
-            this.resDataGridView.AllowUserToAddRows = false;
-            this.resDataGridView.AllowUserToDeleteRows = false;
-            this.resDataGridView.AllowUserToResizeColumns = false;
-            this.resDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.resDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.resDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.resDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.resDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.resDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.resDataGridView.ColumnHeadersHeight = 40;
-            this.resDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.overviewRoomType,
-            this.overviewRoomNumber,
-            this.overviewStudent,
-            this.overviewDate,
-            this.overviewTime,
-            this.overviewDuration});
-            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.resDataGridView.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
-            this.resDataGridView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.resDataGridView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.resDataGridView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.resDataGridView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.resDataGridView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.resDataGridView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.resDataGridView.CurrentTheme.Name = null;
-            this.resDataGridView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.resDataGridView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.resDataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.resDataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.resDataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.resDataGridView.EnableHeadersVisualStyles = false;
-            this.resDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.resDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.resDataGridView.HeaderBackColor = System.Drawing.Color.Empty;
-            this.resDataGridView.HeaderForeColor = System.Drawing.Color.White;
-            this.resDataGridView.Location = new System.Drawing.Point(24, 308);
-            this.resDataGridView.Name = "resDataGridView";
-            this.resDataGridView.ReadOnly = true;
-            this.resDataGridView.RowHeadersVisible = false;
-            this.resDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.resDataGridView.RowTemplate.Height = 40;
-            this.resDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.resDataGridView.Size = new System.Drawing.Size(718, 192);
-            this.resDataGridView.TabIndex = 34;
-            this.resDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn4.FillWeight = 304.5686F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "#";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 42;
-            // 
-            // overviewRoomType
-            // 
-            this.overviewRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewRoomType.FillWeight = 59.08621F;
-            this.overviewRoomType.HeaderText = "Room Type";
-            this.overviewRoomType.Name = "overviewRoomType";
-            this.overviewRoomType.ReadOnly = true;
-            this.overviewRoomType.Width = 116;
-            // 
-            // overviewRoomNumber
-            // 
-            this.overviewRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewRoomNumber.FillWeight = 160.9156F;
-            this.overviewRoomNumber.HeaderText = "Room Number";
-            this.overviewRoomNumber.Name = "overviewRoomNumber";
-            this.overviewRoomNumber.ReadOnly = true;
-            this.overviewRoomNumber.Width = 141;
-            // 
-            // overviewStudent
-            // 
-            this.overviewStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewStudent.FillWeight = 25.14307F;
-            this.overviewStudent.HeaderText = "Number of Students";
-            this.overviewStudent.Name = "overviewStudent";
-            this.overviewStudent.ReadOnly = true;
-            this.overviewStudent.Width = 182;
-            // 
-            // overviewDate
-            // 
-            this.overviewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewDate.FillWeight = 25.14307F;
-            this.overviewDate.HeaderText = "Date";
-            this.overviewDate.Name = "overviewDate";
-            this.overviewDate.ReadOnly = true;
-            this.overviewDate.Width = 67;
-            // 
-            // overviewTime
-            // 
-            this.overviewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewTime.HeaderText = "Time";
-            this.overviewTime.Name = "overviewTime";
-            this.overviewTime.ReadOnly = true;
-            this.overviewTime.Width = 69;
-            // 
-            // overviewDuration
-            // 
-            this.overviewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.overviewDuration.FillWeight = 25.14307F;
-            this.overviewDuration.HeaderText = "Duration";
-            this.overviewDuration.Name = "overviewDuration";
-            this.overviewDuration.ReadOnly = true;
-            this.overviewDuration.Width = 96;
             // 
             // bunifuShadowPanel2
             // 
@@ -1379,7 +1246,7 @@ namespace IOOP_Assignment
             this.tableRoom.EnableHeadersVisualStyles = false;
             this.tableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tableRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableRoom.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tableRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tableRoom.Location = new System.Drawing.Point(21, 76);
             this.tableRoom.Name = "tableRoom";
@@ -1451,7 +1318,7 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.EnableHeadersVisualStyles = false;
             this.tableAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableAvailableRoom.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tableAvailableRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableAvailableRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tableAvailableRoom.Location = new System.Drawing.Point(21, 295);
             this.tableAvailableRoom.Name = "tableAvailableRoom";
@@ -2086,7 +1953,7 @@ namespace IOOP_Assignment
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(24, 121);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
@@ -2394,7 +2261,7 @@ namespace IOOP_Assignment
             this.tablePreviewRoom.EnableHeadersVisualStyles = false;
             this.tablePreviewRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tablePreviewRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tablePreviewRoom.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tablePreviewRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tablePreviewRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tablePreviewRoom.Location = new System.Drawing.Point(27, 29);
             this.tablePreviewRoom.Name = "tablePreviewRoom";
@@ -3085,7 +2952,7 @@ namespace IOOP_Assignment
             this.tableNewRoom.EnableHeadersVisualStyles = false;
             this.tableNewRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tableNewRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableNewRoom.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tableNewRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableNewRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tableNewRoom.Location = new System.Drawing.Point(437, 206);
             this.tableNewRoom.Name = "tableNewRoom";
@@ -3501,7 +3368,7 @@ namespace IOOP_Assignment
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
+            this.bunifuElipse1.TargetControl = this.resDataGridView;
             // 
             // bunifuShapes1
             // 
@@ -3553,6 +3420,188 @@ namespace IOOP_Assignment
             this.bunifuShapes3.TabIndex = 32;
             this.bunifuShapes3.Text = "bunifuShapes3";
             // 
+            // resDataGridView
+            // 
+            this.resDataGridView.AllowCustomTheming = false;
+            this.resDataGridView.AllowUserToAddRows = false;
+            this.resDataGridView.AllowUserToDeleteRows = false;
+            this.resDataGridView.AllowUserToResizeColumns = false;
+            this.resDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.resDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.resDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.resDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.resDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.resDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.resDataGridView.ColumnHeadersHeight = 50;
+            this.resDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.resDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colResID,
+            this.colRoomType,
+            this.colRoomNumber,
+            this.colStudentNum,
+            this.colDate,
+            this.colTime,
+            this.colDuration});
+            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.resDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.resDataGridView.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
+            this.resDataGridView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.resDataGridView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.resDataGridView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.resDataGridView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.resDataGridView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.resDataGridView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.resDataGridView.CurrentTheme.Name = null;
+            this.resDataGridView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.resDataGridView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.resDataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.resDataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.resDataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.resDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.resDataGridView.EnableHeadersVisualStyles = false;
+            this.resDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.resDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.resDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.resDataGridView.HeaderForeColor = System.Drawing.Color.White;
+            this.resDataGridView.Location = new System.Drawing.Point(31, 52);
+            this.resDataGridView.Name = "resDataGridView";
+            this.resDataGridView.ReadOnly = true;
+            this.resDataGridView.RowHeadersVisible = false;
+            this.resDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.resDataGridView.RowTemplate.Height = 40;
+            this.resDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.resDataGridView.Size = new System.Drawing.Size(664, 166);
+            this.resDataGridView.TabIndex = 34;
+            this.resDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            // 
+            // bunifuShadowPanel6
+            // 
+            this.bunifuShadowPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel6.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuShadowPanel6.BorderRadius = 40;
+            this.bunifuShadowPanel6.BorderThickness = 1;
+            this.bunifuShadowPanel6.Controls.Add(this.bunifuLabel20);
+            this.bunifuShadowPanel6.Controls.Add(this.resDataGridView);
+            this.bunifuShadowPanel6.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel6.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel6.Location = new System.Drawing.Point(21, 298);
+            this.bunifuShadowPanel6.Name = "bunifuShadowPanel6";
+            this.bunifuShadowPanel6.PanelColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel6.PanelColor2 = System.Drawing.Color.White;
+            this.bunifuShadowPanel6.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel6.ShadowDept = 2;
+            this.bunifuShadowPanel6.ShadowDepth = 4;
+            this.bunifuShadowPanel6.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel6.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel6.Size = new System.Drawing.Size(721, 242);
+            this.bunifuShadowPanel6.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel6.TabIndex = 35;
+            // 
+            // colResID
+            // 
+            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResID.FillWeight = 304.5686F;
+            this.colResID.HeaderText = "#";
+            this.colResID.Name = "colResID";
+            this.colResID.ReadOnly = true;
+            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResID.Width = 42;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomType.FillWeight = 59.08621F;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomType.Width = 116;
+            // 
+            // colRoomNumber
+            // 
+            this.colRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomNumber.FillWeight = 160.9156F;
+            this.colRoomNumber.HeaderText = "Room Number";
+            this.colRoomNumber.Name = "colRoomNumber";
+            this.colRoomNumber.ReadOnly = true;
+            this.colRoomNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNumber.Width = 141;
+            // 
+            // colStudentNum
+            // 
+            this.colStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudentNum.FillWeight = 25.14307F;
+            this.colStudentNum.HeaderText = "Number of Students";
+            this.colStudentNum.Name = "colStudentNum";
+            this.colStudentNum.ReadOnly = true;
+            this.colStudentNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colStudentNum.Width = 115;
+            // 
+            // colDate
+            // 
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDate.FillWeight = 25.14307F;
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.Width = 94;
+            // 
+            // colTime
+            // 
+            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTime.Width = 80;
+            // 
+            // colDuration
+            // 
+            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDuration.FillWeight = 25.14307F;
+            this.colDuration.HeaderText = "Duration";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDuration.Width = 76;
+            // 
+            // bunifuLabel20
+            // 
+            this.bunifuLabel20.AllowParentOverrides = false;
+            this.bunifuLabel20.AutoEllipsis = false;
+            this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel20.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel20.Location = new System.Drawing.Point(31, 15);
+            this.bunifuLabel20.Name = "bunifuLabel20";
+            this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel20.Size = new System.Drawing.Size(221, 30);
+            this.bunifuLabel20.TabIndex = 35;
+            this.bunifuLabel20.Text = "Your Reservation Table";
+            this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // Student_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3574,7 +3623,6 @@ namespace IOOP_Assignment
             this.bunifuPages2.ResumeLayout(false);
             this.dashboardPage.ResumeLayout(false);
             this.dashboardPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resDataGridView)).EndInit();
             this.bunifuShadowPanel2.ResumeLayout(false);
             this.bunifuShadowPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
@@ -3603,6 +3651,9 @@ namespace IOOP_Assignment
             this.formPage.ResumeLayout(false);
             this.formPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableNewRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resDataGridView)).EndInit();
+            this.bunifuShadowPanel6.ResumeLayout(false);
+            this.bunifuShadowPanel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3723,14 +3774,6 @@ namespace IOOP_Assignment
         private System.Windows.Forms.CheckBox chkboxStudent;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration;
-        private Bunifu.UI.WinForms.BunifuDataGridView resDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewRoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn overviewDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn editRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn editRoomNumber;
@@ -3738,5 +3781,15 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn editDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn editTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn editDuration;
+        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel6;
+        private Bunifu.UI.WinForms.BunifuDataGridView resDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
     }
 }
