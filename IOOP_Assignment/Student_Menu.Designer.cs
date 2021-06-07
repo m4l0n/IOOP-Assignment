@@ -80,18 +80,12 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel6 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
             this.resDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblName = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.lblRandom = new System.Windows.Forms.Label();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -201,6 +195,13 @@ namespace IOOP_Assignment
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPages2.SuspendLayout();
@@ -563,7 +564,7 @@ namespace IOOP_Assignment
             this.bunifuPages2.PageName = "dashboardPage";
             this.bunifuPages2.PageTitle = "Dashboard";
             this.bunifuPages2.SelectedIndex = 0;
-            this.bunifuPages2.Size = new System.Drawing.Size(769, 572);
+            this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -593,7 +594,7 @@ namespace IOOP_Assignment
             this.dashboardPage.Location = new System.Drawing.Point(4, 4);
             this.dashboardPage.Name = "dashboardPage";
             this.dashboardPage.Padding = new System.Windows.Forms.Padding(3);
-            this.dashboardPage.Size = new System.Drawing.Size(761, 546);
+            this.dashboardPage.Size = new System.Drawing.Size(761, 550);
             this.dashboardPage.TabIndex = 0;
             this.dashboardPage.Text = "Dashboard";
             this.dashboardPage.UseVisualStyleBackColor = true;
@@ -608,7 +609,7 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel6.Controls.Add(this.resDataGridView);
             this.bunifuShadowPanel6.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.bunifuShadowPanel6.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel6.Location = new System.Drawing.Point(21, 298);
+            this.bunifuShadowPanel6.Location = new System.Drawing.Point(21, 301);
             this.bunifuShadowPanel6.Name = "bunifuShadowPanel6";
             this.bunifuShadowPanel6.PanelColor = System.Drawing.Color.White;
             this.bunifuShadowPanel6.PanelColor2 = System.Drawing.Color.White;
@@ -700,7 +701,7 @@ namespace IOOP_Assignment
             this.resDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.resDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
             this.resDataGridView.HeaderForeColor = System.Drawing.Color.White;
-            this.resDataGridView.Location = new System.Drawing.Point(31, 52);
+            this.resDataGridView.Location = new System.Drawing.Point(29, 53);
             this.resDataGridView.Name = "resDataGridView";
             this.resDataGridView.ReadOnly = true;
             this.resDataGridView.RowHeadersVisible = false;
@@ -710,75 +711,7 @@ namespace IOOP_Assignment
             this.resDataGridView.Size = new System.Drawing.Size(664, 166);
             this.resDataGridView.TabIndex = 34;
             this.resDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            // 
-            // colResID
-            // 
-            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colResID.FillWeight = 304.5686F;
-            this.colResID.HeaderText = "#";
-            this.colResID.Name = "colResID";
-            this.colResID.ReadOnly = true;
-            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colResID.Width = 42;
-            // 
-            // colRoomType
-            // 
-            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomType.FillWeight = 59.08621F;
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.Name = "colRoomType";
-            this.colRoomType.ReadOnly = true;
-            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomType.Width = 116;
-            // 
-            // colRoomNumber
-            // 
-            this.colRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomNumber.FillWeight = 160.9156F;
-            this.colRoomNumber.HeaderText = "Room Number";
-            this.colRoomNumber.Name = "colRoomNumber";
-            this.colRoomNumber.ReadOnly = true;
-            this.colRoomNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomNumber.Width = 141;
-            // 
-            // colStudentNum
-            // 
-            this.colStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStudentNum.FillWeight = 25.14307F;
-            this.colStudentNum.HeaderText = "Number of Students";
-            this.colStudentNum.Name = "colStudentNum";
-            this.colStudentNum.ReadOnly = true;
-            this.colStudentNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colStudentNum.Width = 115;
-            // 
-            // colDate
-            // 
-            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDate.FillWeight = 25.14307F;
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDate.Width = 94;
-            // 
-            // colTime
-            // 
-            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colTime.HeaderText = "Time";
-            this.colTime.Name = "colTime";
-            this.colTime.ReadOnly = true;
-            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTime.Width = 80;
-            // 
-            // colDuration
-            // 
-            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDuration.FillWeight = 25.14307F;
-            this.colDuration.HeaderText = "Duration";
-            this.colDuration.Name = "colDuration";
-            this.colDuration.ReadOnly = true;
-            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDuration.Width = 76;
+            this.resDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.resDataGridView_RowPostPaint);
             // 
             // bunifuShadowPanel2
             // 
@@ -863,6 +796,7 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel1.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuShadowPanel1.BorderRadius = 40;
             this.bunifuShadowPanel1.BorderThickness = 1;
+            this.bunifuShadowPanel1.Controls.Add(this.lblRandom);
             this.bunifuShadowPanel1.Controls.Add(this.bunifuPanel2);
             this.bunifuShadowPanel1.Controls.Add(this.bunifuLabel9);
             this.bunifuShadowPanel1.Controls.Add(this.lblActiveRes);
@@ -884,6 +818,14 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel1.Size = new System.Drawing.Size(721, 193);
             this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel1.TabIndex = 27;
+            // 
+            // lblRandom
+            // 
+            this.lblRandom.AutoSize = true;
+            this.lblRandom.Location = new System.Drawing.Point(279, 122);
+            this.lblRandom.Name = "lblRandom";
+            this.lblRandom.Size = new System.Drawing.Size(0, 13);
+            this.lblRandom.TabIndex = 7;
             // 
             // bunifuPanel2
             // 
@@ -3615,6 +3557,75 @@ namespace IOOP_Assignment
             this.reservationSystemDBDataSetBindingSource.DataSource = this.reservationSystem_DBDataSet;
             this.reservationSystemDBDataSetBindingSource.Position = 0;
             // 
+            // colDuration
+            // 
+            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDuration.FillWeight = 25.14307F;
+            this.colDuration.HeaderText = "Duration";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDuration.Width = 76;
+            // 
+            // colTime
+            // 
+            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTime.Width = 80;
+            // 
+            // colDate
+            // 
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDate.FillWeight = 25.14307F;
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.Width = 94;
+            // 
+            // colStudentNum
+            // 
+            this.colStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudentNum.FillWeight = 25.14307F;
+            this.colStudentNum.HeaderText = "Number of Students";
+            this.colStudentNum.Name = "colStudentNum";
+            this.colStudentNum.ReadOnly = true;
+            this.colStudentNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colStudentNum.Width = 115;
+            // 
+            // colRoomNumber
+            // 
+            this.colRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomNumber.FillWeight = 160.9156F;
+            this.colRoomNumber.HeaderText = "Room Number";
+            this.colRoomNumber.Name = "colRoomNumber";
+            this.colRoomNumber.ReadOnly = true;
+            this.colRoomNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNumber.Width = 141;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomType.FillWeight = 59.08621F;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomType.Width = 116;
+            // 
+            // colResID
+            // 
+            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResID.FillWeight = 304.5686F;
+            this.colResID.HeaderText = "#";
+            this.colResID.Name = "colResID";
+            this.colResID.ReadOnly = true;
+            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResID.Width = 42;
+            // 
             // Student_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3798,6 +3809,11 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn editDuration;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel6;
         private Bunifu.UI.WinForms.BunifuDataGridView resDataGridView;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel19;
+        private ReservationSystem_DBDataSet reservationSystem_DBDataSet;
+        private System.Windows.Forms.BindingSource reservationSystemDBDataSetBindingSource;
+        private System.Windows.Forms.Label lblRandom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNumber;
@@ -3805,9 +3821,5 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel19;
-        private ReservationSystem_DBDataSet reservationSystem_DBDataSet;
-        private System.Windows.Forms.BindingSource reservationSystemDBDataSetBindingSource;
     }
 }

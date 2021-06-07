@@ -16,6 +16,8 @@ namespace IOOP_Assignment
     {
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+
         public Student_Menu()
         {
             InitializeComponent();
@@ -23,39 +25,47 @@ namespace IOOP_Assignment
 
         private void Student_Menu_Shown(object sender, EventArgs e)
         {
-            resDataGridView.Rows.Add(
-                new object[]
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
+                + User.tpNumber + "'", con);
+            int activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], Date, " +
+                "convert(varchar(5),Time,108) as Time, " +
+                "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
+            if (activeReservation != 0)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                List<Reservation> resList = new List<Reservation>();
+                resList = (from DataRow dr in dt.Rows
+                           select new Reservation()
+                           {
+                               roomType = dr["Room Type"].ToString(),
+                               roomNumber = dr["Room Number"].ToString(),
+                               date = dr["Date"].ToString(),
+                               time = dr["Time"].ToString(),
+                               numStudents = Convert.ToInt32(dr["Number of Students"]),
+                               duration = dr["Duration"].ToString(),
+                           }).ToList();
+
+                foreach (var res in resList)
                 {
-                    "1",
-                    "Amber",
-                    "A01",
-                    "5",
-                    "24 May 2021",
-                    "8:00 p.m.",
-                    "2 hours",
-                });
-            resDataGridView.Rows.Add(
-                new object[]
-                {
-                    "2",
-                    "Blackthorn",
-                    "B02",
-                    "3",
-                    "27 May 2021",
-                    "10:00 a.m.",
-                    "1 hour",
-                });
-            resDataGridView.Rows.Add(
-                new object[]
-                {
-                    "3",
-                    "Cedar",
-                    "C03",
-                    "2",
-                    "30 June 2021",
-                    "08:30 a.m.",
-                    "3 hours",
-                });
+                    resDataGridView.Rows.Add(
+                        new object[]
+                        {
+                            "",
+                            res.roomType,
+                            res.roomNumber,
+                            res.numStudents,
+                            res.date,
+                            res.time,
+                            res.duration,
+                        });
+                }
+            }
+
             resDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -109,6 +119,11 @@ namespace IOOP_Assignment
             {
                 this.WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void resDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.resDataGridView.Rows[e.RowIndex].Cells["colResID"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

@@ -91,7 +91,6 @@ namespace IOOP_Assignment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             User.loginEmail = emailTxtBox.Text;
             User.loginPass = passwordTxtBox.Text;
             User login = new User();
