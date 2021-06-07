@@ -16,32 +16,29 @@ namespace IOOP_Assignment
 {
     public partial class Form1 : Form
     {
-        private string userRole;
-        
+ 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-
-        public string UserRole { get => userRole; set => userRole = value; }
 
         public Form1()
         {
             InitializeComponent();
             lblInvalidLogin.Hide();
+            lblRegSuccess.Hide();
         }
 
-        private void regButton_Click(object sender, EventArgs e)
+        private async void regButton_Click(object sender, EventArgs e)
         {
+            User.name = nameTxtBox.Text;
+            User.tpNumber = tpTxtBox.Text;
+            User.regEmail = regEmailTxtBox.Text;
+            User.regPass = regPassTxtBox.Text;
+            User.confPass = confPassTxtBox.Text;
             User registration = new User();
-
-            registration.name = nameTxtBox.Text;
-            registration.tpNumber = tpTxtBox.Text;
-            registration.regEmail = regEmailTxtBox.Text;
-            registration.regPass = regPassTxtBox.Text;
-            registration.confPass = confPassTxtBox.Text;
-
             //Validate Registration Data
             RegistrationValidator validator = new RegistrationValidator();
             ValidationResult result = validator.Validate(registration);
 
+            con.Open();
             if (!result.IsValid)
             {
                 foreach(ValidationFailure failure in result.Errors)
@@ -52,18 +49,26 @@ namespace IOOP_Assignment
             }
             else
             {
-                MessageBox.Show("Operation Completed");
+                SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass,'Student')"
+                    ,con);
+                cmd.Parameters.AddWithValue("@tpNum", User.tpNumber);
+                cmd.Parameters.AddWithValue("@name", User.name);
+                cmd.Parameters.AddWithValue("email", User.regEmail);
+                cmd.Parameters.AddWithValue("@pass", User.regPass);
+                int result2 = cmd.ExecuteNonQuery();
+                if (result2 != 0)
+                {
+                    lblRegSuccess.Show();
+                    await Task.Delay(2000);
+                    bunifuPages1.PageIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-            bunifuPages1.PageIndex = 1;
-        }
-
-        private void bunifuButton4_Click(object sender, EventArgs e)
-        {
-            bunifuPages1.PageIndex = 0;
+            con.Close();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -86,11 +91,9 @@ namespace IOOP_Assignment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            User.loginEmail = emailTxtBox.Text;
+            User.loginPass = passwordTxtBox.Text;
             User login = new User();
-
-            login.loginEmail = emailTxtBox.Text;
-            login.loginPass = passwordTxtBox.Text;
-
             //Validate Login Details
             LoginValidator validator = new LoginValidator();
             ValidationResult result = validator.Validate(login);
@@ -105,15 +108,15 @@ namespace IOOP_Assignment
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + login.loginEmail 
-                    + "' and Password='" + login.loginPass + "'", con);
+                SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + User.loginEmail 
+                    + "' and Password='" + User.loginPass + "'", con);
                 int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
                 if (count > 0)
                 {
                     SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '" 
-                        + login.loginEmail + "'", con);
-                    UserRole = cmd2.ExecuteScalar().ToString();
+                        + User.loginEmail + "'", con);
+                    User.userRole = cmd2.ExecuteScalar().ToString();
                     lblInvalidLogin.Hide();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -122,6 +125,16 @@ namespace IOOP_Assignment
                     lblInvalidLogin.Show();
                 con.Close();
             }
+        }
+
+        private void btnRedirectRegister_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.PageIndex = 1;
+        }
+
+        private void btnRedirectLogin_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.PageIndex = 0;
         }
     }
 }

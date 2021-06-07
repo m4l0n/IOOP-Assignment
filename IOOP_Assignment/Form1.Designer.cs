@@ -72,8 +72,8 @@ namespace IOOP_Assignment
             this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.loginPage = new System.Windows.Forms.TabPage();
-            this.lblInvalidLogin = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lblInvalidLogin = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnRedirectRegister = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -84,6 +84,7 @@ namespace IOOP_Assignment
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.regPage = new System.Windows.Forms.TabPage();
+            this.lblRegSuccess = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnRegister = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.confPassTxtBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnRedirectLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -212,24 +213,6 @@ namespace IOOP_Assignment
             this.loginPage.TabIndex = 2;
             this.loginPage.Text = "Login";
             // 
-            // lblInvalidLogin
-            // 
-            this.lblInvalidLogin.AllowParentOverrides = false;
-            this.lblInvalidLogin.AutoEllipsis = false;
-            this.lblInvalidLogin.AutoSize = false;
-            this.lblInvalidLogin.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblInvalidLogin.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblInvalidLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblInvalidLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidLogin.Location = new System.Drawing.Point(133, 345);
-            this.lblInvalidLogin.Name = "lblInvalidLogin";
-            this.lblInvalidLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblInvalidLogin.Size = new System.Drawing.Size(222, 48);
-            this.lblInvalidLogin.TabIndex = 20;
-            this.lblInvalidLogin.Text = "✖ Invalid email & password combination!\r\nPlease try again.";
-            this.lblInvalidLogin.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblInvalidLogin.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // btnLogin
             // 
             this.btnLogin.AllowAnimations = true;
@@ -320,6 +303,24 @@ namespace IOOP_Assignment
             this.btnLogin.UseDefaultRadiusAndThickness = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // lblInvalidLogin
+            // 
+            this.lblInvalidLogin.AllowParentOverrides = false;
+            this.lblInvalidLogin.AutoEllipsis = false;
+            this.lblInvalidLogin.AutoSize = false;
+            this.lblInvalidLogin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblInvalidLogin.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblInvalidLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblInvalidLogin.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidLogin.Location = new System.Drawing.Point(133, 345);
+            this.lblInvalidLogin.Name = "lblInvalidLogin";
+            this.lblInvalidLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblInvalidLogin.Size = new System.Drawing.Size(222, 48);
+            this.lblInvalidLogin.TabIndex = 20;
+            this.lblInvalidLogin.Text = "✖ Invalid email & password combination!\r\nPlease try again.";
+            this.lblInvalidLogin.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInvalidLogin.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // btnRedirectRegister
             // 
             this.btnRedirectRegister.AllowAnimations = true;
@@ -408,7 +409,7 @@ namespace IOOP_Assignment
             this.btnRedirectRegister.TextMarginLeft = 0;
             this.btnRedirectRegister.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRedirectRegister.UseDefaultRadiusAndThickness = true;
-            this.btnRedirectRegister.Click += new System.EventHandler(this.bunifuButton3_Click);
+            this.btnRedirectRegister.Click += new System.EventHandler(this.btnRedirectRegister_Click);
             // 
             // bunifuLabel5
             // 
@@ -677,10 +678,10 @@ namespace IOOP_Assignment
             this.bunifuPages1.Location = new System.Drawing.Point(504, 16);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.loginPage;
-            this.bunifuPages1.PageIndex = 0;
-            this.bunifuPages1.PageName = "loginPage";
-            this.bunifuPages1.PageTitle = "Login";
+            this.bunifuPages1.Page = this.regPage;
+            this.bunifuPages1.PageIndex = 1;
+            this.bunifuPages1.PageName = "regPage";
+            this.bunifuPages1.PageTitle = "Registration";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(431, 517);
             this.bunifuPages1.TabIndex = 5;
@@ -705,6 +706,7 @@ namespace IOOP_Assignment
             // regPage
             // 
             this.regPage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.regPage.Controls.Add(this.lblRegSuccess);
             this.regPage.Controls.Add(this.btnRegister);
             this.regPage.Controls.Add(this.confPassTxtBox);
             this.regPage.Controls.Add(this.btnRedirectLogin);
@@ -722,13 +724,31 @@ namespace IOOP_Assignment
             this.regPage.TabIndex = 4;
             this.regPage.Text = "Registration";
             // 
+            // lblRegSuccess
+            // 
+            this.lblRegSuccess.AllowParentOverrides = false;
+            this.lblRegSuccess.AutoEllipsis = false;
+            this.lblRegSuccess.AutoSize = false;
+            this.lblRegSuccess.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblRegSuccess.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblRegSuccess.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblRegSuccess.ForeColor = System.Drawing.Color.Green;
+            this.lblRegSuccess.Location = new System.Drawing.Point(98, 422);
+            this.lblRegSuccess.Name = "lblRegSuccess";
+            this.lblRegSuccess.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblRegSuccess.Size = new System.Drawing.Size(261, 40);
+            this.lblRegSuccess.TabIndex = 25;
+            this.lblRegSuccess.Text = "✔ Successfully Registered! Please login to \r\naccess your dashboard.";
+            this.lblRegSuccess.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.lblRegSuccess.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // btnRegister
             // 
             this.btnRegister.AllowAnimations = true;
             this.btnRegister.AllowMouseEffects = true;
             this.btnRegister.AllowToggling = false;
             this.btnRegister.AnimationSpeed = 200;
-            this.btnRegister.AutoGenerateColors = false;
+            this.btnRegister.AutoGenerateColors = true;
             this.btnRegister.AutoRoundBorders = true;
             this.btnRegister.AutoSizeLeftIcon = true;
             this.btnRegister.AutoSizeRightIcon = true;
@@ -779,11 +799,11 @@ namespace IOOP_Assignment
             this.btnRegister.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnRegister.OnDisabledState.IconLeftImage = null;
             this.btnRegister.OnDisabledState.IconRightImage = null;
-            this.btnRegister.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRegister.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(193)))), ((int)(((byte)(255)))));
             this.btnRegister.onHoverState.BorderRadius = 1;
             this.btnRegister.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnRegister.onHoverState.BorderThickness = 1;
-            this.btnRegister.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRegister.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(228)))), ((int)(((byte)(229)))));
             this.btnRegister.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnRegister.onHoverState.IconLeftImage = null;
             this.btnRegister.onHoverState.IconRightImage = null;
@@ -795,11 +815,11 @@ namespace IOOP_Assignment
             this.btnRegister.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnRegister.OnIdleState.IconLeftImage = null;
             this.btnRegister.OnIdleState.IconRightImage = null;
-            this.btnRegister.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRegister.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(79)))), ((int)(((byte)(140)))));
             this.btnRegister.OnPressedState.BorderRadius = 1;
             this.btnRegister.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnRegister.OnPressedState.BorderThickness = 1;
-            this.btnRegister.OnPressedState.FillColor = System.Drawing.Color.DarkTurquoise;
+            this.btnRegister.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(114)))));
             this.btnRegister.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnRegister.OnPressedState.IconLeftImage = null;
             this.btnRegister.OnPressedState.IconRightImage = null;
@@ -974,7 +994,7 @@ namespace IOOP_Assignment
             this.btnRedirectLogin.TextMarginLeft = 0;
             this.btnRedirectLogin.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRedirectLogin.UseDefaultRadiusAndThickness = true;
-            this.btnRedirectLogin.Click += new System.EventHandler(this.bunifuButton4_Click);
+            this.btnRedirectLogin.Click += new System.EventHandler(this.btnRedirectLogin_Click);
             // 
             // bunifuLabel6
             // 
@@ -1465,6 +1485,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
         private Bunifu.UI.WinForms.BunifuLabel lblInvalidLogin;
+        private Bunifu.UI.WinForms.BunifuLabel lblRegSuccess;
     }
 }
 
