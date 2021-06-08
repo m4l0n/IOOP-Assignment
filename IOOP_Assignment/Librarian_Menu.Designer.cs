@@ -136,6 +136,9 @@ namespace IOOP_Assignment
             this.ddmMonth = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.clmRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearchMonthly = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -160,9 +163,7 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.clmRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resChart = new LiveCharts.WinForms.CartesianChart();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -715,10 +716,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.dailyReportPage;
-            this.bunifuPages2.PageIndex = 2;
-            this.bunifuPages2.PageName = "dailyReportPage";
-            this.bunifuPages2.PageTitle = "Daily Report";
+            this.bunifuPages2.Page = this.overviewPage;
+            this.bunifuPages2.PageIndex = 0;
+            this.bunifuPages2.PageName = "overviewPage";
+            this.bunifuPages2.PageTitle = "Overview";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -763,6 +764,7 @@ namespace IOOP_Assignment
             this.graphPanel.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.graphPanel.BorderRadius = 20;
             this.graphPanel.BorderThickness = 1;
+            this.graphPanel.Controls.Add(this.resChart);
             this.graphPanel.Controls.Add(this.bunifuLabel33);
             this.graphPanel.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.graphPanel.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
@@ -927,7 +929,7 @@ namespace IOOP_Assignment
             this.requestInfoButton.FadeWhenInactive = false;
             this.requestInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.requestInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("requestInfoButton.Image")));
-            this.requestInfoButton.ActiveImage = null;
+            this.requestInfoButton.ImageActive = null;
             this.requestInfoButton.ImageLocation = null;
             this.requestInfoButton.ImageMargin = 10;
             this.requestInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -944,7 +946,7 @@ namespace IOOP_Assignment
             this.requestInfoButton.TabIndex = 32;
             this.requestInfoButton.ToolTipText = "";
             this.requestInfoButton.WaitOnLoad = false;
-            this.requestInfoButton.ImageMargin = 10;
+            this.requestInfoButton.Zoom = 10;
             this.requestInfoButton.ZoomSpeed = 10;
             this.requestInfoButton.Click += new System.EventHandler(this.requestInfoButton_Click);
             // 
@@ -1002,7 +1004,7 @@ namespace IOOP_Assignment
             this.resInfoButton.FadeWhenInactive = false;
             this.resInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.resInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("resInfoButton.Image")));
-            this.resInfoButton.ActiveImage = null;
+            this.resInfoButton.ImageActive = null;
             this.resInfoButton.ImageLocation = null;
             this.resInfoButton.ImageMargin = 10;
             this.resInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -1019,7 +1021,7 @@ namespace IOOP_Assignment
             this.resInfoButton.TabIndex = 26;
             this.resInfoButton.ToolTipText = "";
             this.resInfoButton.WaitOnLoad = false;
-            this.resInfoButton.ImageMargin = 10;
+            this.resInfoButton.Zoom = 10;
             this.resInfoButton.ZoomSpeed = 10;
             this.resInfoButton.Click += new System.EventHandler(this.resInfoButton_Click);
             // 
@@ -1077,7 +1079,7 @@ namespace IOOP_Assignment
             this.totalUsersInfoButton.FadeWhenInactive = false;
             this.totalUsersInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.totalUsersInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("totalUsersInfoButton.Image")));
-            this.totalUsersInfoButton.ActiveImage = null;
+            this.totalUsersInfoButton.ImageActive = null;
             this.totalUsersInfoButton.ImageLocation = null;
             this.totalUsersInfoButton.ImageMargin = 10;
             this.totalUsersInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -1094,7 +1096,7 @@ namespace IOOP_Assignment
             this.totalUsersInfoButton.TabIndex = 25;
             this.totalUsersInfoButton.ToolTipText = "";
             this.totalUsersInfoButton.WaitOnLoad = false;
-            this.totalUsersInfoButton.ImageMargin = 10;
+            this.totalUsersInfoButton.Zoom = 10;
             this.totalUsersInfoButton.ZoomSpeed = 10;
             this.totalUsersInfoButton.Click += new System.EventHandler(this.totalUsersInfoButton_Click);
             // 
@@ -1593,7 +1595,7 @@ namespace IOOP_Assignment
             this.requestDataGridView.EnableHeadersVisualStyles = false;
             this.requestDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.requestDataGridView.HeaderBackColor = System.Drawing.Color.DarkSlateGray;
-            this.requestDataGridView.HeaderBackColor = System.Drawing.Color.Empty;
+            this.requestDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
             this.requestDataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.requestDataGridView.Location = new System.Drawing.Point(37, 23);
             this.requestDataGridView.Name = "requestDataGridView";
@@ -1845,7 +1847,7 @@ namespace IOOP_Assignment
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(29, 226);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
@@ -2609,7 +2611,7 @@ namespace IOOP_Assignment
             this.bunifuDataGridView2.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView2.HeaderBackColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView2.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView2.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView2.Location = new System.Drawing.Point(29, 226);
             this.bunifuDataGridView2.Name = "bunifuDataGridView2";
@@ -2619,6 +2621,21 @@ namespace IOOP_Assignment
             this.bunifuDataGridView2.Size = new System.Drawing.Size(841, 344);
             this.bunifuDataGridView2.TabIndex = 57;
             this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // clmRoom
+            // 
+            this.clmRoom.HeaderText = "Room";
+            this.clmRoom.Name = "clmRoom";
+            // 
+            // clmRes
+            // 
+            this.clmRes.HeaderText = "No of Reservation";
+            this.clmRes.Name = "clmRes";
+            // 
+            // clmDuration
+            // 
+            this.clmDuration.HeaderText = "Total Duration Used";
+            this.clmDuration.Name = "clmDuration";
             // 
             // btnSearchMonthly
             // 
@@ -3301,20 +3318,13 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // clmRoom
+            // resChart
             // 
-            this.clmRoom.HeaderText = "Room";
-            this.clmRoom.Name = "clmRoom";
-            // 
-            // clmRes
-            // 
-            this.clmRes.HeaderText = "No of Reservation";
-            this.clmRes.Name = "clmRes";
-            // 
-            // clmDuration
-            // 
-            this.clmDuration.HeaderText = "Total Duration Used";
-            this.clmDuration.Name = "clmDuration";
+            this.resChart.Location = new System.Drawing.Point(25, 68);
+            this.resChart.Name = "resChart";
+            this.resChart.Size = new System.Drawing.Size(797, 218);
+            this.resChart.TabIndex = 33;
+            this.resChart.Text = "cartesianChart1";
             // 
             // Librarian_Menu
             // 
@@ -3491,5 +3501,6 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn clmRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmRes;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDuration;
+        private LiveCharts.WinForms.CartesianChart resChart;
     }
 }
