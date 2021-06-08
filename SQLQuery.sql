@@ -1,4 +1,4 @@
-﻿Declare @date Date, @days INT = 6, @counter INT = 1
+Declare @date Date, @days INT = 6, @counter INT = 1
 Declare @Results TABLE (Date Date, TotalReservation int)
 WHILE (@counter < @days)
 BEGIN
@@ -11,3 +11,4 @@ BEGIN
 	Set @counter += 1
 END
 select * from @Results
+
