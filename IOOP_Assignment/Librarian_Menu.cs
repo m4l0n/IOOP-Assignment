@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -141,6 +143,30 @@ namespace IOOP_Assignment
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Librarian_Menu_Load(object sender, EventArgs e)
+        {
+           using (ReservationSystemEntities db = new ReservationSystemEntities())
+            {
+                var data = db.GetPastReservation();
+                LineSeries line = new LineSeries() { DataLabels = true, Values = new ChartValues<int>(), LabelPoint
+                = point => point.Y.ToString() };
+                Axis ax = new Axis();
+                ax.Labels = new List<string>();
+                foreach (var x in data)
+                {
+                    line.Values.Add(x.TotalReservation.Value);
+                    ax.Labels.Add(x.Date.ToString());
+                }
+                resChart.Series.Add(line);
+                resChart.AxisX.Add(ax);
+                resChart.AxisY.Add(
+                    new Axis
+                    {
+                        LabelFormatter = value => value.ToString()
+                    });
+            }
         }
     }
 }
