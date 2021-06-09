@@ -74,21 +74,6 @@ namespace IOOP_Assignment
             hideSubMenu();
         }
 
-        private void bunifuPictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void changesPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
             bunifuPages2.PageIndex = 0;
@@ -112,16 +97,6 @@ namespace IOOP_Assignment
             }
         }
 
-        private void monthlyReportPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCheckBox1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-
-        }
-
         private void totalUsersInfoButton_Click(object sender, EventArgs e)
         {
             bunifuSnackbar1.Show(this, "This card shows the total users registered in the system.",
@@ -138,11 +113,6 @@ namespace IOOP_Assignment
         {
             bunifuSnackbar1.Show(this, "This card shows the total unattended requests for reservation changes.",
                 Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 4000);
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Librarian_Menu_Load(object sender, EventArgs e)

@@ -716,10 +716,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.overviewPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "overviewPage";
-            this.bunifuPages2.PageTitle = "Overview";
+            this.bunifuPages2.Page = this.changesPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "changesPage";
+            this.bunifuPages2.PageTitle = "Changes";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -1156,7 +1156,6 @@ namespace IOOP_Assignment
             this.changesPage.Size = new System.Drawing.Size(890, 592);
             this.changesPage.TabIndex = 1;
             this.changesPage.Text = "Changes";
-            this.changesPage.Click += new System.EventHandler(this.changesPage_Click);
             // 
             // bunifuShadowPanel1
             // 
@@ -1517,7 +1516,6 @@ namespace IOOP_Assignment
             this.bunifuButton3.TextMarginLeft = 0;
             this.bunifuButton3.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton3.UseDefaultRadiusAndThickness = true;
-            this.bunifuButton3.Click += new System.EventHandler(this.bunifuButton3_Click);
             // 
             // bunifuShadowPanel8
             // 
@@ -2287,7 +2285,6 @@ namespace IOOP_Assignment
             this.cbdAmber.TabIndex = 33;
             this.cbdAmber.ThreeState = false;
             this.cbdAmber.ToolTipText = null;
-            this.cbdAmber.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.bunifuCheckBox1_CheckedChanged);
             // 
             // bunifuDatePicker1
             // 
@@ -2451,7 +2448,6 @@ namespace IOOP_Assignment
             this.monthlyReportPage.Size = new System.Drawing.Size(890, 592);
             this.monthlyReportPage.TabIndex = 3;
             this.monthlyReportPage.Text = "Monthly Report";
-            this.monthlyReportPage.Click += new System.EventHandler(this.monthlyReportPage_Click);
             // 
             // ddmYear
             // 
