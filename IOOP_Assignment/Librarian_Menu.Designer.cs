@@ -62,6 +62,7 @@ namespace IOOP_Assignment
             this.bunifuPages2 = new Bunifu.UI.WinForms.BunifuPages();
             this.overviewPage = new System.Windows.Forms.TabPage();
             this.graphPanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.resChart = new LiveCharts.WinForms.CartesianChart();
             this.bunifuLabel33 = new Bunifu.UI.WinForms.BunifuLabel();
             this.userInfoPanel = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
@@ -163,7 +164,6 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.resChart = new LiveCharts.WinForms.CartesianChart();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -780,6 +780,14 @@ namespace IOOP_Assignment
             this.graphPanel.Size = new System.Drawing.Size(841, 302);
             this.graphPanel.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.graphPanel.TabIndex = 31;
+            // 
+            // resChart
+            // 
+            this.resChart.Location = new System.Drawing.Point(25, 68);
+            this.resChart.Name = "resChart";
+            this.resChart.Size = new System.Drawing.Size(797, 218);
+            this.resChart.TabIndex = 33;
+            this.resChart.Text = "cartesianChart1";
             // 
             // bunifuLabel33
             // 
@@ -3318,14 +3326,6 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // resChart
-            // 
-            this.resChart.Location = new System.Drawing.Point(25, 68);
-            this.resChart.Name = "resChart";
-            this.resChart.Size = new System.Drawing.Size(797, 218);
-            this.resChart.TabIndex = 33;
-            this.resChart.Text = "cartesianChart1";
-            // 
             // Librarian_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3341,6 +3341,7 @@ namespace IOOP_Assignment
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Librarian_Menu";
             this.Text = "Librarian_Menu";
+            this.Load += new System.EventHandler(this.Librarian_Menu_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.panelReportSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
