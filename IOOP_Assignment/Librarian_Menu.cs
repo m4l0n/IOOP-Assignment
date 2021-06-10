@@ -131,7 +131,8 @@ namespace IOOP_Assignment
                 foreach (var x in data)
                 {
                     line.Values.Add(x.TotalReservation.Value);
-                    ax.Labels.Add(x.Date.ToString());
+                    string dates = x.Date.ToString().Replace("12:00:00 AM", "");
+                    ax.Labels.Add(dates);
                 }
                 resChart.Series.Add(line);
                 resChart.AxisX.Add(ax);
