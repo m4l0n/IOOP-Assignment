@@ -21,6 +21,7 @@ namespace IOOP_Assignment
         public Student_Menu()
         {
             InitializeComponent();
+            //Converts DatePicker to TimePicker
             timeReserve.Format = DateTimePickerFormat.Custom;
             timeReserve.CustomFormat = "HH:mm tt";
             timeReserve.ShowUpDown = true;
@@ -40,11 +41,11 @@ namespace IOOP_Assignment
                 "format(Date, 'dd/MM/yyyy') as Date, " +
                 "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
                 "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
-            if (activeReservation != 0)
+            if (activeReservation != 0) //only executes if there's record of reservation found for the user
             {
                 SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 DataTable dt = new DataTable(); //Creates a DataTable in the memory
-                da.Fill(dt); //Fills the DataTable with the result from SQL Query
+                da.Fill(dt);    //Fills the DataTable with the result from SQL Query
                 con.Close();
                 List<Reservation> resList = new List<Reservation>();
                 resList = (from DataRow dr in dt.Rows
@@ -58,7 +59,7 @@ namespace IOOP_Assignment
                                duration = dr["Duration"].ToString(),
                            }).ToList(); //LINQ returns a list of object
 
-                foreach (var res in resList) //Fills the table with data
+                foreach (var res in resList)    //Fills the table with data
                 {
                     resDataGridView.Rows.Add(
                         new object[]
@@ -72,7 +73,7 @@ namespace IOOP_Assignment
                             res.duration,
                         });
                 }
-                foreach (var res in resList) //Fills the table with data
+                foreach (var res in resList)    //Fills the table with data
                 {
                     tableReservationEdit.Rows.Add(
                         new object[]
@@ -87,6 +88,7 @@ namespace IOOP_Assignment
                         });
                 }
             }
+            //Bunifu DataGridView Style Formatting
             resDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -128,38 +130,42 @@ namespace IOOP_Assignment
 
         private void shapeClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   //Close application
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(0);
+            bunifuPages2.SetPage(0);    //Redirect to Dashboard
         }
 
         private void btnRoomRes_Click(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(1);
+            bunifuPages2.SetPage(1);    //Redirect to Room Reservation
         }
         private void btnEditRes_Click(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(2);
+            bunifuPages2.SetPage(2);    //Redirect to Reservation Modification
+        }
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
+        }
+        private void btnPreviewCancel_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.SetPage(1);
         }
         private void shapeMinimize_Click(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
-                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Minimized;   //Minimise Form
             }
         }
         private void resDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
+            //Auto Increment first column
             this.resDataGridView.Rows[e.RowIndex].Cells["colResID"].Value = (e.RowIndex + 1).ToString();
             this.tableReservationEdit.Rows[e.RowIndex].Cells["colResIDEdit"].Value = (e.RowIndex + 1).ToString();
-        }
-
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.PageIndex = 3;
         }
 
         private void chkboxDate_CheckedChanged(object sender, EventArgs e)
@@ -185,6 +191,48 @@ namespace IOOP_Assignment
         private void chkboxDuration_CheckedChanged(object sender, EventArgs e)
         {
             comboNewDuration.Enabled = chkboxDuration.Checked;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            comboDuration.SelectedItem = null;
+            comboRoom.SelectedItem = null;
+            comboStudentNo.SelectedItem = null;
+        }
+
+        private void comboRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboRoom.SelectedIndex)
+            {
+                case 0:
+                    comboStudentNo.Items.Clear();
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        comboStudentNo.Items.Add(i);
+                    }
+                    break;
+                case 1:
+                    comboStudentNo.Items.Clear();
+                    for (int i = 1; i <= 8; i++)
+                    {
+                        comboStudentNo.Items.Add(i);
+                    }
+                    break;
+                case 2:
+                    comboStudentNo.Items.Clear();
+                    for (int i = 1; i <= 4; i++)
+                    {
+                        comboStudentNo.Items.Add(i);
+                    }
+                    break;
+                case 3:
+                    comboStudentNo.Items.Clear();
+                    for (int i = 1; i <= 2; i++)
+                    {
+                        comboStudentNo.Items.Add(i);
+                    }
+                    break;
+            }
         }
     }
 }
