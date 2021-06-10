@@ -57,12 +57,19 @@ namespace IOOP_Assignment
                 subMenu.Visible = false;
             }
         }
+        private void btnDashboardPage_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.PageIndex = 0;
+        }
 
+        private void btnChangesPage_Click(object sender, EventArgs e)
+        {
+            bunifuPages2.PageIndex = 1;
+        }
         private void reportBtn_Click(object sender, EventArgs e)
         {
             showSubMenu(panelReportSubMenu);
         }
-
 
         private void monthlyReportButton_Click(object sender, EventArgs e)
         {
@@ -76,16 +83,6 @@ namespace IOOP_Assignment
             bunifuPages2.PageIndex = 2;
             //Code...
             hideSubMenu();
-        }
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.PageIndex = 0;
-        }
-
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.PageIndex = 1;
         }
 
         private void bunifuShapes1_Click(object sender, EventArgs e)
