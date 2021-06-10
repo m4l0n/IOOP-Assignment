@@ -570,7 +570,7 @@ namespace IOOP_Assignment
             this.btnChangesPage.OnIdleState.BorderThickness = 1;
             this.btnChangesPage.OnIdleState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnChangesPage.OnIdleState.ForeColor = System.Drawing.Color.Black;
-            this.btnChangesPage.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.OnIdleState.IconLeftImage")));
+            this.btnChangesPage.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnChangesPage.OnIdleState.IconLeftImage")));
             this.btnChangesPage.OnIdleState.IconRightImage = null;
             this.btnChangesPage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
             this.btnChangesPage.OnPressedState.BorderRadius = 1;
@@ -660,7 +660,7 @@ namespace IOOP_Assignment
             this.btnDashboardPage.OnIdleState.BorderThickness = 1;
             this.btnDashboardPage.OnIdleState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnDashboardPage.OnIdleState.ForeColor = System.Drawing.Color.Black;
-            this.btnDashboardPage.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.OnIdleState.IconLeftImage")));
+            this.btnDashboardPage.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnDashboardPage.OnIdleState.IconLeftImage")));
             this.btnDashboardPage.OnIdleState.IconRightImage = null;
             this.btnDashboardPage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
             this.btnDashboardPage.OnPressedState.BorderRadius = 1;
@@ -716,10 +716,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.overviewPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "overviewPage";
-            this.bunifuPages2.PageTitle = "Overview";
+            this.bunifuPages2.Page = this.changesPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "changesPage";
+            this.bunifuPages2.PageTitle = "Changes";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
