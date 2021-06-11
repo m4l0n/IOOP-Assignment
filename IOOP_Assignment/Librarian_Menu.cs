@@ -120,8 +120,9 @@ namespace IOOP_Assignment
             ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
             ddmYear.SelectedIndex = 20;
             //Displays at Overview
+            string tdy_date = Now.ToString("M/d/yyyy");
             con.Open();
-            SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{Now.ToString("d/MMMM/yyyy")}'", con);
+            SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{tdy_date}'", con);
             lblReservationTdy.Text = sql.ExecuteScalar().ToString();
             SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con);
             lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
