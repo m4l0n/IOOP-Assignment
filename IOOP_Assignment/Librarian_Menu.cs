@@ -173,9 +173,27 @@ namespace IOOP_Assignment
         private void btnSearchDaily_Click(object sender, EventArgs e)
         {
             string date = dailyReportDatePicker.Value.ToString("dd/MM/yyyy");
-            string roomType = grpChkBoxRoomType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-            bunifuLabel1.Text = roomType;
-        }
+            string roomType = radDaphne.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            Request reqData = new Request();
+            List<Request> reqList = reqData.getReqData(date, roomType);
+            if (reqList != null)
+            {
+                foreach (var req in reqList)    //Fills the table with data
+                {
+                    requestDataGridView.Rows.Add(
+                        new object[]
+                        {
+                            req.StudentID,
+                            req.RoomType,
+                            req.Date,
+                            req.Time,
+                            req.NumStudents,
+                            req.Duration,
+                            req.ReservationID,
+                        });
+                }
+            }
 
+        }
     }
 }
