@@ -84,7 +84,6 @@ namespace IOOP_Assignment
                 this.WindowState = FormWindowState.Minimized;
             }
         }
-
         private void totalUsersInfoButton_Click(object sender, EventArgs e)
         {
             bunifuSnackbar1.Show(this, "This card shows the total users registered in the system.",
@@ -119,6 +118,7 @@ namespace IOOP_Assignment
             }
             ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
             ddmYear.SelectedIndex = 20;
+           
             //Displays at Overview
             string tdy_date = Now.ToString("M/d/yyyy");
             con.Open();
@@ -136,11 +136,22 @@ namespace IOOP_Assignment
             lblNameL3.Text = User.name;
             lblNameL4.Text = User.name;
             con.Close();
+            
+            showGraph();
+        }
+
+        private void showGraph()
+        {
             using (ReservationSystemEntities db = new ReservationSystemEntities())
             {
                 var data = db.GetPastReservation();
-                LineSeries line = new LineSeries() { DataLabels = true, Values = new ChartValues<int>(), LabelPoint
-                = point => point.Y.ToString() };
+                LineSeries line = new LineSeries()
+                {
+                    DataLabels = true,
+                    Values = new ChartValues<int>(),
+                    LabelPoint
+                = point => point.Y.ToString()
+                };
                 Axis ax = new Axis();
                 ax.Labels = new List<string>();
                 foreach (var x in data)
@@ -158,5 +169,13 @@ namespace IOOP_Assignment
                     });
             }
         }
+
+        private void btnSearchDaily_Click(object sender, EventArgs e)
+        {
+            string date = dailyReportDatePicker.Value.ToString("dd/MM/yyyy");
+            string roomType = grpChkBoxRoomType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            bunifuLabel1.Text = roomType;
+        }
+
     }
 }

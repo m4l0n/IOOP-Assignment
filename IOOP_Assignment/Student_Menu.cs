@@ -32,59 +32,36 @@ namespace IOOP_Assignment
 
         private void Student_Menu_Shown(object sender, EventArgs e)
         {
-            //Reservation List Table (Dashboard)
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
-                + User.tpNumber + "'", con);
-            int activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
-                "format(Date, 'dd/MM/yyyy') as Date, " +
-                "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
-                "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
-            if (activeReservation != 0) //only executes if there's record of reservation found for the user
+            Reservation res = new Reservation();
+            List<Reservation> resList = res.getResData();   //returns resList as List of Objects
+            if (resList != null)
             {
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataTable dt = new DataTable(); //Creates a DataTable in the memory
-                da.Fill(dt);    //Fills the DataTable with the result from SQL Query
-                con.Close();
-                List<Reservation> resList = new List<Reservation>();
-                resList = (from DataRow dr in dt.Rows
-                           select new Reservation()
-                           {
-                               roomType = dr["Room Type"].ToString(),
-                               roomNumber = dr["Room Number"].ToString(),
-                               date = dr["Date"].ToString(),
-                               time = dr["Time"].ToString(),
-                               numStudents = Convert.ToInt32(dr["Number of Students"]),
-                               duration = dr["Duration"].ToString(),
-                           }).ToList(); //LINQ returns a list of object
-
-                foreach (var res in resList)    //Fills the table with data
+                foreach (var ress in resList)    //Fills the table with data
                 {
                     resDataGridView.Rows.Add(
                         new object[]
                         {
                             "",
-                            res.roomType,
-                            res.roomNumber,
-                            res.numStudents,
-                            res.date,
-                            res.time,
-                            res.duration,
+                            ress.RoomType,
+                            ress.RoomNumber,
+                            ress.NumStudents,
+                            ress.Date,
+                            ress.Time,
+                            ress.Duration,
                         });
                 }
-                foreach (var res in resList)    //Fills the table with data
+                foreach (var ress in resList)    //Fills the table with data
                 {
                     tableReservationEdit.Rows.Add(
                         new object[]
                         {
                             "",
-                            res.roomType,
-                            res.roomNumber,
-                            res.numStudents,
-                            res.date,
-                            res.time,
-                            res.duration,
+                            ress.RoomType,
+                            ress.RoomNumber,
+                            ress.NumStudents,
+                            ress.Date,
+                            ress.Time,
+                            ress.Duration,
                         });
                 }
             }
