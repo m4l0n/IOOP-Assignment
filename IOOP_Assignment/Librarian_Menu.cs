@@ -104,6 +104,9 @@ namespace IOOP_Assignment
 
         private void Librarian_Menu_Load(object sender, EventArgs e)
         {
+            showGraph();
+            formatTables();
+
             //Dropdown for monthly utilization report
             DateTime Now = DateTime.Now;
             int year = int.Parse(Now.ToString("yyyy"));
@@ -135,9 +138,7 @@ namespace IOOP_Assignment
             lblNameL2.Text = User.name;
             lblNameL3.Text = User.name;
             lblNameL4.Text = User.name;
-            con.Close();
-            
-            showGraph();
+            con.Close();          
         }
 
         private void showGraph()
@@ -172,28 +173,43 @@ namespace IOOP_Assignment
 
         private void btnSearchDaily_Click(object sender, EventArgs e)
         {
-            string date = dailyReportDatePicker.Value.ToString("dd/MM/yyyy");
+            dailyReportTable.Rows.Clear();
+            string date = dailyReportDatePicker.Value.ToString("MM/dd/yyyy");
             string roomType = radDaphne.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-            Request reqData = new Request();
-            List<Request> reqList = reqData.getReqData(date, roomType);
-            if (reqList != null)
+            Reservation dailyReport = new Reservation();
+            List<Reservation> resList = dailyReport.getDailyReport(date, roomType);
+            if (resList != null)
             {
-                foreach (var req in reqList)    //Fills the table with data
+                foreach (var res in resList)    //Fills the table with data
                 {
-                    requestDataGridView.Rows.Add(
+                    dailyReportTable.Rows.Add(
                         new object[]
                         {
-                            req.StudentID,
-                            req.RoomType,
-                            req.Date,
-                            req.Time,
-                            req.NumStudents,
-                            req.Duration,
-                            req.ReservationID,
+                            res.ResID,
+                            res.RoomType,
+                            res.RoomNumber,
+                            res.NumStudents,
+                            res.Date,
+                            res.Time,
+                            res.Duration,
+                            res.StudentID,
                         });
                 }
             }
-
         }
+        private void formatTables()
+        {
+            //Bunifu DataGridView Style Formatting
+            dailyReportTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colRoomNum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colNumStudents"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dailyReportTable.Columns["colStudentID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
     }
 }

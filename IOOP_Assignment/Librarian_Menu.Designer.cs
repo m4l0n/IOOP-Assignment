@@ -42,10 +42,10 @@ namespace IOOP_Assignment
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -97,6 +97,13 @@ namespace IOOP_Assignment
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.requestDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInfoPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblNameL2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -104,16 +111,18 @@ namespace IOOP_Assignment
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dailyReportPage = new System.Windows.Forms.TabPage();
-            this.monthlyResTable = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.radDaphne = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radCedar = new System.Windows.Forms.RadioButton();
+            this.radBThorn = new System.Windows.Forms.RadioButton();
+            this.radAmber = new System.Windows.Forms.RadioButton();
+            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnSearchDaily = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.dailyReportDatePicker = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.dailyReportTable = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.userInfoPanel3 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblNameL3 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -152,23 +161,15 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.dailyReportDatePicker = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.radDaphne = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.radAll = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radCedar = new System.Windows.Forms.RadioButton();
-            this.radBThorn = new System.Windows.Forms.RadioButton();
-            this.radAmber = new System.Windows.Forms.RadioButton();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -188,15 +189,15 @@ namespace IOOP_Assignment
             this.userInfoPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
             this.dailyReportPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyResTable)).BeginInit();
+            this.bunifuShadowPanel2.SuspendLayout();
+            this.radDaphne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dailyReportTable)).BeginInit();
             this.userInfoPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
             this.monthlyReportPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).BeginInit();
             this.userInfoPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).BeginInit();
-            this.bunifuShadowPanel2.SuspendLayout();
-            this.radDaphne.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -723,10 +724,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.changesPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "changesPage";
-            this.bunifuPages2.PageTitle = "Changes";
+            this.bunifuPages2.Page = this.dailyReportPage;
+            this.bunifuPages2.PageIndex = 2;
+            this.bunifuPages2.PageName = "dailyReportPage";
+            this.bunifuPages2.PageTitle = "Daily Report";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -1621,7 +1622,7 @@ namespace IOOP_Assignment
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.requestDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.requestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestDataGridView.ColumnHeadersHeight = 40;
             this.requestDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colStudID,
             this.colNewRoom,
@@ -1670,6 +1671,59 @@ namespace IOOP_Assignment
             this.requestDataGridView.Size = new System.Drawing.Size(802, 328);
             this.requestDataGridView.TabIndex = 32;
             this.requestDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
+            // 
+            // colStudID
+            // 
+            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudID.HeaderText = "Student ID";
+            this.colStudID.Name = "colStudID";
+            this.colStudID.ReadOnly = true;
+            // 
+            // colNewRoom
+            // 
+            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewRoom.HeaderText = "New Room";
+            this.colNewRoom.Name = "colNewRoom";
+            this.colNewRoom.ReadOnly = true;
+            // 
+            // colNewDate
+            // 
+            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewDate.HeaderText = "New Date";
+            this.colNewDate.Name = "colNewDate";
+            this.colNewDate.ReadOnly = true;
+            this.colNewDate.Width = 115;
+            // 
+            // colNewTime
+            // 
+            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewTime.HeaderText = "New Time";
+            this.colNewTime.Name = "colNewTime";
+            this.colNewTime.ReadOnly = true;
+            this.colNewTime.Width = 110;
+            // 
+            // colNewStudentNum
+            // 
+            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewStudentNum.HeaderText = "New Student Number";
+            this.colNewStudentNum.Name = "colNewStudentNum";
+            this.colNewStudentNum.ReadOnly = true;
+            this.colNewStudentNum.Width = 130;
+            // 
+            // colNewDuration
+            // 
+            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colNewDuration.HeaderText = "New Duration";
+            this.colNewDuration.Name = "colNewDuration";
+            this.colNewDuration.ReadOnly = true;
+            this.colNewDuration.Width = 133;
+            // 
+            // colNewResID
+            // 
+            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewResID.HeaderText = "Reservation ID";
+            this.colNewResID.Name = "colNewResID";
+            this.colNewResID.ReadOnly = true;
             // 
             // userInfoPanel2
             // 
@@ -1785,7 +1839,7 @@ namespace IOOP_Assignment
             // 
             this.dailyReportPage.BackColor = System.Drawing.Color.White;
             this.dailyReportPage.Controls.Add(this.bunifuShadowPanel2);
-            this.dailyReportPage.Controls.Add(this.monthlyResTable);
+            this.dailyReportPage.Controls.Add(this.dailyReportTable);
             this.dailyReportPage.Controls.Add(this.userInfoPanel3);
             this.dailyReportPage.Controls.Add(this.bunifuLabel11);
             this.dailyReportPage.Controls.Add(this.bunifuLabel15);
@@ -1796,157 +1850,129 @@ namespace IOOP_Assignment
             this.dailyReportPage.TabIndex = 2;
             this.dailyReportPage.Text = "Daily Report";
             // 
-            // monthlyResTable
+            // bunifuShadowPanel2
             // 
-            this.monthlyResTable.AllowCustomTheming = false;
-            this.monthlyResTable.AllowUserToAddRows = false;
-            this.monthlyResTable.AllowUserToDeleteRows = false;
-            this.monthlyResTable.AllowUserToResizeColumns = false;
-            this.monthlyResTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.monthlyResTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.monthlyResTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.monthlyResTable.BackgroundColor = System.Drawing.Color.White;
-            this.monthlyResTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.monthlyResTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.monthlyResTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monthlyResTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.monthlyResTable.ColumnHeadersHeight = 40;
-            this.monthlyResTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colResID,
-            this.colRoomType,
-            this.colRoomNum,
-            this.colNumStudents,
-            this.colDate,
-            this.colTime,
-            this.colDuration,
-            this.studentID});
-            this.monthlyResTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.monthlyResTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.monthlyResTable.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.monthlyResTable.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
-            this.monthlyResTable.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.monthlyResTable.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.monthlyResTable.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.monthlyResTable.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.monthlyResTable.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.monthlyResTable.CurrentTheme.Name = null;
-            this.monthlyResTable.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.monthlyResTable.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.monthlyResTable.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.monthlyResTable.DefaultCellStyle = dataGridViewCellStyle6;
-            this.monthlyResTable.EnableHeadersVisualStyles = false;
-            this.monthlyResTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.monthlyResTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.monthlyResTable.HeaderBgColor = System.Drawing.Color.Empty;
-            this.monthlyResTable.HeaderForeColor = System.Drawing.Color.White;
-            this.monthlyResTable.Location = new System.Drawing.Point(64, 232);
-            this.monthlyResTable.Name = "monthlyResTable";
-            this.monthlyResTable.ReadOnly = true;
-            this.monthlyResTable.RowHeadersVisible = false;
-            this.monthlyResTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.monthlyResTable.RowTemplate.Height = 40;
-            this.monthlyResTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.monthlyResTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.monthlyResTable.Size = new System.Drawing.Size(752, 324);
-            this.monthlyResTable.TabIndex = 44;
-            this.monthlyResTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.bunifuShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuShadowPanel2.BorderRadius = 20;
+            this.bunifuShadowPanel2.BorderThickness = 1;
+            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel14);
+            this.bunifuShadowPanel2.Controls.Add(this.radDaphne);
+            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel9);
+            this.bunifuShadowPanel2.Controls.Add(this.btnSearchDaily);
+            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel1);
+            this.bunifuShadowPanel2.Controls.Add(this.dailyReportDatePicker);
+            this.bunifuShadowPanel2.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel2.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel2.Location = new System.Drawing.Point(64, 70);
+            this.bunifuShadowPanel2.Name = "bunifuShadowPanel2";
+            this.bunifuShadowPanel2.PanelColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel2.PanelColor2 = System.Drawing.Color.White;
+            this.bunifuShadowPanel2.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel2.ShadowDept = 2;
+            this.bunifuShadowPanel2.ShadowDepth = 3;
+            this.bunifuShadowPanel2.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel2.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel2.Size = new System.Drawing.Size(752, 145);
+            this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel2.TabIndex = 51;
             // 
-            // colResID
+            // radDaphne
             // 
-            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colResID.FillWeight = 304.5686F;
-            this.colResID.HeaderText = "#";
-            this.colResID.Name = "colResID";
-            this.colResID.ReadOnly = true;
-            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colResID.Width = 30;
+            this.radDaphne.BackColor = System.Drawing.Color.White;
+            this.radDaphne.BorderColor = System.Drawing.Color.White;
+            this.radDaphne.BorderRadius = 1;
+            this.radDaphne.BorderThickness = 1;
+            this.radDaphne.Controls.Add(this.radAll);
+            this.radDaphne.Controls.Add(this.radioButton2);
+            this.radDaphne.Controls.Add(this.radCedar);
+            this.radDaphne.Controls.Add(this.radBThorn);
+            this.radDaphne.Controls.Add(this.radAmber);
+            this.radDaphne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.radDaphne.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.radDaphne.LabelIndent = 10;
+            this.radDaphne.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.radDaphne.Location = new System.Drawing.Point(100, 97);
+            this.radDaphne.Name = "radDaphne";
+            this.radDaphne.Size = new System.Drawing.Size(372, 35);
+            this.radDaphne.TabIndex = 52;
+            this.radDaphne.TabStop = false;
             // 
-            // colRoomType
+            // radAll
             // 
-            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colRoomType.FillWeight = 59.08621F;
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.Name = "colRoomType";
-            this.colRoomType.ReadOnly = true;
-            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomType.Width = 116;
+            this.radAll.AutoSize = true;
+            this.radAll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAll.Location = new System.Drawing.Point(322, 15);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(40, 21);
+            this.radAll.TabIndex = 4;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "All";
+            this.radAll.UseVisualStyleBackColor = true;
             // 
-            // colRoomNum
+            // radioButton2
             // 
-            this.colRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colRoomNum.FillWeight = 160.9156F;
-            this.colRoomNum.HeaderText = "Room Number";
-            this.colRoomNum.Name = "colRoomNum";
-            this.colRoomNum.ReadOnly = true;
-            this.colRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomNum.Width = 141;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(245, 15);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(71, 21);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Daphne";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // colNumStudents
+            // radCedar
             // 
-            this.colNumStudents.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNumStudents.FillWeight = 25.14307F;
-            this.colNumStudents.HeaderText = "Number of Students";
-            this.colNumStudents.Name = "colNumStudents";
-            this.colNumStudents.ReadOnly = true;
-            this.colNumStudents.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.radCedar.AutoSize = true;
+            this.radCedar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radCedar.Location = new System.Drawing.Point(178, 15);
+            this.radCedar.Name = "radCedar";
+            this.radCedar.Size = new System.Drawing.Size(61, 21);
+            this.radCedar.TabIndex = 2;
+            this.radCedar.TabStop = true;
+            this.radCedar.Text = "Cedar";
+            this.radCedar.UseVisualStyleBackColor = true;
             // 
-            // colDate
+            // radBThorn
             // 
-            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colDate.FillWeight = 25.14307F;
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDate.Width = 67;
+            this.radBThorn.AutoSize = true;
+            this.radBThorn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBThorn.Location = new System.Drawing.Point(83, 15);
+            this.radBThorn.Name = "radBThorn";
+            this.radBThorn.Size = new System.Drawing.Size(86, 21);
+            this.radBThorn.TabIndex = 1;
+            this.radBThorn.TabStop = true;
+            this.radBThorn.Text = "Blackthorn";
+            this.radBThorn.UseVisualStyleBackColor = true;
             // 
-            // colTime
+            // radAmber
             // 
-            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colTime.HeaderText = "Time";
-            this.colTime.Name = "colTime";
-            this.colTime.ReadOnly = true;
-            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTime.Width = 69;
+            this.radAmber.AutoSize = true;
+            this.radAmber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAmber.Location = new System.Drawing.Point(12, 15);
+            this.radAmber.Name = "radAmber";
+            this.radAmber.Size = new System.Drawing.Size(65, 21);
+            this.radAmber.TabIndex = 0;
+            this.radAmber.TabStop = true;
+            this.radAmber.Text = "Amber";
+            this.radAmber.UseVisualStyleBackColor = true;
             // 
-            // colDuration
+            // bunifuLabel9
             // 
-            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colDuration.FillWeight = 25.14307F;
-            this.colDuration.HeaderText = "Duration";
-            this.colDuration.Name = "colDuration";
-            this.colDuration.ReadOnly = true;
-            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDuration.Width = 96;
-            // 
-            // studentID
-            // 
-            this.studentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.studentID.HeaderText = "Student ID";
-            this.studentID.Name = "studentID";
-            this.studentID.ReadOnly = true;
-            this.studentID.Width = 111;
+            this.bunifuLabel9.AllowParentOverrides = false;
+            this.bunifuLabel9.AutoEllipsis = false;
+            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel9.Location = new System.Drawing.Point(13, 112);
+            this.bunifuLabel9.Name = "bunifuLabel9";
+            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel9.Size = new System.Drawing.Size(81, 20);
+            this.bunifuLabel9.TabIndex = 51;
+            this.bunifuLabel9.Text = "Room Type:";
+            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnSearchDaily
             // 
@@ -2037,6 +2063,123 @@ namespace IOOP_Assignment
             this.btnSearchDaily.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSearchDaily.UseDefaultRadiusAndThickness = true;
             this.btnSearchDaily.Click += new System.EventHandler(this.btnSearchDaily_Click);
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel1.Location = new System.Drawing.Point(49, 26);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(36, 20);
+            this.bunifuLabel1.TabIndex = 39;
+            this.bunifuLabel1.Text = "Date:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dailyReportDatePicker
+            // 
+            this.dailyReportDatePicker.BackColor = System.Drawing.Color.Transparent;
+            this.dailyReportDatePicker.BorderRadius = 1;
+            this.dailyReportDatePicker.Color = System.Drawing.Color.Silver;
+            this.dailyReportDatePicker.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dailyReportDatePicker.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dailyReportDatePicker.DisabledColor = System.Drawing.Color.Gray;
+            this.dailyReportDatePicker.DisplayWeekNumbers = false;
+            this.dailyReportDatePicker.DPHeight = 0;
+            this.dailyReportDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dailyReportDatePicker.FillDatePicker = false;
+            this.dailyReportDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dailyReportDatePicker.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportDatePicker.Icon = ((System.Drawing.Image)(resources.GetObject("dailyReportDatePicker.Icon")));
+            this.dailyReportDatePicker.IconColor = System.Drawing.Color.Gray;
+            this.dailyReportDatePicker.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dailyReportDatePicker.LeftTextMargin = 5;
+            this.dailyReportDatePicker.Location = new System.Drawing.Point(110, 21);
+            this.dailyReportDatePicker.MinimumSize = new System.Drawing.Size(4, 32);
+            this.dailyReportDatePicker.Name = "dailyReportDatePicker";
+            this.dailyReportDatePicker.Size = new System.Drawing.Size(297, 32);
+            this.dailyReportDatePicker.TabIndex = 38;
+            this.dailyReportDatePicker.Value = new System.DateTime(2021, 6, 1, 13, 31, 0, 0);
+            // 
+            // dailyReportTable
+            // 
+            this.dailyReportTable.AllowCustomTheming = false;
+            this.dailyReportTable.AllowUserToAddRows = false;
+            this.dailyReportTable.AllowUserToDeleteRows = false;
+            this.dailyReportTable.AllowUserToResizeColumns = false;
+            this.dailyReportTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dailyReportTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dailyReportTable.BackgroundColor = System.Drawing.Color.White;
+            this.dailyReportTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dailyReportTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dailyReportTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dailyReportTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dailyReportTable.ColumnHeadersHeight = 40;
+            this.dailyReportTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colResID,
+            this.colRoomType,
+            this.colRoomNum,
+            this.colNumStudents,
+            this.colDate,
+            this.colTime,
+            this.colDuration,
+            this.colStudentID});
+            this.dailyReportTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dailyReportTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportTable.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dailyReportTable.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dailyReportTable.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dailyReportTable.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dailyReportTable.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dailyReportTable.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dailyReportTable.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dailyReportTable.CurrentTheme.Name = null;
+            this.dailyReportTable.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dailyReportTable.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dailyReportTable.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dailyReportTable.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dailyReportTable.EnableHeadersVisualStyles = false;
+            this.dailyReportTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.dailyReportTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dailyReportTable.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dailyReportTable.HeaderForeColor = System.Drawing.Color.White;
+            this.dailyReportTable.Location = new System.Drawing.Point(64, 232);
+            this.dailyReportTable.Name = "dailyReportTable";
+            this.dailyReportTable.ReadOnly = true;
+            this.dailyReportTable.RowHeadersVisible = false;
+            this.dailyReportTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dailyReportTable.RowTemplate.Height = 40;
+            this.dailyReportTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dailyReportTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dailyReportTable.Size = new System.Drawing.Size(752, 324);
+            this.dailyReportTable.TabIndex = 44;
+            this.dailyReportTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
             // userInfoPanel3
             // 
@@ -3049,222 +3192,96 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // bunifuShadowPanel2
+            // bunifuLabel14
             // 
-            this.bunifuShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuShadowPanel2.BorderRadius = 20;
-            this.bunifuShadowPanel2.BorderThickness = 1;
-            this.bunifuShadowPanel2.Controls.Add(this.radDaphne);
-            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel9);
-            this.bunifuShadowPanel2.Controls.Add(this.btnSearchDaily);
-            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel1);
-            this.bunifuShadowPanel2.Controls.Add(this.dailyReportDatePicker);
-            this.bunifuShadowPanel2.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel2.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel2.Location = new System.Drawing.Point(64, 70);
-            this.bunifuShadowPanel2.Name = "bunifuShadowPanel2";
-            this.bunifuShadowPanel2.PanelColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel2.PanelColor2 = System.Drawing.Color.White;
-            this.bunifuShadowPanel2.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel2.ShadowDept = 2;
-            this.bunifuShadowPanel2.ShadowDepth = 3;
-            this.bunifuShadowPanel2.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel2.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel2.Size = new System.Drawing.Size(752, 145);
-            this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel2.TabIndex = 51;
+            this.bunifuLabel14.AllowParentOverrides = false;
+            this.bunifuLabel14.AutoEllipsis = false;
+            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel14.Location = new System.Drawing.Point(433, 30);
+            this.bunifuLabel14.Name = "bunifuLabel14";
+            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
+            this.bunifuLabel14.TabIndex = 53;
+            this.bunifuLabel14.Text = "bunifuLabel14";
+            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel1
+            // colResID
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.Location = new System.Drawing.Point(49, 26);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(36, 20);
-            this.bunifuLabel1.TabIndex = 39;
-            this.bunifuLabel1.Text = "Date:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResID.FillWeight = 304.5686F;
+            this.colResID.HeaderText = "#";
+            this.colResID.Name = "colResID";
+            this.colResID.ReadOnly = true;
+            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResID.Width = 30;
             // 
-            // dailyReportDatePicker
+            // colRoomType
             // 
-            this.dailyReportDatePicker.BackColor = System.Drawing.Color.Transparent;
-            this.dailyReportDatePicker.BorderRadius = 1;
-            this.dailyReportDatePicker.Color = System.Drawing.Color.Silver;
-            this.dailyReportDatePicker.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.dailyReportDatePicker.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dailyReportDatePicker.DisabledColor = System.Drawing.Color.Gray;
-            this.dailyReportDatePicker.DisplayWeekNumbers = false;
-            this.dailyReportDatePicker.DPHeight = 0;
-            this.dailyReportDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dailyReportDatePicker.FillDatePicker = false;
-            this.dailyReportDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dailyReportDatePicker.ForeColor = System.Drawing.Color.Black;
-            this.dailyReportDatePicker.Icon = ((System.Drawing.Image)(resources.GetObject("dailyReportDatePicker.Icon")));
-            this.dailyReportDatePicker.IconColor = System.Drawing.Color.Gray;
-            this.dailyReportDatePicker.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dailyReportDatePicker.LeftTextMargin = 5;
-            this.dailyReportDatePicker.Location = new System.Drawing.Point(110, 21);
-            this.dailyReportDatePicker.MinimumSize = new System.Drawing.Size(4, 32);
-            this.dailyReportDatePicker.Name = "dailyReportDatePicker";
-            this.dailyReportDatePicker.Size = new System.Drawing.Size(297, 32);
-            this.dailyReportDatePicker.TabIndex = 38;
-            this.dailyReportDatePicker.Value = new System.DateTime(2021, 6, 1, 13, 31, 0, 0);
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colRoomType.FillWeight = 59.08621F;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomType.Width = 116;
             // 
-            // radDaphne
+            // colRoomNum
             // 
-            this.radDaphne.BackColor = System.Drawing.Color.White;
-            this.radDaphne.BorderColor = System.Drawing.Color.White;
-            this.radDaphne.BorderRadius = 1;
-            this.radDaphne.BorderThickness = 1;
-            this.radDaphne.Controls.Add(this.radAll);
-            this.radDaphne.Controls.Add(this.radioButton2);
-            this.radDaphne.Controls.Add(this.radCedar);
-            this.radDaphne.Controls.Add(this.radBThorn);
-            this.radDaphne.Controls.Add(this.radAmber);
-            this.radDaphne.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radDaphne.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.radDaphne.LabelIndent = 10;
-            this.radDaphne.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.radDaphne.Location = new System.Drawing.Point(100, 97);
-            this.radDaphne.Name = "radDaphne";
-            this.radDaphne.Size = new System.Drawing.Size(372, 35);
-            this.radDaphne.TabIndex = 52;
-            this.radDaphne.TabStop = false;
+            this.colRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colRoomNum.FillWeight = 160.9156F;
+            this.colRoomNum.HeaderText = "Room Number";
+            this.colRoomNum.Name = "colRoomNum";
+            this.colRoomNum.ReadOnly = true;
+            this.colRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNum.Width = 141;
             // 
-            // radAll
+            // colNumStudents
             // 
-            this.radAll.AutoSize = true;
-            this.radAll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAll.Location = new System.Drawing.Point(322, 15);
-            this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(40, 21);
-            this.radAll.TabIndex = 4;
-            this.radAll.TabStop = true;
-            this.radAll.Text = "All";
-            this.radAll.UseVisualStyleBackColor = true;
+            this.colNumStudents.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNumStudents.FillWeight = 25.14307F;
+            this.colNumStudents.HeaderText = "Number of Students";
+            this.colNumStudents.Name = "colNumStudents";
+            this.colNumStudents.ReadOnly = true;
+            this.colNumStudents.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // radioButton2
+            // colDate
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(245, 15);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 21);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Daphne";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDate.FillWeight = 25.14307F;
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.Width = 67;
             // 
-            // radCedar
+            // colTime
             // 
-            this.radCedar.AutoSize = true;
-            this.radCedar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCedar.Location = new System.Drawing.Point(178, 15);
-            this.radCedar.Name = "radCedar";
-            this.radCedar.Size = new System.Drawing.Size(61, 21);
-            this.radCedar.TabIndex = 2;
-            this.radCedar.TabStop = true;
-            this.radCedar.Text = "Cedar";
-            this.radCedar.UseVisualStyleBackColor = true;
+            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTime.Width = 69;
             // 
-            // radBThorn
+            // colDuration
             // 
-            this.radBThorn.AutoSize = true;
-            this.radBThorn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radBThorn.Location = new System.Drawing.Point(83, 15);
-            this.radBThorn.Name = "radBThorn";
-            this.radBThorn.Size = new System.Drawing.Size(89, 21);
-            this.radBThorn.TabIndex = 1;
-            this.radBThorn.TabStop = true;
-            this.radBThorn.Text = "BlackThorn";
-            this.radBThorn.UseVisualStyleBackColor = true;
+            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colDuration.FillWeight = 25.14307F;
+            this.colDuration.HeaderText = "Duration";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDuration.Width = 96;
             // 
-            // radAmber
+            // colStudentID
             // 
-            this.radAmber.AutoSize = true;
-            this.radAmber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAmber.Location = new System.Drawing.Point(12, 15);
-            this.radAmber.Name = "radAmber";
-            this.radAmber.Size = new System.Drawing.Size(65, 21);
-            this.radAmber.TabIndex = 0;
-            this.radAmber.TabStop = true;
-            this.radAmber.Text = "Amber";
-            this.radAmber.UseVisualStyleBackColor = true;
-            // 
-            // bunifuLabel9
-            // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel9.Location = new System.Drawing.Point(13, 112);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(81, 20);
-            this.bunifuLabel9.TabIndex = 51;
-            this.bunifuLabel9.Text = "Room Type:";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // colStudID
-            // 
-            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStudID.HeaderText = "Student ID";
-            this.colStudID.Name = "colStudID";
-            this.colStudID.ReadOnly = true;
-            // 
-            // colNewRoom
-            // 
-            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewRoom.HeaderText = "New Room";
-            this.colNewRoom.Name = "colNewRoom";
-            this.colNewRoom.ReadOnly = true;
-            // 
-            // colNewDate
-            // 
-            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewDate.HeaderText = "New Date";
-            this.colNewDate.Name = "colNewDate";
-            this.colNewDate.ReadOnly = true;
-            this.colNewDate.Width = 115;
-            // 
-            // colNewTime
-            // 
-            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewTime.HeaderText = "New Time";
-            this.colNewTime.Name = "colNewTime";
-            this.colNewTime.ReadOnly = true;
-            this.colNewTime.Width = 110;
-            // 
-            // colNewStudentNum
-            // 
-            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewStudentNum.HeaderText = "New Student Number";
-            this.colNewStudentNum.Name = "colNewStudentNum";
-            this.colNewStudentNum.ReadOnly = true;
-            this.colNewStudentNum.Width = 130;
-            // 
-            // colNewDuration
-            // 
-            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colNewDuration.HeaderText = "New Duration";
-            this.colNewDuration.Name = "colNewDuration";
-            this.colNewDuration.ReadOnly = true;
-            this.colNewDuration.Width = 133;
-            // 
-            // colNewResID
-            // 
-            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewResID.HeaderText = "Reservation ID";
-            this.colNewResID.Name = "colNewResID";
-            this.colNewResID.ReadOnly = true;
+            this.colStudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colStudentID.HeaderText = "Student ID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Width = 111;
             // 
             // Librarian_Menu
             // 
@@ -3312,7 +3329,11 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
             this.dailyReportPage.ResumeLayout(false);
             this.dailyReportPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyResTable)).EndInit();
+            this.bunifuShadowPanel2.ResumeLayout(false);
+            this.bunifuShadowPanel2.PerformLayout();
+            this.radDaphne.ResumeLayout(false);
+            this.radDaphne.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dailyReportTable)).EndInit();
             this.userInfoPanel3.ResumeLayout(false);
             this.userInfoPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
@@ -3322,10 +3343,6 @@ namespace IOOP_Assignment
             this.userInfoPanel4.ResumeLayout(false);
             this.userInfoPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).EndInit();
-            this.bunifuShadowPanel2.ResumeLayout(false);
-            this.bunifuShadowPanel2.PerformLayout();
-            this.radDaphne.ResumeLayout(false);
-            this.radDaphne.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3426,15 +3443,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblUnattendReq;
         private Bunifu.UI.WinForms.BunifuLabel lblReservationTdy;
         private Bunifu.UI.WinForms.BunifuLabel lblTotalUsers;
-        private Bunifu.UI.WinForms.BunifuDataGridView monthlyResTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentID;
+        private Bunifu.UI.WinForms.BunifuDataGridView dailyReportTable;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel2;
         private Bunifu.UI.WinForms.BunifuGroupBox radDaphne;
         private System.Windows.Forms.RadioButton radAll;
@@ -3452,5 +3461,14 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewStudentNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewResID;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumStudents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
     }
 }
