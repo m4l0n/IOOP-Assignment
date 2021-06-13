@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -243,5 +244,61 @@ namespace IOOP_Assignment
             requestDataGridView.Columns["colNewResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
+        private void requestDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in requestDataGridView.SelectedRows)
+            {
+                string roomType = row.Cells[1].Value.ToString();
+                string date = row.Cells[2].Value.ToString();
+                string time = row.Cells[3].Value.ToString();
+                bunifuLabel35.Text = "Status of Room Type " + roomType + " on " + date + " " + time + " is";
+                DateTime dt = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string datee = dt.ToString("MM/dd/yyyy");
+                string status = getRoomStatus(roomType, datee);
+                if (status == "Available")
+                {
+                    lblStatus.ForeColor = Color.Lime;
+                    lblStatus.Text = "AVAILABLE";
+                }
+                else
+                {
+                    lblStatus.ForeColor = Color.Red;
+                    lblStatus.Text = "UNAVAILABLE";
+                }
+            }
+        }
+
+        private string getRoomStatus(string rt, string d)
+        {
+            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
+                rt + "' and Date='" + d + "'", con);
+            con.Open();
+            int reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+            con.Close();
+            string status = "Unavailable";
+            switch (rt)
+            {
+                case "Amber":
+                    if (reservedRoom < 5)
+                        status = "Available";
+                    break;
+                case "Blackthorn":
+                    if (reservedRoom < 1)
+                        status = "Available";
+                    break;
+                case "Cedar":
+                    if (reservedRoom < 6)
+                        status = "Available";
+                    break;
+                case "Daphne":
+                    if (reservedRoom < 5)
+                        status = "Available";
+                    break;
+                default:
+                    status = "Unavailable";
+                    break;
+            }
+            return status;
+        }
     }
 }
