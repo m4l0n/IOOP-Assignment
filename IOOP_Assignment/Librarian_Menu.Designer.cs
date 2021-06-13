@@ -149,7 +149,6 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
             this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -719,10 +718,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.overviewPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "overviewPage";
-            this.bunifuPages2.PageTitle = "Overview";
+            this.bunifuPages2.Page = this.changesPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "changesPage";
+            this.bunifuPages2.PageTitle = "Changes";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -1714,7 +1713,6 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuShadowPanel2.BorderRadius = 20;
             this.bunifuShadowPanel2.BorderThickness = 1;
-            this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel14);
             this.bunifuShadowPanel2.Controls.Add(this.radDaphne);
             this.bunifuShadowPanel2.Controls.Add(this.bunifuLabel9);
             this.bunifuShadowPanel2.Controls.Add(this.btnSearchDaily);
@@ -3050,21 +3048,6 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // bunifuLabel14
-            // 
-            this.bunifuLabel14.AllowParentOverrides = false;
-            this.bunifuLabel14.AutoEllipsis = false;
-            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel14.Location = new System.Drawing.Point(433, 30);
-            this.bunifuLabel14.Name = "bunifuLabel14";
-            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
-            this.bunifuLabel14.TabIndex = 53;
-            this.bunifuLabel14.Text = "bunifuLabel14";
-            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // colResID
             // 
             this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -3361,7 +3344,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuDatePicker dailyReportDatePicker;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
         private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;

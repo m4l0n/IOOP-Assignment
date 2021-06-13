@@ -66,6 +66,13 @@ namespace IOOP_Assignment
                 }
             }
             formatTables();
+            con.Open();
+            using (SqlCommand cmd4 = new SqlCommand("DELETE FROM [dbo].RequestStatus where StudentID=@StudID", con))
+            {
+                cmd4.Parameters.AddWithValue("@StudID", User.tpNumber);
+                int deletionCount = cmd4.ExecuteNonQuery();
+                MessageBox.Show("Deleted rows " + deletionCount);
+            }
         }
 
         private void Student_Menu_Load(object sender, EventArgs e)
@@ -85,6 +92,7 @@ namespace IOOP_Assignment
             lblHi.Text = "Hi " + User.name + ",";
             lblActiveRes.Text = activeReservation.ToString();
             con.Close();
+            checkNotification(User.tpNumber);
         }
 
         private void shapeClose_Click(object sender, EventArgs e)
@@ -213,6 +221,71 @@ namespace IOOP_Assignment
             tableReservationEdit.Columns["colDateEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colTimeEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colDurationEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void checkNotification(string studID)
+        {
+            /*
+            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].RequestStatus where StudentID='" + studID + "'", con);
+            con.Open();
+            int notificationCount = Convert.ToInt32(cmd.ExecuteScalar());
+            con.Close();
+            if (notificationCount != 0)
+            {
+                SqlCommand cmd2 = new SqlCommand("select [Request Status], RequestID from [dbo].RequestStatus where " +
+                    "StudentID='" + studID + "'", con);
+                con.Open();
+                using (SqlDataReader reader = cmd2.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string temp = Convert.ToString(reader["RequestID"]);
+                        string date;
+                        using (SqlCommand cmd3 = new SqlCommand("select format(Date, 'dd/MM/yyyy') as Date from [dbo].Request " +
+                            "where RequestID='" + temp + "'", con))
+                        {
+                            date = Convert.ToString(cmd3.ExecuteScalar());
+                        }
+                        string message = "The Reservation Change Request on " + date + " was " +
+                            Convert.ToString(reader["Request Status"]);
+                        bunifuSnackbar1.Show(this, message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 10000,
+                            "Notification", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                    }
+                }
+            }
+            */
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                int notificationCount;
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].RequestStatus where StudentID='" 
+                    + studID + "'", con))
+                {
+                    notificationCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                if (notificationCount != 0)
+                {
+                    SqlCommand cmd2 = new SqlCommand("select [Request Status], RequestID from [dbo].RequestStatus where " +
+                        "StudentID='" + studID + "'", con);
+                    using (SqlDataReader reader = cmd2.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string temp = Convert.ToString(reader["RequestID"]);
+                            string date;
+                            using (SqlCommand cmd3 = new SqlCommand("select format(Date, 'dd/MM/yyyy') as Date from [dbo].Request " +
+                                "where RequestID='" + temp + "'", con))
+                            {
+                                date = Convert.ToString(cmd3.ExecuteScalar());
+                            }
+                            string message = "The Reservation Change Request on " + date + " was " +
+                                Convert.ToString(reader["Request Status"]);
+                            bunifuSnackbar1.Show(this, message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 10000,
+                                "Notification", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                        }
+                    }
+                }
+            }
         }
     }
 }

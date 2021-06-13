@@ -141,6 +141,12 @@ namespace IOOP_Assignment
             this.previewPage = new System.Windows.Forms.TabPage();
             this.bunifuLabel13 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel11 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.lblPreviewRoomNumber1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewRoomType1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbPreviewStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewDuration1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewTime1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewDate1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewRoomNumber0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbPreviewStudent0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewDate0 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -195,12 +201,7 @@ namespace IOOP_Assignment
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblPreviewDate1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblPreviewTime1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblPreviewDuration1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lbPreviewStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblPreviewRoomType1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblPreviewRoomNumber1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPages2.SuspendLayout();
@@ -562,10 +563,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.reservationPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "reservationPage";
-            this.bunifuPages2.PageTitle = "Reservation";
+            this.bunifuPages2.Page = this.dashboardPage;
+            this.bunifuPages2.PageIndex = 0;
+            this.bunifuPages2.PageName = "dashboardPage";
+            this.bunifuPages2.PageTitle = "Dashboard";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -2372,6 +2373,102 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel11.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel11.TabIndex = 49;
             // 
+            // lblPreviewRoomNumber1
+            // 
+            this.lblPreviewRoomNumber1.AllowParentOverrides = false;
+            this.lblPreviewRoomNumber1.AutoEllipsis = false;
+            this.lblPreviewRoomNumber1.CursorType = null;
+            this.lblPreviewRoomNumber1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewRoomNumber1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewRoomNumber1.Location = new System.Drawing.Point(236, 248);
+            this.lblPreviewRoomNumber1.Name = "lblPreviewRoomNumber1";
+            this.lblPreviewRoomNumber1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewRoomNumber1.Size = new System.Drawing.Size(27, 23);
+            this.lblPreviewRoomNumber1.TabIndex = 54;
+            this.lblPreviewRoomNumber1.Text = "A01";
+            this.lblPreviewRoomNumber1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewRoomNumber1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblPreviewRoomType1
+            // 
+            this.lblPreviewRoomType1.AllowParentOverrides = false;
+            this.lblPreviewRoomType1.AutoEllipsis = false;
+            this.lblPreviewRoomType1.CursorType = null;
+            this.lblPreviewRoomType1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewRoomType1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewRoomType1.Location = new System.Drawing.Point(236, 197);
+            this.lblPreviewRoomType1.Name = "lblPreviewRoomType1";
+            this.lblPreviewRoomType1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewRoomType1.Size = new System.Drawing.Size(51, 23);
+            this.lblPreviewRoomType1.TabIndex = 53;
+            this.lblPreviewRoomType1.Text = "Amber";
+            this.lblPreviewRoomType1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewRoomType1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lbPreviewStudent1
+            // 
+            this.lbPreviewStudent1.AllowParentOverrides = false;
+            this.lbPreviewStudent1.AutoEllipsis = false;
+            this.lbPreviewStudent1.CursorType = null;
+            this.lbPreviewStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lbPreviewStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lbPreviewStudent1.Location = new System.Drawing.Point(236, 151);
+            this.lbPreviewStudent1.Name = "lbPreviewStudent1";
+            this.lbPreviewStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbPreviewStudent1.Size = new System.Drawing.Size(9, 23);
+            this.lbPreviewStudent1.TabIndex = 52;
+            this.lbPreviewStudent1.Text = "8";
+            this.lbPreviewStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbPreviewStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblPreviewDuration1
+            // 
+            this.lblPreviewDuration1.AllowParentOverrides = false;
+            this.lblPreviewDuration1.AutoEllipsis = false;
+            this.lblPreviewDuration1.CursorType = null;
+            this.lblPreviewDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewDuration1.Location = new System.Drawing.Point(236, 103);
+            this.lblPreviewDuration1.Name = "lblPreviewDuration1";
+            this.lblPreviewDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewDuration1.Size = new System.Drawing.Size(60, 23);
+            this.lblPreviewDuration1.TabIndex = 51;
+            this.lblPreviewDuration1.Text = "2 Hours";
+            this.lblPreviewDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblPreviewTime1
+            // 
+            this.lblPreviewTime1.AllowParentOverrides = false;
+            this.lblPreviewTime1.AutoEllipsis = false;
+            this.lblPreviewTime1.CursorType = null;
+            this.lblPreviewTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewTime1.Location = new System.Drawing.Point(236, 57);
+            this.lblPreviewTime1.Name = "lblPreviewTime1";
+            this.lblPreviewTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewTime1.Size = new System.Drawing.Size(70, 23);
+            this.lblPreviewTime1.TabIndex = 50;
+            this.lblPreviewTime1.Text = "10:00 AM";
+            this.lblPreviewTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblPreviewDate1
+            // 
+            this.lblPreviewDate1.AllowParentOverrides = false;
+            this.lblPreviewDate1.AutoEllipsis = false;
+            this.lblPreviewDate1.CursorType = null;
+            this.lblPreviewDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewDate1.Location = new System.Drawing.Point(236, 13);
+            this.lblPreviewDate1.Name = "lblPreviewDate1";
+            this.lblPreviewDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewDate1.Size = new System.Drawing.Size(99, 23);
+            this.lblPreviewDate1.TabIndex = 49;
+            this.lblPreviewDate1.Text = "24 June 2021";
+            this.lblPreviewDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // lblPreviewRoomNumber0
             // 
             this.lblPreviewRoomNumber0.AllowParentOverrides = false;
@@ -3635,101 +3732,74 @@ namespace IOOP_Assignment
             this.reservationSystemDBDataSetBindingSource.DataSource = this.reservationSystem_DBDataSet;
             this.reservationSystemDBDataSetBindingSource.Position = 0;
             // 
-            // lblPreviewDate1
+            // bunifuSnackbar1
             // 
-            this.lblPreviewDate1.AllowParentOverrides = false;
-            this.lblPreviewDate1.AutoEllipsis = false;
-            this.lblPreviewDate1.CursorType = null;
-            this.lblPreviewDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblPreviewDate1.Location = new System.Drawing.Point(236, 13);
-            this.lblPreviewDate1.Name = "lblPreviewDate1";
-            this.lblPreviewDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPreviewDate1.Size = new System.Drawing.Size(99, 23);
-            this.lblPreviewDate1.TabIndex = 49;
-            this.lblPreviewDate1.Text = "24 June 2021";
-            this.lblPreviewDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPreviewDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblPreviewTime1
-            // 
-            this.lblPreviewTime1.AllowParentOverrides = false;
-            this.lblPreviewTime1.AutoEllipsis = false;
-            this.lblPreviewTime1.CursorType = null;
-            this.lblPreviewTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblPreviewTime1.Location = new System.Drawing.Point(236, 57);
-            this.lblPreviewTime1.Name = "lblPreviewTime1";
-            this.lblPreviewTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPreviewTime1.Size = new System.Drawing.Size(70, 23);
-            this.lblPreviewTime1.TabIndex = 50;
-            this.lblPreviewTime1.Text = "10:00 AM";
-            this.lblPreviewTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPreviewTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblPreviewDuration1
-            // 
-            this.lblPreviewDuration1.AllowParentOverrides = false;
-            this.lblPreviewDuration1.AutoEllipsis = false;
-            this.lblPreviewDuration1.CursorType = null;
-            this.lblPreviewDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblPreviewDuration1.Location = new System.Drawing.Point(236, 103);
-            this.lblPreviewDuration1.Name = "lblPreviewDuration1";
-            this.lblPreviewDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPreviewDuration1.Size = new System.Drawing.Size(60, 23);
-            this.lblPreviewDuration1.TabIndex = 51;
-            this.lblPreviewDuration1.Text = "2 Hours";
-            this.lblPreviewDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPreviewDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lbPreviewStudent1
-            // 
-            this.lbPreviewStudent1.AllowParentOverrides = false;
-            this.lbPreviewStudent1.AutoEllipsis = false;
-            this.lbPreviewStudent1.CursorType = null;
-            this.lbPreviewStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lbPreviewStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lbPreviewStudent1.Location = new System.Drawing.Point(236, 151);
-            this.lbPreviewStudent1.Name = "lbPreviewStudent1";
-            this.lbPreviewStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbPreviewStudent1.Size = new System.Drawing.Size(9, 23);
-            this.lbPreviewStudent1.TabIndex = 52;
-            this.lbPreviewStudent1.Text = "8";
-            this.lbPreviewStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbPreviewStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblPreviewRoomType1
-            // 
-            this.lblPreviewRoomType1.AllowParentOverrides = false;
-            this.lblPreviewRoomType1.AutoEllipsis = false;
-            this.lblPreviewRoomType1.CursorType = null;
-            this.lblPreviewRoomType1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewRoomType1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblPreviewRoomType1.Location = new System.Drawing.Point(236, 197);
-            this.lblPreviewRoomType1.Name = "lblPreviewRoomType1";
-            this.lblPreviewRoomType1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPreviewRoomType1.Size = new System.Drawing.Size(51, 23);
-            this.lblPreviewRoomType1.TabIndex = 53;
-            this.lblPreviewRoomType1.Text = "Amber";
-            this.lblPreviewRoomType1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPreviewRoomType1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblPreviewRoomNumber1
-            // 
-            this.lblPreviewRoomNumber1.AllowParentOverrides = false;
-            this.lblPreviewRoomNumber1.AutoEllipsis = false;
-            this.lblPreviewRoomNumber1.CursorType = null;
-            this.lblPreviewRoomNumber1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewRoomNumber1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblPreviewRoomNumber1.Location = new System.Drawing.Point(236, 248);
-            this.lblPreviewRoomNumber1.Name = "lblPreviewRoomNumber1";
-            this.lblPreviewRoomNumber1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPreviewRoomNumber1.Size = new System.Drawing.Size(27, 23);
-            this.lblPreviewRoomNumber1.TabIndex = 54;
-            this.lblPreviewRoomNumber1.Text = "A01";
-            this.lblPreviewRoomNumber1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPreviewRoomNumber1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuSnackbar1.AllowDragging = false;
+            this.bunifuSnackbar1.AllowMultipleViews = true;
+            this.bunifuSnackbar1.ClickToClose = true;
+            this.bunifuSnackbar1.DoubleClickToClose = true;
+            this.bunifuSnackbar1.DurationAfterIdle = 3000;
+            this.bunifuSnackbar1.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.ErrorOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar1.ErrorOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar1.ErrorOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.ErrorOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.ErrorOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(199)))));
+            this.bunifuSnackbar1.ErrorOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar1.ErrorOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.bunifuSnackbar1.ErrorOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar1.FadeCloseIcon = false;
+            this.bunifuSnackbar1.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
+            this.bunifuSnackbar1.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.InformationOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar1.InformationOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar1.InformationOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.InformationOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.InformationOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar1.InformationOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.bunifuSnackbar1.InformationOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar1.Margin = 10;
+            this.bunifuSnackbar1.MaximumSize = new System.Drawing.Size(0, 0);
+            this.bunifuSnackbar1.MaximumViews = 7;
+            this.bunifuSnackbar1.MessageRightMargin = 15;
+            this.bunifuSnackbar1.MinimumSize = new System.Drawing.Size(0, 0);
+            this.bunifuSnackbar1.ShowBorders = false;
+            this.bunifuSnackbar1.ShowCloseIcon = false;
+            this.bunifuSnackbar1.ShowIcon = true;
+            this.bunifuSnackbar1.ShowShadows = true;
+            this.bunifuSnackbar1.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.SuccessOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar1.SuccessOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar1.SuccessOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.SuccessOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.SuccessOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.bunifuSnackbar1.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar1.SuccessOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.bunifuSnackbar1.SuccessOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar1.ViewsMargin = 7;
+            this.bunifuSnackbar1.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar1.WarningOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar1.WarningOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar1.WarningOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.WarningOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.WarningOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar1.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
+            this.bunifuSnackbar1.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar1.WarningOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar1.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
             // Student_Menu
             // 
@@ -3945,5 +4015,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewDuration1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewTime1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewDate1;
+        private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
     }
 }
