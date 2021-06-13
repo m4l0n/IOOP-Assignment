@@ -41,10 +41,6 @@ namespace IOOP_Assignment
             SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
                 + User.tpNumber + "'", con);
             int activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
-                "format(Date, 'dd/MM/yyyy') as Date, " +
-                "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
-                "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
             if (activeReservation != 0) //only executes if there's record of reservation found for the user
             {
                 /*
@@ -64,6 +60,10 @@ namespace IOOP_Assignment
                                duration = dr["Duration"].ToString(),
                            }).ToList(); //LINQ returns a list of object
             */
+                SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
+                    "format(Date, 'dd/MM/yyyy') as Date, " +
+                    "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
+                    "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
                 List<Reservation> resList = new List<Reservation>();
                 using (SqlDataReader reader = cmd2.ExecuteReader())
                 {

@@ -34,40 +34,32 @@ namespace IOOP_Assignment
         public string Duration { get => duration; set => duration = value; }
         public int ReservationID { get => reservationID; set => reservationID = value; }
 
-        public List<Request> getReqData(string d, string rt)
+        public List<Request> getReqData()
         {
-            d = date;
-            rt = roomType;
-            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[Request]", con);
-            int activeReq = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            SqlCommand cmd2;
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Request", con);
+            int activeReq = (Convert.ToInt32(cmd.ExecuteScalar()));
             if (activeReq != 0)
             {
-                if (rt != "All")
-                {
-                    cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
-                        "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
-                        "ReservationID, StudentID where Room Type='" + rt +"' and Date='" + d + "'", con);
-                }
-                else
-                {
-                    cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
-                        "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
-                        "ReservationID, StudentID where Date='" + d + "'", con);
-                }
+                SqlCommand cmd2 = new SqlCommand("select StudentID, [Room Type], " +
+                    "format(Date, 'dd/MM/yyyy') as Date, " +
+                    "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
+                    "[Number of Students], Duration, ReservationID from [dbo].Request", con);
                 List<Request> reqList = new List<Request>();
                 using (SqlDataReader reader = cmd2.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Request req = new Request();
-                        req.RoomType = (Convert.ToString(reader["Room Type"]));
-                        req.Date = (Convert.ToString(reader["Date"]));
-                        req.Time = (Convert.ToString(reader["Time"]));
-                        req.NumStudents = (Convert.ToInt32(reader["Number of Students"]));
-                        req.Duration = (Convert.ToString(reader["Duration"]));
-                        req.ReservationID = (Convert.ToInt32(reader["ReservationID"]));
-                        req.StudentID = (Convert.ToString(reader["StudentID"]));
+                        Request req = new Request
+                        {
+                            RoomType = (Convert.ToString(reader["Room Type"])),
+                            Date = (Convert.ToString(reader["Date"])),
+                            Time = (Convert.ToString(reader["Time"])),
+                            NumStudents = (Convert.ToInt32(reader["Number of Students"])),
+                            StudentID = (Convert.ToString(reader["StudentID"])),
+                            Duration = (Convert.ToString(reader["Duration"])),
+                            ReservationID = (Convert.ToInt32(reader["ReservationID"]))
+                        };
                         reqList.Add(req);
                     }
                 }

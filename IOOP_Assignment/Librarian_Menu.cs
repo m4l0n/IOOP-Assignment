@@ -138,7 +138,28 @@ namespace IOOP_Assignment
             lblNameL2.Text = User.name;
             lblNameL3.Text = User.name;
             lblNameL4.Text = User.name;
-            con.Close();          
+            con.Close();
+
+            //Display Request Data in Request Table
+            Request reqData = new Request();
+            List<Request> reqList = reqData.getReqData();
+            if (reqList != null)
+            {
+                foreach (var req in reqList)
+                {
+                    requestDataGridView.Rows.Add(
+                        new object[]
+                        {
+                            req.StudentID,
+                            req.RoomType,
+                            req.Date,
+                            req.Time,
+                            req.NumStudents,
+                            req.Duration,
+                            req.ReservationID,
+                        });
+                }
+            }
         }
 
         private void showGraph()
@@ -200,6 +221,7 @@ namespace IOOP_Assignment
         private void formatTables()
         {
             //Bunifu DataGridView Style Formatting
+            dailyReportTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dailyReportTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dailyReportTable.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dailyReportTable.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -209,6 +231,16 @@ namespace IOOP_Assignment
             dailyReportTable.Columns["colTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dailyReportTable.Columns["colDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dailyReportTable.Columns["colStudentID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            requestDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            requestDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colStudID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewRoom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewStudentNum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colNewResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
     }

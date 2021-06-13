@@ -97,13 +97,6 @@ namespace IOOP_Assignment
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.requestDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInfoPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblNameL2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -170,6 +163,13 @@ namespace IOOP_Assignment
             this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -724,10 +724,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.dailyReportPage;
-            this.bunifuPages2.PageIndex = 2;
-            this.bunifuPages2.PageName = "dailyReportPage";
-            this.bunifuPages2.PageTitle = "Daily Report";
+            this.bunifuPages2.Page = this.changesPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "changesPage";
+            this.bunifuPages2.PageTitle = "Changes";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -1671,59 +1671,6 @@ namespace IOOP_Assignment
             this.requestDataGridView.Size = new System.Drawing.Size(802, 328);
             this.requestDataGridView.TabIndex = 32;
             this.requestDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
-            // 
-            // colStudID
-            // 
-            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStudID.HeaderText = "Student ID";
-            this.colStudID.Name = "colStudID";
-            this.colStudID.ReadOnly = true;
-            // 
-            // colNewRoom
-            // 
-            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewRoom.HeaderText = "New Room";
-            this.colNewRoom.Name = "colNewRoom";
-            this.colNewRoom.ReadOnly = true;
-            // 
-            // colNewDate
-            // 
-            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewDate.HeaderText = "New Date";
-            this.colNewDate.Name = "colNewDate";
-            this.colNewDate.ReadOnly = true;
-            this.colNewDate.Width = 115;
-            // 
-            // colNewTime
-            // 
-            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewTime.HeaderText = "New Time";
-            this.colNewTime.Name = "colNewTime";
-            this.colNewTime.ReadOnly = true;
-            this.colNewTime.Width = 110;
-            // 
-            // colNewStudentNum
-            // 
-            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewStudentNum.HeaderText = "New Student Number";
-            this.colNewStudentNum.Name = "colNewStudentNum";
-            this.colNewStudentNum.ReadOnly = true;
-            this.colNewStudentNum.Width = 130;
-            // 
-            // colNewDuration
-            // 
-            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colNewDuration.HeaderText = "New Duration";
-            this.colNewDuration.Name = "colNewDuration";
-            this.colNewDuration.ReadOnly = true;
-            this.colNewDuration.Width = 133;
-            // 
-            // colNewResID
-            // 
-            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewResID.HeaderText = "Reservation ID";
-            this.colNewResID.Name = "colNewResID";
-            this.colNewResID.ReadOnly = true;
             // 
             // userInfoPanel2
             // 
@@ -3283,6 +3230,60 @@ namespace IOOP_Assignment
             this.colStudentID.ReadOnly = true;
             this.colStudentID.Width = 111;
             // 
+            // colStudID
+            // 
+            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudID.HeaderText = "Student ID";
+            this.colStudID.Name = "colStudID";
+            this.colStudID.ReadOnly = true;
+            // 
+            // colNewRoom
+            // 
+            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewRoom.HeaderText = "New Room";
+            this.colNewRoom.Name = "colNewRoom";
+            this.colNewRoom.ReadOnly = true;
+            // 
+            // colNewDate
+            // 
+            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewDate.HeaderText = "New Date";
+            this.colNewDate.Name = "colNewDate";
+            this.colNewDate.ReadOnly = true;
+            this.colNewDate.Width = 115;
+            // 
+            // colNewTime
+            // 
+            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewTime.HeaderText = "New Time";
+            this.colNewTime.Name = "colNewTime";
+            this.colNewTime.ReadOnly = true;
+            this.colNewTime.Width = 110;
+            // 
+            // colNewStudentNum
+            // 
+            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewStudentNum.HeaderText = "New Student Number";
+            this.colNewStudentNum.Name = "colNewStudentNum";
+            this.colNewStudentNum.ReadOnly = true;
+            this.colNewStudentNum.Width = 130;
+            // 
+            // colNewDuration
+            // 
+            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colNewDuration.HeaderText = "New Duration";
+            this.colNewDuration.Name = "colNewDuration";
+            this.colNewDuration.ReadOnly = true;
+            this.colNewDuration.Width = 133;
+            // 
+            // colNewResID
+            // 
+            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewResID.HeaderText = "Reservation ID";
+            this.colNewResID.Name = "colNewResID";
+            this.colNewResID.ReadOnly = true;
+            this.colNewResID.Width = 105;
+            // 
             // Librarian_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3454,13 +3455,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuDatePicker dailyReportDatePicker;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStudID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewStudentNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewDuration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNewResID;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
         private System.Windows.Forms.DataGridViewTextBoxColumn colResID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
@@ -3470,5 +3464,12 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewStudentNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewDuration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNewResID;
     }
 }
