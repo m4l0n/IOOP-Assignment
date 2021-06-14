@@ -83,6 +83,7 @@ namespace IOOP_Assignment
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.overviewLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.changesPage = new System.Windows.Forms.TabPage();
+            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.lblStatus = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel35 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -157,7 +158,6 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
             this.colReqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1212,6 +1212,22 @@ namespace IOOP_Assignment
             this.changesPage.Size = new System.Drawing.Size(890, 592);
             this.changesPage.TabIndex = 1;
             this.changesPage.Text = "Changes";
+            // 
+            // bunifuLabel14
+            // 
+            this.bunifuLabel14.AllowParentOverrides = false;
+            this.bunifuLabel14.AutoEllipsis = false;
+            this.bunifuLabel14.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel14.Location = new System.Drawing.Point(287, 14);
+            this.bunifuLabel14.Name = "bunifuLabel14";
+            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
+            this.bunifuLabel14.TabIndex = 39;
+            this.bunifuLabel14.Text = "bunifuLabel14";
+            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuShadowPanel1
             // 
@@ -3130,21 +3146,6 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // bunifuLabel14
-            // 
-            this.bunifuLabel14.AllowParentOverrides = false;
-            this.bunifuLabel14.AutoEllipsis = false;
-            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel14.Location = new System.Drawing.Point(287, 14);
-            this.bunifuLabel14.Name = "bunifuLabel14";
-            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
-            this.bunifuLabel14.TabIndex = 39;
-            this.bunifuLabel14.Text = "bunifuLabel14";
-            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // colReqID
             // 
             this.colReqID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -3201,11 +3202,11 @@ namespace IOOP_Assignment
             // 
             // colNewResID
             // 
-            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewResID.HeaderText = "ReservationID";
+            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colNewResID.HeaderText = "Res ID";
             this.colNewResID.Name = "colNewResID";
             this.colNewResID.ReadOnly = true;
-            this.colNewResID.Width = 80;
+            this.colNewResID.Width = 79;
             // 
             // Librarian_Menu
             // 
