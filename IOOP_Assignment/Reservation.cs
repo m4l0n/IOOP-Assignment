@@ -109,10 +109,12 @@ namespace IOOP_Assignment
         {
             date = d;
             roomType = rt;
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[Reservation]", con);
-            int activeRes = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            con.Close();
+            int activeRes;
+            using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[Reservation]", con))
+            {
+                con.Open();
+                activeRes = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            }
             SqlCommand cmd2;
             if (activeRes != 0)
             {
@@ -156,6 +158,28 @@ namespace IOOP_Assignment
             {
                 return null;
             }
+        }
+
+        public string assignRoom(Request req)   //Method to assign a Room Number
+        {
+            string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
+                "where [Room Type] = '" + req.RoomType + "' and Date = '" + req.Date + "' " +
+                "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
+            string assignedRoom;
+            string takenRooms;
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                takenRooms = cmd.ExecuteScalar().ToString();
+                takenRooms = takenRooms.Replace(",", "','");
+                string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
+                    "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
+                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                {
+                    assignedRoom = cmd2.ExecuteScalar().ToString();
+                }
+            }
+            return assignedRoom;
         }
     }
 }

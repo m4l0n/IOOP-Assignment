@@ -88,8 +88,8 @@ namespace IOOP_Assignment
             this.bunifuLabel35 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel10 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuLabel34 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnDenyReq = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnAcceptReq = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.requestDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.userInfoPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
@@ -111,6 +111,14 @@ namespace IOOP_Assignment
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dailyReportDatePicker = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.dailyReportTable = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInfoPanel3 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblNameL3 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -149,14 +157,8 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.colReqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1197,6 +1199,7 @@ namespace IOOP_Assignment
             // changesPage
             // 
             this.changesPage.BackColor = System.Drawing.Color.White;
+            this.changesPage.Controls.Add(this.bunifuLabel14);
             this.changesPage.Controls.Add(this.bunifuShadowPanel1);
             this.changesPage.Controls.Add(this.bunifuShadowPanel10);
             this.changesPage.Controls.Add(this.bunifuShadowPanel8);
@@ -1274,8 +1277,8 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel10.BorderRadius = 15;
             this.bunifuShadowPanel10.BorderThickness = 1;
             this.bunifuShadowPanel10.Controls.Add(this.bunifuLabel34);
-            this.bunifuShadowPanel10.Controls.Add(this.bunifuButton4);
-            this.bunifuShadowPanel10.Controls.Add(this.bunifuButton3);
+            this.bunifuShadowPanel10.Controls.Add(this.btnDenyReq);
+            this.bunifuShadowPanel10.Controls.Add(this.btnAcceptReq);
             this.bunifuShadowPanel10.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.bunifuShadowPanel10.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
             this.bunifuShadowPanel10.Location = new System.Drawing.Point(616, 474);
@@ -1307,183 +1310,185 @@ namespace IOOP_Assignment
             this.bunifuLabel34.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel34.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuButton4
+            // btnDenyReq
             // 
-            this.bunifuButton4.AllowAnimations = true;
-            this.bunifuButton4.AllowMouseEffects = true;
-            this.bunifuButton4.AllowToggling = false;
-            this.bunifuButton4.AnimationSpeed = 200;
-            this.bunifuButton4.AutoGenerateColors = true;
-            this.bunifuButton4.AutoRoundBorders = true;
-            this.bunifuButton4.AutoSizeLeftIcon = true;
-            this.bunifuButton4.AutoSizeRightIcon = true;
-            this.bunifuButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton4.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.BackgroundImage")));
-            this.bunifuButton4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.ButtonText = "Deny";
-            this.bunifuButton4.ButtonTextMarginLeft = 0;
-            this.bunifuButton4.ColorContrastOnClick = 45;
-            this.bunifuButton4.ColorContrastOnHover = 45;
-            this.bunifuButton4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnDenyReq.AllowAnimations = true;
+            this.btnDenyReq.AllowMouseEffects = true;
+            this.btnDenyReq.AllowToggling = false;
+            this.btnDenyReq.AnimationSpeed = 200;
+            this.btnDenyReq.AutoGenerateColors = true;
+            this.btnDenyReq.AutoRoundBorders = true;
+            this.btnDenyReq.AutoSizeLeftIcon = true;
+            this.btnDenyReq.AutoSizeRightIcon = true;
+            this.btnDenyReq.BackColor = System.Drawing.Color.Transparent;
+            this.btnDenyReq.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnDenyReq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDenyReq.BackgroundImage")));
+            this.btnDenyReq.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDenyReq.ButtonText = "Deny";
+            this.btnDenyReq.ButtonTextMarginLeft = 0;
+            this.btnDenyReq.ColorContrastOnClick = 45;
+            this.btnDenyReq.ColorContrastOnHover = 45;
+            this.btnDenyReq.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges6.BottomLeft = true;
             borderEdges6.BottomRight = true;
             borderEdges6.TopLeft = true;
             borderEdges6.TopRight = true;
-            this.bunifuButton4.CustomizableEdges = borderEdges6;
-            this.bunifuButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton4.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton4.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton4.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.bunifuButton4.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton4.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton4.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton4.IconMarginLeft = 11;
-            this.bunifuButton4.IconPadding = 10;
-            this.bunifuButton4.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton4.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton4.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton4.IconSize = 25;
-            this.bunifuButton4.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton4.IdleBorderRadius = 44;
-            this.bunifuButton4.IdleBorderThickness = 1;
-            this.bunifuButton4.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton4.IdleIconLeftImage = null;
-            this.bunifuButton4.IdleIconRightImage = null;
-            this.bunifuButton4.IndicateFocus = false;
-            this.bunifuButton4.Location = new System.Drawing.Point(141, 43);
-            this.bunifuButton4.Name = "bunifuButton4";
-            this.bunifuButton4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton4.OnDisabledState.BorderRadius = 1;
-            this.bunifuButton4.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton4.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton4.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton4.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton4.OnDisabledState.IconRightImage = null;
-            this.bunifuButton4.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.bunifuButton4.onHoverState.BorderRadius = 1;
-            this.bunifuButton4.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.onHoverState.BorderThickness = 1;
-            this.bunifuButton4.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.bunifuButton4.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.onHoverState.IconLeftImage = null;
-            this.bunifuButton4.onHoverState.IconRightImage = null;
-            this.bunifuButton4.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton4.OnIdleState.BorderRadius = 1;
-            this.bunifuButton4.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnIdleState.BorderThickness = 1;
-            this.bunifuButton4.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton4.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.OnIdleState.IconLeftImage = null;
-            this.bunifuButton4.OnIdleState.IconRightImage = null;
-            this.bunifuButton4.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.bunifuButton4.OnPressedState.BorderRadius = 1;
-            this.bunifuButton4.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnPressedState.BorderThickness = 1;
-            this.bunifuButton4.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.bunifuButton4.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.OnPressedState.IconLeftImage = null;
-            this.bunifuButton4.OnPressedState.IconRightImage = null;
-            this.bunifuButton4.Size = new System.Drawing.Size(94, 46);
-            this.bunifuButton4.TabIndex = 35;
-            this.bunifuButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton4.TextMarginLeft = 0;
-            this.bunifuButton4.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton4.UseDefaultRadiusAndThickness = true;
+            this.btnDenyReq.CustomizableEdges = borderEdges6;
+            this.btnDenyReq.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDenyReq.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDenyReq.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDenyReq.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDenyReq.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnDenyReq.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnDenyReq.ForeColor = System.Drawing.Color.White;
+            this.btnDenyReq.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDenyReq.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDenyReq.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDenyReq.IconMarginLeft = 11;
+            this.btnDenyReq.IconPadding = 10;
+            this.btnDenyReq.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDenyReq.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDenyReq.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDenyReq.IconSize = 25;
+            this.btnDenyReq.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnDenyReq.IdleBorderRadius = 44;
+            this.btnDenyReq.IdleBorderThickness = 1;
+            this.btnDenyReq.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnDenyReq.IdleIconLeftImage = null;
+            this.btnDenyReq.IdleIconRightImage = null;
+            this.btnDenyReq.IndicateFocus = false;
+            this.btnDenyReq.Location = new System.Drawing.Point(141, 43);
+            this.btnDenyReq.Name = "btnDenyReq";
+            this.btnDenyReq.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDenyReq.OnDisabledState.BorderRadius = 1;
+            this.btnDenyReq.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDenyReq.OnDisabledState.BorderThickness = 1;
+            this.btnDenyReq.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDenyReq.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDenyReq.OnDisabledState.IconLeftImage = null;
+            this.btnDenyReq.OnDisabledState.IconRightImage = null;
+            this.btnDenyReq.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.btnDenyReq.onHoverState.BorderRadius = 1;
+            this.btnDenyReq.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDenyReq.onHoverState.BorderThickness = 1;
+            this.btnDenyReq.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.btnDenyReq.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDenyReq.onHoverState.IconLeftImage = null;
+            this.btnDenyReq.onHoverState.IconRightImage = null;
+            this.btnDenyReq.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnDenyReq.OnIdleState.BorderRadius = 1;
+            this.btnDenyReq.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDenyReq.OnIdleState.BorderThickness = 1;
+            this.btnDenyReq.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnDenyReq.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDenyReq.OnIdleState.IconLeftImage = null;
+            this.btnDenyReq.OnIdleState.IconRightImage = null;
+            this.btnDenyReq.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.btnDenyReq.OnPressedState.BorderRadius = 1;
+            this.btnDenyReq.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDenyReq.OnPressedState.BorderThickness = 1;
+            this.btnDenyReq.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.btnDenyReq.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDenyReq.OnPressedState.IconLeftImage = null;
+            this.btnDenyReq.OnPressedState.IconRightImage = null;
+            this.btnDenyReq.Size = new System.Drawing.Size(94, 46);
+            this.btnDenyReq.TabIndex = 35;
+            this.btnDenyReq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDenyReq.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDenyReq.TextMarginLeft = 0;
+            this.btnDenyReq.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDenyReq.UseDefaultRadiusAndThickness = true;
+            this.btnDenyReq.Click += new System.EventHandler(this.btnDenyReq_Click);
             // 
-            // bunifuButton3
+            // btnAcceptReq
             // 
-            this.bunifuButton3.AllowAnimations = true;
-            this.bunifuButton3.AllowMouseEffects = true;
-            this.bunifuButton3.AllowToggling = false;
-            this.bunifuButton3.AnimationSpeed = 200;
-            this.bunifuButton3.AutoGenerateColors = true;
-            this.bunifuButton3.AutoRoundBorders = true;
-            this.bunifuButton3.AutoSizeLeftIcon = true;
-            this.bunifuButton3.AutoSizeRightIcon = true;
-            this.bunifuButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton3.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton3.BackgroundImage")));
-            this.bunifuButton3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.ButtonText = "Accept";
-            this.bunifuButton3.ButtonTextMarginLeft = 0;
-            this.bunifuButton3.ColorContrastOnClick = 45;
-            this.bunifuButton3.ColorContrastOnHover = 45;
-            this.bunifuButton3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAcceptReq.AllowAnimations = true;
+            this.btnAcceptReq.AllowMouseEffects = true;
+            this.btnAcceptReq.AllowToggling = false;
+            this.btnAcceptReq.AnimationSpeed = 200;
+            this.btnAcceptReq.AutoGenerateColors = true;
+            this.btnAcceptReq.AutoRoundBorders = true;
+            this.btnAcceptReq.AutoSizeLeftIcon = true;
+            this.btnAcceptReq.AutoSizeRightIcon = true;
+            this.btnAcceptReq.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcceptReq.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnAcceptReq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcceptReq.BackgroundImage")));
+            this.btnAcceptReq.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAcceptReq.ButtonText = "Accept";
+            this.btnAcceptReq.ButtonTextMarginLeft = 0;
+            this.btnAcceptReq.ColorContrastOnClick = 45;
+            this.btnAcceptReq.ColorContrastOnHover = 45;
+            this.btnAcceptReq.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges7.BottomLeft = true;
             borderEdges7.BottomRight = true;
             borderEdges7.TopLeft = true;
             borderEdges7.TopRight = true;
-            this.bunifuButton3.CustomizableEdges = borderEdges7;
-            this.bunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton3.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton3.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.bunifuButton3.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton3.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton3.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton3.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton3.IconMarginLeft = 11;
-            this.bunifuButton3.IconPadding = 10;
-            this.bunifuButton3.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton3.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton3.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton3.IconSize = 25;
-            this.bunifuButton3.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton3.IdleBorderRadius = 44;
-            this.bunifuButton3.IdleBorderThickness = 1;
-            this.bunifuButton3.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton3.IdleIconLeftImage = null;
-            this.bunifuButton3.IdleIconRightImage = null;
-            this.bunifuButton3.IndicateFocus = false;
-            this.bunifuButton3.Location = new System.Drawing.Point(17, 43);
-            this.bunifuButton3.Name = "bunifuButton3";
-            this.bunifuButton3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton3.OnDisabledState.BorderRadius = 1;
-            this.bunifuButton3.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton3.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton3.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton3.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton3.OnDisabledState.IconRightImage = null;
-            this.bunifuButton3.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.bunifuButton3.onHoverState.BorderRadius = 1;
-            this.bunifuButton3.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.onHoverState.BorderThickness = 1;
-            this.bunifuButton3.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.bunifuButton3.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton3.onHoverState.IconLeftImage = null;
-            this.bunifuButton3.onHoverState.IconRightImage = null;
-            this.bunifuButton3.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton3.OnIdleState.BorderRadius = 1;
-            this.bunifuButton3.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.OnIdleState.BorderThickness = 1;
-            this.bunifuButton3.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.bunifuButton3.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton3.OnIdleState.IconLeftImage = null;
-            this.bunifuButton3.OnIdleState.IconRightImage = null;
-            this.bunifuButton3.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.bunifuButton3.OnPressedState.BorderRadius = 1;
-            this.bunifuButton3.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.OnPressedState.BorderThickness = 1;
-            this.bunifuButton3.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.bunifuButton3.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton3.OnPressedState.IconLeftImage = null;
-            this.bunifuButton3.OnPressedState.IconRightImage = null;
-            this.bunifuButton3.Size = new System.Drawing.Size(94, 46);
-            this.bunifuButton3.TabIndex = 34;
-            this.bunifuButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton3.TextMarginLeft = 0;
-            this.bunifuButton3.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton3.UseDefaultRadiusAndThickness = true;
+            this.btnAcceptReq.CustomizableEdges = borderEdges7;
+            this.btnAcceptReq.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAcceptReq.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAcceptReq.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAcceptReq.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAcceptReq.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnAcceptReq.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnAcceptReq.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptReq.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcceptReq.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAcceptReq.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnAcceptReq.IconMarginLeft = 11;
+            this.btnAcceptReq.IconPadding = 10;
+            this.btnAcceptReq.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAcceptReq.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAcceptReq.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnAcceptReq.IconSize = 25;
+            this.btnAcceptReq.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnAcceptReq.IdleBorderRadius = 44;
+            this.btnAcceptReq.IdleBorderThickness = 1;
+            this.btnAcceptReq.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnAcceptReq.IdleIconLeftImage = null;
+            this.btnAcceptReq.IdleIconRightImage = null;
+            this.btnAcceptReq.IndicateFocus = false;
+            this.btnAcceptReq.Location = new System.Drawing.Point(17, 43);
+            this.btnAcceptReq.Name = "btnAcceptReq";
+            this.btnAcceptReq.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAcceptReq.OnDisabledState.BorderRadius = 1;
+            this.btnAcceptReq.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAcceptReq.OnDisabledState.BorderThickness = 1;
+            this.btnAcceptReq.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAcceptReq.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAcceptReq.OnDisabledState.IconLeftImage = null;
+            this.btnAcceptReq.OnDisabledState.IconRightImage = null;
+            this.btnAcceptReq.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.btnAcceptReq.onHoverState.BorderRadius = 1;
+            this.btnAcceptReq.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAcceptReq.onHoverState.BorderThickness = 1;
+            this.btnAcceptReq.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.btnAcceptReq.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptReq.onHoverState.IconLeftImage = null;
+            this.btnAcceptReq.onHoverState.IconRightImage = null;
+            this.btnAcceptReq.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnAcceptReq.OnIdleState.BorderRadius = 1;
+            this.btnAcceptReq.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAcceptReq.OnIdleState.BorderThickness = 1;
+            this.btnAcceptReq.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.btnAcceptReq.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptReq.OnIdleState.IconLeftImage = null;
+            this.btnAcceptReq.OnIdleState.IconRightImage = null;
+            this.btnAcceptReq.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.btnAcceptReq.OnPressedState.BorderRadius = 1;
+            this.btnAcceptReq.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAcceptReq.OnPressedState.BorderThickness = 1;
+            this.btnAcceptReq.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.btnAcceptReq.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptReq.OnPressedState.IconLeftImage = null;
+            this.btnAcceptReq.OnPressedState.IconRightImage = null;
+            this.btnAcceptReq.Size = new System.Drawing.Size(94, 46);
+            this.btnAcceptReq.TabIndex = 34;
+            this.btnAcceptReq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAcceptReq.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAcceptReq.TextMarginLeft = 0;
+            this.btnAcceptReq.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnAcceptReq.UseDefaultRadiusAndThickness = true;
+            this.btnAcceptReq.Click += new System.EventHandler(this.btnAcceptReq_Click);
             // 
             // bunifuShadowPanel8
             // 
@@ -1533,6 +1538,7 @@ namespace IOOP_Assignment
             this.requestDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.requestDataGridView.ColumnHeadersHeight = 40;
             this.requestDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colReqID,
             this.colStudID,
             this.colNewRoom,
             this.colNewDate,
@@ -2036,6 +2042,82 @@ namespace IOOP_Assignment
             this.dailyReportTable.Size = new System.Drawing.Size(752, 324);
             this.dailyReportTable.TabIndex = 44;
             this.dailyReportTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            // 
+            // colResID
+            // 
+            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResID.FillWeight = 304.5686F;
+            this.colResID.HeaderText = "#";
+            this.colResID.Name = "colResID";
+            this.colResID.ReadOnly = true;
+            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResID.Width = 30;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colRoomType.FillWeight = 59.08621F;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomType.Width = 116;
+            // 
+            // colRoomNum
+            // 
+            this.colRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colRoomNum.FillWeight = 160.9156F;
+            this.colRoomNum.HeaderText = "Room Number";
+            this.colRoomNum.Name = "colRoomNum";
+            this.colRoomNum.ReadOnly = true;
+            this.colRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNum.Width = 141;
+            // 
+            // colNumStudents
+            // 
+            this.colNumStudents.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNumStudents.FillWeight = 25.14307F;
+            this.colNumStudents.HeaderText = "Number of Students";
+            this.colNumStudents.Name = "colNumStudents";
+            this.colNumStudents.ReadOnly = true;
+            this.colNumStudents.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colDate
+            // 
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDate.FillWeight = 25.14307F;
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.Width = 67;
+            // 
+            // colTime
+            // 
+            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTime.Width = 69;
+            // 
+            // colDuration
+            // 
+            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colDuration.FillWeight = 25.14307F;
+            this.colDuration.HeaderText = "Duration";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDuration.Width = 96;
+            // 
+            // colStudentID
+            // 
+            this.colStudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colStudentID.HeaderText = "Student ID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Width = 111;
             // 
             // userInfoPanel3
             // 
@@ -3048,81 +3130,28 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // colResID
+            // bunifuLabel14
             // 
-            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colResID.FillWeight = 304.5686F;
-            this.colResID.HeaderText = "#";
-            this.colResID.Name = "colResID";
-            this.colResID.ReadOnly = true;
-            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colResID.Width = 30;
+            this.bunifuLabel14.AllowParentOverrides = false;
+            this.bunifuLabel14.AutoEllipsis = false;
+            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel14.Location = new System.Drawing.Point(287, 14);
+            this.bunifuLabel14.Name = "bunifuLabel14";
+            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
+            this.bunifuLabel14.TabIndex = 39;
+            this.bunifuLabel14.Text = "bunifuLabel14";
+            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // colRoomType
+            // colReqID
             // 
-            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colRoomType.FillWeight = 59.08621F;
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.Name = "colRoomType";
-            this.colRoomType.ReadOnly = true;
-            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomType.Width = 116;
-            // 
-            // colRoomNum
-            // 
-            this.colRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colRoomNum.FillWeight = 160.9156F;
-            this.colRoomNum.HeaderText = "Room Number";
-            this.colRoomNum.Name = "colRoomNum";
-            this.colRoomNum.ReadOnly = true;
-            this.colRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomNum.Width = 141;
-            // 
-            // colNumStudents
-            // 
-            this.colNumStudents.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNumStudents.FillWeight = 25.14307F;
-            this.colNumStudents.HeaderText = "Number of Students";
-            this.colNumStudents.Name = "colNumStudents";
-            this.colNumStudents.ReadOnly = true;
-            this.colNumStudents.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colDate
-            // 
-            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colDate.FillWeight = 25.14307F;
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDate.Width = 67;
-            // 
-            // colTime
-            // 
-            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colTime.HeaderText = "Time";
-            this.colTime.Name = "colTime";
-            this.colTime.ReadOnly = true;
-            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTime.Width = 69;
-            // 
-            // colDuration
-            // 
-            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colDuration.FillWeight = 25.14307F;
-            this.colDuration.HeaderText = "Duration";
-            this.colDuration.Name = "colDuration";
-            this.colDuration.ReadOnly = true;
-            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDuration.Width = 96;
-            // 
-            // colStudentID
-            // 
-            this.colStudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colStudentID.HeaderText = "Student ID";
-            this.colStudentID.Name = "colStudentID";
-            this.colStudentID.ReadOnly = true;
-            this.colStudentID.Width = 111;
+            this.colReqID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colReqID.HeaderText = "#";
+            this.colReqID.Name = "colReqID";
+            this.colReqID.ReadOnly = true;
+            this.colReqID.Width = 30;
             // 
             // colStudID
             // 
@@ -3173,10 +3202,10 @@ namespace IOOP_Assignment
             // colNewResID
             // 
             this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewResID.HeaderText = "Reservation ID";
+            this.colNewResID.HeaderText = "ReservationID";
             this.colNewResID.Name = "colNewResID";
             this.colNewResID.ReadOnly = true;
-            this.colNewResID.Width = 105;
+            this.colNewResID.Width = 80;
             // 
             // Librarian_Menu
             // 
@@ -3319,9 +3348,9 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuImageButton totalUsersInfoButton;
         private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAcceptReq;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel34;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton4;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDenyReq;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel10;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private Bunifu.UI.WinForms.BunifuLabel lblStatus;
@@ -3352,6 +3381,8 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colReqID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewDate;

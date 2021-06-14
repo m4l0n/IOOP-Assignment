@@ -151,6 +151,7 @@ namespace IOOP_Assignment
                     requestDataGridView.Rows.Add(
                         new object[]
                         {
+                            req.RequestID,
                             req.StudentID,
                             req.RoomType,
                             req.Date,
@@ -235,6 +236,7 @@ namespace IOOP_Assignment
 
             requestDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             requestDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            requestDataGridView.Columns["colReqID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             requestDataGridView.Columns["colStudID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             requestDataGridView.Columns["colNewRoom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             requestDataGridView.Columns["colNewDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -248,9 +250,9 @@ namespace IOOP_Assignment
         {
             foreach (DataGridViewRow row in requestDataGridView.SelectedRows)
             {
-                string roomType = row.Cells[1].Value.ToString();
-                string date = row.Cells[2].Value.ToString();
-                string time = row.Cells[3].Value.ToString();
+                string roomType = row.Cells[2].Value.ToString();
+                string date = row.Cells[3].Value.ToString();
+                string time = row.Cells[4].Value.ToString();
                 bunifuLabel35.Text = "Status of Room Type " + roomType + " on " + date + " " + time + " is";
                 DateTime dt = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 string datee = dt.ToString("MM/dd/yyyy");
@@ -270,11 +272,14 @@ namespace IOOP_Assignment
 
         private string getRoomStatus(string rt, string d)
         {
-            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
-                rt + "' and Date='" + d + "'", con);
-            con.Open();
-            int reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
+            int reservedRoom;
+            using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
+                rt + "' and Date='" + d + "'", con))
+            {
+                if (con.State == ConnectionState.Closed)
+                    con.Open();
+                reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+            }
             string status = "Unavailable";
             switch (rt)
             {
@@ -299,6 +304,63 @@ namespace IOOP_Assignment
                     break;
             }
             return status;
+        }
+
+        private void btnAcceptReq_Click(object sender, EventArgs e)
+        {
+            int row = requestDataGridView.CurrentRow.Index;
+            DateTime dt = DateTime.ParseExact(Convert.ToString(requestDataGridView[3, row].Value),
+                "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string datee = dt.ToString("MM/dd/yyyy");
+            Request req = new Request
+            {
+                RequestID = Convert.ToInt32(requestDataGridView[0, row].Value),
+                StudentID = Convert.ToString(requestDataGridView[1, row].Value),
+                RoomType = Convert.ToString(requestDataGridView[2, row].Value),
+                Date = datee,
+                Time = Convert.ToString(requestDataGridView[4, row].Value),
+                NumStudents = Convert.ToInt32(requestDataGridView[5, row].Value),
+                Duration = Convert.ToString(requestDataGridView[6, row].Value),
+                ReservationID = Convert.ToInt32(requestDataGridView[7, row].Value),
+            };
+            Reservation res = new Reservation();
+            string assignedRoom = res.assignRoom(req);
+            string query = "update [dbo].Reservation set [Room Type]='" + req.RoomType + "', Date='"
+                + req.Date + "', Time='" + req.Time + "', [Number of Students]='" + req.NumStudents + "'," +
+                "Duration='" + req.Duration + "', [Room Number]='" + assignedRoom + "' where ReservationID='" + 
+                req.ReservationID + "'";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.ExecuteNonQuery(); //Updates Reservation Table
+            }
+            using (SqlCommand cmd2 = new SqlCommand("insert into [dbo].RequestStatus values ('APPROVED','" + 
+                req.StudentID + "','" + req.RequestID + "')", con))
+            {
+                cmd2.ExecuteNonQuery();
+            }
+            using (SqlCommand cmd3 = new SqlCommand("delete from [dbo].Request where RequestID='"+ req.RequestID + "'", con))
+            {
+                cmd3.ExecuteNonQuery();
+            }
+        }
+
+        private void btnDenyReq_Click(object sender, EventArgs e)
+        {
+            int row = requestDataGridView.CurrentRow.Index;
+            Request req = new Request
+            {
+                RequestID = Convert.ToInt32(requestDataGridView[0, row].Value),
+                StudentID = Convert.ToString(requestDataGridView[1, row].Value)
+            };
+            using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
+                req.StudentID + "','" + req.RequestID + "')", con))
+            {
+                cmd.ExecuteNonQuery();
+            }
+            using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
+            {
+                cmd2.ExecuteNonQuery();
+            }
         }
     }
 }

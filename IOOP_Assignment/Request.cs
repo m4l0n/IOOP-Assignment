@@ -18,6 +18,7 @@ namespace IOOP_Assignment
         //Declare connection string
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        private int requestID;
         private string roomType;
         private string date;
         private string time;
@@ -33,6 +34,7 @@ namespace IOOP_Assignment
         public string StudentID { get => studentID; set => studentID = value; }
         public string Duration { get => duration; set => duration = value; }
         public int ReservationID { get => reservationID; set => reservationID = value; }
+        public int RequestID { get => requestID; set => requestID = value; }
 
         public List<Request> getReqData()
         {
@@ -41,7 +43,7 @@ namespace IOOP_Assignment
             int activeReq = (Convert.ToInt32(cmd.ExecuteScalar()));
             if (activeReq != 0)
             {
-                SqlCommand cmd2 = new SqlCommand("select StudentID, [Room Type], " +
+                SqlCommand cmd2 = new SqlCommand("select RequestID, StudentID, [Room Type], " +
                     "format(Date, 'dd/MM/yyyy') as Date, " +
                     "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
                     "[Number of Students], Duration, ReservationID from [dbo].Request", con);
@@ -52,6 +54,7 @@ namespace IOOP_Assignment
                     {
                         Request req = new Request
                         {
+                            RequestID = (Convert.ToInt32(reader["RequestID"])),
                             RoomType = (Convert.ToString(reader["Room Type"])),
                             Date = (Convert.ToString(reader["Date"])),
                             Time = (Convert.ToString(reader["Time"])),
