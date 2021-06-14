@@ -35,3 +35,11 @@ as
     LEFT OUTER JOIN Reservation ON dateTable.Date = Reservation.Date
     GROUP by dateTable.Date
     ORDER BY dateTable.Date;
+
+select substring(
+(
+	select ', '+ [Room Number] AS 'data()'
+		FROM [dbo].Reservation
+		where [Room Type]='Amber' and Date='06/12/2021'
+		FOR XML PATH('')
+),2,9999) AS [Room Numbers]
