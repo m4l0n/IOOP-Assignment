@@ -83,7 +83,6 @@ namespace IOOP_Assignment
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.overviewLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.changesPage = new System.Windows.Forms.TabPage();
-            this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.lblStatus = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel35 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -93,6 +92,14 @@ namespace IOOP_Assignment
             this.btnAcceptReq = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.requestDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.colReqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInfoPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblNameL2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -158,14 +165,6 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.colReqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -720,10 +719,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.changesPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "changesPage";
-            this.bunifuPages2.PageTitle = "Changes";
+            this.bunifuPages2.Page = this.overviewPage;
+            this.bunifuPages2.PageIndex = 0;
+            this.bunifuPages2.PageName = "overviewPage";
+            this.bunifuPages2.PageTitle = "Overview";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -948,7 +947,7 @@ namespace IOOP_Assignment
             // 
             this.requestInfoButton.ActiveImage = null;
             this.requestInfoButton.AllowAnimations = true;
-            this.requestInfoButton.AllowBuffering = false;
+            this.requestInfoButton.AllowBuffering = true;
             this.requestInfoButton.AllowToggling = false;
             this.requestInfoButton.AllowZooming = true;
             this.requestInfoButton.AllowZoomingOnFocus = false;
@@ -1040,7 +1039,7 @@ namespace IOOP_Assignment
             // 
             this.resInfoButton.ActiveImage = null;
             this.resInfoButton.AllowAnimations = true;
-            this.resInfoButton.AllowBuffering = false;
+            this.resInfoButton.AllowBuffering = true;
             this.resInfoButton.AllowToggling = false;
             this.resInfoButton.AllowZooming = true;
             this.resInfoButton.AllowZoomingOnFocus = false;
@@ -1132,7 +1131,7 @@ namespace IOOP_Assignment
             // 
             this.totalUsersInfoButton.ActiveImage = null;
             this.totalUsersInfoButton.AllowAnimations = true;
-            this.totalUsersInfoButton.AllowBuffering = false;
+            this.totalUsersInfoButton.AllowBuffering = true;
             this.totalUsersInfoButton.AllowToggling = false;
             this.totalUsersInfoButton.AllowZooming = true;
             this.totalUsersInfoButton.AllowZoomingOnFocus = false;
@@ -1199,7 +1198,6 @@ namespace IOOP_Assignment
             // changesPage
             // 
             this.changesPage.BackColor = System.Drawing.Color.White;
-            this.changesPage.Controls.Add(this.bunifuLabel14);
             this.changesPage.Controls.Add(this.bunifuShadowPanel1);
             this.changesPage.Controls.Add(this.bunifuShadowPanel10);
             this.changesPage.Controls.Add(this.bunifuShadowPanel8);
@@ -1212,22 +1210,6 @@ namespace IOOP_Assignment
             this.changesPage.Size = new System.Drawing.Size(890, 592);
             this.changesPage.TabIndex = 1;
             this.changesPage.Text = "Changes";
-            // 
-            // bunifuLabel14
-            // 
-            this.bunifuLabel14.AllowParentOverrides = false;
-            this.bunifuLabel14.AutoEllipsis = false;
-            this.bunifuLabel14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel14.Location = new System.Drawing.Point(287, 14);
-            this.bunifuLabel14.Name = "bunifuLabel14";
-            this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel14.Size = new System.Drawing.Size(75, 15);
-            this.bunifuLabel14.TabIndex = 39;
-            this.bunifuLabel14.Text = "bunifuLabel14";
-            this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuShadowPanel1
             // 
@@ -1603,6 +1585,68 @@ namespace IOOP_Assignment
             this.requestDataGridView.TabIndex = 32;
             this.requestDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
             this.requestDataGridView.SelectionChanged += new System.EventHandler(this.requestDataGridView_SelectionChanged);
+            // 
+            // colReqID
+            // 
+            this.colReqID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colReqID.HeaderText = "#";
+            this.colReqID.Name = "colReqID";
+            this.colReqID.ReadOnly = true;
+            this.colReqID.Width = 30;
+            // 
+            // colStudID
+            // 
+            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudID.HeaderText = "Student ID";
+            this.colStudID.Name = "colStudID";
+            this.colStudID.ReadOnly = true;
+            // 
+            // colNewRoom
+            // 
+            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewRoom.HeaderText = "New Room";
+            this.colNewRoom.Name = "colNewRoom";
+            this.colNewRoom.ReadOnly = true;
+            // 
+            // colNewDate
+            // 
+            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewDate.HeaderText = "New Date";
+            this.colNewDate.Name = "colNewDate";
+            this.colNewDate.ReadOnly = true;
+            this.colNewDate.Width = 115;
+            // 
+            // colNewTime
+            // 
+            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewTime.HeaderText = "New Time";
+            this.colNewTime.Name = "colNewTime";
+            this.colNewTime.ReadOnly = true;
+            this.colNewTime.Width = 110;
+            // 
+            // colNewStudentNum
+            // 
+            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNewStudentNum.HeaderText = "New Student Number";
+            this.colNewStudentNum.Name = "colNewStudentNum";
+            this.colNewStudentNum.ReadOnly = true;
+            this.colNewStudentNum.Width = 130;
+            // 
+            // colNewDuration
+            // 
+            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colNewDuration.HeaderText = "New Duration";
+            this.colNewDuration.Name = "colNewDuration";
+            this.colNewDuration.ReadOnly = true;
+            this.colNewDuration.Width = 133;
+            // 
+            // colNewResID
+            // 
+            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colNewResID.HeaderText = "Res ID";
+            this.colNewResID.Name = "colNewResID";
+            this.colNewResID.ReadOnly = true;
+            this.colNewResID.Width = 79;
             // 
             // userInfoPanel2
             // 
@@ -3146,68 +3190,6 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
-            // colReqID
-            // 
-            this.colReqID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colReqID.HeaderText = "#";
-            this.colReqID.Name = "colReqID";
-            this.colReqID.ReadOnly = true;
-            this.colReqID.Width = 30;
-            // 
-            // colStudID
-            // 
-            this.colStudID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStudID.HeaderText = "Student ID";
-            this.colStudID.Name = "colStudID";
-            this.colStudID.ReadOnly = true;
-            // 
-            // colNewRoom
-            // 
-            this.colNewRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewRoom.HeaderText = "New Room";
-            this.colNewRoom.Name = "colNewRoom";
-            this.colNewRoom.ReadOnly = true;
-            // 
-            // colNewDate
-            // 
-            this.colNewDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewDate.HeaderText = "New Date";
-            this.colNewDate.Name = "colNewDate";
-            this.colNewDate.ReadOnly = true;
-            this.colNewDate.Width = 115;
-            // 
-            // colNewTime
-            // 
-            this.colNewTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewTime.HeaderText = "New Time";
-            this.colNewTime.Name = "colNewTime";
-            this.colNewTime.ReadOnly = true;
-            this.colNewTime.Width = 110;
-            // 
-            // colNewStudentNum
-            // 
-            this.colNewStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNewStudentNum.HeaderText = "New Student Number";
-            this.colNewStudentNum.Name = "colNewStudentNum";
-            this.colNewStudentNum.ReadOnly = true;
-            this.colNewStudentNum.Width = 130;
-            // 
-            // colNewDuration
-            // 
-            this.colNewDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colNewDuration.HeaderText = "New Duration";
-            this.colNewDuration.Name = "colNewDuration";
-            this.colNewDuration.ReadOnly = true;
-            this.colNewDuration.Width = 133;
-            // 
-            // colNewResID
-            // 
-            this.colNewResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colNewResID.HeaderText = "Res ID";
-            this.colNewResID.Name = "colNewResID";
-            this.colNewResID.ReadOnly = true;
-            this.colNewResID.Width = 79;
-            // 
             // Librarian_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3382,7 +3364,6 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReqID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewRoom;
