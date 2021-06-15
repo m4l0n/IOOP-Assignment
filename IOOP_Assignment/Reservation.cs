@@ -21,7 +21,7 @@ namespace IOOP_Assignment
         private string duration;
         private string studentID;
         private string roomNumber;
-        private string resID;
+        private int resID;
 
         public string RoomType { get => roomType; set => roomType = value; }
         public string Date { get => date; set => date = value; }
@@ -30,7 +30,7 @@ namespace IOOP_Assignment
         public string StudentID { get => studentID; set => studentID = value; }
         public string Duration { get => duration; set => duration = value; }
         public string RoomNumber { get => roomNumber; set => roomNumber = value; }
-        public string ResID { get => resID; set => resID = value; }
+        public int ResID { get => resID; set => resID = value; }
 
         public List<Reservation> getResData()
         {
@@ -63,8 +63,8 @@ namespace IOOP_Assignment
                 if (activeReservation != 0) //only executes if there's record of reservation found for the user
                 {
                     List<Reservation> resList = new List<Reservation>();
-                    using (SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
-                        "format(Date, 'dd/MM/yyyy') as Date, " +
+                    using (SqlCommand cmd2 = new SqlCommand("Select ReservationID, [Room Type], [Room Number], " +
+                        "[Number of Students], format(Date, 'dd/MM/yyyy') as Date, " +
                         "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
                         "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'and Date >= getDate()", con))
                     {
@@ -74,6 +74,7 @@ namespace IOOP_Assignment
                             {
                                 Reservation res = new Reservation
                                 {
+                                    ResID = (Convert.ToInt32(reader["ReservationID"])),
                                     RoomType = (Convert.ToString(reader["Room Type"])),
                                     RoomNumber = (Convert.ToString(reader["Room Number"])),
                                     Date = (Convert.ToString(reader["Date"])),
@@ -137,7 +138,7 @@ namespace IOOP_Assignment
                                 NumStudents = (Convert.ToInt32(reader["Number of Students"])),
                                 Duration = (Convert.ToString(reader["Duration"])),
                                 StudentID = (Convert.ToString(reader["StudentID"])),
-                                ResID = (Convert.ToString(reader["ReservationID"]))
+                                ResID = (Convert.ToInt32(reader["ReservationID"]))
                             };
                             resList.Add(dailyReport);
                         }

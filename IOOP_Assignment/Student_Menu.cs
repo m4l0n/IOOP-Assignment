@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,7 @@ namespace IOOP_Assignment
                     tableReservationEdit.Rows.Add(
                         new object[]
                         {
-                            "",
+                            ress.ResID,
                             ress.RoomType,
                             ress.RoomNumber,
                             ress.NumStudents,
@@ -141,7 +142,6 @@ namespace IOOP_Assignment
         {
             //Auto Increment first column
             this.resDataGridView.Rows[e.RowIndex].Cells["colResID"].Value = (e.RowIndex + 1).ToString();
-            this.tableReservationEdit.Rows[e.RowIndex].Cells["colResIDEdit"].Value = (e.RowIndex + 1).ToString();
         }
 
         private void chkboxDate_CheckedChanged(object sender, EventArgs e)
@@ -213,6 +213,7 @@ namespace IOOP_Assignment
         private void formatTables()
         {
             //Bunifu DataGridView Style Formatting
+            resDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -222,6 +223,7 @@ namespace IOOP_Assignment
             resDataGridView.Columns["colTime"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             resDataGridView.Columns["colDuration"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            tableReservationEdit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableReservationEdit.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colResIDEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colRoomTypeEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -289,6 +291,24 @@ namespace IOOP_Assignment
                     }
                 }
             }
+        }
+
+        private void btnEditReserve_Click(object sender, EventArgs e)
+        {
+            int row = tableReservationEdit.CurrentRow.Index;
+            DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[3, row].Value),
+                "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string datee = dt.ToString("MM/dd/yyyy");
+            Reservation req = new Reservation
+            {
+                ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
+                RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
+                RoomNumber = Convert.ToString(tableReservationEdit[2,row].Value),
+                NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
+                Date = datee,
+                Time = Convert.ToString(tableReservationEdit[5, row].Value),
+                Duration = Convert.ToString(tableReservationEdit[6, row].Value),
+            };
         }
     }
 }
