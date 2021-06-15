@@ -14,9 +14,6 @@ namespace IOOP_Assignment
 {
     class Reservation
     {
-        //Declare connection string
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-
         private string roomType;
         private string date;
         private string time;
@@ -37,126 +34,121 @@ namespace IOOP_Assignment
 
         public List<Reservation> getResData()
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
-                + User.tpNumber + "'", con);
-            int activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            /*
+            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+            DataTable dt = new DataTable(); //Creates a DataTable in the memory
+            da.Fill(dt);    //Fills the DataTable with the result from SQL Query
             con.Close();
-            if (activeReservation != 0) //only executes if there's record of reservation found for the user
-            {
-                /*
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataTable dt = new DataTable(); //Creates a DataTable in the memory
-                da.Fill(dt);    //Fills the DataTable with the result from SQL Query
-                con.Close();
-                List<Reservation> resList = new List<Reservation>();
-                resList = (from DataRow dr in dt.Rows
-                           select new Reservation()
-                           {
-                               roomType = dr["Room Type"].ToString(),
-                               roomNumber = dr["Room Number"].ToString(),
-                               date = dr["Date"].ToString(),
-                               time = dr["Time"].ToString(),
-                               numStudents = Convert.ToInt32(dr["Number of Students"]),
-                               duration = dr["Duration"].ToString(),
-                           }).ToList(); //LINQ returns a list of object
+            List<Reservation> resList = new List<Reservation>();
+            resList = (from DataRow dr in dt.Rows
+                       select new Reservation()
+                       {
+                           roomType = dr["Room Type"].ToString(),
+                           roomNumber = dr["Room Number"].ToString(),
+                           date = dr["Date"].ToString(),
+                           time = dr["Time"].ToString(),
+                           numStudents = Convert.ToInt32(dr["Number of Students"]),
+                           duration = dr["Duration"].ToString(),
+                       }).ToList(); //LINQ returns a list of object
             */
-                SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
-                    "format(Date, 'dd/MM/yyyy') as Date, " +
-                    "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
-                    "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
-                List<Reservation> resList = new List<Reservation>();
-                con.Open();
-                using (SqlDataReader reader = cmd2.ExecuteReader())
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                int activeReservation;
+                using (SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
+                    + User.tpNumber + "'", con))
                 {
-                    while (reader.Read())
+                    con.Open();
+                    activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                }
+                if (activeReservation != 0) //only executes if there's record of reservation found for the user
+                {
+                    List<Reservation> resList = new List<Reservation>();
+                    using (SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
+                        "format(Date, 'dd/MM/yyyy') as Date, " +
+                        "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
+                        "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con))
                     {
-                        Reservation res = new Reservation
+                        con.Open();
+                        using (SqlDataReader reader = cmd2.ExecuteReader())
                         {
-                            RoomType = (Convert.ToString(reader["Room Type"])),
-                            RoomNumber = (Convert.ToString(reader["Room Number"])),
-                            Date = (Convert.ToString(reader["Date"])),
-                            Time = (Convert.ToString(reader["Time"])),
-                            NumStudents = (Convert.ToInt32(reader["Number of Students"])),
-                            Duration = (Convert.ToString(reader["Duration"]))
-                        };
-                        resList.Add(res);
+                            while (reader.Read())
+                            {
+                                Reservation res = new Reservation
+                                {
+                                    RoomType = (Convert.ToString(reader["Room Type"])),
+                                    RoomNumber = (Convert.ToString(reader["Room Number"])),
+                                    Date = (Convert.ToString(reader["Date"])),
+                                    Time = (Convert.ToString(reader["Time"])),
+                                    NumStudents = (Convert.ToInt32(reader["Number of Students"])),
+                                    Duration = (Convert.ToString(reader["Duration"]))
+                                };
+                                resList.Add(res);
+                            }
+                        }
                     }
-                }              
-                return resList;
-            }
-            else
-            {
-                return null;
+                    return resList;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
-        /*public List<Reservation> getDailyRes()
-        {
-            SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation]", con);
-            int activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
-                "format(Date, 'dd/MM/yyyy') as Date, " +
-                "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
-                "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con);
-            if (activeReservation != 0) //only executes if there's record of reservation found for the user
-            {
-
-            }
-        }
-        */
         public List<Reservation> getDailyReport(string d, string rt)
         {
             date = d;
             roomType = rt;
             int activeRes;
-            using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[Reservation]", con))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                activeRes = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            }
-            SqlCommand cmd2;
-            if (activeRes != 0)
-            {
-                if (rt != "All")
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[Reservation]", con))
                 {
-                    cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
-                        "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
-                        "ReservationID, StudentID, [Room Number] from [dbo].Reservation " +
-                        "where [Room Type]='" + rt + "' and Date='" + d + "'", con);
+                    activeRes = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                }
+                SqlCommand cmd2;
+                if (activeRes != 0) //Checks if there are any reservations
+                {
+                    if (rt != "All")
+                    {
+                        cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
+                            "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
+                            "ReservationID, StudentID, [Room Number] from [dbo].Reservation " +
+                            "where [Room Type]='" + rt + "' and Date='" + d + "'", con);
+                    }
+                    else
+                    {
+                        cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
+                            "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
+                            "ReservationID, StudentID, [Room Number] from [dbo].Reservation " +
+                            "where Date='" + d + "'", con);
+                    }
+                    List<Reservation> resList = new List<Reservation>();
+                    using (SqlDataReader reader = cmd2.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Reservation dailyReport = new Reservation
+                            {
+                                RoomType = (Convert.ToString(reader["Room Type"])),
+                                RoomNumber = (Convert.ToString(reader["Room Number"])),
+                                Date = (Convert.ToString(reader["Date"])),
+                                Time = (Convert.ToString(reader["Time"])),
+                                NumStudents = (Convert.ToInt32(reader["Number of Students"])),
+                                Duration = (Convert.ToString(reader["Duration"])),
+                                StudentID = (Convert.ToString(reader["StudentID"])),
+                                ResID = (Convert.ToString(reader["ReservationID"]))
+                            };
+                            resList.Add(dailyReport);
+                        }
+                    }
+                    return resList;
                 }
                 else
                 {
-                    cmd2 = new SqlCommand("select [Room Type], format(Date, 'dd/MM/yyyy') as Date, " +
-                        "CONVERT(varchar(10), CAST(Time as Time),0) as Time, [Number of Students], Duration," +
-                        "ReservationID, StudentID, [Room Number] from [dbo].Reservation " +
-                        "where Date='" + d + "'", con);
+                    return null;
                 }
-                List<Reservation> resList = new List<Reservation>();
-                con.Open();
-                using (SqlDataReader reader = cmd2.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Reservation dailyReport = new Reservation
-                        {
-                            RoomType = (Convert.ToString(reader["Room Type"])),
-                            RoomNumber = (Convert.ToString(reader["Room Number"])),
-                            Date = (Convert.ToString(reader["Date"])),
-                            Time = (Convert.ToString(reader["Time"])),
-                            NumStudents = (Convert.ToInt32(reader["Number of Students"])),
-                            Duration = (Convert.ToString(reader["Duration"])),
-                            StudentID = (Convert.ToString(reader["StudentID"])),
-                            ResID = (Convert.ToString(reader["ReservationID"]))
-                        };
-                        resList.Add(dailyReport);
-                    }
-                }
-                return resList;
-            }
-            else
-            {
-                return null;
             }
         }
 
@@ -167,19 +159,22 @@ namespace IOOP_Assignment
                 "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
             string assignedRoom;
             string takenRooms;
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                con.Open();
-                takenRooms = cmd.ExecuteScalar().ToString();
-                takenRooms = takenRooms.Replace(",", "','");
-                string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
-                    "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
-                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    assignedRoom = cmd2.ExecuteScalar().ToString();
+                    con.Open();
+                    takenRooms = cmd.ExecuteScalar().ToString();
+                    takenRooms = takenRooms.Replace(",", "','");
+                    string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
+                        "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
+                    using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                    {
+                        assignedRoom = cmd2.ExecuteScalar().ToString();
+                    }
                 }
+                return assignedRoom;
             }
-            return assignedRoom;
         }
     }
 }

@@ -16,9 +16,6 @@ namespace IOOP_Assignment
 {
     public partial class Form1 : Form
     {
- 
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-
         public Form1()
         {
             InitializeComponent();
@@ -37,9 +34,7 @@ namespace IOOP_Assignment
             //Validate Registration Data
             RegistrationValidator validator = new RegistrationValidator();
             ValidationResult result = validator.Validate(registration);
-
-            con.Open();
-            if (!result.IsValid)
+            if (!result.IsValid)    //Data invalid format
             {
                 foreach(ValidationFailure failure in result.Errors)
                 {
@@ -47,28 +42,34 @@ namespace IOOP_Assignment
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 4000);
                 }
             }
-            else
+            else   //Data valid format
             {
-                SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass,'Student')"
-                    ,con);
-                cmd.Parameters.AddWithValue("@tpNum", User.tpNumber);
-                cmd.Parameters.AddWithValue("@name", User.name);
-                cmd.Parameters.AddWithValue("email", User.regEmail);
-                cmd.Parameters.AddWithValue("@pass", User.regPass);
-                int result2 = cmd.ExecuteNonQuery();
-                if (result2 != 0)
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
                 {
-                    lblRegSuccess.Show();
-                    await Task.Delay(2000);
-                    bunifuPages1.PageIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int result2;
+                    using (SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass," +
+                        "'Student')" , con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@tpNum", User.tpNumber);
+                        cmd.Parameters.AddWithValue("@name", User.name);
+                        cmd.Parameters.AddWithValue("email", User.regEmail);
+                        cmd.Parameters.AddWithValue("@pass", User.regPass);
+                        result2 = cmd.ExecuteNonQuery();
+                    }
+                    if (result2 != 0)
+                    {
+                        lblRegSuccess.Show();
+                        await Task.Delay(2000);
+                        bunifuPages1.PageIndex = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            con.Close();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -97,8 +98,7 @@ namespace IOOP_Assignment
             //Validate Login Details
             LoginValidator validator = new LoginValidator();
             ValidationResult result = validator.Validate(login);
-            con.Open();
-            if (!result.IsValid)
+            if (!result.IsValid)    //Data invalid format
             {
                 foreach (ValidationFailure failure in result.Errors)
                 {
@@ -106,24 +106,30 @@ namespace IOOP_Assignment
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 4000);
                 }
             }
-            else
+            else    //Data valid format
             {
-                SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + User.loginEmail 
-                    + "' and Password='" + User.loginPass + "'", con);
-                int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-
-                if (count > 0)
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
                 {
-                    SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '" 
-                        + User.loginEmail + "'", con);
-                    User.userRole = cmd2.ExecuteScalar().ToString();
-                    lblInvalidLogin.Hide();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    con.Open();
+                    int count;
+                    using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + User.loginEmail
+                    + "' and Password='" + User.loginPass + "'", con))
+                    {
+                        count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                    }
+                    if (count > 0)
+                    {
+                        using (SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '"
+                            + User.loginEmail + "'", con))
+                        {
+                            User.userRole = cmd2.ExecuteScalar().ToString();
+                        }
+                        lblInvalidLogin.Hide();
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else lblInvalidLogin.Show();
                 }
-                else
-                    lblInvalidLogin.Show();
-                con.Close();
             }
         }
 

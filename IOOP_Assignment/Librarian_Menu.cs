@@ -17,8 +17,6 @@ namespace IOOP_Assignment
 {
     public partial class Librarian_Menu : Form
     {
-        //Declare connection string
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         public Librarian_Menu()
         {
             InitializeComponent();
@@ -125,21 +123,32 @@ namespace IOOP_Assignment
            
             //Displays at Overview
             string tdy_date = Now.ToString("M/d/yyyy");
-            con.Open();
-            SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{tdy_date}'", con);
-            lblReservationTdy.Text = sql.ExecuteScalar().ToString();
-            SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con);
-            lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
-            SqlCommand sql3 = new SqlCommand("Select count(RequestID) from [dbo].[Request]", con);
-            lblUnattendReq.Text = sql3.ExecuteScalar().ToString();
-            //Username
-            SqlCommand sql4 = new SqlCommand($"Select Name from [dbo].[User] where Email='{User.loginEmail}'", con);
-            User.name = sql4.ExecuteScalar().ToString();
-            lblNameL1.Text = User.name;
-            lblNameL2.Text = User.name;
-            lblNameL3.Text = User.name;
-            lblNameL4.Text = User.name;
-            con.Close();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date=" +
+                    $"'{tdy_date}'", con))
+                {
+                    lblReservationTdy.Text = sql.ExecuteScalar().ToString();
+                }
+                using (SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con))
+                {
+                    lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
+                }
+                using (SqlCommand sql3 = new SqlCommand("Select count(RequestID) from [dbo].[Request]", con))
+                {
+                    lblUnattendReq.Text = sql3.ExecuteScalar().ToString();
+                }
+                //Username
+                using (SqlCommand sql4 = new SqlCommand($"Select Name from [dbo].[User] where Email='{User.loginEmail}'", con))
+                {
+                    User.name = sql4.ExecuteScalar().ToString();
+                }
+                lblNameL1.Text = User.name;
+                lblNameL2.Text = User.name;
+                lblNameL3.Text = User.name;
+                lblNameL4.Text = User.name;
+            }
 
             //Display Request Data in Request Table
             Request reqData = new Request();
@@ -273,12 +282,14 @@ namespace IOOP_Assignment
         private string getRoomStatus(string rt, string d)
         {
             int reservedRoom;
-            using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
-                rt + "' and Date='" + d + "'", con))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-                reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
+                    rt + "' and Date='" + d + "'", con))
+                {
+                    reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+                }
             }
             string status = "Unavailable";
             switch (rt)
@@ -329,18 +340,23 @@ namespace IOOP_Assignment
                 + req.Date + "', Time='" + req.Time + "', [Number of Students]='" + req.NumStudents + "'," +
                 "Duration='" + req.Duration + "', [Room Number]='" + assignedRoom + "' where ReservationID='" + 
                 req.ReservationID + "'";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                cmd.ExecuteNonQuery(); //Updates Reservation Table
-            }
-            using (SqlCommand cmd2 = new SqlCommand("insert into [dbo].RequestStatus values ('APPROVED','" + 
-                req.StudentID + "','" + req.RequestID + "')", con))
-            {
-                cmd2.ExecuteNonQuery();
-            }
-            using (SqlCommand cmd3 = new SqlCommand("delete from [dbo].Request where RequestID='"+ req.RequestID + "'", con))
-            {
-                cmd3.ExecuteNonQuery();
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.ExecuteNonQuery(); //Updates Reservation Table
+                }
+                using (SqlCommand cmd2 = new SqlCommand("insert into [dbo].RequestStatus values ('APPROVED','" +
+                    req.StudentID + "','" + req.Date + "')", con))
+                {
+                    cmd2.ExecuteNonQuery();
+                }
+                using (SqlCommand cmd3 = new SqlCommand("delete from [dbo].Request where RequestID='" + req.RequestID + "'", con))
+                {
+                    cmd3.ExecuteNonQuery();
+                }
+                bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             }
         }
 
@@ -351,15 +367,21 @@ namespace IOOP_Assignment
             {
                 RequestID = Convert.ToInt32(requestDataGridView[0, row].Value),
                 StudentID = Convert.ToString(requestDataGridView[1, row].Value)
+
             };
-            using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
                 req.StudentID + "','" + req.RequestID + "')", con))
-            {
-                cmd.ExecuteNonQuery();
-            }
-            using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
-            {
-                cmd2.ExecuteNonQuery();
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
+                {
+                    cmd2.ExecuteNonQuery();
+                }
+                bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             }
         }
     }

@@ -14,10 +14,6 @@ namespace IOOP_Assignment
 {
     public partial class Student_Menu : Form
     {
-        //Declare connection string
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-
-
         public Student_Menu()
         {
             InitializeComponent();
@@ -66,33 +62,47 @@ namespace IOOP_Assignment
                 }
             }
             formatTables();
-            con.Open();
-            using (SqlCommand cmd4 = new SqlCommand("DELETE FROM [dbo].RequestStatus where StudentID=@StudID", con))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                cmd4.Parameters.AddWithValue("@StudID", User.tpNumber);
-                int deletionCount = cmd4.ExecuteNonQuery();
-                MessageBox.Show("Deleted rows " + deletionCount);
+                con.Open();
+                using (SqlCommand cmd4 = new SqlCommand("DELETE FROM [dbo].RequestStatus where " +
+                    "StudentID=@StudID", con))
+                {
+                    cmd4.Parameters.AddWithValue("@StudID", User.tpNumber);
+                    int deletionCount = cmd4.ExecuteNonQuery();
+                    MessageBox.Show("Deleted rows " + deletionCount);
+                }
             }
         }
 
         private void Student_Menu_Load(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" + User.loginEmail + "'", con);
-            User.name = cmd.ExecuteScalar().ToString();
-            lblName.Text = User.name;
-            lblName2.Text = User.name;
-            lblName3.Text = User.name;
-            SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='" 
-                + User.loginEmail + "'", con);
-            User.tpNumber = cmd2.ExecuteScalar().ToString();
-            SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
-                + User.tpNumber + "'", con);
-            int activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
-            lblHi.Text = "Hi " + User.name + ",";
-            lblActiveRes.Text = activeReservation.ToString();
-            con.Close();
-            checkNotification(User.tpNumber);
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" + 
+                    User.loginEmail + "'", con))
+                {
+                    User.name = cmd.ExecuteScalar().ToString();
+                }
+                lblName.Text = User.name;
+                lblName2.Text = User.name;
+                lblName3.Text = User.name;
+                using (SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='"
+                    + User.loginEmail + "'", con))
+                {
+                    User.tpNumber = cmd2.ExecuteScalar().ToString();
+                }
+                int activeReservation;
+                using (SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where " +
+                    "StudentID ='" + User.tpNumber + "'", con))
+                {
+                    activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
+                }
+                lblHi.Text = "Hi " + User.name + ",";
+                lblActiveRes.Text = activeReservation.ToString();
+                checkNotification(User.tpNumber);
+            }
         }
 
         private void shapeClose_Click(object sender, EventArgs e)
