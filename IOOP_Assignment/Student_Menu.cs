@@ -69,8 +69,7 @@ namespace IOOP_Assignment
                     "StudentID=@StudID", con))
                 {
                     cmd4.Parameters.AddWithValue("@StudID", User.tpNumber);
-                    int deletionCount = cmd4.ExecuteNonQuery();
-                    MessageBox.Show("Deleted rows " + deletionCount);
+                    cmd4.ExecuteNonQuery();
                 }
             }
         }
@@ -95,7 +94,7 @@ namespace IOOP_Assignment
                 }
                 int activeReservation;
                 using (SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where " +
-                    "StudentID ='" + User.tpNumber + "'", con))
+                    "StudentID ='" + User.tpNumber + "' and Date >= getDate()", con))
                 {
                     activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
                 }
@@ -275,19 +274,13 @@ namespace IOOP_Assignment
                 }
                 if (notificationCount != 0)
                 {
-                    SqlCommand cmd2 = new SqlCommand("select [Request Status], RequestID from [dbo].RequestStatus where " +
-                        "StudentID='" + studID + "'", con);
+                    SqlCommand cmd2 = new SqlCommand("select [Request Status], format(Date, 'dd/MM/yyyy') as Date from " +
+                        "[dbo].RequestStatus where StudentID='" + studID + "'", con);
                     using (SqlDataReader reader = cmd2.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string temp = Convert.ToString(reader["RequestID"]);
-                            string date;
-                            using (SqlCommand cmd3 = new SqlCommand("select format(Date, 'dd/MM/yyyy') as Date from [dbo].Request " +
-                                "where RequestID='" + temp + "'", con))
-                            {
-                                date = Convert.ToString(cmd3.ExecuteScalar());
-                            }
+                            string date = Convert.ToString(reader["Date"]);
                             string message = "The Reservation Change Request on " + date + " was " +
                                 Convert.ToString(reader["Request Status"]);
                             bunifuSnackbar1.Show(this, message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 10000,

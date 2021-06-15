@@ -55,7 +55,7 @@ namespace IOOP_Assignment
             {
                 int activeReservation;
                 using (SqlCommand cmd = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where StudentID ='"
-                    + User.tpNumber + "'", con))
+                    + User.tpNumber + "' and Date >= getDate()", con))
                 {
                     con.Open();
                     activeReservation = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -66,9 +66,8 @@ namespace IOOP_Assignment
                     using (SqlCommand cmd2 = new SqlCommand("Select [Room Type], [Room Number], [Number of Students], " +
                         "format(Date, 'dd/MM/yyyy') as Date, " +
                         "CONVERT(varchar(10), CAST(Time as Time),0) as Time, " +
-                        "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'", con))
+                        "Duration from [dbo].[Reservation] where StudentID='" + User.tpNumber + "'and Date >= getDate()", con))
                     {
-                        con.Open();
                         using (SqlDataReader reader = cmd2.ExecuteReader())
                         {
                             while (reader.Read())
