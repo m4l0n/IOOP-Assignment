@@ -126,8 +126,7 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date=" +
-                    $"'{tdy_date}'", con))
+                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{tdy_date}'", con))
                 {
                     lblReservationTdy.Text = sql.ExecuteScalar().ToString();
                 }
@@ -148,7 +147,14 @@ namespace IOOP_Assignment
                 lblNameL2.Text = User.name;
                 lblNameL3.Text = User.name;
                 lblNameL4.Text = User.name;
+                //column for Monthly Utilization Review
+                SqlDataAdapter sql5 = new SqlDataAdapter($"select [Room Number], Count(Date) as [No of Reservation], replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5'),'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where [Room Type]='' group by [Room Number]", con);
+                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql5);
+                DataTable dataTable = new DataTable();
+                sql5.Fill(dataTable);
+                MonthlyUtilizationDataGridView.DataSource = dataTable;
             }
+
 
             //Display Request Data in Request Table
             Request reqData = new Request();
@@ -382,6 +388,113 @@ namespace IOOP_Assignment
                     cmd2.ExecuteNonQuery();
                 }
                 bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
+            }
+        }
+
+        private void btnSearchMonthly_Click(object sender, EventArgs e)
+        {
+            MonthlyUtilizationDataGridView.DataSource = null;
+            string month_name = ddmMonth.SelectedItem.ToString();
+            int year1 = Int32.Parse(ddmYear.SelectedItem.ToString());
+            int month1 = ddmMonth.FindStringExact(month_name) + 1;
+            int month2 = month1 + 1;
+            int year2 = year1;
+            if (month2 == 13)
+            {
+                month2 = 1;
+                year2 = year1 + 1;
+            }
+            string date1 = $"{month1}-1-{year1}";
+            string date2 = $"{month2}-1-{year2}";
+            string roomtype = "";
+            if (cbmAmber.Checked == true)
+            {
+                roomtype += "[Room Type]='Amber'";
+            }
+            if (cbmBlackThorn.Checked == true)
+            {
+                if (roomtype != "")
+                {
+                    roomtype += " or ";
+                }
+                roomtype += "[Room Type]='BlackThorn'";
+            }
+            if (cbmCedar.Checked == true)
+            {
+                if (roomtype != "")
+                {
+                    roomtype += " or ";
+                }
+                roomtype += "[Room Type]='Cedar'";
+            }
+            if (cbmDaphne.Checked == true)
+            {
+                if (roomtype != "")
+                {
+                    roomtype += " or ";
+                }
+                roomtype += "[Room Type]='Daphne'";
+            }
+            if(roomtype=="")
+            {
+                roomtype += "[Room Type]=''";
+            }
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                SqlDataAdapter sql = new SqlDataAdapter($"select [Room Number], Count(Date) as [No of Reservation], replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5'),'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where date between '{date1}' and '{date2}' and {roomtype} group by [Room Number]", con);
+                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql);
+                DataTable dataTable = new DataTable();
+                sql.Fill(dataTable);
+                MonthlyUtilizationDataGridView.DataSource = dataTable;
+            }
+        }
+
+        private void bunifuLabel29_Click(object sender, EventArgs e)
+        {
+            if(cbmAmber.Checked)
+            {
+                cbmAmber.Checked = false;
+            }
+            else
+            {
+                cbmAmber.Checked = true;
+            }
+        }
+
+        private void bunifuLabel28_Click(object sender, EventArgs e)
+        {
+            if (cbmBlackThorn.Checked)
+            {
+                cbmBlackThorn.Checked = false;
+            }
+            else
+            {
+                cbmBlackThorn.Checked = true;
+            }
+        }
+
+        private void bunifuLabel27_Click(object sender, EventArgs e)
+        {
+            if (cbmCedar.Checked)
+            {
+                cbmCedar.Checked = false;
+            }
+            else
+            {
+                cbmCedar.Checked = true;
+            }
+        }
+
+        private void bunifuLabel26_Click(object sender, EventArgs e)
+        {
+            if (cbmDaphne.Checked)
+            {
+                cbmDaphne.Checked = false;
+            }
+            else
+            {
+                cbmDaphne.Checked = true;
             }
         }
     }
