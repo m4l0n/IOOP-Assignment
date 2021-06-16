@@ -67,6 +67,13 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel6 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuLabel20 = new Bunifu.UI.WinForms.BunifuLabel();
             this.resDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblName = new Bunifu.UI.WinForms.BunifuLabel();
@@ -112,6 +119,13 @@ namespace IOOP_Assignment
             this.bunifuLabel12 = new Bunifu.UI.WinForms.BunifuLabel();
             this.editPage = new System.Windows.Forms.TabPage();
             this.tableReservationEdit = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.colResIDEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomTypeEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNumEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumStudentsEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTimeEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDurationEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuSeparator7 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.cbkboxSecurityCancel = new System.Windows.Forms.CheckBox();
             this.bunifuSeparator6 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -188,20 +202,6 @@ namespace IOOP_Assignment
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.colResIDEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomTypeEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNumEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumStudentsEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDateEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTimeEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDurationEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colResID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPages2.SuspendLayout();
@@ -563,10 +563,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.dashboardPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "dashboardPage";
-            this.bunifuPages2.PageTitle = "Dashboard";
+            this.bunifuPages2.Page = this.editPage;
+            this.bunifuPages2.PageIndex = 2;
+            this.bunifuPages2.PageName = "editPage";
+            this.bunifuPages2.PageTitle = "Edit";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -716,6 +716,74 @@ namespace IOOP_Assignment
             this.resDataGridView.TabIndex = 34;
             this.resDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             this.resDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.resDataGridView_RowPostPaint);
+            // 
+            // colResID
+            // 
+            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResID.FillWeight = 304.5686F;
+            this.colResID.HeaderText = "#";
+            this.colResID.Name = "colResID";
+            this.colResID.ReadOnly = true;
+            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResID.Width = 30;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomType.FillWeight = 59.08621F;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomType.Width = 105;
+            // 
+            // colRoomNumber
+            // 
+            this.colRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomNumber.FillWeight = 160.9156F;
+            this.colRoomNumber.HeaderText = "Room Number";
+            this.colRoomNumber.Name = "colRoomNumber";
+            this.colRoomNumber.ReadOnly = true;
+            this.colRoomNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNumber.Width = 120;
+            // 
+            // colStudentNum
+            // 
+            this.colStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colStudentNum.FillWeight = 25.14307F;
+            this.colStudentNum.HeaderText = "Number of Students";
+            this.colStudentNum.Name = "colStudentNum";
+            this.colStudentNum.ReadOnly = true;
+            this.colStudentNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colStudentNum.Width = 130;
+            // 
+            // colDate
+            // 
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDate.FillWeight = 25.14307F;
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.Width = 94;
+            // 
+            // colTime
+            // 
+            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTime.Width = 80;
+            // 
+            // colDuration
+            // 
+            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDuration.FillWeight = 25.14307F;
+            this.colDuration.HeaderText = "Duration";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ReadOnly = true;
+            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // bunifuShadowPanel2
             // 
@@ -1774,8 +1842,7 @@ namespace IOOP_Assignment
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tableReservationEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.tableReservationEdit.ColumnHeadersHeight = 60;
-            this.tableReservationEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tableReservationEdit.ColumnHeadersHeight = 40;
             this.tableReservationEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colResIDEdit,
             this.colRoomTypeEdit,
@@ -1826,6 +1893,74 @@ namespace IOOP_Assignment
             this.tableReservationEdit.Size = new System.Drawing.Size(678, 166);
             this.tableReservationEdit.TabIndex = 38;
             this.tableReservationEdit.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            // 
+            // colResIDEdit
+            // 
+            this.colResIDEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colResIDEdit.FillWeight = 304.5686F;
+            this.colResIDEdit.HeaderText = "#";
+            this.colResIDEdit.Name = "colResIDEdit";
+            this.colResIDEdit.ReadOnly = true;
+            this.colResIDEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colResIDEdit.Width = 30;
+            // 
+            // colRoomTypeEdit
+            // 
+            this.colRoomTypeEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomTypeEdit.FillWeight = 59.08621F;
+            this.colRoomTypeEdit.HeaderText = "Room Type";
+            this.colRoomTypeEdit.Name = "colRoomTypeEdit";
+            this.colRoomTypeEdit.ReadOnly = true;
+            this.colRoomTypeEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomTypeEdit.Width = 110;
+            // 
+            // colRoomNumEdit
+            // 
+            this.colRoomNumEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRoomNumEdit.FillWeight = 160.9156F;
+            this.colRoomNumEdit.HeaderText = "Room Number";
+            this.colRoomNumEdit.Name = "colRoomNumEdit";
+            this.colRoomNumEdit.ReadOnly = true;
+            this.colRoomNumEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colRoomNumEdit.Width = 110;
+            // 
+            // colNumStudentsEdit
+            // 
+            this.colNumStudentsEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNumStudentsEdit.FillWeight = 25.14307F;
+            this.colNumStudentsEdit.HeaderText = "Number of Students";
+            this.colNumStudentsEdit.Name = "colNumStudentsEdit";
+            this.colNumStudentsEdit.ReadOnly = true;
+            this.colNumStudentsEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNumStudentsEdit.Width = 130;
+            // 
+            // colDateEdit
+            // 
+            this.colDateEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDateEdit.FillWeight = 25.14307F;
+            this.colDateEdit.HeaderText = "Date";
+            this.colDateEdit.Name = "colDateEdit";
+            this.colDateEdit.ReadOnly = true;
+            this.colDateEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDateEdit.Width = 96;
+            // 
+            // colTimeEdit
+            // 
+            this.colTimeEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTimeEdit.HeaderText = "Time";
+            this.colTimeEdit.Name = "colTimeEdit";
+            this.colTimeEdit.ReadOnly = true;
+            this.colTimeEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTimeEdit.Width = 90;
+            // 
+            // colDurationEdit
+            // 
+            this.colDurationEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDurationEdit.FillWeight = 25.14307F;
+            this.colDurationEdit.HeaderText = "Duration";
+            this.colDurationEdit.Name = "colDurationEdit";
+            this.colDurationEdit.ReadOnly = true;
+            this.colDurationEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // bunifuSeparator7
             // 
@@ -1912,6 +2047,7 @@ namespace IOOP_Assignment
             this.btnCancelReserve.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancelReserve.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCancelReserve.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnCancelReserve.Enabled = false;
             this.btnCancelReserve.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnCancelReserve.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelReserve.ForeColor = System.Drawing.Color.White;
@@ -3664,142 +3800,6 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
-            // 
-            // colResIDEdit
-            // 
-            this.colResIDEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colResIDEdit.FillWeight = 304.5686F;
-            this.colResIDEdit.HeaderText = "#";
-            this.colResIDEdit.Name = "colResIDEdit";
-            this.colResIDEdit.ReadOnly = true;
-            this.colResIDEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colResIDEdit.Width = 30;
-            // 
-            // colRoomTypeEdit
-            // 
-            this.colRoomTypeEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomTypeEdit.FillWeight = 59.08621F;
-            this.colRoomTypeEdit.HeaderText = "Room Type";
-            this.colRoomTypeEdit.Name = "colRoomTypeEdit";
-            this.colRoomTypeEdit.ReadOnly = true;
-            this.colRoomTypeEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomTypeEdit.Width = 110;
-            // 
-            // colRoomNumEdit
-            // 
-            this.colRoomNumEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomNumEdit.FillWeight = 160.9156F;
-            this.colRoomNumEdit.HeaderText = "Room Number";
-            this.colRoomNumEdit.Name = "colRoomNumEdit";
-            this.colRoomNumEdit.ReadOnly = true;
-            this.colRoomNumEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomNumEdit.Width = 110;
-            // 
-            // colNumStudentsEdit
-            // 
-            this.colNumStudentsEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNumStudentsEdit.FillWeight = 25.14307F;
-            this.colNumStudentsEdit.HeaderText = "Number of Students";
-            this.colNumStudentsEdit.Name = "colNumStudentsEdit";
-            this.colNumStudentsEdit.ReadOnly = true;
-            this.colNumStudentsEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNumStudentsEdit.Width = 130;
-            // 
-            // colDateEdit
-            // 
-            this.colDateEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDateEdit.FillWeight = 25.14307F;
-            this.colDateEdit.HeaderText = "Date";
-            this.colDateEdit.Name = "colDateEdit";
-            this.colDateEdit.ReadOnly = true;
-            this.colDateEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDateEdit.Width = 96;
-            // 
-            // colTimeEdit
-            // 
-            this.colTimeEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colTimeEdit.HeaderText = "Time";
-            this.colTimeEdit.Name = "colTimeEdit";
-            this.colTimeEdit.ReadOnly = true;
-            this.colTimeEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTimeEdit.Width = 90;
-            // 
-            // colDurationEdit
-            // 
-            this.colDurationEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDurationEdit.FillWeight = 25.14307F;
-            this.colDurationEdit.HeaderText = "Duration";
-            this.colDurationEdit.Name = "colDurationEdit";
-            this.colDurationEdit.ReadOnly = true;
-            this.colDurationEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colResID
-            // 
-            this.colResID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colResID.FillWeight = 304.5686F;
-            this.colResID.HeaderText = "#";
-            this.colResID.Name = "colResID";
-            this.colResID.ReadOnly = true;
-            this.colResID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colResID.Width = 30;
-            // 
-            // colRoomType
-            // 
-            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomType.FillWeight = 59.08621F;
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.Name = "colRoomType";
-            this.colRoomType.ReadOnly = true;
-            this.colRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomType.Width = 105;
-            // 
-            // colRoomNumber
-            // 
-            this.colRoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRoomNumber.FillWeight = 160.9156F;
-            this.colRoomNumber.HeaderText = "Room Number";
-            this.colRoomNumber.Name = "colRoomNumber";
-            this.colRoomNumber.ReadOnly = true;
-            this.colRoomNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoomNumber.Width = 120;
-            // 
-            // colStudentNum
-            // 
-            this.colStudentNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStudentNum.FillWeight = 25.14307F;
-            this.colStudentNum.HeaderText = "Number of Students";
-            this.colStudentNum.Name = "colStudentNum";
-            this.colStudentNum.ReadOnly = true;
-            this.colStudentNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colStudentNum.Width = 130;
-            // 
-            // colDate
-            // 
-            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDate.FillWeight = 25.14307F;
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDate.Width = 94;
-            // 
-            // colTime
-            // 
-            this.colTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colTime.HeaderText = "Time";
-            this.colTime.Name = "colTime";
-            this.colTime.ReadOnly = true;
-            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTime.Width = 80;
-            // 
-            // colDuration
-            // 
-            this.colDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDuration.FillWeight = 25.14307F;
-            this.colDuration.HeaderText = "Duration";
-            this.colDuration.Name = "colDuration";
-            this.colDuration.ReadOnly = true;
-            this.colDuration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Student_Menu
             // 
