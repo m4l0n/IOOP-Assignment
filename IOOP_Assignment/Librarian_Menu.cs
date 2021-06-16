@@ -103,9 +103,6 @@ namespace IOOP_Assignment
 
         private void Librarian_Menu_Load(object sender, EventArgs e)
         {
-            showGraph();
-            formatTables();
-
             //Dropdown for monthly utilization report
             DateTime Now = DateTime.Now;
             int year = int.Parse(Now.ToString("yyyy"));
@@ -147,12 +144,17 @@ namespace IOOP_Assignment
                 lblNameL2.Text = User.name;
                 lblNameL3.Text = User.name;
                 lblNameL4.Text = User.name;
-                //column for Monthly Utilization Review
-                SqlDataAdapter sql5 = new SqlDataAdapter($"select [Room Number], Count(Date) as [No of Reservation], replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5'),'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where [Room Type]='' group by [Room Number]", con);
+
+                //Columns for Monthly Utilization Review
+                SqlDataAdapter sql5 = new SqlDataAdapter($"select [Room Number], Count(Date) as [Number of Reservations], " +
+                    $"replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')," +
+                    $"'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours'," +
+                    $"'hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where [Room Type]=''" +
+                    $" group by [Room Number]", con);
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql5);
                 DataTable dataTable = new DataTable();
                 sql5.Fill(dataTable);
-                MonthlyUtilizationDataGridView.DataSource = dataTable;
+                monthlyUtilizationDataGridView.DataSource = dataTable;
             }
 
 
@@ -177,6 +179,9 @@ namespace IOOP_Assignment
                         });
                 }
             }
+
+            showGraph();
+            formatTables();
         }
 
         private void showGraph()
@@ -393,7 +398,7 @@ namespace IOOP_Assignment
 
         private void btnSearchMonthly_Click(object sender, EventArgs e)
         {
-            MonthlyUtilizationDataGridView.DataSource = null;
+            monthlyUtilizationDataGridView.DataSource = null;
             string month_name = ddmMonth.SelectedItem.ToString();
             int year1 = Int32.Parse(ddmYear.SelectedItem.ToString());
             int month1 = ddmMonth.FindStringExact(month_name) + 1;
@@ -408,37 +413,28 @@ namespace IOOP_Assignment
             string date2 = $"{month2}-1-{year2}";
             string roomtype = "";
             if (cbmAmber.Checked == true)
-            {
                 roomtype += "[Room Type]='Amber'";
-            }
             if (cbmBlackThorn.Checked == true)
             {
                 if (roomtype != "")
-                {
                     roomtype += " or ";
-                }
                 roomtype += "[Room Type]='BlackThorn'";
             }
             if (cbmCedar.Checked == true)
             {
                 if (roomtype != "")
-                {
                     roomtype += " or ";
-                }
                 roomtype += "[Room Type]='Cedar'";
             }
             if (cbmDaphne.Checked == true)
             {
                 if (roomtype != "")
-                {
                     roomtype += " or ";
-                }
                 roomtype += "[Room Type]='Daphne'";
             }
-            if(roomtype=="")
-            {
+            if (roomtype=="") 
                 roomtype += "[Room Type]=''";
-            }
+            
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
@@ -446,56 +442,40 @@ namespace IOOP_Assignment
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql);
                 DataTable dataTable = new DataTable();
                 sql.Fill(dataTable);
-                MonthlyUtilizationDataGridView.DataSource = dataTable;
+                monthlyUtilizationDataGridView.DataSource = dataTable;
             }
         }
 
         private void bunifuLabel29_Click(object sender, EventArgs e)
         {
             if(cbmAmber.Checked)
-            {
                 cbmAmber.Checked = false;
-            }
             else
-            {
                 cbmAmber.Checked = true;
-            }
         }
 
         private void bunifuLabel28_Click(object sender, EventArgs e)
         {
             if (cbmBlackThorn.Checked)
-            {
                 cbmBlackThorn.Checked = false;
-            }
             else
-            {
                 cbmBlackThorn.Checked = true;
-            }
         }
 
         private void bunifuLabel27_Click(object sender, EventArgs e)
         {
             if (cbmCedar.Checked)
-            {
                 cbmCedar.Checked = false;
-            }
             else
-            {
                 cbmCedar.Checked = true;
-            }
         }
 
         private void bunifuLabel26_Click(object sender, EventArgs e)
         {
             if (cbmDaphne.Checked)
-            {
                 cbmDaphne.Checked = false;
-            }
             else
-            {
                 cbmDaphne.Checked = true;
-            }
         }
     }
 }
