@@ -137,10 +137,7 @@ namespace IOOP_Assignment
             this.ddmYear = new Bunifu.UI.WinForms.BunifuDropdown();
             this.ddmMonth = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.clmRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonthlyUtilizationDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnSearchMonthly = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -190,7 +187,7 @@ namespace IOOP_Assignment
             this.userInfoPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
             this.monthlyReportPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthlyUtilizationDataGridView)).BeginInit();
             this.userInfoPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -719,10 +716,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.overviewPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "overviewPage";
-            this.bunifuPages2.PageTitle = "Overview";
+            this.bunifuPages2.Page = this.monthlyReportPage;
+            this.bunifuPages2.PageIndex = 3;
+            this.bunifuPages2.PageName = "monthlyReportPage";
+            this.bunifuPages2.PageTitle = "Monthly Report";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -2295,7 +2292,7 @@ namespace IOOP_Assignment
             this.monthlyReportPage.Controls.Add(this.ddmYear);
             this.monthlyReportPage.Controls.Add(this.ddmMonth);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel32);
-            this.monthlyReportPage.Controls.Add(this.bunifuDataGridView2);
+            this.monthlyReportPage.Controls.Add(this.MonthlyUtilizationDataGridView);
             this.monthlyReportPage.Controls.Add(this.btnSearchMonthly);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel26);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel27);
@@ -2431,16 +2428,21 @@ namespace IOOP_Assignment
             this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel32.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuDataGridView2
+            // MonthlyUtilizationDataGridView
             // 
-            this.bunifuDataGridView2.AllowCustomTheming = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.AllowCustomTheming = false;
+            this.MonthlyUtilizationDataGridView.AllowUserToAddRows = false;
+            this.MonthlyUtilizationDataGridView.AllowUserToDeleteRows = false;
+            this.MonthlyUtilizationDataGridView.AllowUserToResizeColumns = false;
+            this.MonthlyUtilizationDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.bunifuDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.bunifuDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.MonthlyUtilizationDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.MonthlyUtilizationDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MonthlyUtilizationDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.MonthlyUtilizationDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MonthlyUtilizationDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.MonthlyUtilizationDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
@@ -2448,66 +2450,50 @@ namespace IOOP_Assignment
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.bunifuDataGridView2.ColumnHeadersHeight = 40;
-            this.bunifuDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmRoom,
-            this.clmRes,
-            this.clmDuration});
-            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView2.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.bunifuDataGridView2.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView2.CurrentTheme.Name = null;
-            this.bunifuDataGridView2.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.bunifuDataGridView2.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView2.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.MonthlyUtilizationDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.MonthlyUtilizationDataGridView.ColumnHeadersHeight = 40;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.MonthlyUtilizationDataGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.MonthlyUtilizationDataGridView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.Name = null;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.MonthlyUtilizationDataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.MonthlyUtilizationDataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.bunifuDataGridView2.EnableHeadersVisualStyles = false;
-            this.bunifuDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView2.HeaderBgColor = System.Drawing.Color.Empty;
-            this.bunifuDataGridView2.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView2.Location = new System.Drawing.Point(29, 226);
-            this.bunifuDataGridView2.Name = "bunifuDataGridView2";
-            this.bunifuDataGridView2.RowHeadersVisible = false;
-            this.bunifuDataGridView2.RowTemplate.Height = 40;
-            this.bunifuDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView2.Size = new System.Drawing.Size(841, 344);
-            this.bunifuDataGridView2.TabIndex = 57;
-            this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
-            // clmRoom
-            // 
-            this.clmRoom.HeaderText = "Room";
-            this.clmRoom.Name = "clmRoom";
-            // 
-            // clmRes
-            // 
-            this.clmRes.HeaderText = "No of Reservation";
-            this.clmRes.Name = "clmRes";
-            // 
-            // clmDuration
-            // 
-            this.clmDuration.HeaderText = "Total Duration Used";
-            this.clmDuration.Name = "clmDuration";
+            this.MonthlyUtilizationDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            this.MonthlyUtilizationDataGridView.EnableHeadersVisualStyles = false;
+            this.MonthlyUtilizationDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.MonthlyUtilizationDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.MonthlyUtilizationDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.MonthlyUtilizationDataGridView.HeaderForeColor = System.Drawing.Color.White;
+            this.MonthlyUtilizationDataGridView.Location = new System.Drawing.Point(29, 226);
+            this.MonthlyUtilizationDataGridView.Name = "MonthlyUtilizationDataGridView";
+            this.MonthlyUtilizationDataGridView.ReadOnly = true;
+            this.MonthlyUtilizationDataGridView.RowHeadersVisible = false;
+            this.MonthlyUtilizationDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.MonthlyUtilizationDataGridView.RowTemplate.Height = 40;
+            this.MonthlyUtilizationDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.MonthlyUtilizationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MonthlyUtilizationDataGridView.Size = new System.Drawing.Size(841, 344);
+            this.MonthlyUtilizationDataGridView.TabIndex = 57;
+            this.MonthlyUtilizationDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
             // btnSearchMonthly
             // 
@@ -2597,6 +2583,7 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.TextMarginLeft = 0;
             this.btnSearchMonthly.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSearchMonthly.UseDefaultRadiusAndThickness = true;
+            this.btnSearchMonthly.Click += new System.EventHandler(this.btnSearchMonthly_Click);
             // 
             // bunifuLabel26
             // 
@@ -2612,6 +2599,7 @@ namespace IOOP_Assignment
             this.bunifuLabel26.Text = "Daphne";
             this.bunifuLabel26.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel26.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel26.Click += new System.EventHandler(this.bunifuLabel26_Click);
             // 
             // bunifuLabel27
             // 
@@ -2627,6 +2615,7 @@ namespace IOOP_Assignment
             this.bunifuLabel27.Text = "Cedar";
             this.bunifuLabel27.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel27.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel27.Click += new System.EventHandler(this.bunifuLabel27_Click);
             // 
             // bunifuLabel28
             // 
@@ -2642,6 +2631,7 @@ namespace IOOP_Assignment
             this.bunifuLabel28.Text = "BlackThorn";
             this.bunifuLabel28.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel28.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel28.Click += new System.EventHandler(this.bunifuLabel28_Click);
             // 
             // bunifuLabel29
             // 
@@ -2657,6 +2647,7 @@ namespace IOOP_Assignment
             this.bunifuLabel29.Text = "Amber";
             this.bunifuLabel29.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel29.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel29.Click += new System.EventHandler(this.bunifuLabel29_Click);
             // 
             // bunifuLabel30
             // 
@@ -3246,7 +3237,7 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
             this.monthlyReportPage.ResumeLayout(false);
             this.monthlyReportPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthlyUtilizationDataGridView)).EndInit();
             this.userInfoPanel4.ResumeLayout(false);
             this.userInfoPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).EndInit();
@@ -3307,7 +3298,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblNameL4;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel18;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchDaily;
-        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView2;
+        private Bunifu.UI.WinForms.BunifuDataGridView MonthlyUtilizationDataGridView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchMonthly;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel26;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel27;
@@ -3338,9 +3329,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private Bunifu.UI.WinForms.BunifuLabel lblStatus;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmRes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDuration;
         private LiveCharts.WinForms.CartesianChart resChart;
         private Bunifu.UI.WinForms.BunifuLabel lblUnattendReq;
         private Bunifu.UI.WinForms.BunifuLabel lblReservationTdy;
