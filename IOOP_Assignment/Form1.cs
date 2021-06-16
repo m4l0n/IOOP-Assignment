@@ -23,7 +23,7 @@ namespace IOOP_Assignment
             lblRegSuccess.Hide();
         }
 
-        private async void regButton_Click(object sender, EventArgs e)
+        private void regButton_Click(object sender, EventArgs e)
         {
             User.name = nameTxtBox.Text;
             User.tpNumber = tpTxtBox.Text;
@@ -44,31 +44,7 @@ namespace IOOP_Assignment
             }
             else   //Data valid format
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-                {
-                    int result2;
-                    using (SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass," +
-                        "'Student')" , con))
-                    {
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@tpNum", User.tpNumber);
-                        cmd.Parameters.AddWithValue("@name", User.name);
-                        cmd.Parameters.AddWithValue("email", User.regEmail);
-                        cmd.Parameters.AddWithValue("@pass", User.regPass);
-                        result2 = cmd.ExecuteNonQuery();
-                    }
-                    if (result2 != 0)
-                    {
-                        lblRegSuccess.Show();
-                        await Task.Delay(2000);
-                        bunifuPages1.PageIndex = 0;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                registerUser();
             }
         }
 
@@ -108,28 +84,7 @@ namespace IOOP_Assignment
             }
             else    //Data valid format
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-                {
-                    con.Open();
-                    int count;
-                    using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + User.loginEmail
-                    + "' and Password='" + User.loginPass + "'", con))
-                    {
-                        count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                    }
-                    if (count > 0)
-                    {
-                        using (SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '"
-                            + User.loginEmail + "'", con))
-                        {
-                            User.userRole = cmd2.ExecuteScalar().ToString();
-                        }
-                        lblInvalidLogin.Hide();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    else lblInvalidLogin.Show();
-                }
+                loginUser();
             }
         }
 
@@ -153,6 +108,61 @@ namespace IOOP_Assignment
             if (this.WindowState != FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private async void registerUser()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                int result2;
+                using (SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass," +
+                    "'Student')", con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@tpNum", User.tpNumber);
+                    cmd.Parameters.AddWithValue("@name", User.name);
+                    cmd.Parameters.AddWithValue("email", User.regEmail);
+                    cmd.Parameters.AddWithValue("@pass", User.regPass);
+                    result2 = cmd.ExecuteNonQuery();
+                }
+                if (result2 != 0)
+                {
+                    lblRegSuccess.Show();
+                    await Task.Delay(2000);
+                    bunifuPages1.PageIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void loginUser()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                int count;
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].[User] where Email='" + User.loginEmail
+                + "' and Password='" + User.loginPass + "'", con))
+                {
+                    count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                }
+                if (count > 0)
+                {
+                    using (SqlCommand cmd2 = new SqlCommand("select Role from [dbo].[User] where email = '"
+                        + User.loginEmail + "'", con))
+                    {
+                        User.userRole = cmd2.ExecuteScalar().ToString();
+                    }
+                    lblInvalidLogin.Hide();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else lblInvalidLogin.Show();
             }
         }
     }
