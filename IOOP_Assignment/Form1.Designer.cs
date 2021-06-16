@@ -96,6 +96,9 @@ namespace IOOP_Assignment
             this.nameTxtBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
+            this.shapeMinimise = new Bunifu.UI.WinForms.BunifuShapes();
+            this.shapeClose = new Bunifu.UI.WinForms.BunifuShapes();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.loginPage.SuspendLayout();
@@ -1430,12 +1433,65 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
+            // bunifuShapes3
+            // 
+            this.bunifuShapes3.Angle = 0F;
+            this.bunifuShapes3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShapes3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(202)))), ((int)(((byte)(78)))));
+            this.bunifuShapes3.BorderThickness = 1;
+            this.bunifuShapes3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(202)))), ((int)(((byte)(78)))));
+            this.bunifuShapes3.FillShape = true;
+            this.bunifuShapes3.Location = new System.Drawing.Point(886, 3);
+            this.bunifuShapes3.Name = "bunifuShapes3";
+            this.bunifuShapes3.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Circle;
+            this.bunifuShapes3.Sides = 5;
+            this.bunifuShapes3.Size = new System.Drawing.Size(13, 13);
+            this.bunifuShapes3.TabIndex = 39;
+            this.bunifuShapes3.Text = "bunifuShapes3";
+            // 
+            // shapeMinimise
+            // 
+            this.shapeMinimise.Angle = 0F;
+            this.shapeMinimise.BackColor = System.Drawing.Color.Transparent;
+            this.shapeMinimise.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(68)))));
+            this.shapeMinimise.BorderThickness = 1;
+            this.shapeMinimise.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(68)))));
+            this.shapeMinimise.FillShape = true;
+            this.shapeMinimise.Location = new System.Drawing.Point(905, 3);
+            this.shapeMinimise.Name = "shapeMinimise";
+            this.shapeMinimise.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Circle;
+            this.shapeMinimise.Sides = 5;
+            this.shapeMinimise.Size = new System.Drawing.Size(13, 13);
+            this.shapeMinimise.TabIndex = 38;
+            this.shapeMinimise.Text = "bunifuShapes2";
+            this.shapeMinimise.Click += new System.EventHandler(this.shapeMinimise_Click);
+            // 
+            // shapeClose
+            // 
+            this.shapeClose.Angle = 0F;
+            this.shapeClose.BackColor = System.Drawing.Color.Transparent;
+            this.shapeClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(96)))), ((int)(((byte)(92)))));
+            this.shapeClose.BorderThickness = 1;
+            this.shapeClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(96)))), ((int)(((byte)(92)))));
+            this.shapeClose.FillShape = true;
+            this.shapeClose.Location = new System.Drawing.Point(922, 3);
+            this.shapeClose.Name = "shapeClose";
+            this.shapeClose.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Circle;
+            this.shapeClose.Sides = 5;
+            this.shapeClose.Size = new System.Drawing.Size(13, 13);
+            this.shapeClose.TabIndex = 37;
+            this.shapeClose.Text = "bunifuShapes1";
+            this.shapeClose.Click += new System.EventHandler(this.shapeClose_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(939, 518);
+            this.Controls.Add(this.bunifuShapes3);
+            this.Controls.Add(this.shapeMinimise);
+            this.Controls.Add(this.shapeClose);
             this.Controls.Add(this.bunifuPages1);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1486,6 +1542,9 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
         private Bunifu.UI.WinForms.BunifuLabel lblInvalidLogin;
         private Bunifu.UI.WinForms.BunifuLabel lblRegSuccess;
+        private Bunifu.UI.WinForms.BunifuShapes bunifuShapes3;
+        private Bunifu.UI.WinForms.BunifuShapes shapeMinimise;
+        private Bunifu.UI.WinForms.BunifuShapes shapeClose;
     }
 }
 

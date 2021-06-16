@@ -18,7 +18,9 @@ namespace IOOP_Assignment.Validator
                 .NotEmpty().WithMessage("Name cannot be empty!")
                 .Matches("^[a-zA-Z ,.'-]+$").WithMessage("Name format is not valid!");
             //TP Number Rule
-
+            RuleFor(p => User.tpNumber)
+                .NotEmpty().WithMessage("TP Number cannot be empty!")
+                .Matches("\\ATP0\\d{5}\\z").WithMessage("TP Number format is invalid.");
             //Reg Email Rule
             RuleFor(p => User.regEmail)
                 .NotEmpty().WithMessage("Email cannot be empty!")
@@ -34,9 +36,6 @@ namespace IOOP_Assignment.Validator
             RuleFor(p => User.confPass)
                 .NotEmpty().WithMessage("Please confirm your password.")
                 .Equal(p => User.regPass).WithMessage("Passwords should match!");
-
         }
-
-
     }
 }

@@ -142,5 +142,18 @@ namespace IOOP_Assignment
         {
             bunifuPages1.PageIndex = 0;
         }
+
+        private void shapeClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void shapeMinimise_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 }
