@@ -438,44 +438,39 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                SqlDataAdapter sql = new SqlDataAdapter($"select [Room Number], Count(Date) as [No of Reservation], replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5'),'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where date between '{date1}' and '{date2}' and {roomtype} group by [Room Number]", con);
+                SqlDataAdapter sql = new SqlDataAdapter($"select [Room Number], Count(Date) as [Number of Reservations], " +
+                    $"replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')" +
+                    $",'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes')," +
+                    $"'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] " +
+                    $"where date between '{date1}' and '{date2}' and {roomtype} group by [Room Number]", con);
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql);
                 DataTable dataTable = new DataTable();
                 sql.Fill(dataTable);
                 monthlyUtilizationDataGridView.DataSource = dataTable;
             }
         }
-
-        private void bunifuLabel29_Click(object sender, EventArgs e)
+        private void lblAmber_Click(object sender, EventArgs e)
         {
-            if(cbmAmber.Checked)
-                cbmAmber.Checked = false;
-            else
-                cbmAmber.Checked = true;
+            if (cbmAmber.Checked) cbmAmber.Checked = false;
+            else cbmAmber.Checked = true;
         }
 
-        private void bunifuLabel28_Click(object sender, EventArgs e)
+        private void lblBThorn_Click(object sender, EventArgs e)
         {
-            if (cbmBlackThorn.Checked)
-                cbmBlackThorn.Checked = false;
-            else
-                cbmBlackThorn.Checked = true;
+            if (cbmBlackThorn.Checked) cbmBlackThorn.Checked = false;
+            else cbmBlackThorn.Checked = true;
         }
 
-        private void bunifuLabel27_Click(object sender, EventArgs e)
+        private void lblCedar_Click(object sender, EventArgs e)
         {
-            if (cbmCedar.Checked)
-                cbmCedar.Checked = false;
-            else
-                cbmCedar.Checked = true;
+            if (cbmCedar.Checked) cbmCedar.Checked = false;
+            else cbmCedar.Checked = true;
         }
 
-        private void bunifuLabel26_Click(object sender, EventArgs e)
+        private void lblDaphne_Click(object sender, EventArgs e)
         {
-            if (cbmDaphne.Checked)
-                cbmDaphne.Checked = false;
-            else
-                cbmDaphne.Checked = true;
+            if (cbmDaphne.Checked) cbmDaphne.Checked = false;
+            else cbmDaphne.Checked = true;
         }
     }
 }

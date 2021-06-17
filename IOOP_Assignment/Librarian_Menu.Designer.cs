@@ -139,10 +139,10 @@ namespace IOOP_Assignment
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
             this.monthlyUtilizationDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnSearchMonthly = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel26 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel27 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel28 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel29 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblDaphne = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblCedar = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblBThorn = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblAmber = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel30 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel31 = new Bunifu.UI.WinForms.BunifuLabel();
             this.cbmDaphne = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -162,6 +162,7 @@ namespace IOOP_Assignment
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuShadowPanel3 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.bunifuPanel1.SuspendLayout();
             this.panelReportSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -190,6 +191,7 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.monthlyUtilizationDataGridView)).BeginInit();
             this.userInfoPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).BeginInit();
+            this.bunifuShadowPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -716,10 +718,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(266, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.monthlyReportPage;
-            this.bunifuPages2.PageIndex = 3;
-            this.bunifuPages2.PageName = "monthlyReportPage";
-            this.bunifuPages2.PageTitle = "Monthly Report";
+            this.bunifuPages2.Page = this.overviewPage;
+            this.bunifuPages2.PageIndex = 0;
+            this.bunifuPages2.PageName = "overviewPage";
+            this.bunifuPages2.PageTitle = "Overview";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(898, 618);
             this.bunifuPages2.TabIndex = 9;
@@ -927,16 +929,18 @@ namespace IOOP_Assignment
             // lblUnattendReq
             // 
             this.lblUnattendReq.AllowParentOverrides = false;
+            this.lblUnattendReq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnattendReq.AutoEllipsis = false;
             this.lblUnattendReq.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblUnattendReq.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblUnattendReq.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblUnattendReq.Location = new System.Drawing.Point(13, 76);
+            this.lblUnattendReq.Location = new System.Drawing.Point(113, 76);
             this.lblUnattendReq.Name = "lblUnattendReq";
             this.lblUnattendReq.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblUnattendReq.Size = new System.Drawing.Size(0, 0);
             this.lblUnattendReq.TabIndex = 34;
-            this.lblUnattendReq.Text = " ";
             this.lblUnattendReq.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblUnattendReq.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1019,16 +1023,18 @@ namespace IOOP_Assignment
             // lblReservationTdy
             // 
             this.lblReservationTdy.AllowParentOverrides = false;
+            this.lblReservationTdy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblReservationTdy.AutoEllipsis = false;
             this.lblReservationTdy.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblReservationTdy.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblReservationTdy.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservationTdy.Location = new System.Drawing.Point(13, 76);
+            this.lblReservationTdy.Location = new System.Drawing.Point(113, 76);
             this.lblReservationTdy.Name = "lblReservationTdy";
             this.lblReservationTdy.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservationTdy.Size = new System.Drawing.Size(0, 0);
             this.lblReservationTdy.TabIndex = 33;
-            this.lblReservationTdy.Text = " ";
             this.lblReservationTdy.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservationTdy.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1111,16 +1117,18 @@ namespace IOOP_Assignment
             // lblTotalUsers
             // 
             this.lblTotalUsers.AllowParentOverrides = false;
+            this.lblTotalUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalUsers.AutoEllipsis = false;
             this.lblTotalUsers.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalUsers.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblTotalUsers.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotalUsers.Location = new System.Drawing.Point(13, 76);
+            this.lblTotalUsers.Location = new System.Drawing.Point(108, 76);
             this.lblTotalUsers.Name = "lblTotalUsers";
             this.lblTotalUsers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTotalUsers.Size = new System.Drawing.Size(0, 0);
             this.lblTotalUsers.TabIndex = 32;
-            this.lblTotalUsers.Text = " ";
             this.lblTotalUsers.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblTotalUsers.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1811,19 +1819,19 @@ namespace IOOP_Assignment
             this.radDaphne.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.radDaphne.LabelIndent = 10;
             this.radDaphne.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.radDaphne.Location = new System.Drawing.Point(100, 97);
+            this.radDaphne.Location = new System.Drawing.Point(102, 90);
             this.radDaphne.Name = "radDaphne";
-            this.radDaphne.Size = new System.Drawing.Size(372, 35);
+            this.radDaphne.Size = new System.Drawing.Size(425, 52);
             this.radDaphne.TabIndex = 52;
             this.radDaphne.TabStop = false;
             // 
             // radAll
             // 
             this.radAll.AutoSize = true;
-            this.radAll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAll.Location = new System.Drawing.Point(322, 15);
+            this.radAll.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.radAll.Location = new System.Drawing.Point(375, 15);
             this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(40, 21);
+            this.radAll.Size = new System.Drawing.Size(45, 24);
             this.radAll.TabIndex = 4;
             this.radAll.TabStop = true;
             this.radAll.Text = "All";
@@ -1832,10 +1840,10 @@ namespace IOOP_Assignment
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(245, 15);
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Location = new System.Drawing.Point(285, 15);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 21);
+            this.radioButton2.Size = new System.Drawing.Size(81, 24);
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Daphne";
@@ -1844,10 +1852,10 @@ namespace IOOP_Assignment
             // radCedar
             // 
             this.radCedar.AutoSize = true;
-            this.radCedar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCedar.Location = new System.Drawing.Point(178, 15);
+            this.radCedar.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.radCedar.Location = new System.Drawing.Point(208, 15);
             this.radCedar.Name = "radCedar";
-            this.radCedar.Size = new System.Drawing.Size(61, 21);
+            this.radCedar.Size = new System.Drawing.Size(67, 24);
             this.radCedar.TabIndex = 2;
             this.radCedar.TabStop = true;
             this.radCedar.Text = "Cedar";
@@ -1856,10 +1864,10 @@ namespace IOOP_Assignment
             // radBThorn
             // 
             this.radBThorn.AutoSize = true;
-            this.radBThorn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radBThorn.Location = new System.Drawing.Point(83, 15);
+            this.radBThorn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.radBThorn.Location = new System.Drawing.Point(96, 15);
             this.radBThorn.Name = "radBThorn";
-            this.radBThorn.Size = new System.Drawing.Size(86, 21);
+            this.radBThorn.Size = new System.Drawing.Size(101, 24);
             this.radBThorn.TabIndex = 1;
             this.radBThorn.TabStop = true;
             this.radBThorn.Text = "Blackthorn";
@@ -1868,10 +1876,10 @@ namespace IOOP_Assignment
             // radAmber
             // 
             this.radAmber.AutoSize = true;
-            this.radAmber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAmber.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.radAmber.Location = new System.Drawing.Point(12, 15);
             this.radAmber.Name = "radAmber";
-            this.radAmber.Size = new System.Drawing.Size(65, 21);
+            this.radAmber.Size = new System.Drawing.Size(73, 24);
             this.radAmber.TabIndex = 0;
             this.radAmber.TabStop = true;
             this.radAmber.Text = "Amber";
@@ -1884,7 +1892,7 @@ namespace IOOP_Assignment
             this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel9.Location = new System.Drawing.Point(13, 112);
+            this.bunifuLabel9.Location = new System.Drawing.Point(15, 105);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel9.Size = new System.Drawing.Size(81, 20);
@@ -2011,13 +2019,13 @@ namespace IOOP_Assignment
             this.dailyReportDatePicker.DPHeight = 0;
             this.dailyReportDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dailyReportDatePicker.FillDatePicker = false;
-            this.dailyReportDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dailyReportDatePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.dailyReportDatePicker.ForeColor = System.Drawing.Color.Black;
             this.dailyReportDatePicker.Icon = ((System.Drawing.Image)(resources.GetObject("dailyReportDatePicker.Icon")));
             this.dailyReportDatePicker.IconColor = System.Drawing.Color.Gray;
             this.dailyReportDatePicker.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dailyReportDatePicker.LeftTextMargin = 5;
-            this.dailyReportDatePicker.Location = new System.Drawing.Point(110, 21);
+            this.dailyReportDatePicker.Location = new System.Drawing.Point(114, 19);
             this.dailyReportDatePicker.MinimumSize = new System.Drawing.Size(4, 32);
             this.dailyReportDatePicker.Name = "dailyReportDatePicker";
             this.dailyReportDatePicker.Size = new System.Drawing.Size(297, 32);
@@ -2289,21 +2297,8 @@ namespace IOOP_Assignment
             // monthlyReportPage
             // 
             this.monthlyReportPage.BackColor = System.Drawing.Color.White;
-            this.monthlyReportPage.Controls.Add(this.ddmYear);
-            this.monthlyReportPage.Controls.Add(this.ddmMonth);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel32);
+            this.monthlyReportPage.Controls.Add(this.bunifuShadowPanel3);
             this.monthlyReportPage.Controls.Add(this.monthlyUtilizationDataGridView);
-            this.monthlyReportPage.Controls.Add(this.btnSearchMonthly);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel26);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel27);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel28);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel29);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel30);
-            this.monthlyReportPage.Controls.Add(this.bunifuLabel31);
-            this.monthlyReportPage.Controls.Add(this.cbmDaphne);
-            this.monthlyReportPage.Controls.Add(this.cbmCedar);
-            this.monthlyReportPage.Controls.Add(this.cbmBlackThorn);
-            this.monthlyReportPage.Controls.Add(this.cbmAmber);
             this.monthlyReportPage.Controls.Add(this.userInfoPanel4);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel12);
             this.monthlyReportPage.Controls.Add(this.bunifuLabel13);
@@ -2334,7 +2329,7 @@ namespace IOOP_Assignment
             this.ddmYear.FillDropDown = true;
             this.ddmYear.FillIndicator = false;
             this.ddmYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddmYear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ddmYear.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddmYear.ForeColor = System.Drawing.Color.Black;
             this.ddmYear.FormattingEnabled = true;
             this.ddmYear.Icon = null;
@@ -2349,7 +2344,7 @@ namespace IOOP_Assignment
             this.ddmYear.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.ddmYear.ItemHighLightForeColor = System.Drawing.Color.White;
             this.ddmYear.ItemTopMargin = 3;
-            this.ddmYear.Location = new System.Drawing.Point(360, 75);
+            this.ddmYear.Location = new System.Drawing.Point(379, 21);
             this.ddmYear.Name = "ddmYear";
             this.ddmYear.Size = new System.Drawing.Size(165, 32);
             this.ddmYear.TabIndex = 62;
@@ -2377,7 +2372,7 @@ namespace IOOP_Assignment
             this.ddmMonth.FillDropDown = true;
             this.ddmMonth.FillIndicator = false;
             this.ddmMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddmMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ddmMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddmMonth.ForeColor = System.Drawing.Color.Black;
             this.ddmMonth.FormattingEnabled = true;
             this.ddmMonth.Icon = null;
@@ -2405,7 +2400,7 @@ namespace IOOP_Assignment
             "November",
             "December"});
             this.ddmMonth.ItemTopMargin = 3;
-            this.ddmMonth.Location = new System.Drawing.Point(128, 75);
+            this.ddmMonth.Location = new System.Drawing.Point(117, 21);
             this.ddmMonth.Name = "ddmMonth";
             this.ddmMonth.Size = new System.Drawing.Size(165, 32);
             this.ddmMonth.TabIndex = 61;
@@ -2418,11 +2413,11 @@ namespace IOOP_Assignment
             this.bunifuLabel32.AllowParentOverrides = false;
             this.bunifuLabel32.AutoEllipsis = false;
             this.bunifuLabel32.CursorType = null;
-            this.bunifuLabel32.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel32.Location = new System.Drawing.Point(328, 81);
+            this.bunifuLabel32.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel32.Location = new System.Drawing.Point(317, 27);
             this.bunifuLabel32.Name = "bunifuLabel32";
             this.bunifuLabel32.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel32.Size = new System.Drawing.Size(26, 15);
+            this.bunifuLabel32.Size = new System.Drawing.Size(36, 21);
             this.bunifuLabel32.TabIndex = 58;
             this.bunifuLabel32.Text = "Year:";
             this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -2483,7 +2478,7 @@ namespace IOOP_Assignment
             this.monthlyUtilizationDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.monthlyUtilizationDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
             this.monthlyUtilizationDataGridView.HeaderForeColor = System.Drawing.Color.White;
-            this.monthlyUtilizationDataGridView.Location = new System.Drawing.Point(29, 226);
+            this.monthlyUtilizationDataGridView.Location = new System.Drawing.Point(29, 236);
             this.monthlyUtilizationDataGridView.Name = "monthlyUtilizationDataGridView";
             this.monthlyUtilizationDataGridView.ReadOnly = true;
             this.monthlyUtilizationDataGridView.RowHeadersVisible = false;
@@ -2524,7 +2519,7 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnSearchMonthly.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSearchMonthly.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSearchMonthly.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchMonthly.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearchMonthly.ForeColor = System.Drawing.Color.White;
             this.btnSearchMonthly.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchMonthly.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -2536,16 +2531,16 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnSearchMonthly.IconSize = 25;
             this.btnSearchMonthly.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnSearchMonthly.IdleBorderRadius = 1;
+            this.btnSearchMonthly.IdleBorderRadius = 15;
             this.btnSearchMonthly.IdleBorderThickness = 1;
             this.btnSearchMonthly.IdleFillColor = System.Drawing.Color.DodgerBlue;
             this.btnSearchMonthly.IdleIconLeftImage = null;
             this.btnSearchMonthly.IdleIconRightImage = null;
             this.btnSearchMonthly.IndicateFocus = false;
-            this.btnSearchMonthly.Location = new System.Drawing.Point(763, 171);
+            this.btnSearchMonthly.Location = new System.Drawing.Point(577, 46);
             this.btnSearchMonthly.Name = "btnSearchMonthly";
             this.btnSearchMonthly.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSearchMonthly.OnDisabledState.BorderRadius = 1;
+            this.btnSearchMonthly.OnDisabledState.BorderRadius = 15;
             this.btnSearchMonthly.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSearchMonthly.OnDisabledState.BorderThickness = 1;
             this.btnSearchMonthly.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -2553,7 +2548,7 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.OnDisabledState.IconLeftImage = null;
             this.btnSearchMonthly.OnDisabledState.IconRightImage = null;
             this.btnSearchMonthly.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnSearchMonthly.onHoverState.BorderRadius = 1;
+            this.btnSearchMonthly.onHoverState.BorderRadius = 15;
             this.btnSearchMonthly.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSearchMonthly.onHoverState.BorderThickness = 1;
             this.btnSearchMonthly.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -2561,7 +2556,7 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.onHoverState.IconLeftImage = null;
             this.btnSearchMonthly.onHoverState.IconRightImage = null;
             this.btnSearchMonthly.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnSearchMonthly.OnIdleState.BorderRadius = 1;
+            this.btnSearchMonthly.OnIdleState.BorderRadius = 15;
             this.btnSearchMonthly.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSearchMonthly.OnIdleState.BorderThickness = 1;
             this.btnSearchMonthly.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
@@ -2569,14 +2564,14 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.OnIdleState.IconLeftImage = null;
             this.btnSearchMonthly.OnIdleState.IconRightImage = null;
             this.btnSearchMonthly.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnSearchMonthly.OnPressedState.BorderRadius = 1;
+            this.btnSearchMonthly.OnPressedState.BorderRadius = 15;
             this.btnSearchMonthly.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSearchMonthly.OnPressedState.BorderThickness = 1;
             this.btnSearchMonthly.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             this.btnSearchMonthly.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSearchMonthly.OnPressedState.IconLeftImage = null;
             this.btnSearchMonthly.OnPressedState.IconRightImage = null;
-            this.btnSearchMonthly.Size = new System.Drawing.Size(107, 30);
+            this.btnSearchMonthly.Size = new System.Drawing.Size(122, 46);
             this.btnSearchMonthly.TabIndex = 56;
             this.btnSearchMonthly.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearchMonthly.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2585,80 +2580,80 @@ namespace IOOP_Assignment
             this.btnSearchMonthly.UseDefaultRadiusAndThickness = true;
             this.btnSearchMonthly.Click += new System.EventHandler(this.btnSearchMonthly_Click);
             // 
-            // bunifuLabel26
+            // lblDaphne
             // 
-            this.bunifuLabel26.AllowParentOverrides = false;
-            this.bunifuLabel26.AutoEllipsis = false;
-            this.bunifuLabel26.CursorType = null;
-            this.bunifuLabel26.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel26.Location = new System.Drawing.Point(399, 144);
-            this.bunifuLabel26.Name = "bunifuLabel26";
-            this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel26.Size = new System.Drawing.Size(41, 15);
-            this.bunifuLabel26.TabIndex = 55;
-            this.bunifuLabel26.Text = "Daphne";
-            this.bunifuLabel26.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel26.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel26.Click += new System.EventHandler(this.bunifuLabel26_Click);
+            this.lblDaphne.AllowParentOverrides = false;
+            this.lblDaphne.AutoEllipsis = false;
+            this.lblDaphne.CursorType = null;
+            this.lblDaphne.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDaphne.Location = new System.Drawing.Point(455, 85);
+            this.lblDaphne.Name = "lblDaphne";
+            this.lblDaphne.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDaphne.Size = new System.Drawing.Size(56, 21);
+            this.lblDaphne.TabIndex = 55;
+            this.lblDaphne.Text = "Daphne";
+            this.lblDaphne.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblDaphne.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblDaphne.Click += new System.EventHandler(this.lblDaphne_Click);
             // 
-            // bunifuLabel27
+            // lblCedar
             // 
-            this.bunifuLabel27.AllowParentOverrides = false;
-            this.bunifuLabel27.AutoEllipsis = false;
-            this.bunifuLabel27.CursorType = null;
-            this.bunifuLabel27.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel27.Location = new System.Drawing.Point(335, 144);
-            this.bunifuLabel27.Name = "bunifuLabel27";
-            this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel27.Size = new System.Drawing.Size(31, 15);
-            this.bunifuLabel27.TabIndex = 54;
-            this.bunifuLabel27.Text = "Cedar";
-            this.bunifuLabel27.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel27.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel27.Click += new System.EventHandler(this.bunifuLabel27_Click);
+            this.lblCedar.AllowParentOverrides = false;
+            this.lblCedar.AutoEllipsis = false;
+            this.lblCedar.CursorType = null;
+            this.lblCedar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCedar.Location = new System.Drawing.Point(364, 85);
+            this.lblCedar.Name = "lblCedar";
+            this.lblCedar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCedar.Size = new System.Drawing.Size(43, 21);
+            this.lblCedar.TabIndex = 54;
+            this.lblCedar.Text = "Cedar";
+            this.lblCedar.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblCedar.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblCedar.Click += new System.EventHandler(this.lblCedar_Click);
             // 
-            // bunifuLabel28
+            // lblBThorn
             // 
-            this.bunifuLabel28.AllowParentOverrides = false;
-            this.bunifuLabel28.AutoEllipsis = false;
-            this.bunifuLabel28.CursorType = null;
-            this.bunifuLabel28.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel28.Location = new System.Drawing.Point(234, 144);
-            this.bunifuLabel28.Name = "bunifuLabel28";
-            this.bunifuLabel28.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel28.Size = new System.Drawing.Size(59, 15);
-            this.bunifuLabel28.TabIndex = 53;
-            this.bunifuLabel28.Text = "BlackThorn";
-            this.bunifuLabel28.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel28.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel28.Click += new System.EventHandler(this.bunifuLabel28_Click);
+            this.lblBThorn.AllowParentOverrides = false;
+            this.lblBThorn.AutoEllipsis = false;
+            this.lblBThorn.CursorType = null;
+            this.lblBThorn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBThorn.Location = new System.Drawing.Point(238, 85);
+            this.lblBThorn.Name = "lblBThorn";
+            this.lblBThorn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblBThorn.Size = new System.Drawing.Size(81, 21);
+            this.lblBThorn.TabIndex = 53;
+            this.lblBThorn.Text = "BlackThorn";
+            this.lblBThorn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblBThorn.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblBThorn.Click += new System.EventHandler(this.lblBThorn_Click);
             // 
-            // bunifuLabel29
+            // lblAmber
             // 
-            this.bunifuLabel29.AllowParentOverrides = false;
-            this.bunifuLabel29.AutoEllipsis = false;
-            this.bunifuLabel29.CursorType = null;
-            this.bunifuLabel29.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel29.Location = new System.Drawing.Point(155, 144);
-            this.bunifuLabel29.Name = "bunifuLabel29";
-            this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel29.Size = new System.Drawing.Size(36, 15);
-            this.bunifuLabel29.TabIndex = 52;
-            this.bunifuLabel29.Text = "Amber";
-            this.bunifuLabel29.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel29.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel29.Click += new System.EventHandler(this.bunifuLabel29_Click);
+            this.lblAmber.AllowParentOverrides = false;
+            this.lblAmber.AutoEllipsis = false;
+            this.lblAmber.CursorType = null;
+            this.lblAmber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAmber.Location = new System.Drawing.Point(144, 85);
+            this.lblAmber.Name = "lblAmber";
+            this.lblAmber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAmber.Size = new System.Drawing.Size(50, 21);
+            this.lblAmber.TabIndex = 52;
+            this.lblAmber.Text = "Amber";
+            this.lblAmber.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblAmber.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblAmber.Click += new System.EventHandler(this.lblAmber_Click);
             // 
             // bunifuLabel30
             // 
             this.bunifuLabel30.AllowParentOverrides = false;
             this.bunifuLabel30.AutoEllipsis = false;
             this.bunifuLabel30.CursorType = null;
-            this.bunifuLabel30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel30.Location = new System.Drawing.Point(29, 144);
+            this.bunifuLabel30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel30.Location = new System.Drawing.Point(18, 85);
             this.bunifuLabel30.Name = "bunifuLabel30";
             this.bunifuLabel30.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel30.Size = new System.Drawing.Size(63, 15);
+            this.bunifuLabel30.Size = new System.Drawing.Size(88, 21);
             this.bunifuLabel30.TabIndex = 51;
             this.bunifuLabel30.Text = "Room Type:";
             this.bunifuLabel30.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -2669,11 +2664,11 @@ namespace IOOP_Assignment
             this.bunifuLabel31.AllowParentOverrides = false;
             this.bunifuLabel31.AutoEllipsis = false;
             this.bunifuLabel31.CursorType = null;
-            this.bunifuLabel31.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel31.Location = new System.Drawing.Point(29, 81);
+            this.bunifuLabel31.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel31.Location = new System.Drawing.Point(18, 27);
             this.bunifuLabel31.Name = "bunifuLabel31";
             this.bunifuLabel31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel31.Size = new System.Drawing.Size(39, 15);
+            this.bunifuLabel31.Size = new System.Drawing.Size(53, 21);
             this.bunifuLabel31.TabIndex = 50;
             this.bunifuLabel31.Text = "Month:";
             this.bunifuLabel31.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -2684,7 +2679,7 @@ namespace IOOP_Assignment
             this.cbmDaphne.AllowBindingControlAnimation = true;
             this.cbmDaphne.AllowBindingControlColorChanges = false;
             this.cbmDaphne.AllowBindingControlLocation = true;
-            this.cbmDaphne.AllowCheckBoxAnimation = false;
+            this.cbmDaphne.AllowCheckBoxAnimation = true;
             this.cbmDaphne.AllowCheckmarkAnimation = true;
             this.cbmDaphne.AllowOnHoverStates = true;
             this.cbmDaphne.AutoCheck = true;
@@ -2697,7 +2692,7 @@ namespace IOOP_Assignment
             this.cbmDaphne.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cbmDaphne.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmDaphne.CustomCheckmarkImage = null;
-            this.cbmDaphne.Location = new System.Drawing.Point(372, 139);
+            this.cbmDaphne.Location = new System.Drawing.Point(428, 85);
             this.cbmDaphne.MinimumSize = new System.Drawing.Size(17, 17);
             this.cbmDaphne.Name = "cbmDaphne";
             this.cbmDaphne.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -2737,7 +2732,7 @@ namespace IOOP_Assignment
             this.cbmCedar.AllowBindingControlAnimation = true;
             this.cbmCedar.AllowBindingControlColorChanges = false;
             this.cbmCedar.AllowBindingControlLocation = true;
-            this.cbmCedar.AllowCheckBoxAnimation = false;
+            this.cbmCedar.AllowCheckBoxAnimation = true;
             this.cbmCedar.AllowCheckmarkAnimation = true;
             this.cbmCedar.AllowOnHoverStates = true;
             this.cbmCedar.AutoCheck = true;
@@ -2750,7 +2745,7 @@ namespace IOOP_Assignment
             this.cbmCedar.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cbmCedar.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmCedar.CustomCheckmarkImage = null;
-            this.cbmCedar.Location = new System.Drawing.Point(308, 139);
+            this.cbmCedar.Location = new System.Drawing.Point(337, 85);
             this.cbmCedar.MinimumSize = new System.Drawing.Size(17, 17);
             this.cbmCedar.Name = "cbmCedar";
             this.cbmCedar.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -2790,7 +2785,7 @@ namespace IOOP_Assignment
             this.cbmBlackThorn.AllowBindingControlAnimation = true;
             this.cbmBlackThorn.AllowBindingControlColorChanges = false;
             this.cbmBlackThorn.AllowBindingControlLocation = true;
-            this.cbmBlackThorn.AllowCheckBoxAnimation = false;
+            this.cbmBlackThorn.AllowCheckBoxAnimation = true;
             this.cbmBlackThorn.AllowCheckmarkAnimation = true;
             this.cbmBlackThorn.AllowOnHoverStates = true;
             this.cbmBlackThorn.AutoCheck = true;
@@ -2803,7 +2798,7 @@ namespace IOOP_Assignment
             this.cbmBlackThorn.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cbmBlackThorn.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmBlackThorn.CustomCheckmarkImage = null;
-            this.cbmBlackThorn.Location = new System.Drawing.Point(206, 139);
+            this.cbmBlackThorn.Location = new System.Drawing.Point(211, 85);
             this.cbmBlackThorn.MinimumSize = new System.Drawing.Size(17, 17);
             this.cbmBlackThorn.Name = "cbmBlackThorn";
             this.cbmBlackThorn.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -2843,7 +2838,7 @@ namespace IOOP_Assignment
             this.cbmAmber.AllowBindingControlAnimation = true;
             this.cbmAmber.AllowBindingControlColorChanges = false;
             this.cbmAmber.AllowBindingControlLocation = true;
-            this.cbmAmber.AllowCheckBoxAnimation = false;
+            this.cbmAmber.AllowCheckBoxAnimation = true;
             this.cbmAmber.AllowCheckmarkAnimation = true;
             this.cbmAmber.AllowOnHoverStates = true;
             this.cbmAmber.AutoCheck = true;
@@ -2856,7 +2851,7 @@ namespace IOOP_Assignment
             this.cbmAmber.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cbmAmber.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmAmber.CustomCheckmarkImage = null;
-            this.cbmAmber.Location = new System.Drawing.Point(128, 139);
+            this.cbmAmber.Location = new System.Drawing.Point(117, 85);
             this.cbmAmber.MinimumSize = new System.Drawing.Size(17, 17);
             this.cbmAmber.Name = "cbmAmber";
             this.cbmAmber.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -3181,6 +3176,41 @@ namespace IOOP_Assignment
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.requestDataGridView;
             // 
+            // bunifuShadowPanel3
+            // 
+            this.bunifuShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel3.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuShadowPanel3.BorderRadius = 20;
+            this.bunifuShadowPanel3.BorderThickness = 1;
+            this.bunifuShadowPanel3.Controls.Add(this.lblDaphne);
+            this.bunifuShadowPanel3.Controls.Add(this.ddmYear);
+            this.bunifuShadowPanel3.Controls.Add(this.btnSearchMonthly);
+            this.bunifuShadowPanel3.Controls.Add(this.cbmAmber);
+            this.bunifuShadowPanel3.Controls.Add(this.ddmMonth);
+            this.bunifuShadowPanel3.Controls.Add(this.cbmBlackThorn);
+            this.bunifuShadowPanel3.Controls.Add(this.bunifuLabel32);
+            this.bunifuShadowPanel3.Controls.Add(this.cbmCedar);
+            this.bunifuShadowPanel3.Controls.Add(this.cbmDaphne);
+            this.bunifuShadowPanel3.Controls.Add(this.bunifuLabel31);
+            this.bunifuShadowPanel3.Controls.Add(this.bunifuLabel30);
+            this.bunifuShadowPanel3.Controls.Add(this.lblCedar);
+            this.bunifuShadowPanel3.Controls.Add(this.lblAmber);
+            this.bunifuShadowPanel3.Controls.Add(this.lblBThorn);
+            this.bunifuShadowPanel3.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel3.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel3.Location = new System.Drawing.Point(104, 89);
+            this.bunifuShadowPanel3.Name = "bunifuShadowPanel3";
+            this.bunifuShadowPanel3.PanelColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel3.PanelColor2 = System.Drawing.Color.White;
+            this.bunifuShadowPanel3.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel3.ShadowDept = 2;
+            this.bunifuShadowPanel3.ShadowDepth = 3;
+            this.bunifuShadowPanel3.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel3.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel3.Size = new System.Drawing.Size(725, 131);
+            this.bunifuShadowPanel3.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel3.TabIndex = 63;
+            // 
             // Librarian_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3241,6 +3271,8 @@ namespace IOOP_Assignment
             this.userInfoPanel4.ResumeLayout(false);
             this.userInfoPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).EndInit();
+            this.bunifuShadowPanel3.ResumeLayout(false);
+            this.bunifuShadowPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3300,10 +3332,10 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchDaily;
         private Bunifu.UI.WinForms.BunifuDataGridView monthlyUtilizationDataGridView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchMonthly;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel26;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel27;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel28;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel29;
+        private Bunifu.UI.WinForms.BunifuLabel lblDaphne;
+        private Bunifu.UI.WinForms.BunifuLabel lblCedar;
+        private Bunifu.UI.WinForms.BunifuLabel lblBThorn;
+        private Bunifu.UI.WinForms.BunifuLabel lblAmber;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel30;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel31;
         private Bunifu.UI.WinForms.BunifuCheckBox cbmDaphne;
@@ -3360,5 +3392,6 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewStudentNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNewResID;
+        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel3;
     }
 }
