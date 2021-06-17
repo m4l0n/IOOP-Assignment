@@ -958,7 +958,7 @@ namespace IOOP_Assignment
             this.requestInfoButton.FadeWhenInactive = false;
             this.requestInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.requestInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("requestInfoButton.Image")));
-            this.requestInfoButton.ImageActive = null;
+            this.requestInfoButton.ActiveImage = null;
             this.requestInfoButton.ImageLocation = null;
             this.requestInfoButton.ImageMargin = 10;
             this.requestInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -975,7 +975,7 @@ namespace IOOP_Assignment
             this.requestInfoButton.TabIndex = 32;
             this.requestInfoButton.ToolTipText = "";
             this.requestInfoButton.WaitOnLoad = false;
-            this.requestInfoButton.Zoom = 10;
+            this.requestInfoButton.ImageMargin = 10;
             this.requestInfoButton.ZoomSpeed = 10;
             this.requestInfoButton.Click += new System.EventHandler(this.requestInfoButton_Click);
             // 
@@ -1052,7 +1052,7 @@ namespace IOOP_Assignment
             this.resInfoButton.FadeWhenInactive = false;
             this.resInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.resInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("resInfoButton.Image")));
-            this.resInfoButton.ImageActive = null;
+            this.resInfoButton.ActiveImage = null;
             this.resInfoButton.ImageLocation = null;
             this.resInfoButton.ImageMargin = 10;
             this.resInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -1069,7 +1069,7 @@ namespace IOOP_Assignment
             this.resInfoButton.TabIndex = 26;
             this.resInfoButton.ToolTipText = "";
             this.resInfoButton.WaitOnLoad = false;
-            this.resInfoButton.Zoom = 10;
+            this.resInfoButton.ImageMargin = 10;
             this.resInfoButton.ZoomSpeed = 10;
             this.resInfoButton.Click += new System.EventHandler(this.resInfoButton_Click);
             // 
@@ -1146,7 +1146,7 @@ namespace IOOP_Assignment
             this.totalUsersInfoButton.FadeWhenInactive = false;
             this.totalUsersInfoButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.totalUsersInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("totalUsersInfoButton.Image")));
-            this.totalUsersInfoButton.ImageActive = null;
+            this.totalUsersInfoButton.ActiveImage = null;
             this.totalUsersInfoButton.ImageLocation = null;
             this.totalUsersInfoButton.ImageMargin = 10;
             this.totalUsersInfoButton.ImageSize = new System.Drawing.Size(20, 20);
@@ -1163,7 +1163,7 @@ namespace IOOP_Assignment
             this.totalUsersInfoButton.TabIndex = 25;
             this.totalUsersInfoButton.ToolTipText = "";
             this.totalUsersInfoButton.WaitOnLoad = false;
-            this.totalUsersInfoButton.Zoom = 10;
+            this.totalUsersInfoButton.ImageMargin = 10;
             this.totalUsersInfoButton.ZoomSpeed = 10;
             this.totalUsersInfoButton.Click += new System.EventHandler(this.totalUsersInfoButton_Click);
             // 
@@ -1578,7 +1578,7 @@ namespace IOOP_Assignment
             this.requestDataGridView.EnableHeadersVisualStyles = false;
             this.requestDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.requestDataGridView.HeaderBackColor = System.Drawing.Color.DarkSlateGray;
-            this.requestDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.requestDataGridView.HeaderBackColor = System.Drawing.Color.Empty;
             this.requestDataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.requestDataGridView.Location = new System.Drawing.Point(20, 25);
             this.requestDataGridView.Name = "requestDataGridView";
@@ -2094,7 +2094,7 @@ namespace IOOP_Assignment
             this.dailyReportTable.EnableHeadersVisualStyles = false;
             this.dailyReportTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.dailyReportTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dailyReportTable.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dailyReportTable.HeaderBackColor = System.Drawing.Color.Empty;
             this.dailyReportTable.HeaderForeColor = System.Drawing.Color.White;
             this.dailyReportTable.Location = new System.Drawing.Point(64, 232);
             this.dailyReportTable.Name = "dailyReportTable";
@@ -2476,7 +2476,7 @@ namespace IOOP_Assignment
             this.monthlyUtilizationDataGridView.EnableHeadersVisualStyles = false;
             this.monthlyUtilizationDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.monthlyUtilizationDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.monthlyUtilizationDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.monthlyUtilizationDataGridView.HeaderBackColor = System.Drawing.Color.Empty;
             this.monthlyUtilizationDataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.monthlyUtilizationDataGridView.Location = new System.Drawing.Point(29, 236);
             this.monthlyUtilizationDataGridView.Name = "monthlyUtilizationDataGridView";

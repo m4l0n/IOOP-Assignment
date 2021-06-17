@@ -79,9 +79,7 @@ namespace IOOP_Assignment
         private void bunifuShapes2_Click(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
-            {
                 this.WindowState = FormWindowState.Minimized;
-            }
         }
         private void totalUsersInfoButton_Click(object sender, EventArgs e)
         {
@@ -123,7 +121,8 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] where Date='{tdy_date}'", con))
+                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] " +
+                    $"where Date='{tdy_date}'", con))
                 {
                     lblReservationTdy.Text = sql.ExecuteScalar().ToString();
                 }
@@ -196,8 +195,10 @@ namespace IOOP_Assignment
                     LabelPoint
                 = point => point.Y.ToString()
                 };
-                Axis ax = new Axis();
-                ax.Labels = new List<string>();
+                Axis ax = new Axis
+                {
+                    Labels = new List<string>()
+                };
                 foreach (var x in data)
                 {
                     line.Values.Add(x.TotalReservation.Value);
@@ -298,28 +299,22 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
                     rt + "' and Date='" + d + "'", con))
-                {
                     reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
-                }
             }
             string status = "Unavailable";
             switch (rt)
             {
                 case "Amber":
-                    if (reservedRoom < 5)
-                        status = "Available";
+                    if (reservedRoom < 5) status = "Available";
                     break;
                 case "Blackthorn":
-                    if (reservedRoom < 1)
-                        status = "Available";
+                    if (reservedRoom < 1) status = "Available";
                     break;
                 case "Cedar":
-                    if (reservedRoom < 6)
-                        status = "Available";
+                    if (reservedRoom < 6) status = "Available";
                     break;
                 case "Daphne":
-                    if (reservedRoom < 5)
-                        status = "Available";
+                    if (reservedRoom < 5) status = "Available";
                     break;
                 default:
                     status = "Unavailable";
@@ -385,13 +380,9 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
                 req.StudentID + "','" + req.RequestID + "')", con))
-                {
                     cmd.ExecuteNonQuery();
-                }
                 using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
-                {
                     cmd2.ExecuteNonQuery();
-                }
                 bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             }
         }
@@ -404,6 +395,7 @@ namespace IOOP_Assignment
             int month1 = ddmMonth.FindStringExact(month_name) + 1;
             int month2 = month1 + 1;
             int year2 = year1;
+
             if (month2 == 13)
             {
                 month2 = 1;
@@ -412,24 +404,22 @@ namespace IOOP_Assignment
             string date1 = $"{month1}-1-{year1}";
             string date2 = $"{month2}-1-{year2}";
             string roomtype = "";
+            
             if (cbmAmber.Checked == true)
                 roomtype += "[Room Type]='Amber'";
             if (cbmBlackThorn.Checked == true)
             {
-                if (roomtype != "")
-                    roomtype += " or ";
+                if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='BlackThorn'";
             }
             if (cbmCedar.Checked == true)
             {
-                if (roomtype != "")
-                    roomtype += " or ";
+                if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='Cedar'";
             }
             if (cbmDaphne.Checked == true)
             {
-                if (roomtype != "")
-                    roomtype += " or ";
+                if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='Daphne'";
             }
             if (roomtype=="") 
