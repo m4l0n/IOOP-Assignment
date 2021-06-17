@@ -310,5 +310,10 @@ namespace IOOP_Assignment
                 Duration = Convert.ToString(tableReservationEdit[6, row].Value),
             };
         }
+
+        private void cbkboxSecurityCancel_CheckedChanged(object sender, EventArgs e)
+        {
+            btnCancelReserve.Enabled = cbkboxSecurityCancel.Checked;
+        }
     }
 }

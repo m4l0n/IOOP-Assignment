@@ -20,7 +20,6 @@ namespace IOOP_Assignment
         public Librarian_Menu()
         {
             InitializeComponent();
-            customiseDesign();
         }
         private void customiseDesign()
         {
@@ -38,10 +37,7 @@ namespace IOOP_Assignment
                 hideSubMenu();
                 subMenu.Visible = true;
             }
-            else
-            {
-                subMenu.Visible = false;
-            }
+            else subMenu.Visible = false;
         }
         private void btnDashboardPage_Click(object sender, EventArgs e)
         {
@@ -101,6 +97,10 @@ namespace IOOP_Assignment
 
         private void Librarian_Menu_Load(object sender, EventArgs e)
         {
+            customiseDesign();
+            showGraph();
+            formatTables();
+
             //Dropdown for monthly utilization report
             DateTime Now = DateTime.Now;
             int year = int.Parse(Now.ToString("yyyy"));
@@ -115,34 +115,12 @@ namespace IOOP_Assignment
             }
             ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
             ddmYear.SelectedIndex = 20;
-           
+
             //Displays at Overview
             string tdy_date = Now.ToString("M/d/yyyy");
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                con.Open();
-                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] " +
-                    $"where Date='{tdy_date}'", con))
-                {
-                    lblReservationTdy.Text = sql.ExecuteScalar().ToString();
-                }
-                using (SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con))
-                {
-                    lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
-                }
-                using (SqlCommand sql3 = new SqlCommand("Select count(RequestID) from [dbo].[Request]", con))
-                {
-                    lblUnattendReq.Text = sql3.ExecuteScalar().ToString();
-                }
-                //Username
-                using (SqlCommand sql4 = new SqlCommand($"Select Name from [dbo].[User] where Email='{User.loginEmail}'", con))
-                {
-                    User.name = sql4.ExecuteScalar().ToString();
-                }
-                lblNameL1.Text = User.name;
-                lblNameL2.Text = User.name;
-                lblNameL3.Text = User.name;
-                lblNameL4.Text = User.name;
+                fillProfileDetails(tdy_date);
 
                 //Columns for Monthly Utilization Review
                 SqlDataAdapter sql5 = new SqlDataAdapter($"select [Room Number], Count(Date) as [Number of Reservations], " +
@@ -155,7 +133,6 @@ namespace IOOP_Assignment
                 sql5.Fill(dataTable);
                 monthlyUtilizationDataGridView.DataSource = dataTable;
             }
-
 
             //Display Request Data in Request Table
             Request reqData = new Request();
@@ -178,9 +155,6 @@ namespace IOOP_Assignment
                         });
                 }
             }
-
-            showGraph();
-            formatTables();
         }
 
         private void showGraph()
@@ -192,8 +166,7 @@ namespace IOOP_Assignment
                 {
                     DataLabels = true,
                     Values = new ChartValues<int>(),
-                    LabelPoint
-                = point => point.Y.ToString()
+                    LabelPoint = point => point.Y.ToString()
                 };
                 Axis ax = new Axis
                 {
@@ -271,6 +244,7 @@ namespace IOOP_Assignment
         {
             foreach (DataGridViewRow row in requestDataGridView.SelectedRows)
             {
+                //Get values from the table
                 string roomType = row.Cells[2].Value.ToString();
                 string date = row.Cells[3].Value.ToString();
                 string time = row.Cells[4].Value.ToString();
@@ -299,7 +273,9 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
                     rt + "' and Date='" + d + "'", con))
+                {
                     reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+                }
             }
             string status = "Unavailable";
             switch (rt)
@@ -344,7 +320,7 @@ namespace IOOP_Assignment
             string assignedRoom = res.assignRoom(req);
             string query = "update [dbo].Reservation set [Room Type]='" + req.RoomType + "', Date='"
                 + req.Date + "', Time='" + req.Time + "', [Number of Students]='" + req.NumStudents + "'," +
-                "Duration='" + req.Duration + "', [Room Number]='" + assignedRoom + "' where ReservationID='" + 
+                "Duration='" + req.Duration + "', [Room Number]='" + assignedRoom + "' where ReservationID='" +
                 req.ReservationID + "'";
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
@@ -404,7 +380,7 @@ namespace IOOP_Assignment
             string date1 = $"{month1}-1-{year1}";
             string date2 = $"{month2}-1-{year2}";
             string roomtype = "";
-            
+
             if (cbmAmber.Checked == true)
                 roomtype += "[Room Type]='Amber'";
             if (cbmBlackThorn.Checked == true)
@@ -422,9 +398,9 @@ namespace IOOP_Assignment
                 if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='Daphne'";
             }
-            if (roomtype=="") 
+            if (roomtype == "")
                 roomtype += "[Room Type]=''";
-            
+
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
@@ -461,6 +437,36 @@ namespace IOOP_Assignment
         {
             if (cbmDaphne.Checked) cbmDaphne.Checked = false;
             else cbmDaphne.Checked = true;
+        }
+        private void fillProfileDetails(string tdy_date)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] " +
+                    $"where Date='{tdy_date}'", con))
+                {
+                    lblReservationTdy.Text = sql.ExecuteScalar().ToString();
+                }
+                using (SqlCommand sql2 = new SqlCommand("Select count(TPNumber) from [dbo].[User] where role='Student'", con))
+                {
+                    lblTotalUsers.Text = sql2.ExecuteScalar().ToString();
+                }
+                using (SqlCommand sql3 = new SqlCommand("Select count(RequestID) from [dbo].[Request]", con))
+                {
+                    lblUnattendReq.Text = sql3.ExecuteScalar().ToString();
+                }
+                //Username
+                using (SqlCommand sql4 = new SqlCommand($"Select Name from [dbo].[User] where Email='{User.loginEmail}'", con))
+                {
+                    User.name = sql4.ExecuteScalar().ToString();
+                }
+                lblNameL1.Text = User.name;
+                lblNameL2.Text = User.name;
+                lblNameL3.Text = User.name;
+                lblNameL4.Text = User.name;
+
+            }
         }
     }
 }

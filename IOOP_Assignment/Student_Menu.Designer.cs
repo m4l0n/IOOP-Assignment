@@ -703,7 +703,7 @@ namespace IOOP_Assignment
             this.resDataGridView.EnableHeadersVisualStyles = false;
             this.resDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.resDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.resDataGridView.HeaderBackColor = System.Drawing.Color.Empty;
+            this.resDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
             this.resDataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.resDataGridView.Location = new System.Drawing.Point(20, 51);
             this.resDataGridView.Name = "resDataGridView";
@@ -1441,7 +1441,7 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.EnableHeadersVisualStyles = false;
             this.tableAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableAvailableRoom.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tableAvailableRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableAvailableRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tableAvailableRoom.Location = new System.Drawing.Point(13, 14);
             this.tableAvailableRoom.Name = "tableAvailableRoom";
@@ -1880,7 +1880,7 @@ namespace IOOP_Assignment
             this.tableReservationEdit.EnableHeadersVisualStyles = false;
             this.tableReservationEdit.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.tableReservationEdit.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableReservationEdit.HeaderBackColor = System.Drawing.Color.Empty;
+            this.tableReservationEdit.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableReservationEdit.HeaderForeColor = System.Drawing.Color.White;
             this.tableReservationEdit.Location = new System.Drawing.Point(47, 170);
             this.tableReservationEdit.Name = "tableReservationEdit";
@@ -1987,6 +1987,7 @@ namespace IOOP_Assignment
             this.cbkboxSecurityCancel.TabIndex = 37;
             this.cbkboxSecurityCancel.Text = "Confirm your Cancellation Request";
             this.cbkboxSecurityCancel.UseVisualStyleBackColor = true;
+            this.cbkboxSecurityCancel.CheckedChanged += new System.EventHandler(this.cbkboxSecurityCancel_CheckedChanged);
             // 
             // bunifuSeparator6
             // 
