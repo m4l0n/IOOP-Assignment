@@ -334,6 +334,8 @@ namespace IOOP_Assignment
 
         private void btnPreviewConfirm_Click(object sender, EventArgs e)
         {
+            lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
+            
             Reservation res = new Reservation
             {
                 Date = dateReserve.Value.ToShortDateString(),
@@ -343,8 +345,6 @@ namespace IOOP_Assignment
                 NumStudents = Convert.ToInt32(comboStudentNo.GetItemText(comboStudentNo.SelectedItem)),
                 StudentID = User.tpNumber,
             };
-
-            lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
 
             int result = res.addReservation(res);
             if (result != 0)
