@@ -118,6 +118,8 @@ namespace IOOP_Assignment
         private void btnRoomRes_Click(object sender, EventArgs e)
         {
             bunifuPages2.SetPage(1);    //Redirect to Room Reservation
+            dateReserve.Value = DateTime.Now.AddDays(2);
+            dateReserve.MinDate = DateTime.Now.AddDays(2); //Limiting Reservation date
         }
         private void btnEditRes_Click(object sender, EventArgs e)
         {
@@ -126,7 +128,37 @@ namespace IOOP_Assignment
         private void btnPreview_Click(object sender, EventArgs e)
         {
             bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
+            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
+            lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
+            lblPreviewTime1.Text = timeReserve.Value.ToShortTimeString();
+            lblPreviewDuration1.Text = comboDuration.GetItemText(comboDuration.SelectedItem);
+            lblPreviewRoomType1.Text = roomtype;
+            lblPreviewStudent1.Text = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
+            Reservation res = new Reservation();
+            Request req = new Request
+            {
+                RoomType = Convert.ToString(comboRoom.GetItemText(comboRoom.SelectedItem)),
+            };
+            string assignedRoom = res.assignRoom(req);
+            lblPreviewRoomNumber1.Text = assignedRoom;
+            bunifuLabel8.Text = roomtype;
+
+            string capacity; 
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select Capacity from [dbo].[Room] where [Room Type] = @roomtype", con))
+                {
+                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
+                    capacity = cmd.ExecuteScalar().ToString();
+                }
+
+            }
+
+            bunifuLabel11.Text = capacity;
         }
+
         private void btnPreviewCancel_Click(object sender, EventArgs e)
         {
             bunifuPages2.SetPage(1);
@@ -296,24 +328,155 @@ namespace IOOP_Assignment
         private void btnEditReserve_Click(object sender, EventArgs e)
         {
             int row = tableReservationEdit.CurrentRow.Index;
-            DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[3, row].Value),
+            DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
                 "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string datee = dt.ToString("MM/dd/yyyy");
+            
+            
+
             Reservation req = new Reservation
             {
                 ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
                 RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
-                RoomNumber = Convert.ToString(tableReservationEdit[2,row].Value),
+                RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
                 NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
                 Date = datee,
                 Time = Convert.ToString(tableReservationEdit[5, row].Value),
                 Duration = Convert.ToString(tableReservationEdit[6, row].Value),
+                
             };
+
+            lblReservedDate.Text = ("Reserved Date: " + datee);
+            //lblReservedDuration;
+            //lblReservedTime;
+            //lblReservedRoom;
+            //lblReservedStudent;
+
+            
+            bunifuPages2.SetPage(4);    //Direct to Edit Form Page
         }
 
         private void cbkboxSecurityCancel_CheckedChanged(object sender, EventArgs e)
         {
             btnCancelReserve.Enabled = cbkboxSecurityCancel.Checked;
+        }
+
+        private void dateReserve_ValueChanged(object sender, EventArgs e)
+        {
+            string date = dateReserve.Value.ToShortDateString();
+            //string datee = date.ToString("MM/dd/yyyy");
+            string w = getAvailableRoom(date);
+            
+
+            tableAvailableRoom.Columns[0].Name = "column1";
+            tableAvailableRoom.Columns[1].Name = "column2";
+
+            string[] row1 = new string[] { "Amber", w };
+            
+            tableAvailableRoom.Rows[0].SetValues(row1);
+            
+
+        }
+
+        private string getAvailableRoom(string date)
+        {
+            int reservedAmber;
+            
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='Amber' and Date='" + date + "'", con))
+                {
+                    reservedAmber = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            int room = 0;
+            room = 5 - reservedAmber;
+
+            return room.ToString();
+
+        }
+
+        private void comboDuration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPreviewDate1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblPreviewDuration1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tableAvailableRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dateNewReserved_ValueChanged(object sender, EventArgs e)
+        {
+            
+            
+                
+        }
+
+        private void tableReservationEdit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnPreviewConfirm_Click(object sender, EventArgs e)
+        {
+            string date = dateReserve.Value.ToShortDateString();
+            string time = timeReserve.Value.ToShortTimeString();
+            string duration = comboDuration.GetItemText(comboDuration.SelectedItem);
+            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
+            string student = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='"
+                    + User.loginEmail + "'", con))
+                {
+                    User.tpNumber = cmd2.ExecuteScalar().ToString();
+                }
+            }
+            
+            string studentid = User.tpNumber;
+            Reservation res = new Reservation();
+            Request req = new Request
+            {          
+                RoomType = Convert.ToString(comboRoom.GetItemText(comboRoom.SelectedItem)),
+            };
+            string assignedRoom = res.assignRoom(req);
+            lblPreviewRoomNumber1.Text = assignedRoom;
+
+            string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, @studentid, @assignedroom)"; 
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
+                    cmd.Parameters.AddWithValue("@date", date);
+                    cmd.Parameters.AddWithValue("@time", time);
+                    cmd.Parameters.AddWithValue("@student", student);
+                    cmd.Parameters.AddWithValue("@duration", duration);
+                    cmd.Parameters.AddWithValue("@studentid", studentid);
+                    cmd.Parameters.AddWithValue("@assignedroom", assignedRoom);
+
+                    cmd.ExecuteNonQuery(); //Add Reservation into Reservation Table
+                }
+            }
+            MessageBox.Show("Successfully Reserved!");
+            
+
         }
     }
 }

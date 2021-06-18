@@ -143,12 +143,12 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel11 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.lblPreviewRoomNumber1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewRoomType1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lbPreviewStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewDuration1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewTime1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewDate1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewRoomNumber0 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lbPreviewStudent0 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPreviewStudent0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewDate0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewDuration0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewRoomType0 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -563,10 +563,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.editPage;
-            this.bunifuPages2.PageIndex = 2;
-            this.bunifuPages2.PageName = "editPage";
-            this.bunifuPages2.PageTitle = "Edit";
+            this.bunifuPages2.Page = this.reservationPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "reservationPage";
+            this.bunifuPages2.PageTitle = "Reservation";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -1262,6 +1262,7 @@ namespace IOOP_Assignment
             this.dateReserve.Size = new System.Drawing.Size(220, 32);
             this.dateReserve.TabIndex = 37;
             this.dateReserve.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
+            this.dateReserve.ValueChanged += new System.EventHandler(this.dateReserve_ValueChanged);
             // 
             // comboDuration
             // 
@@ -1296,6 +1297,18 @@ namespace IOOP_Assignment
             this.comboDuration.ItemHeight = 26;
             this.comboDuration.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboDuration.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboDuration.Items.AddRange(new object[] {
+            "1 hour",
+            "1 hour 30 Minutes",
+            "2 hours",
+            "2 hours  30 Minutes",
+            "3 hours",
+            "3 hours  30 Minutes",
+            "4 hours",
+            "4 hours  30 Minutes",
+            "5 hours",
+            "5 hours  30 Minutes",
+            "6 hours"});
             this.comboDuration.ItemTopMargin = 3;
             this.comboDuration.Location = new System.Drawing.Point(180, 161);
             this.comboDuration.Name = "comboDuration";
@@ -1304,6 +1317,7 @@ namespace IOOP_Assignment
             this.comboDuration.Text = "Select Duration";
             this.comboDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboDuration.TextLeftMargin = 5;
+            this.comboDuration.SelectedIndexChanged += new System.EventHandler(this.comboDuration_SelectedIndexChanged);
             // 
             // comboRoom
             // 
@@ -1451,6 +1465,7 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.Size = new System.Drawing.Size(299, 148);
             this.tableAvailableRoom.TabIndex = 40;
             this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.tableAvailableRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableAvailableRoom_CellContentClick);
             // 
             // columnAvailableRoomType
             // 
@@ -1613,7 +1628,7 @@ namespace IOOP_Assignment
             this.btnCancel.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnCancel.ButtonText = "Cancel";
+            this.btnCancel.ButtonText = "RESET";
             this.btnCancel.ButtonTextMarginLeft = 0;
             this.btnCancel.ColorContrastOnClick = 45;
             this.btnCancel.ColorContrastOnHover = 45;
@@ -1893,6 +1908,7 @@ namespace IOOP_Assignment
             this.tableReservationEdit.Size = new System.Drawing.Size(678, 166);
             this.tableReservationEdit.TabIndex = 38;
             this.tableReservationEdit.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.tableReservationEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableReservationEdit_CellContentClick);
             // 
             // colResIDEdit
             // 
@@ -2349,12 +2365,12 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel11.BorderThickness = 1;
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewRoomNumber1);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewRoomType1);
-            this.bunifuShadowPanel11.Controls.Add(this.lbPreviewStudent1);
+            this.bunifuShadowPanel11.Controls.Add(this.lblPreviewStudent1);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewDuration1);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewTime1);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewDate1);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewRoomNumber0);
-            this.bunifuShadowPanel11.Controls.Add(this.lbPreviewStudent0);
+            this.bunifuShadowPanel11.Controls.Add(this.lblPreviewStudent0);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewDate0);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewDuration0);
             this.bunifuShadowPanel11.Controls.Add(this.lblPreviewRoomType0);
@@ -2406,21 +2422,21 @@ namespace IOOP_Assignment
             this.lblPreviewRoomType1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomType1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lbPreviewStudent1
+            // lblPreviewStudent1
             // 
-            this.lbPreviewStudent1.AllowParentOverrides = false;
-            this.lbPreviewStudent1.AutoEllipsis = false;
-            this.lbPreviewStudent1.CursorType = null;
-            this.lbPreviewStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lbPreviewStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lbPreviewStudent1.Location = new System.Drawing.Point(236, 151);
-            this.lbPreviewStudent1.Name = "lbPreviewStudent1";
-            this.lbPreviewStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbPreviewStudent1.Size = new System.Drawing.Size(9, 23);
-            this.lbPreviewStudent1.TabIndex = 52;
-            this.lbPreviewStudent1.Text = "8";
-            this.lbPreviewStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbPreviewStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPreviewStudent1.AllowParentOverrides = false;
+            this.lblPreviewStudent1.AutoEllipsis = false;
+            this.lblPreviewStudent1.CursorType = null;
+            this.lblPreviewStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblPreviewStudent1.Location = new System.Drawing.Point(236, 151);
+            this.lblPreviewStudent1.Name = "lblPreviewStudent1";
+            this.lblPreviewStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewStudent1.Size = new System.Drawing.Size(9, 23);
+            this.lblPreviewStudent1.TabIndex = 52;
+            this.lblPreviewStudent1.Text = "8";
+            this.lblPreviewStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblPreviewDuration1
             // 
@@ -2437,6 +2453,7 @@ namespace IOOP_Assignment
             this.lblPreviewDuration1.Text = "2 Hours";
             this.lblPreviewDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPreviewDuration1.Click += new System.EventHandler(this.lblPreviewDuration1_Click);
             // 
             // lblPreviewTime1
             // 
@@ -2469,6 +2486,7 @@ namespace IOOP_Assignment
             this.lblPreviewDate1.Text = "24 June 2021";
             this.lblPreviewDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPreviewDate1.Click += new System.EventHandler(this.lblPreviewDate1_Click);
             // 
             // lblPreviewRoomNumber0
             // 
@@ -2485,20 +2503,20 @@ namespace IOOP_Assignment
             this.lblPreviewRoomNumber0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomNumber0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lbPreviewStudent0
+            // lblPreviewStudent0
             // 
-            this.lbPreviewStudent0.AllowParentOverrides = false;
-            this.lbPreviewStudent0.AutoEllipsis = false;
-            this.lbPreviewStudent0.CursorType = null;
-            this.lbPreviewStudent0.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lbPreviewStudent0.Location = new System.Drawing.Point(42, 151);
-            this.lbPreviewStudent0.Name = "lbPreviewStudent0";
-            this.lbPreviewStudent0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbPreviewStudent0.Size = new System.Drawing.Size(160, 23);
-            this.lbPreviewStudent0.TabIndex = 48;
-            this.lbPreviewStudent0.Text = "Number of Students:";
-            this.lbPreviewStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbPreviewStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPreviewStudent0.AllowParentOverrides = false;
+            this.lblPreviewStudent0.AutoEllipsis = false;
+            this.lblPreviewStudent0.CursorType = null;
+            this.lblPreviewStudent0.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblPreviewStudent0.Location = new System.Drawing.Point(42, 151);
+            this.lblPreviewStudent0.Name = "lblPreviewStudent0";
+            this.lblPreviewStudent0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPreviewStudent0.Size = new System.Drawing.Size(160, 23);
+            this.lblPreviewStudent0.TabIndex = 48;
+            this.lblPreviewStudent0.Text = "Number of Students:";
+            this.lblPreviewStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPreviewStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblPreviewDate0
             // 
@@ -2752,6 +2770,7 @@ namespace IOOP_Assignment
             this.btnPreviewConfirm.TextMarginLeft = 0;
             this.btnPreviewConfirm.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPreviewConfirm.UseDefaultRadiusAndThickness = true;
+            this.btnPreviewConfirm.Click += new System.EventHandler(this.btnPreviewConfirm_Click);
             // 
             // btnPreviewCancel
             // 
@@ -3403,6 +3422,7 @@ namespace IOOP_Assignment
             this.dateNewReserved.Size = new System.Drawing.Size(220, 32);
             this.dateNewReserved.TabIndex = 14;
             this.dateNewReserved.Value = new System.DateTime(2021, 6, 10, 0, 39, 0, 0);
+            this.dateNewReserved.ValueChanged += new System.EventHandler(this.dateNewReserved_ValueChanged);
             // 
             // bunifuSeparator5
             // 
@@ -3942,7 +3962,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblStudent;
         private Bunifu.UI.WinForms.BunifuDropdown comboDuration;
         private Bunifu.UI.WinForms.BunifuLabel lblTime;
-        private Bunifu.UI.WinForms.BunifuLabel lbPreviewStudent0;
+        private Bunifu.UI.WinForms.BunifuLabel lblPreviewStudent0;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewDuration0;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel6;
         private Bunifu.UI.WinForms.BunifuDataGridView resDataGridView;
@@ -3998,7 +4018,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel11;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewRoomNumber1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewRoomType1;
-        private Bunifu.UI.WinForms.BunifuLabel lbPreviewStudent1;
+        private Bunifu.UI.WinForms.BunifuLabel lblPreviewStudent1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewDuration1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewTime1;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewDate1;
