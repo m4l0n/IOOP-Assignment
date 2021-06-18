@@ -80,7 +80,7 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" + 
+                using (SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" +
                     User.loginEmail + "'", con))
                 {
                     User.name = cmd.ExecuteScalar().ToString();
@@ -124,39 +124,6 @@ namespace IOOP_Assignment
         private void btnEditRes_Click(object sender, EventArgs e)
         {
             bunifuPages2.SetPage(2);    //Redirect to Reservation Modification
-        }
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
-            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
-            lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
-            lblPreviewTime1.Text = timeReserve.Value.ToShortTimeString();
-            lblPreviewDuration1.Text = comboDuration.GetItemText(comboDuration.SelectedItem);
-            lblPreviewRoomType1.Text = roomtype;
-            lblPreviewStudent1.Text = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
-            Reservation res = new Reservation();
-            Request req = new Request
-            {
-                RoomType = Convert.ToString(comboRoom.GetItemText(comboRoom.SelectedItem)),
-            };
-            string assignedRoom = res.assignRoom(req);
-            lblPreviewRoomNumber1.Text = assignedRoom;
-            bunifuLabel8.Text = roomtype;
-
-            string capacity; 
-
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select Capacity from [dbo].[Room] where [Room Type] = @roomtype", con))
-                {
-                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
-                    capacity = cmd.ExecuteScalar().ToString();
-                }
-
-            }
-
-            bunifuLabel11.Text = capacity;
         }
 
         private void btnPreviewCancel_Click(object sender, EventArgs e)
@@ -264,44 +231,19 @@ namespace IOOP_Assignment
             tableReservationEdit.Columns["colDateEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colTimeEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableReservationEdit.Columns["colDurationEdit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            tableAvailableRoom.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tableAvailableRoom.Columns["columnAvailableRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tableAvailableRoom.Columns["columnAvailableRoom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void checkNotification(string studID)
         {
-            /*
-            SqlCommand cmd = new SqlCommand("select count(*) from [dbo].RequestStatus where StudentID='" + studID + "'", con);
-            con.Open();
-            int notificationCount = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
-            if (notificationCount != 0)
-            {
-                SqlCommand cmd2 = new SqlCommand("select [Request Status], RequestID from [dbo].RequestStatus where " +
-                    "StudentID='" + studID + "'", con);
-                con.Open();
-                using (SqlDataReader reader = cmd2.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        string temp = Convert.ToString(reader["RequestID"]);
-                        string date;
-                        using (SqlCommand cmd3 = new SqlCommand("select format(Date, 'dd/MM/yyyy') as Date from [dbo].Request " +
-                            "where RequestID='" + temp + "'", con))
-                        {
-                            date = Convert.ToString(cmd3.ExecuteScalar());
-                        }
-                        string message = "The Reservation Change Request on " + date + " was " +
-                            Convert.ToString(reader["Request Status"]);
-                        bunifuSnackbar1.Show(this, message, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 10000,
-                            "Notification", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
-                    }
-                }
-            }
-            */
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
                 int notificationCount;
-                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].RequestStatus where StudentID='" 
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].RequestStatus where StudentID='"
                     + studID + "'", con))
                 {
                     notificationCount = Convert.ToInt32(cmd.ExecuteScalar());
@@ -331,8 +273,6 @@ namespace IOOP_Assignment
             DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
                 "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string datee = dt.ToString("MM/dd/yyyy");
-            
-            
 
             Reservation req = new Reservation
             {
@@ -340,10 +280,9 @@ namespace IOOP_Assignment
                 RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
                 RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
                 NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
-                Date = datee,
                 Time = Convert.ToString(tableReservationEdit[5, row].Value),
                 Duration = Convert.ToString(tableReservationEdit[6, row].Value),
-                
+
             };
 
             lblReservedDate.Text = ("Reserved Date: " + datee);
@@ -352,8 +291,8 @@ namespace IOOP_Assignment
             //lblReservedRoom;
             //lblReservedStudent;
 
-            
-            bunifuPages2.SetPage(4);    //Direct to Edit Form Page
+
+            bunifuPages2.SetPage(4);    //Redirect to Edit Form Page
         }
 
         private void cbkboxSecurityCancel_CheckedChanged(object sender, EventArgs e)
@@ -361,122 +300,120 @@ namespace IOOP_Assignment
             btnCancelReserve.Enabled = cbkboxSecurityCancel.Checked;
         }
 
-        private void dateReserve_ValueChanged(object sender, EventArgs e)
+        private void btnPreview_Click(object sender, EventArgs e)
         {
-            string date = dateReserve.Value.ToShortDateString();
-            //string datee = date.ToString("MM/dd/yyyy");
-            string w = getAvailableRoom(date);
-            
+            bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
 
-            tableAvailableRoom.Columns[0].Name = "column1";
-            tableAvailableRoom.Columns[1].Name = "column2";
+            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
+            lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
+            lblPreviewTime1.Text = timeReserve.Value.ToShortTimeString();
+            lblPreviewDuration1.Text = comboDuration.GetItemText(comboDuration.SelectedItem);
+            lblPreviewRoomType1.Text = roomtype;
+            lblPreviewStudent1.Text = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
+            Reservation res = new Reservation
+            {
+                RoomType = roomtype,
+                Date = dateReserve.Value.ToString("MM/dd/yyyy")
+            };
 
-            string[] row1 = new string[] { "Amber", w };
-            
-            tableAvailableRoom.Rows[0].SetValues(row1);
-            
+            Reservation.assignedRoom = res.assignRoom(res);
+            lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
+            lblRoomType.Text = roomtype;
 
-        }
-
-        private string getAvailableRoom(string date)
-        {
-            int reservedAmber;
-            
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='Amber' and Date='" + date + "'", con))
+                using (SqlCommand cmd = new SqlCommand("select Capacity from [dbo].[Room] where [Room Type]=@roomtype", con))
                 {
-                    reservedAmber = Convert.ToInt32(cmd.ExecuteScalar());
+                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
+                    lblCapacity.Text = cmd.ExecuteScalar().ToString();
                 }
+
             }
-            int room = 0;
-            room = 5 - reservedAmber;
-
-            return room.ToString();
-
-        }
-
-        private void comboDuration_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPreviewDate1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lblPreviewDuration1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tableAvailableRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dateNewReserved_ValueChanged(object sender, EventArgs e)
-        {
-            
-            
-                
-        }
-
-        private void tableReservationEdit_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnPreviewConfirm_Click(object sender, EventArgs e)
         {
-            string date = dateReserve.Value.ToShortDateString();
-            string time = timeReserve.Value.ToShortTimeString();
-            string duration = comboDuration.GetItemText(comboDuration.SelectedItem);
-            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
-            string student = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
-
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            Reservation res = new Reservation
             {
-                con.Open();
-                using (SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='"
-                    + User.loginEmail + "'", con))
-                {
-                    User.tpNumber = cmd2.ExecuteScalar().ToString();
-                }
-            }
-            
-            string studentid = User.tpNumber;
-            Reservation res = new Reservation();
-            Request req = new Request
-            {          
-                RoomType = Convert.ToString(comboRoom.GetItemText(comboRoom.SelectedItem)),
+                Date = dateReserve.Value.ToShortDateString(),
+                Time = timeReserve.Value.ToShortTimeString(),
+                Duration = comboDuration.GetItemText(comboDuration.SelectedItem),
+                RoomType = comboRoom.GetItemText(comboRoom.SelectedItem),
+                NumStudents = Convert.ToInt32(comboStudentNo.GetItemText(comboStudentNo.SelectedItem)),
+                StudentID = User.tpNumber,
             };
-            string assignedRoom = res.assignRoom(req);
-            lblPreviewRoomNumber1.Text = assignedRoom;
 
-            string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, @studentid, @assignedroom)"; 
+            lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
+
+            string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, " +
+                "@studentid, @assignedroom)";
 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
-                    cmd.Parameters.AddWithValue("@date", date);
-                    cmd.Parameters.AddWithValue("@time", time);
-                    cmd.Parameters.AddWithValue("@student", student);
-                    cmd.Parameters.AddWithValue("@duration", duration);
-                    cmd.Parameters.AddWithValue("@studentid", studentid);
-                    cmd.Parameters.AddWithValue("@assignedroom", assignedRoom);
+                    cmd.Parameters.AddWithValue("@roomtype", res.RoomType);
+                    cmd.Parameters.AddWithValue("@date", res.Date);
+                    cmd.Parameters.AddWithValue("@time", res.Time);
+                    cmd.Parameters.AddWithValue("@student", res.NumStudents);
+                    cmd.Parameters.AddWithValue("@duration", res.Duration);
+                    cmd.Parameters.AddWithValue("@studentid", res.StudentID);
+                    cmd.Parameters.AddWithValue("@assignedroom", Reservation.assignedRoom);
 
                     cmd.ExecuteNonQuery(); //Add Reservation into Reservation Table
                 }
             }
-            MessageBox.Show("Successfully Reserved!");
-            
+            bunifuSnackbar1.Show(this, "You have successfully booked a slot for the Discussion Room! To modify the details, " +
+                "Click on 'Edit Reservation' on the side panel.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+        }
 
+        private string[] getRoomStatus(string[] roomType, string d)
+        {
+            int reservedRoom;
+            int counter = 0;
+            int[] reservedNum = new int[4];
+            string[] roomStatus = { "Unavailable", "Unavailable" , "Unavailable" , "Unavailable" };
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                foreach (string i in roomType)
+                {
+                    using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
+                    i + "' and Date='" + d + "'", con))
+                    {
+                        reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+                        reservedNum[counter] = reservedRoom;
+                    }
+                    counter += 1;
+                }
+            }
+            if (reservedNum[0] < 10) roomStatus[0] = "Available";
+            if (reservedNum[1] < 8) roomStatus[1] = "Available";
+            if (reservedNum[2] < 4) roomStatus[2] = "Available";
+            if (reservedNum[3] < 2) roomStatus[3] = "Available";
+
+            return roomStatus;
+        }
+        private void dateReserve_ValueChanged(object sender, EventArgs e)
+        {
+            tableAvailableRoom.Rows.Clear();
+            comboRoom.Items.Clear();
+            string[] roomType = { "Amber", "Blackthorn", "Cedar", "Daphne" };
+            string date = dateReserve.Value.ToString("MM/dd/yyyy");
+            string[] roomStatus = getRoomStatus(roomType, date);
+
+            for (int i = 0; i <= 3; i++)
+            {
+                tableAvailableRoom.Rows.Add(
+                    new object[]
+                    {
+                        roomType[i],
+                        roomStatus[i],
+                    });
+                if (roomStatus[i] == "Available") comboRoom.Items.Add(roomType[i]);
+            }
         }
     }
 }

@@ -154,8 +154,8 @@ namespace IOOP_Assignment
             this.lblPreviewRoomType0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPreviewTime0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel5 = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblCapacity = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblRoomType = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator9 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -199,9 +199,9 @@ namespace IOOP_Assignment
             this.bunifuShapes2 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPages2.SuspendLayout();
@@ -1317,7 +1317,6 @@ namespace IOOP_Assignment
             this.comboDuration.Text = "Select Duration";
             this.comboDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboDuration.TextLeftMargin = 5;
-            this.comboDuration.SelectedIndexChanged += new System.EventHandler(this.comboDuration_SelectedIndexChanged);
             // 
             // comboRoom
             // 
@@ -1352,11 +1351,6 @@ namespace IOOP_Assignment
             this.comboRoom.ItemHeight = 26;
             this.comboRoom.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboRoom.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboRoom.Items.AddRange(new object[] {
-            "Amber",
-            "Blackthorn",
-            "Cedar",
-            "Daphne"});
             this.comboRoom.ItemTopMargin = 3;
             this.comboRoom.Location = new System.Drawing.Point(180, 227);
             this.comboRoom.Name = "comboRoom";
@@ -1465,7 +1459,6 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.Size = new System.Drawing.Size(299, 148);
             this.tableAvailableRoom.TabIndex = 40;
             this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.tableAvailableRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableAvailableRoom_CellContentClick);
             // 
             // columnAvailableRoomType
             // 
@@ -1908,7 +1901,6 @@ namespace IOOP_Assignment
             this.tableReservationEdit.Size = new System.Drawing.Size(678, 166);
             this.tableReservationEdit.TabIndex = 38;
             this.tableReservationEdit.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            this.tableReservationEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableReservationEdit_CellContentClick);
             // 
             // colResIDEdit
             // 
@@ -2453,7 +2445,6 @@ namespace IOOP_Assignment
             this.lblPreviewDuration1.Text = "2 Hours";
             this.lblPreviewDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lblPreviewDuration1.Click += new System.EventHandler(this.lblPreviewDuration1_Click);
             // 
             // lblPreviewTime1
             // 
@@ -2486,7 +2477,6 @@ namespace IOOP_Assignment
             this.lblPreviewDate1.Text = "24 June 2021";
             this.lblPreviewDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lblPreviewDate1.Click += new System.EventHandler(this.lblPreviewDate1_Click);
             // 
             // lblPreviewRoomNumber0
             // 
@@ -2584,8 +2574,8 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel5.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuShadowPanel5.BorderRadius = 20;
             this.bunifuShadowPanel5.BorderThickness = 1;
-            this.bunifuShadowPanel5.Controls.Add(this.bunifuLabel11);
-            this.bunifuShadowPanel5.Controls.Add(this.bunifuLabel8);
+            this.bunifuShadowPanel5.Controls.Add(this.lblCapacity);
+            this.bunifuShadowPanel5.Controls.Add(this.lblRoomType);
             this.bunifuShadowPanel5.Controls.Add(this.bunifuLabel5);
             this.bunifuShadowPanel5.Controls.Add(this.bunifuSeparator9);
             this.bunifuShadowPanel5.Controls.Add(this.bunifuLabel1);
@@ -2604,37 +2594,39 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel5.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel5.TabIndex = 7;
             // 
-            // bunifuLabel11
+            // lblCapacity
             // 
-            this.bunifuLabel11.AllowParentOverrides = false;
-            this.bunifuLabel11.AutoEllipsis = false;
-            this.bunifuLabel11.CursorType = null;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel11.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuLabel11.Location = new System.Drawing.Point(318, 62);
-            this.bunifuLabel11.Name = "bunifuLabel11";
-            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel11.Size = new System.Drawing.Size(19, 25);
-            this.bunifuLabel11.TabIndex = 60;
-            this.bunifuLabel11.Text = "10";
-            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblCapacity.AllowParentOverrides = false;
+            this.lblCapacity.AutoEllipsis = false;
+            this.lblCapacity.AutoSize = false;
+            this.lblCapacity.CursorType = null;
+            this.lblCapacity.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.lblCapacity.ForeColor = System.Drawing.Color.Blue;
+            this.lblCapacity.Location = new System.Drawing.Point(232, 62);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCapacity.Size = new System.Drawing.Size(182, 25);
+            this.lblCapacity.TabIndex = 60;
+            this.lblCapacity.Text = "10";
+            this.lblCapacity.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCapacity.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel8
+            // lblRoomType
             // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.CursorType = null;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel8.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuLabel8.Location = new System.Drawing.Point(86, 62);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(58, 25);
-            this.bunifuLabel8.TabIndex = 59;
-            this.bunifuLabel8.Text = "Amber";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblRoomType.AllowParentOverrides = false;
+            this.lblRoomType.AutoEllipsis = false;
+            this.lblRoomType.AutoSize = false;
+            this.lblRoomType.CursorType = null;
+            this.lblRoomType.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.lblRoomType.ForeColor = System.Drawing.Color.Blue;
+            this.lblRoomType.Location = new System.Drawing.Point(3, 62);
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblRoomType.Size = new System.Drawing.Size(223, 25);
+            this.lblRoomType.TabIndex = 59;
+            this.lblRoomType.Text = "Amber";
+            this.lblRoomType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRoomType.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel5
             // 
@@ -3422,7 +3414,6 @@ namespace IOOP_Assignment
             this.dateNewReserved.Size = new System.Drawing.Size(220, 32);
             this.dateNewReserved.TabIndex = 14;
             this.dateNewReserved.Value = new System.DateTime(2021, 6, 10, 0, 39, 0, 0);
-            this.dateNewReserved.ValueChanged += new System.EventHandler(this.dateNewReserved_ValueChanged);
             // 
             // bunifuSeparator5
             // 
@@ -3743,16 +3734,6 @@ namespace IOOP_Assignment
             this.bunifuElipse3.ElipseRadius = 5;
             this.bunifuElipse3.TargetControl = this.tableAvailableRoom;
             // 
-            // reservationSystem_DBDataSet
-            // 
-            this.reservationSystem_DBDataSet.DataSetName = "ReservationSystem_DBDataSet";
-            this.reservationSystem_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reservationSystemDBDataSetBindingSource
-            // 
-            this.reservationSystemDBDataSetBindingSource.DataSource = this.reservationSystem_DBDataSet;
-            this.reservationSystemDBDataSetBindingSource.Position = 0;
-            // 
             // bunifuSnackbar1
             // 
             this.bunifuSnackbar1.AllowDragging = false;
@@ -3821,6 +3802,16 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
+            // 
+            // reservationSystem_DBDataSet
+            // 
+            this.reservationSystem_DBDataSet.DataSetName = "ReservationSystem_DBDataSet";
+            this.reservationSystem_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservationSystemDBDataSetBindingSource
+            // 
+            this.reservationSystemDBDataSetBindingSource.DataSource = this.reservationSystem_DBDataSet;
+            this.reservationSystemDBDataSetBindingSource.Position = 0;
             // 
             // Student_Menu
             // 
@@ -4010,8 +4001,8 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuDatePicker newTimeRes;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditConfirm;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel11;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
+        private Bunifu.UI.WinForms.BunifuLabel lblCapacity;
+        private Bunifu.UI.WinForms.BunifuLabel lblRoomType;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator9;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel13;

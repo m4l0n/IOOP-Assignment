@@ -316,8 +316,7 @@ namespace IOOP_Assignment
                 Duration = Convert.ToString(requestDataGridView[6, row].Value),
                 ReservationID = Convert.ToInt32(requestDataGridView[7, row].Value),
             };
-            Reservation res = new Reservation();
-            string assignedRoom = res.assignRoom(req);
+            string assignedRoom = req.assignRoom(req);
             string query = "update [dbo].Reservation set [Room Type]='" + req.RoomType + "', Date='"
                 + req.Date + "', Time='" + req.Time + "', [Number of Students]='" + req.NumStudents + "'," +
                 "Duration='" + req.Duration + "', [Room Number]='" + assignedRoom + "' where ReservationID='" +

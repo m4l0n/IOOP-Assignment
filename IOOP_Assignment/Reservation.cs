@@ -22,6 +22,7 @@ namespace IOOP_Assignment
         private string studentID;
         private string roomNumber;
         private int resID;
+        public static string assignedRoom;
 
         public string RoomType { get => roomType; set => roomType = value; }
         public string Date { get => date; set => date = value; }
@@ -152,10 +153,10 @@ namespace IOOP_Assignment
             }
         }
 
-        public string assignRoom(Request req)   //Method to assign a Room Number
+        public string assignRoom(Reservation res)   //Method to assign a Room Number
         {
             string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
-                "where [Room Type] = '" + req.RoomType + "' and Date = '" + req.Date + "' " +
+                "where [Room Type] = '" + res.RoomType + "' and Date = '" + res.Date + "' " +
                 "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
             string assignedRoom;
             string takenRooms;
@@ -167,7 +168,7 @@ namespace IOOP_Assignment
                     takenRooms = cmd.ExecuteScalar().ToString();
                     takenRooms = takenRooms.Replace(",", "','");
                     string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
-                        "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
+                        "('" + takenRooms + "') and [Room Type]='" + res.RoomType + "'";
                     using (SqlCommand cmd2 = new SqlCommand(query2, con))
                     {
                         assignedRoom = cmd2.ExecuteScalar().ToString();

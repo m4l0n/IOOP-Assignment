@@ -73,6 +73,31 @@ namespace IOOP_Assignment
                 }
             }
         }
-        
+
+        public string assignRoom(Request req)   //Method to assign a Room Number
+        {
+            string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
+                "where [Room Type] = '" + req.RoomType + "' and Date = '" + req.Date + "' " +
+                "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
+            string assignedRoom;
+            string takenRooms;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+                    takenRooms = cmd.ExecuteScalar().ToString();
+                    takenRooms = takenRooms.Replace(",", "','");
+                    string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
+                        "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
+                    using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                    {
+                        assignedRoom = cmd2.ExecuteScalar().ToString();
+                    }
+                }
+                return assignedRoom;
+            }
+        }
+
     }
 }
