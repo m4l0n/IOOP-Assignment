@@ -346,27 +346,17 @@ namespace IOOP_Assignment
 
             lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
 
-            string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, " +
-                "@studentid, @assignedroom)";
-
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            int result = res.addReservation(res);
+            if (result != 0)
             {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@roomtype", res.RoomType);
-                    cmd.Parameters.AddWithValue("@date", res.Date);
-                    cmd.Parameters.AddWithValue("@time", res.Time);
-                    cmd.Parameters.AddWithValue("@student", res.NumStudents);
-                    cmd.Parameters.AddWithValue("@duration", res.Duration);
-                    cmd.Parameters.AddWithValue("@studentid", res.StudentID);
-                    cmd.Parameters.AddWithValue("@assignedroom", Reservation.assignedRoom);
-
-                    cmd.ExecuteNonQuery(); //Add Reservation into Reservation Table
-                }
-            }
-            bunifuSnackbar1.Show(this, "You have successfully booked a slot for the Discussion Room! To modify the details, " +
+                bunifuSnackbar1.Show(this, "You have successfully booked a slot for the Discussion Room! To modify the details, " +
                 "Click on 'Edit Reservation' on the side panel.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+            }
+            else
+            {
+                bunifuSnackbar1.Show(this, "Something went wrong while trying to make a reservation. Please contact the system" +
+                    "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+            }
         }
 
         private string[] getRoomStatus(string[] roomType, string d)

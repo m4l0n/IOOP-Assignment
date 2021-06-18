@@ -104,8 +104,6 @@ namespace IOOP_Assignment
             this.lblTime = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.tableAvailableRoom = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.columnAvailableRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAvailableRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuShadowPanel7 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -200,6 +198,8 @@ namespace IOOP_Assignment
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.columnAvailableRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnAvailableRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuPanel1.SuspendLayout();
@@ -1401,10 +1401,12 @@ namespace IOOP_Assignment
             // tableAvailableRoom
             // 
             this.tableAvailableRoom.AllowCustomTheming = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.tableAvailableRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableAvailableRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableAvailableRoom.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableAvailableRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableAvailableRoom.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1420,55 +1422,46 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnAvailableRoomType,
             this.columnAvailableRoom});
-            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.tableAvailableRoom.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.tableAvailableRoom.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.tableAvailableRoom.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tableAvailableRoom.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
             this.tableAvailableRoom.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             this.tableAvailableRoom.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.tableAvailableRoom.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             this.tableAvailableRoom.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.tableAvailableRoom.CurrentTheme.Name = null;
-            this.tableAvailableRoom.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableAvailableRoom.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.tableAvailableRoom.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.tableAvailableRoom.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.tableAvailableRoom.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.tableAvailableRoom.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tableAvailableRoom.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableAvailableRoom.EnableHeadersVisualStyles = false;
-            this.tableAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.tableAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
             this.tableAvailableRoom.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.tableAvailableRoom.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableAvailableRoom.HeaderForeColor = System.Drawing.Color.White;
             this.tableAvailableRoom.Location = new System.Drawing.Point(13, 14);
             this.tableAvailableRoom.Name = "tableAvailableRoom";
+            this.tableAvailableRoom.ReadOnly = true;
             this.tableAvailableRoom.RowHeadersVisible = false;
             this.tableAvailableRoom.RowTemplate.Height = 40;
             this.tableAvailableRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableAvailableRoom.Size = new System.Drawing.Size(299, 148);
             this.tableAvailableRoom.TabIndex = 40;
-            this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
-            // columnAvailableRoomType
-            // 
-            this.columnAvailableRoomType.HeaderText = "Room Type";
-            this.columnAvailableRoomType.Name = "columnAvailableRoomType";
-            // 
-            // columnAvailableRoom
-            // 
-            this.columnAvailableRoom.HeaderText = "Available Room";
-            this.columnAvailableRoom.Name = "columnAvailableRoom";
+            this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
             // bunifuShadowPanel7
             // 
@@ -3803,6 +3796,20 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
+            // columnAvailableRoomType
+            // 
+            this.columnAvailableRoomType.HeaderText = "Room Type";
+            this.columnAvailableRoomType.Name = "columnAvailableRoomType";
+            this.columnAvailableRoomType.ReadOnly = true;
+            this.columnAvailableRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // columnAvailableRoom
+            // 
+            this.columnAvailableRoom.HeaderText = "Available Room";
+            this.columnAvailableRoom.Name = "columnAvailableRoom";
+            this.columnAvailableRoom.ReadOnly = true;
+            this.columnAvailableRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // reservationSystem_DBDataSet
             // 
             this.reservationSystem_DBDataSet.DataSetName = "ReservationSystem_DBDataSet";
@@ -3934,8 +3941,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPreview;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCancel;
         private Bunifu.UI.WinForms.BunifuDataGridView tableAvailableRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoom;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPreviewConfirm;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPreviewCancel;
         private Bunifu.UI.WinForms.BunifuLabel lblPreviewTime0;
@@ -4028,5 +4033,7 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoom;
     }
 }

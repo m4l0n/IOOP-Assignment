@@ -177,5 +177,29 @@ namespace IOOP_Assignment
                 return assignedRoom;
             }
         }
+
+        public int addReservation(Reservation res)
+        {
+            string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, " +
+                "@studentid, @assignedroom)";
+            int result;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@roomtype", res.RoomType);
+                    cmd.Parameters.AddWithValue("@date", res.Date);
+                    cmd.Parameters.AddWithValue("@time", res.Time);
+                    cmd.Parameters.AddWithValue("@student", res.NumStudents);
+                    cmd.Parameters.AddWithValue("@duration", res.Duration);
+                    cmd.Parameters.AddWithValue("@studentid", res.StudentID);
+                    cmd.Parameters.AddWithValue("@assignedroom", Reservation.assignedRoom);
+
+                    result = cmd.ExecuteNonQuery(); //Add Reservation into Reservation Table
+                }
+            }
+            return result;
+        }
     }
 }
