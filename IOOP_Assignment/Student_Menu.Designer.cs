@@ -563,10 +563,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.formPage;
-            this.bunifuPages2.PageIndex = 4;
-            this.bunifuPages2.PageName = "formPage";
-            this.bunifuPages2.PageTitle = "Form";
+            this.bunifuPages2.Page = this.dashboardPage;
+            this.bunifuPages2.PageIndex = 0;
+            this.bunifuPages2.PageName = "dashboardPage";
+            this.bunifuPages2.PageTitle = "Dashboard";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -938,7 +938,7 @@ namespace IOOP_Assignment
             this.bunifuLabel9.AutoEllipsis = false;
             this.bunifuLabel9.CursorType = null;
             this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel9.Location = new System.Drawing.Point(194, 79);
+            this.bunifuLabel9.Location = new System.Drawing.Point(133, 92);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel9.Size = new System.Drawing.Size(139, 21);
@@ -954,7 +954,7 @@ namespace IOOP_Assignment
             this.lblActiveRes.AutoEllipsis = false;
             this.lblActiveRes.CursorType = null;
             this.lblActiveRes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblActiveRes.Location = new System.Drawing.Point(178, 79);
+            this.lblActiveRes.Location = new System.Drawing.Point(111, 92);
             this.lblActiveRes.Name = "lblActiveRes";
             this.lblActiveRes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblActiveRes.Size = new System.Drawing.Size(0, 0);
@@ -970,7 +970,7 @@ namespace IOOP_Assignment
             this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel7.Location = new System.Drawing.Point(103, 79);
+            this.bunifuLabel7.Location = new System.Drawing.Point(34, 92);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(64, 21);
@@ -987,7 +987,7 @@ namespace IOOP_Assignment
             this.lblHi.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblHi.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblHi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHi.Location = new System.Drawing.Point(34, 79);
+            this.lblHi.Location = new System.Drawing.Point(34, 67);
             this.lblHi.Name = "lblHi";
             this.lblHi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblHi.Size = new System.Drawing.Size(0, 0);
