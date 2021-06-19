@@ -581,6 +581,7 @@ namespace IOOP_Assignment
             this.passwordTxtBox.TextPlaceholder = "Password";
             this.passwordTxtBox.UseSystemPasswordChar = false;
             this.passwordTxtBox.WordWrap = true;
+            this.passwordTxtBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTxtBox_KeyDown);
             // 
             // emailTxtBox
             // 
@@ -1343,7 +1344,7 @@ namespace IOOP_Assignment
             this.bunifuImageButton1.FadeWhenInactive = false;
             this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ActiveImage = null;
+            this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.ImageLocation = null;
             this.bunifuImageButton1.ImageMargin = 10;
             this.bunifuImageButton1.ImageSize = new System.Drawing.Size(14, 15);
@@ -1360,7 +1361,7 @@ namespace IOOP_Assignment
             this.bunifuImageButton1.TabIndex = 24;
             this.bunifuImageButton1.ToolTipText = "";
             this.bunifuImageButton1.WaitOnLoad = false;
-            this.bunifuImageButton1.ImageMargin = 10;
+            this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.ZoomSpeed = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 

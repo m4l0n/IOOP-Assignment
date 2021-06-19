@@ -130,11 +130,12 @@ namespace IOOP_Assignment
         private void chkboxRoom_CheckedChanged(object sender, EventArgs e)
         {
             comboNewRoom.Enabled = chkboxRoom.Checked;
-        }
-
-        private void chkboxStudent_CheckedChanged(object sender, EventArgs e)
-        {
-            comboNewStudent.Enabled = chkboxStudent.Checked;
+            comboNewStudent.Enabled = chkboxRoom.Checked;
+            if (chkboxRoom.Checked)
+            {
+                bunifuSnackbar1.Show(this, "You must select both Room Type and Number of Students!",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000);
+            }
         }
 
         private void chkboxTime_CheckedChanged(object sender, EventArgs e)
@@ -392,43 +393,30 @@ namespace IOOP_Assignment
 
         private void comboNewRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string roomtype = lblReservedRoom1.Text;
-
-            if (chkboxRoom.Checked)
+            switch (comboNewRoom.SelectedIndex)
             {
-                roomtype = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
-                chkboxStudent.Checked = false;
-            }
-            else
-            {
-                roomtype = lblReservedRoom1.Text;
-                chkboxStudent.Checked = false;
-            }
-
-            switch (roomtype)
-            {
-                case "Amber":
+                case 0:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 10; i++)
                     {
                         comboNewStudent.Items.Add(i);
                     }
                     break;
-                case "Blackthorn":
+                case 1:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 8; i++)
                     {
                         comboNewStudent.Items.Add(i);
                     }
                     break;
-                case "Cedar":
+                case 2:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 4; i++)
                     {
                         comboNewStudent.Items.Add(i);
                     }
                     break;
-                case "Daphne":
+                case 3:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 2; i++)
                     {
@@ -456,8 +444,11 @@ namespace IOOP_Assignment
             };
 
             if (chkboxDate.Checked) req.Date = dateNewReserved.Value.ToShortDateString();
-            if (chkboxRoom.Checked) req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
-            if (chkboxStudent.Checked) req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));           
+            if (chkboxRoom.Checked)
+            {
+                req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+                req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));
+            }
             if (chkboxTime.Checked) req.Time = newTimeRes.Value.ToShortTimeString();
             if (chkboxDuration.Checked) req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
 

@@ -173,7 +173,6 @@ namespace IOOP_Assignment
             this.lblNewDuration = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblNewStudent = new Bunifu.UI.WinForms.BunifuLabel();
             this.chkboxDuration = new System.Windows.Forms.CheckBox();
-            this.chkboxStudent = new System.Windows.Forms.CheckBox();
             this.lblReservedStudent0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblReservedDuration0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnEditCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -564,10 +563,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.reservationPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "reservationPage";
-            this.bunifuPages2.PageTitle = "Reservation";
+            this.bunifuPages2.Page = this.formPage;
+            this.bunifuPages2.PageIndex = 4;
+            this.bunifuPages2.PageName = "formPage";
+            this.bunifuPages2.PageTitle = "Form";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -2879,7 +2878,6 @@ namespace IOOP_Assignment
             this.formPage.Controls.Add(this.lblNewDuration);
             this.formPage.Controls.Add(this.lblNewStudent);
             this.formPage.Controls.Add(this.chkboxDuration);
-            this.formPage.Controls.Add(this.chkboxStudent);
             this.formPage.Controls.Add(this.lblReservedStudent0);
             this.formPage.Controls.Add(this.lblReservedDuration0);
             this.formPage.Controls.Add(this.btnEditCancel);
@@ -2914,7 +2912,7 @@ namespace IOOP_Assignment
             this.lblReservedRoom1.CursorType = null;
             this.lblReservedRoom1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.lblReservedRoom1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedRoom1.Location = new System.Drawing.Point(473, 40);
+            this.lblReservedRoom1.Location = new System.Drawing.Point(475, 41);
             this.lblReservedRoom1.Name = "lblReservedRoom1";
             this.lblReservedRoom1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservedRoom1.Size = new System.Drawing.Size(46, 23);
@@ -2930,7 +2928,7 @@ namespace IOOP_Assignment
             this.lblReservedStudent1.CursorType = null;
             this.lblReservedStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.lblReservedStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedStudent1.Location = new System.Drawing.Point(571, 11);
+            this.lblReservedStudent1.Location = new System.Drawing.Point(573, 13);
             this.lblReservedStudent1.Name = "lblReservedStudent1";
             this.lblReservedStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservedStudent1.Size = new System.Drawing.Size(67, 23);
@@ -2946,7 +2944,7 @@ namespace IOOP_Assignment
             this.lblReservedDuration1.CursorType = null;
             this.lblReservedDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.lblReservedDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedDuration1.Location = new System.Drawing.Point(171, 70);
+            this.lblReservedDuration1.Location = new System.Drawing.Point(173, 71);
             this.lblReservedDuration1.Name = "lblReservedDuration1";
             this.lblReservedDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservedDuration1.Size = new System.Drawing.Size(67, 23);
@@ -2962,7 +2960,7 @@ namespace IOOP_Assignment
             this.lblReservedTime1.CursorType = null;
             this.lblReservedTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.lblReservedTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedTime1.Location = new System.Drawing.Point(143, 40);
+            this.lblReservedTime1.Location = new System.Drawing.Point(145, 42);
             this.lblReservedTime1.Name = "lblReservedTime1";
             this.lblReservedTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservedTime1.Size = new System.Drawing.Size(37, 23);
@@ -2978,7 +2976,7 @@ namespace IOOP_Assignment
             this.lblReservedDate1.CursorType = null;
             this.lblReservedDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.lblReservedDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedDate1.Location = new System.Drawing.Point(142, 11);
+            this.lblReservedDate1.Location = new System.Drawing.Point(144, 13);
             this.lblReservedDate1.Name = "lblReservedDate1";
             this.lblReservedDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblReservedDate1.Size = new System.Drawing.Size(36, 23);
@@ -3058,6 +3056,7 @@ namespace IOOP_Assignment
             this.comboNewStudent.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
             this.comboNewStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNewStudent.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewStudent.Enabled = false;
             this.comboNewStudent.FillDropDown = true;
             this.comboNewStudent.FillIndicator = false;
             this.comboNewStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3075,7 +3074,7 @@ namespace IOOP_Assignment
             this.comboNewStudent.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboNewStudent.ItemHighLightForeColor = System.Drawing.Color.White;
             this.comboNewStudent.ItemTopMargin = 3;
-            this.comboNewStudent.Location = new System.Drawing.Point(217, 320);
+            this.comboNewStudent.Location = new System.Drawing.Point(217, 294);
             this.comboNewStudent.Name = "comboNewStudent";
             this.comboNewStudent.Size = new System.Drawing.Size(220, 32);
             this.comboNewStudent.TabIndex = 58;
@@ -3267,7 +3266,7 @@ namespace IOOP_Assignment
             this.lblNewStudent.AutoEllipsis = false;
             this.lblNewStudent.CursorType = null;
             this.lblNewStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewStudent.Location = new System.Drawing.Point(34, 326);
+            this.lblNewStudent.Location = new System.Drawing.Point(34, 299);
             this.lblNewStudent.Name = "lblNewStudent";
             this.lblNewStudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNewStudent.Size = new System.Drawing.Size(177, 20);
@@ -3287,18 +3286,6 @@ namespace IOOP_Assignment
             this.chkboxDuration.Text = "Change Duration";
             this.chkboxDuration.UseVisualStyleBackColor = true;
             this.chkboxDuration.CheckedChanged += new System.EventHandler(this.chkboxDuration_CheckedChanged);
-            // 
-            // chkboxStudent
-            // 
-            this.chkboxStudent.AutoSize = true;
-            this.chkboxStudent.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chkboxStudent.Location = new System.Drawing.Point(34, 291);
-            this.chkboxStudent.Name = "chkboxStudent";
-            this.chkboxStudent.Size = new System.Drawing.Size(203, 23);
-            this.chkboxStudent.TabIndex = 47;
-            this.chkboxStudent.Text = "Change Number of Students";
-            this.chkboxStudent.UseVisualStyleBackColor = true;
-            this.chkboxStudent.CheckedChanged += new System.EventHandler(this.chkboxStudent_CheckedChanged);
             // 
             // lblReservedStudent0
             // 
@@ -3460,7 +3447,7 @@ namespace IOOP_Assignment
             "Cedar",
             "Daphne"});
             this.comboNewRoom.ItemTopMargin = 3;
-            this.comboNewRoom.Location = new System.Drawing.Point(123, 241);
+            this.comboNewRoom.Location = new System.Drawing.Point(217, 237);
             this.comboNewRoom.Name = "comboNewRoom";
             this.comboNewRoom.Size = new System.Drawing.Size(220, 32);
             this.comboNewRoom.TabIndex = 16;
@@ -3573,9 +3560,9 @@ namespace IOOP_Assignment
             this.chkboxRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.chkboxRoom.Location = new System.Drawing.Point(34, 206);
             this.chkboxRoom.Name = "chkboxRoom";
-            this.chkboxRoom.Size = new System.Drawing.Size(115, 23);
+            this.chkboxRoom.Size = new System.Drawing.Size(270, 23);
             this.chkboxRoom.TabIndex = 8;
-            this.chkboxRoom.Text = "Change Room";
+            this.chkboxRoom.Text = "Change Room and Number of Students";
             this.chkboxRoom.UseVisualStyleBackColor = true;
             this.chkboxRoom.CheckedChanged += new System.EventHandler(this.chkboxRoom_CheckedChanged);
             // 
@@ -3629,7 +3616,7 @@ namespace IOOP_Assignment
             this.lblNewRoom.AutoEllipsis = false;
             this.lblNewRoom.CursorType = null;
             this.lblNewRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewRoom.Location = new System.Drawing.Point(34, 245);
+            this.lblNewRoom.Location = new System.Drawing.Point(34, 249);
             this.lblNewRoom.Name = "lblNewRoom";
             this.lblNewRoom.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNewRoom.Size = new System.Drawing.Size(79, 20);
@@ -4052,7 +4039,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblNewDuration;
         private Bunifu.UI.WinForms.BunifuLabel lblNewStudent;
         private System.Windows.Forms.CheckBox chkboxDuration;
-        private System.Windows.Forms.CheckBox chkboxStudent;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent0;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration0;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditCancel;
