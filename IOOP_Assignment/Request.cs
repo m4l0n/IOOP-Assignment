@@ -99,5 +99,44 @@ namespace IOOP_Assignment
             }
         }
 
+        public int addRequest(Reservation req)
+        {
+            string query = "insert into [dbo].Request values (@roomtype, @date, @time, @student, @duration, @reservationid, @studentid)";
+            int result;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@roomtype", RoomType);
+                    cmd.Parameters.AddWithValue("@date", Date);
+                    cmd.Parameters.AddWithValue("@time", Time);
+                    cmd.Parameters.AddWithValue("@student", NumStudents);
+                    cmd.Parameters.AddWithValue("@duration", Duration);
+                    cmd.Parameters.AddWithValue("@reservationid", ReservationID);
+                    cmd.Parameters.AddWithValue("@studentid", StudentID);
+
+                    result = cmd.ExecuteNonQuery(); //Add Request to Request Table
+                }
+            }
+            return result;
+        }
+
+        public int deleteReservation(Reservation req)
+        {
+            string query = "delete from [dbo].Reservation where [ReservationID] = @reservationid";
+            int result;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@reservationid", ReservationID);
+
+                    result = cmd.ExecuteNonQuery(); //Delete reservation from Reservation Table
+                }
+            }
+            return result;
+        }
     }
 }
