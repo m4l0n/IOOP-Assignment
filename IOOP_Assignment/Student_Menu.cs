@@ -390,11 +390,6 @@ namespace IOOP_Assignment
             }
         }
 
-        private void dateNewReserved_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void comboNewRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
             string roomtype = lblReservedRoom1.Text;
