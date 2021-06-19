@@ -436,16 +436,14 @@ namespace IOOP_Assignment
             }
         }
 
-        private void btnEditConfirm_Click(object sender, EventArgs e)
+        private async void btnEditConfirm_Click(object sender, EventArgs e)
         {
-            if (chkboxDate.Checked == false
-                && chkboxRoom.Checked == false
-                && chkboxTime.Checked == false
+            if (chkboxDate.Checked == false && chkboxRoom.Checked == false && chkboxTime.Checked == false 
                 && chkboxDuration.Checked == false)
             {
-                bunifuSnackbar1.Show(this, "No changes made, redirecting to Edit Page.",
-                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
-
+                bunifuSnackbar1.Show(this, "No changes made, you will be redirected back to Dashboard.",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000);
+                await Task.Delay(2000);
                 bunifuPages2.SetPage(2);
             }
             else
@@ -455,16 +453,12 @@ namespace IOOP_Assignment
 
                 if (chkboxRoom.Checked)
                 {
-                    if (comboNewRoom.SelectedIndex != -1
-                        && comboNewStudent.SelectedIndex != -1)
+                    if (comboNewRoom.SelectedIndex != -1 && comboNewStudent.SelectedIndex != -1)
                     {
                         roomvalidate = 1;
                     }
                 }
-                else
-                {
-                    roomvalidate = 1;
-                }
+                else roomvalidate = 1;
 
                 if (chkboxDuration.Checked)
                 {
@@ -473,13 +467,9 @@ namespace IOOP_Assignment
                         durationvalidate = 1;
                     }
                 }
-                else
-                {
-                    durationvalidate = 1;
-                }
+                else durationvalidate = 1;
 
-                if (roomvalidate == 1
-                    && durationvalidate == 1)
+                if (roomvalidate == 1 && durationvalidate == 1)
                 {
                     int row = tableReservationEdit.CurrentRow.Index;
                     DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
@@ -519,7 +509,7 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    bunifuSnackbar1.Show(this, "Please make sure ticked field is filled.",
+                    bunifuSnackbar1.Show(this, "Please make sure all checked options are filled.",
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
                 }
             }
