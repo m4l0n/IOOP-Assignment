@@ -564,16 +564,16 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.editPage;
-            this.bunifuPages2.PageIndex = 2;
-            this.bunifuPages2.PageName = "editPage";
-            this.bunifuPages2.PageTitle = "Edit";
+            this.bunifuPages2.Page = this.reservationPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "reservationPage";
+            this.bunifuPages2.PageTitle = "Reservation";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
+            animation1.LeafCoeff = 1F;
             animation1.MaxTime = 1F;
             animation1.MinTime = 0F;
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
@@ -585,9 +585,9 @@ namespace IOOP_Assignment
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
             animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
             animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
+            animation1.TransparencyCoeff = 0F;
             this.bunifuPages2.Transition = animation1;
-            this.bunifuPages2.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
+            this.bunifuPages2.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Leaf;
             // 
             // dashboardPage
             // 

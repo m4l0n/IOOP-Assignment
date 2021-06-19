@@ -26,10 +26,6 @@ namespace IOOP_Assignment
             {
                 Application.Run(new Librarian_Menu());
             }
-            else
-            {
-                MessageBox.Show("Role not found!");
-            }
         }
     }
 }

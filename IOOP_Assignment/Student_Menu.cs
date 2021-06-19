@@ -18,13 +18,6 @@ namespace IOOP_Assignment
         public Student_Menu()
         {
             InitializeComponent();
-            //Converts DatePicker to TimePicker
-            timeReserve.Format = DateTimePickerFormat.Custom;
-            timeReserve.CustomFormat = "HH:mm tt";
-            timeReserve.ShowUpDown = true;
-            newTimeRes.Format = DateTimePickerFormat.Custom;
-            newTimeRes.CustomFormat = "HH:mm tt";
-            newTimeRes.ShowUpDown = true;
         }
 
         private void Student_Menu_Shown(object sender, EventArgs e)
@@ -77,32 +70,16 @@ namespace IOOP_Assignment
 
         private void Student_Menu_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" +
-                    User.loginEmail + "'", con))
-                {
-                    User.name = cmd.ExecuteScalar().ToString();
-                }
-                lblName.Text = User.name;
-                lblName2.Text = User.name;
-                lblName3.Text = User.name;
-                using (SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='"
-                    + User.loginEmail + "'", con))
-                {
-                    User.tpNumber = cmd2.ExecuteScalar().ToString();
-                }
-                int activeReservation;
-                using (SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where " +
-                    "StudentID ='" + User.tpNumber + "' and Date >= getDate()", con))
-                {
-                    activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
-                }
-                lblHi.Text = "Hi " + User.name + ",";
-                lblActiveRes.Text = activeReservation.ToString();
-                checkNotification(User.tpNumber);
-            }
+            checkNotification(User.tpNumber);
+            fillProfileDetails();
+
+            //Converts DatePicker to TimePicker
+            timeReserve.Format = DateTimePickerFormat.Custom;
+            timeReserve.CustomFormat = "HH:mm tt";
+            timeReserve.ShowUpDown = true;
+            newTimeRes.Format = DateTimePickerFormat.Custom;
+            newTimeRes.CustomFormat = "HH:mm tt";
+            newTimeRes.ShowUpDown = true;
         }
 
         private void shapeClose_Click(object sender, EventArgs e)
@@ -173,8 +150,13 @@ namespace IOOP_Assignment
         private void btnCancel_Click(object sender, EventArgs e)
         {
             comboDuration.SelectedItem = null;
+            comboDuration.Text = "Select Duration";
             comboRoom.SelectedItem = null;
+            comboRoom.Text = "Select Room Type";
             comboStudentNo.SelectedItem = null;
+            comboStudentNo.Text = "Select Number of Students";
+            dateReserve.ResetText();
+            timeReserve.ResetText();
         }
 
         private void comboRoom_SelectedIndexChanged(object sender, EventArgs e)
@@ -468,69 +450,38 @@ namespace IOOP_Assignment
                 "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string date = dt.ToString("MM/dd/yyyy");
 
-            Reservation req = new Reservation
+            Request req = new Request
             {
-                ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
+                ReservationID = Convert.ToInt32(tableReservationEdit[0, row].Value),
                 RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
-                RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
                 NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
+                Date = date,
                 Time = Convert.ToString(tableReservationEdit[5, row].Value),
                 Duration = Convert.ToString(tableReservationEdit[6, row].Value),
-
             };
 
-            if (chkboxDate.Checked)
-            {
-                date = dateNewReserved.Value.ToShortDateString();
-            }
+            if (chkboxDate.Checked) req.Date = dateNewReserved.Value.ToShortDateString();
+            if (chkboxRoom.Checked) req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+            if (chkboxStudent.Checked) req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));           
+            if (chkboxTime.Checked) req.Time = newTimeRes.Value.ToShortTimeString();
+            if (chkboxDuration.Checked) req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
 
-            if (chkboxRoom.Checked)
+            int result = req.addRequest(req);
+            if (result != 0)
             {
-                req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+                bunifuSnackbar1.Show(this, "You have successfully requested for a change on your reservation. Librarians will " +
+                    "check on it soon.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
             }
-
-            if (chkboxStudent.Checked)
+            else
             {
-                req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));
+                bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
+                    "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
             }
-
-            if (chkboxTime.Checked)
-            {
-                req.Time = newTimeRes.Value.ToShortTimeString();
-            }
-
-            if (chkboxDuration.Checked)
-            {
-                req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
-            }
-
-            Request addreq = new Request
-            {
-                RoomType = req.RoomType,
-                Date = date,
-                Time = req.Time,
-                NumStudents = req.NumStudents,
-                Duration = req.Duration,
-                ReservationID = req.ResID,
-                StudentID = User.tpNumber,
-            };
-
-            int result = addreq.addRequest(req);
-                if (result != 0)
-                {
-                    bunifuSnackbar1.Show(this, "You have successfully request a change on your reservation. Librarian will check on it soon. " +
-                    "Check on notification for the result.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
-                }
-                else
-                {
-                    bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
-                        "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
-                }
-            }
+        }
 
         private void btnEditCancel_Click(object sender, EventArgs e)
         {
-
+            bunifuPages2.SetPage(0);
         }
 
         private void btnCancelReserve_Click(object sender, EventArgs e)
@@ -538,37 +489,53 @@ namespace IOOP_Assignment
             if (cbkboxSecurityCancel.Checked)
             {
                 int row = tableReservationEdit.CurrentRow.Index;
-                DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
-                    "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                string date = dt.ToString("MM/dd/yyyy");
-
-                Reservation req = new Reservation
-                {
-                    ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
-                    RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
-                    RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
-                    NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
-                    Time = Convert.ToString(tableReservationEdit[5, row].Value),
-                    Duration = Convert.ToString(tableReservationEdit[6, row].Value),
-
-                };
-
                 Request delreq = new Request
                 {
-                    ReservationID = req.ResID,
+                    ReservationID = Convert.ToInt32(tableReservationEdit[0, row].Value),
                 };
 
-                int result = delreq.deleteReservation(req);
+                int result = delreq.deleteReservation(delreq);
                 if (result != 0)
                 {
-                    bunifuSnackbar1.Show(this, "You have successfully cancel your reservation.",
+                    bunifuSnackbar1.Show(this, "You have successfully cancelled your reservation.",
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                    tableReservationEdit.Rows.RemoveAt(row);
+                    resDataGridView.Rows.RemoveAt(row);
                 }
                 else
                 {
-                    bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
-                        "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                    bunifuSnackbar1.Show(this, "Something went wrong while attempting to make a request. Please contact the " +
+                        "system administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
                 }
+            }
+        }
+
+        private void fillProfileDetails()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select Name from [dbo].[User] where Email='" +
+                    User.loginEmail + "'", con))
+                {
+                    User.name = cmd.ExecuteScalar().ToString();
+                }
+                lblName.Text = User.name;
+                lblName2.Text = User.name;
+                lblName3.Text = User.name;
+                using (SqlCommand cmd2 = new SqlCommand("select TPNumber from [dbo].[User]  where Email='"
+                    + User.loginEmail + "'", con))
+                {
+                    User.tpNumber = cmd2.ExecuteScalar().ToString();
+                }
+                int activeReservation;
+                using (SqlCommand cmd3 = new SqlCommand("select count(StudentID) from [dbo].[Reservation] where " +
+                    "StudentID ='" + User.tpNumber + "' and Date >= getDate()", con))
+                {
+                    activeReservation = Convert.ToInt32(cmd3.ExecuteScalar().ToString());
+                }
+                lblHi.Text = "Hi " + User.name + ",";
+                lblActiveRes.Text = activeReservation.ToString();
             }
         }
     }

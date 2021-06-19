@@ -76,7 +76,7 @@ namespace IOOP_Assignment
 
         public string assignRoom(Request req)   //Method to assign a Room Number
         {
-            string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
+            string query = "SELECT SUBSTRING((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
                 "where [Room Type] = '" + req.RoomType + "' and Date = '" + req.Date + "' " +
                 "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
             string assignedRoom;
@@ -88,7 +88,7 @@ namespace IOOP_Assignment
                     con.Open();
                     takenRooms = cmd.ExecuteScalar().ToString();
                     takenRooms = takenRooms.Replace(",", "','");
-                    string query2 = "select top 1 [Room Number] from [dbo].Room where [Room Number] NOT IN " +
+                    string query2 = "SELECT TOP 1 [Room Number] FROM [dbo].Room WHERE [Room Number] NOT IN " +
                         "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";
                     using (SqlCommand cmd2 = new SqlCommand(query2, con))
                     {
@@ -99,9 +99,10 @@ namespace IOOP_Assignment
             }
         }
 
-        public int addRequest(Reservation req)
+        public int addRequest(Request req)
         {
-            string query = "insert into [dbo].Request values (@roomtype, @date, @time, @student, @duration, @reservationid, @studentid)";
+            string query = "INSERT INTO [dbo].Request VALUES(@roomtype, @date, @time, @student, @duration, @reservationid," +
+                " @studentid)";
             int result;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
@@ -122,9 +123,9 @@ namespace IOOP_Assignment
             return result;
         }
 
-        public int deleteReservation(Reservation req)
+        public int deleteReservation(Request req)
         {
-            string query = "delete from [dbo].Reservation where [ReservationID] = @reservationid";
+            string query = "DELETE FROM [dbo].Reservation WHERE[ReservationID] = @reservationid";
             int result;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {

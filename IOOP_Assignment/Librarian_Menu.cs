@@ -336,9 +336,10 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd3 = new SqlCommand("delete from [dbo].Request where RequestID='" + req.RequestID + "'", con))
                 {
                     cmd3.ExecuteNonQuery();
-                }
-                bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
+                }   
             }
+            bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
+            requestDataGridView.Rows.RemoveAt(row);
         }
 
         private void btnDenyReq_Click(object sender, EventArgs e)
@@ -355,11 +356,16 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
                 req.StudentID + "','" + req.RequestID + "')", con))
+                {
                     cmd.ExecuteNonQuery();
+                }
                 using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
+                {
                     cmd2.ExecuteNonQuery();
-                bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
+                }   
             }
+            bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
+            requestDataGridView.Rows.RemoveAt(row);
         }
 
         private void btnSearchMonthly_Click(object sender, EventArgs e)
