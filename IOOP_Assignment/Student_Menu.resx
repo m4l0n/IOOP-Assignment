@@ -23803,6 +23803,21 @@
         cmUvc7WXuubM/hpV9QtD3+KWAbPHLQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="lblReservedRoom1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 206, 209); text-align: left; }</value>
+  </data>
+  <data name="lblReservedStudent1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 206, 209); text-align: left; }</value>
+  </data>
+  <data name="lblReservedDuration1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 206, 209); text-align: left; }</value>
+  </data>
+  <data name="lblReservedTime1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 206, 209); text-align: left; }</value>
+  </data>
+  <data name="lblReservedDate1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 206, 209); text-align: left; }</value>
+  </data>
   <data name="btnEditConfirm.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -24174,25 +24189,16 @@
         KKKKACiiigAooooA/9k=
 </value>
   </data>
-  <data name="txtNewStudent.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMUAAAAlCAYAAADyfC1yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACYSURBVHhe7dPBCcMwAARB9V+VjMpIGSkgRmAIWdKBZuA+
-        998B/LHWes05P2Ynb3fwJDHGPuB0u4MnCVHAJgoIUUCIAkIUEKKAEAWEKCBEASEKCFFAiAJCFBCigBAF
-        hCggRAEhCghRQIgCQhQQooAQBYQoIEQBIQoIUUCIAkIUEKKAEAWEKCB+oriu670Ps5O3O3iSAL7GuAEe
-        BO6FY5yhDgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="lblNewDuration.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="lblNewStudent.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="lblReservedStudent.BaseStylesheet" xml:space="preserve">
+  <data name="lblReservedStudent0.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="lblReservedDuration.BaseStylesheet" xml:space="preserve">
+  <data name="lblReservedDuration0.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="btnEditCancel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -24266,13 +24272,13 @@
   <data name="lblNewDate.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="lblReservedTime.BaseStylesheet" xml:space="preserve">
+  <data name="lblReservedTime0.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="lblReservedRoom.BaseStylesheet" xml:space="preserve">
+  <data name="lblReservedRoom0.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="lblReservedDate.BaseStylesheet" xml:space="preserve">
+  <data name="lblReservedDate0.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="animation1.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">

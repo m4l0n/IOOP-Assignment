@@ -146,6 +146,8 @@ namespace IOOP_Assignment
         private void chkboxDate_CheckedChanged(object sender, EventArgs e)
         {
             dateNewReserved.Enabled = chkboxDate.Checked;
+            dateNewReserved.Value = DateTime.Now.AddDays(2);
+            dateNewReserved.MinDate = DateTime.Now.AddDays(2);
         }
 
         private void chkboxRoom_CheckedChanged(object sender, EventArgs e)
@@ -155,7 +157,7 @@ namespace IOOP_Assignment
 
         private void chkboxStudent_CheckedChanged(object sender, EventArgs e)
         {
-            txtNewStudent.Enabled = chkboxStudent.Checked;
+            comboNewStudent.Enabled = chkboxStudent.Checked;
         }
 
         private void chkboxTime_CheckedChanged(object sender, EventArgs e)
@@ -285,11 +287,11 @@ namespace IOOP_Assignment
 
             };
 
-            lblReservedDate.Text = ("Reserved Date: " + datee);
-            //lblReservedDuration;
-            //lblReservedTime;
-            //lblReservedRoom;
-            //lblReservedStudent;
+            lblReservedDate1.Text = datee;
+            lblReservedDuration1.Text = req.Duration;
+            lblReservedTime1.Text = req.Time;
+            lblReservedRoom1.Text = req.RoomType;
+            lblReservedStudent1.Text = req.NumStudents.ToString();
 
 
             bunifuPages2.SetPage(4);    //Redirect to Edit Form Page
@@ -403,6 +405,170 @@ namespace IOOP_Assignment
                         roomStatus[i],
                     });
                 if (roomStatus[i] == "Available") comboRoom.Items.Add(roomType[i]);
+            }
+        }
+
+        private void dateNewReserved_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboNewRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string roomtype = lblReservedRoom1.Text;
+
+            if (chkboxRoom.Checked)
+            {
+                roomtype = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+                chkboxStudent.Checked = false;
+            }
+            else
+            {
+                roomtype = lblReservedRoom1.Text;
+                chkboxStudent.Checked = false;
+            }
+
+            switch (roomtype)
+            {
+                case "Amber":
+                    comboNewStudent.Items.Clear();
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        comboNewStudent.Items.Add(i);
+                    }
+                    break;
+                case "Blackthorn":
+                    comboNewStudent.Items.Clear();
+                    for (int i = 1; i <= 8; i++)
+                    {
+                        comboNewStudent.Items.Add(i);
+                    }
+                    break;
+                case "Cedar":
+                    comboNewStudent.Items.Clear();
+                    for (int i = 1; i <= 4; i++)
+                    {
+                        comboNewStudent.Items.Add(i);
+                    }
+                    break;
+                case "Daphne":
+                    comboNewStudent.Items.Clear();
+                    for (int i = 1; i <= 2; i++)
+                    {
+                        comboNewStudent.Items.Add(i);
+                    }
+                    break;
+            }
+        }
+
+        private void btnEditConfirm_Click(object sender, EventArgs e)
+        {
+            int row = tableReservationEdit.CurrentRow.Index;
+            DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
+                "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string date = dt.ToString("MM/dd/yyyy");
+
+            Reservation req = new Reservation
+            {
+                ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
+                RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
+                RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
+                NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
+                Time = Convert.ToString(tableReservationEdit[5, row].Value),
+                Duration = Convert.ToString(tableReservationEdit[6, row].Value),
+
+            };
+
+            if (chkboxDate.Checked)
+            {
+                date = dateNewReserved.Value.ToShortDateString();
+            }
+
+            if (chkboxRoom.Checked)
+            {
+                req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+            }
+
+            if (chkboxStudent.Checked)
+            {
+                req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));
+            }
+
+            if (chkboxTime.Checked)
+            {
+                req.Time = newTimeRes.Value.ToShortTimeString();
+            }
+
+            if (chkboxDuration.Checked)
+            {
+                req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
+            }
+
+            Request addreq = new Request
+            {
+                RoomType = req.RoomType,
+                Date = date,
+                Time = req.Time,
+                NumStudents = req.NumStudents,
+                Duration = req.Duration,
+                ReservationID = req.ResID,
+                StudentID = User.tpNumber,
+            };
+
+            int result = addreq.addRequest(req);
+                if (result != 0)
+                {
+                    bunifuSnackbar1.Show(this, "You have successfully request a change on your reservation. Librarian will check on it soon. " +
+                    "Check on notification for the result.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                }
+                else
+                {
+                    bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
+                        "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                }
+            }
+
+        private void btnEditCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelReserve_Click(object sender, EventArgs e)
+        {
+            if (cbkboxSecurityCancel.Checked)
+            {
+                int row = tableReservationEdit.CurrentRow.Index;
+                DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
+                    "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string date = dt.ToString("MM/dd/yyyy");
+
+                Reservation req = new Reservation
+                {
+                    ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
+                    RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
+                    RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
+                    NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
+                    Time = Convert.ToString(tableReservationEdit[5, row].Value),
+                    Duration = Convert.ToString(tableReservationEdit[6, row].Value),
+
+                };
+
+                Request delreq = new Request
+                {
+                    ReservationID = req.ResID,
+                };
+
+                int result = delreq.deleteReservation(req);
+                if (result != 0)
+                {
+                    bunifuSnackbar1.Show(this, "You have successfully cancel your reservation.",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                }
+                else
+                {
+                    bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
+                        "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                }
             }
         }
     }

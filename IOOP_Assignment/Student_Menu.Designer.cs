@@ -51,10 +51,6 @@ namespace IOOP_Assignment
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -104,6 +100,8 @@ namespace IOOP_Assignment
             this.lblTime = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel8 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.tableAvailableRoom = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.columnAvailableRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnAvailableRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuShadowPanel7 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -160,19 +158,24 @@ namespace IOOP_Assignment
             this.btnPreviewConfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPreviewCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.formPage = new System.Windows.Forms.TabPage();
+            this.lblReservedRoom1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedDuration1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedTime1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedDate1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.comboNewDuration = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.comboNewStudent = new Bunifu.UI.WinForms.BunifuDropdown();
             this.btnEditConfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuSeparator8 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.newTimeRes = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuShadowPanel10 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtNewStudent = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.comboNewDuration = new Bunifu.UI.WinForms.BunifuDropdown();
             this.lblNewDuration = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblNewStudent = new Bunifu.UI.WinForms.BunifuLabel();
             this.chkboxDuration = new System.Windows.Forms.CheckBox();
             this.chkboxStudent = new System.Windows.Forms.CheckBox();
-            this.lblReservedStudent = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblReservedDuration = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedStudent0 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedDuration0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnEditCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.comboNewRoom = new Bunifu.UI.WinForms.BunifuDropdown();
             this.dateNewReserved = new Bunifu.UI.WinForms.BunifuDatePicker();
@@ -187,9 +190,9 @@ namespace IOOP_Assignment
             this.lblNewTime = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblNewRoom = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblNewDate = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblReservedTime = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblReservedRoom = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblReservedDate = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedTime0 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedRoom0 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblReservedDate0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -198,8 +201,6 @@ namespace IOOP_Assignment
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.columnAvailableRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAvailableRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuPanel1.SuspendLayout();
@@ -563,10 +564,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.reservationPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "reservationPage";
-            this.bunifuPages2.PageTitle = "Reservation";
+            this.bunifuPages2.Page = this.editPage;
+            this.bunifuPages2.PageIndex = 2;
+            this.bunifuPages2.PageName = "editPage";
+            this.bunifuPages2.PageTitle = "Edit";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -1463,6 +1464,20 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.TabIndex = 40;
             this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
             // 
+            // columnAvailableRoomType
+            // 
+            this.columnAvailableRoomType.HeaderText = "Room Type";
+            this.columnAvailableRoomType.Name = "columnAvailableRoomType";
+            this.columnAvailableRoomType.ReadOnly = true;
+            this.columnAvailableRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // columnAvailableRoom
+            // 
+            this.columnAvailableRoom.HeaderText = "Available Room";
+            this.columnAvailableRoom.Name = "columnAvailableRoom";
+            this.columnAvailableRoom.ReadOnly = true;
+            this.columnAvailableRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // bunifuShadowPanel7
             // 
             this.bunifuShadowPanel7.BackColor = System.Drawing.Color.Transparent;
@@ -2110,6 +2125,7 @@ namespace IOOP_Assignment
             this.btnCancelReserve.TextMarginLeft = 0;
             this.btnCancelReserve.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCancelReserve.UseDefaultRadiusAndThickness = true;
+            this.btnCancelReserve.Click += new System.EventHandler(this.btnCancelReserve_Click);
             // 
             // btnEditReserve
             // 
@@ -2849,18 +2865,23 @@ namespace IOOP_Assignment
             // 
             // formPage
             // 
+            this.formPage.Controls.Add(this.lblReservedRoom1);
+            this.formPage.Controls.Add(this.lblReservedStudent1);
+            this.formPage.Controls.Add(this.lblReservedDuration1);
+            this.formPage.Controls.Add(this.lblReservedTime1);
+            this.formPage.Controls.Add(this.lblReservedDate1);
+            this.formPage.Controls.Add(this.comboNewDuration);
+            this.formPage.Controls.Add(this.comboNewStudent);
             this.formPage.Controls.Add(this.btnEditConfirm);
             this.formPage.Controls.Add(this.bunifuSeparator8);
             this.formPage.Controls.Add(this.newTimeRes);
             this.formPage.Controls.Add(this.bunifuShadowPanel10);
-            this.formPage.Controls.Add(this.txtNewStudent);
-            this.formPage.Controls.Add(this.comboNewDuration);
             this.formPage.Controls.Add(this.lblNewDuration);
             this.formPage.Controls.Add(this.lblNewStudent);
             this.formPage.Controls.Add(this.chkboxDuration);
             this.formPage.Controls.Add(this.chkboxStudent);
-            this.formPage.Controls.Add(this.lblReservedStudent);
-            this.formPage.Controls.Add(this.lblReservedDuration);
+            this.formPage.Controls.Add(this.lblReservedStudent0);
+            this.formPage.Controls.Add(this.lblReservedDuration0);
             this.formPage.Controls.Add(this.btnEditCancel);
             this.formPage.Controls.Add(this.comboNewRoom);
             this.formPage.Controls.Add(this.dateNewReserved);
@@ -2875,9 +2896,9 @@ namespace IOOP_Assignment
             this.formPage.Controls.Add(this.lblNewTime);
             this.formPage.Controls.Add(this.lblNewRoom);
             this.formPage.Controls.Add(this.lblNewDate);
-            this.formPage.Controls.Add(this.lblReservedTime);
-            this.formPage.Controls.Add(this.lblReservedRoom);
-            this.formPage.Controls.Add(this.lblReservedDate);
+            this.formPage.Controls.Add(this.lblReservedTime0);
+            this.formPage.Controls.Add(this.lblReservedRoom0);
+            this.formPage.Controls.Add(this.lblReservedDate0);
             this.formPage.Location = new System.Drawing.Point(4, 4);
             this.formPage.Name = "formPage";
             this.formPage.Padding = new System.Windows.Forms.Padding(3);
@@ -2885,6 +2906,182 @@ namespace IOOP_Assignment
             this.formPage.TabIndex = 4;
             this.formPage.Text = "Form";
             this.formPage.UseVisualStyleBackColor = true;
+            // 
+            // lblReservedRoom1
+            // 
+            this.lblReservedRoom1.AllowParentOverrides = false;
+            this.lblReservedRoom1.AutoEllipsis = false;
+            this.lblReservedRoom1.CursorType = null;
+            this.lblReservedRoom1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedRoom1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedRoom1.Location = new System.Drawing.Point(473, 40);
+            this.lblReservedRoom1.Name = "lblReservedRoom1";
+            this.lblReservedRoom1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedRoom1.Size = new System.Drawing.Size(46, 23);
+            this.lblReservedRoom1.TabIndex = 64;
+            this.lblReservedRoom1.Text = "Room";
+            this.lblReservedRoom1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedRoom1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblReservedStudent1
+            // 
+            this.lblReservedStudent1.AllowParentOverrides = false;
+            this.lblReservedStudent1.AutoEllipsis = false;
+            this.lblReservedStudent1.CursorType = null;
+            this.lblReservedStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedStudent1.Location = new System.Drawing.Point(571, 11);
+            this.lblReservedStudent1.Name = "lblReservedStudent1";
+            this.lblReservedStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedStudent1.Size = new System.Drawing.Size(67, 23);
+            this.lblReservedStudent1.TabIndex = 63;
+            this.lblReservedStudent1.Text = "Students";
+            this.lblReservedStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblReservedDuration1
+            // 
+            this.lblReservedDuration1.AllowParentOverrides = false;
+            this.lblReservedDuration1.AutoEllipsis = false;
+            this.lblReservedDuration1.CursorType = null;
+            this.lblReservedDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedDuration1.Location = new System.Drawing.Point(171, 70);
+            this.lblReservedDuration1.Name = "lblReservedDuration1";
+            this.lblReservedDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDuration1.Size = new System.Drawing.Size(67, 23);
+            this.lblReservedDuration1.TabIndex = 62;
+            this.lblReservedDuration1.Text = "Duration";
+            this.lblReservedDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblReservedTime1
+            // 
+            this.lblReservedTime1.AllowParentOverrides = false;
+            this.lblReservedTime1.AutoEllipsis = false;
+            this.lblReservedTime1.CursorType = null;
+            this.lblReservedTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedTime1.Location = new System.Drawing.Point(143, 40);
+            this.lblReservedTime1.Name = "lblReservedTime1";
+            this.lblReservedTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedTime1.Size = new System.Drawing.Size(37, 23);
+            this.lblReservedTime1.TabIndex = 61;
+            this.lblReservedTime1.Text = "Time";
+            this.lblReservedTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblReservedDate1
+            // 
+            this.lblReservedDate1.AllowParentOverrides = false;
+            this.lblReservedDate1.AutoEllipsis = false;
+            this.lblReservedDate1.CursorType = null;
+            this.lblReservedDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedDate1.Location = new System.Drawing.Point(142, 11);
+            this.lblReservedDate1.Name = "lblReservedDate1";
+            this.lblReservedDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDate1.Size = new System.Drawing.Size(36, 23);
+            this.lblReservedDate1.TabIndex = 60;
+            this.lblReservedDate1.Text = "Date";
+            this.lblReservedDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // comboNewDuration
+            // 
+            this.comboNewDuration.BackColor = System.Drawing.Color.Transparent;
+            this.comboNewDuration.BackgroundColor = System.Drawing.Color.White;
+            this.comboNewDuration.BorderColor = System.Drawing.Color.Silver;
+            this.comboNewDuration.BorderRadius = 1;
+            this.comboNewDuration.Color = System.Drawing.Color.Silver;
+            this.comboNewDuration.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboNewDuration.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewDuration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboNewDuration.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewDuration.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboNewDuration.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboNewDuration.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNewDuration.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboNewDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNewDuration.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewDuration.FillDropDown = true;
+            this.comboNewDuration.FillIndicator = false;
+            this.comboNewDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboNewDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboNewDuration.ForeColor = System.Drawing.Color.Black;
+            this.comboNewDuration.FormattingEnabled = true;
+            this.comboNewDuration.Icon = null;
+            this.comboNewDuration.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewDuration.IndicatorColor = System.Drawing.Color.Gray;
+            this.comboNewDuration.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewDuration.ItemBackColor = System.Drawing.Color.White;
+            this.comboNewDuration.ItemBorderColor = System.Drawing.Color.White;
+            this.comboNewDuration.ItemForeColor = System.Drawing.Color.Black;
+            this.comboNewDuration.ItemHeight = 26;
+            this.comboNewDuration.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.comboNewDuration.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewDuration.Items.AddRange(new object[] {
+            "1 hour",
+            "1 hour 30 Minutes",
+            "2 hours",
+            "2 hours  30 Minutes",
+            "3 hours",
+            "3 hours  30 Minutes",
+            "4 hours",
+            "4 hours  30 Minutes",
+            "5 hours",
+            "5 hours  30 Minutes",
+            "6 hours"});
+            this.comboNewDuration.ItemTopMargin = 3;
+            this.comboNewDuration.Location = new System.Drawing.Point(539, 415);
+            this.comboNewDuration.Name = "comboNewDuration";
+            this.comboNewDuration.Size = new System.Drawing.Size(207, 32);
+            this.comboNewDuration.TabIndex = 59;
+            this.comboNewDuration.Text = "Select New Duration";
+            this.comboNewDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewDuration.TextLeftMargin = 5;
+            // 
+            // comboNewStudent
+            // 
+            this.comboNewStudent.BackColor = System.Drawing.Color.Transparent;
+            this.comboNewStudent.BackgroundColor = System.Drawing.Color.White;
+            this.comboNewStudent.BorderColor = System.Drawing.Color.Silver;
+            this.comboNewStudent.BorderRadius = 1;
+            this.comboNewStudent.Color = System.Drawing.Color.Silver;
+            this.comboNewStudent.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboNewStudent.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewStudent.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboNewStudent.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewStudent.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboNewStudent.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboNewStudent.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNewStudent.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboNewStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNewStudent.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewStudent.FillDropDown = true;
+            this.comboNewStudent.FillIndicator = false;
+            this.comboNewStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboNewStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboNewStudent.ForeColor = System.Drawing.Color.Black;
+            this.comboNewStudent.FormattingEnabled = true;
+            this.comboNewStudent.Icon = null;
+            this.comboNewStudent.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewStudent.IndicatorColor = System.Drawing.Color.Gray;
+            this.comboNewStudent.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewStudent.ItemBackColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemBorderColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemForeColor = System.Drawing.Color.Black;
+            this.comboNewStudent.ItemHeight = 26;
+            this.comboNewStudent.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.comboNewStudent.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemTopMargin = 3;
+            this.comboNewStudent.Location = new System.Drawing.Point(217, 320);
+            this.comboNewStudent.Name = "comboNewStudent";
+            this.comboNewStudent.Size = new System.Drawing.Size(220, 32);
+            this.comboNewStudent.TabIndex = 58;
+            this.comboNewStudent.Text = "Select New Number of Students";
+            this.comboNewStudent.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewStudent.TextLeftMargin = 5;
             // 
             // btnEditConfirm
             // 
@@ -2974,6 +3171,7 @@ namespace IOOP_Assignment
             this.btnEditConfirm.TextMarginLeft = 0;
             this.btnEditConfirm.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnEditConfirm.UseDefaultRadiusAndThickness = true;
+            this.btnEditConfirm.Click += new System.EventHandler(this.btnEditConfirm_Click);
             // 
             // bunifuSeparator8
             // 
@@ -3048,124 +3246,6 @@ namespace IOOP_Assignment
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
-            // txtNewStudent
-            // 
-            this.txtNewStudent.AcceptsReturn = false;
-            this.txtNewStudent.AcceptsTab = false;
-            this.txtNewStudent.AnimationSpeed = 200;
-            this.txtNewStudent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtNewStudent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtNewStudent.BackColor = System.Drawing.Color.Transparent;
-            this.txtNewStudent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtNewStudent.BackgroundImage")));
-            this.txtNewStudent.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtNewStudent.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtNewStudent.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtNewStudent.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtNewStudent.BorderRadius = 1;
-            this.txtNewStudent.BorderThickness = 1;
-            this.txtNewStudent.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNewStudent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewStudent.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtNewStudent.DefaultText = "";
-            this.txtNewStudent.Enabled = false;
-            this.txtNewStudent.FillColor = System.Drawing.Color.White;
-            this.txtNewStudent.HideSelection = true;
-            this.txtNewStudent.IconLeft = null;
-            this.txtNewStudent.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewStudent.IconPadding = 10;
-            this.txtNewStudent.IconRight = null;
-            this.txtNewStudent.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewStudent.Lines = new string[0];
-            this.txtNewStudent.Location = new System.Drawing.Point(217, 318);
-            this.txtNewStudent.MaxLength = 32767;
-            this.txtNewStudent.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtNewStudent.Modified = false;
-            this.txtNewStudent.Multiline = false;
-            this.txtNewStudent.Name = "txtNewStudent";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtNewStudent.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtNewStudent.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtNewStudent.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtNewStudent.OnIdleState = stateProperties4;
-            this.txtNewStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.txtNewStudent.PasswordChar = '\0';
-            this.txtNewStudent.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNewStudent.PlaceholderText = "Enter New Number of Students";
-            this.txtNewStudent.ReadOnly = false;
-            this.txtNewStudent.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNewStudent.SelectedText = "";
-            this.txtNewStudent.SelectionLength = 0;
-            this.txtNewStudent.SelectionStart = 0;
-            this.txtNewStudent.ShortcutsEnabled = true;
-            this.txtNewStudent.Size = new System.Drawing.Size(197, 37);
-            this.txtNewStudent.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtNewStudent.TabIndex = 53;
-            this.txtNewStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNewStudent.TextMarginBottom = 0;
-            this.txtNewStudent.TextMarginLeft = 3;
-            this.txtNewStudent.TextMarginTop = 0;
-            this.txtNewStudent.TextPlaceholder = "Enter New Number of Students";
-            this.txtNewStudent.UseSystemPasswordChar = false;
-            this.txtNewStudent.WordWrap = true;
-            // 
-            // comboNewDuration
-            // 
-            this.comboNewDuration.BackColor = System.Drawing.Color.Transparent;
-            this.comboNewDuration.BackgroundColor = System.Drawing.Color.White;
-            this.comboNewDuration.BorderColor = System.Drawing.Color.Silver;
-            this.comboNewDuration.BorderRadius = 1;
-            this.comboNewDuration.Color = System.Drawing.Color.Silver;
-            this.comboNewDuration.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboNewDuration.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewDuration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.comboNewDuration.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewDuration.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.comboNewDuration.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboNewDuration.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboNewDuration.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.comboNewDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboNewDuration.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewDuration.Enabled = false;
-            this.comboNewDuration.FillDropDown = true;
-            this.comboNewDuration.FillIndicator = false;
-            this.comboNewDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboNewDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboNewDuration.ForeColor = System.Drawing.Color.Black;
-            this.comboNewDuration.FormattingEnabled = true;
-            this.comboNewDuration.Icon = null;
-            this.comboNewDuration.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewDuration.IndicatorColor = System.Drawing.Color.Gray;
-            this.comboNewDuration.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewDuration.ItemBackColor = System.Drawing.Color.White;
-            this.comboNewDuration.ItemBorderColor = System.Drawing.Color.White;
-            this.comboNewDuration.ItemForeColor = System.Drawing.Color.Black;
-            this.comboNewDuration.ItemHeight = 26;
-            this.comboNewDuration.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.comboNewDuration.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboNewDuration.ItemTopMargin = 3;
-            this.comboNewDuration.Location = new System.Drawing.Point(553, 415);
-            this.comboNewDuration.Name = "comboNewDuration";
-            this.comboNewDuration.Size = new System.Drawing.Size(189, 32);
-            this.comboNewDuration.TabIndex = 52;
-            this.comboNewDuration.Text = "Select New Duration";
-            this.comboNewDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewDuration.TextLeftMargin = 5;
-            // 
             // lblNewDuration
             // 
             this.lblNewDuration.AllowParentOverrides = false;
@@ -3220,35 +3300,35 @@ namespace IOOP_Assignment
             this.chkboxStudent.UseVisualStyleBackColor = true;
             this.chkboxStudent.CheckedChanged += new System.EventHandler(this.chkboxStudent_CheckedChanged);
             // 
-            // lblReservedStudent
+            // lblReservedStudent0
             // 
-            this.lblReservedStudent.AllowParentOverrides = false;
-            this.lblReservedStudent.AutoEllipsis = false;
-            this.lblReservedStudent.CursorType = null;
-            this.lblReservedStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedStudent.Location = new System.Drawing.Point(357, 15);
-            this.lblReservedStudent.Name = "lblReservedStudent";
-            this.lblReservedStudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedStudent.Size = new System.Drawing.Size(208, 20);
-            this.lblReservedStudent.TabIndex = 46;
-            this.lblReservedStudent.Text = "Reserved Number of Students:";
-            this.lblReservedStudent.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedStudent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblReservedStudent0.AllowParentOverrides = false;
+            this.lblReservedStudent0.AutoEllipsis = false;
+            this.lblReservedStudent0.CursorType = null;
+            this.lblReservedStudent0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedStudent0.Location = new System.Drawing.Point(357, 14);
+            this.lblReservedStudent0.Name = "lblReservedStudent0";
+            this.lblReservedStudent0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedStudent0.Size = new System.Drawing.Size(208, 20);
+            this.lblReservedStudent0.TabIndex = 46;
+            this.lblReservedStudent0.Text = "Reserved Number of Students:";
+            this.lblReservedStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblReservedDuration
+            // lblReservedDuration0
             // 
-            this.lblReservedDuration.AllowParentOverrides = false;
-            this.lblReservedDuration.AutoEllipsis = false;
-            this.lblReservedDuration.CursorType = null;
-            this.lblReservedDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDuration.Location = new System.Drawing.Point(34, 73);
-            this.lblReservedDuration.Name = "lblReservedDuration";
-            this.lblReservedDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDuration.Size = new System.Drawing.Size(131, 20);
-            this.lblReservedDuration.TabIndex = 45;
-            this.lblReservedDuration.Text = "Reserved Duration:";
-            this.lblReservedDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblReservedDuration0.AllowParentOverrides = false;
+            this.lblReservedDuration0.AutoEllipsis = false;
+            this.lblReservedDuration0.CursorType = null;
+            this.lblReservedDuration0.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDuration0.Location = new System.Drawing.Point(34, 73);
+            this.lblReservedDuration0.Name = "lblReservedDuration0";
+            this.lblReservedDuration0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDuration0.Size = new System.Drawing.Size(131, 20);
+            this.lblReservedDuration0.TabIndex = 45;
+            this.lblReservedDuration0.Text = "Reserved Duration:";
+            this.lblReservedDuration0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDuration0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnEditCancel
             // 
@@ -3338,6 +3418,7 @@ namespace IOOP_Assignment
             this.btnEditCancel.TextMarginLeft = 0;
             this.btnEditCancel.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnEditCancel.UseDefaultRadiusAndThickness = true;
+            this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
             // 
             // comboNewRoom
             // 
@@ -3373,6 +3454,11 @@ namespace IOOP_Assignment
             this.comboNewRoom.ItemHeight = 26;
             this.comboNewRoom.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboNewRoom.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewRoom.Items.AddRange(new object[] {
+            "Amber",
+            "Blackthorn",
+            "Cedar",
+            "Daphne"});
             this.comboNewRoom.ItemTopMargin = 3;
             this.comboNewRoom.Location = new System.Drawing.Point(123, 241);
             this.comboNewRoom.Name = "comboNewRoom";
@@ -3381,6 +3467,7 @@ namespace IOOP_Assignment
             this.comboNewRoom.Text = "Select New Room Type";
             this.comboNewRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboNewRoom.TextLeftMargin = 5;
+            this.comboNewRoom.SelectedIndexChanged += new System.EventHandler(this.comboNewRoom_SelectedIndexChanged);
             // 
             // dateNewReserved
             // 
@@ -3566,50 +3653,50 @@ namespace IOOP_Assignment
             this.lblNewDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblReservedTime
+            // lblReservedTime0
             // 
-            this.lblReservedTime.AllowParentOverrides = false;
-            this.lblReservedTime.AutoEllipsis = false;
-            this.lblReservedTime.CursorType = null;
-            this.lblReservedTime.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedTime.Location = new System.Drawing.Point(34, 43);
-            this.lblReservedTime.Name = "lblReservedTime";
-            this.lblReservedTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedTime.Size = new System.Drawing.Size(103, 20);
-            this.lblReservedTime.TabIndex = 2;
-            this.lblReservedTime.Text = "Reserved Time:";
-            this.lblReservedTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblReservedTime0.AllowParentOverrides = false;
+            this.lblReservedTime0.AutoEllipsis = false;
+            this.lblReservedTime0.CursorType = null;
+            this.lblReservedTime0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedTime0.Location = new System.Drawing.Point(34, 43);
+            this.lblReservedTime0.Name = "lblReservedTime0";
+            this.lblReservedTime0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedTime0.Size = new System.Drawing.Size(103, 20);
+            this.lblReservedTime0.TabIndex = 2;
+            this.lblReservedTime0.Text = "Reserved Time:";
+            this.lblReservedTime0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedTime0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblReservedRoom
+            // lblReservedRoom0
             // 
-            this.lblReservedRoom.AllowParentOverrides = false;
-            this.lblReservedRoom.AutoEllipsis = false;
-            this.lblReservedRoom.CursorType = null;
-            this.lblReservedRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedRoom.Location = new System.Drawing.Point(357, 56);
-            this.lblReservedRoom.Name = "lblReservedRoom";
-            this.lblReservedRoom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedRoom.Size = new System.Drawing.Size(110, 20);
-            this.lblReservedRoom.TabIndex = 1;
-            this.lblReservedRoom.Text = "Reserved Room:";
-            this.lblReservedRoom.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedRoom.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblReservedRoom0.AllowParentOverrides = false;
+            this.lblReservedRoom0.AutoEllipsis = false;
+            this.lblReservedRoom0.CursorType = null;
+            this.lblReservedRoom0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedRoom0.Location = new System.Drawing.Point(357, 43);
+            this.lblReservedRoom0.Name = "lblReservedRoom0";
+            this.lblReservedRoom0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedRoom0.Size = new System.Drawing.Size(110, 20);
+            this.lblReservedRoom0.TabIndex = 1;
+            this.lblReservedRoom0.Text = "Reserved Room:";
+            this.lblReservedRoom0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedRoom0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblReservedDate
+            // lblReservedDate0
             // 
-            this.lblReservedDate.AllowParentOverrides = false;
-            this.lblReservedDate.AutoEllipsis = false;
-            this.lblReservedDate.CursorType = null;
-            this.lblReservedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDate.Location = new System.Drawing.Point(34, 14);
-            this.lblReservedDate.Name = "lblReservedDate";
-            this.lblReservedDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDate.Size = new System.Drawing.Size(102, 20);
-            this.lblReservedDate.TabIndex = 0;
-            this.lblReservedDate.Text = "Reserved Date:";
-            this.lblReservedDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblReservedDate0.AllowParentOverrides = false;
+            this.lblReservedDate0.AutoEllipsis = false;
+            this.lblReservedDate0.CursorType = null;
+            this.lblReservedDate0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDate0.Location = new System.Drawing.Point(34, 14);
+            this.lblReservedDate0.Name = "lblReservedDate0";
+            this.lblReservedDate0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDate0.Size = new System.Drawing.Size(102, 20);
+            this.lblReservedDate0.TabIndex = 0;
+            this.lblReservedDate0.Text = "Reserved Date:";
+            this.lblReservedDate0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDate0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel3
             // 
@@ -3796,20 +3883,6 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
-            // columnAvailableRoomType
-            // 
-            this.columnAvailableRoomType.HeaderText = "Room Type";
-            this.columnAvailableRoomType.Name = "columnAvailableRoomType";
-            this.columnAvailableRoomType.ReadOnly = true;
-            this.columnAvailableRoomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // columnAvailableRoom
-            // 
-            this.columnAvailableRoom.HeaderText = "Available Room";
-            this.columnAvailableRoom.Name = "columnAvailableRoom";
-            this.columnAvailableRoom.ReadOnly = true;
-            this.columnAvailableRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // reservationSystem_DBDataSet
             // 
             this.reservationSystem_DBDataSet.DataSetName = "ReservationSystem_DBDataSet";
@@ -3976,14 +4049,12 @@ namespace IOOP_Assignment
         private System.Windows.Forms.TabPage formPage;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel10;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Bunifu.UI.WinForms.BunifuTextBox txtNewStudent;
-        private Bunifu.UI.WinForms.BunifuDropdown comboNewDuration;
         private Bunifu.UI.WinForms.BunifuLabel lblNewDuration;
         private Bunifu.UI.WinForms.BunifuLabel lblNewStudent;
         private System.Windows.Forms.CheckBox chkboxDuration;
         private System.Windows.Forms.CheckBox chkboxStudent;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration0;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditCancel;
         private Bunifu.UI.WinForms.BunifuDropdown comboNewRoom;
         private Bunifu.UI.WinForms.BunifuDatePicker dateNewReserved;
@@ -3998,9 +4069,9 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblNewTime;
         private Bunifu.UI.WinForms.BunifuLabel lblNewRoom;
         private Bunifu.UI.WinForms.BunifuLabel lblNewDate;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedTime;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedDate;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedTime0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDate0;
         private Bunifu.UI.WinForms.BunifuDatePicker timeReserve;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
         private Bunifu.UI.WinForms.BunifuDatePicker newTimeRes;
@@ -4035,5 +4106,12 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoom;
+        private Bunifu.UI.WinForms.BunifuDropdown comboNewDuration;
+        private Bunifu.UI.WinForms.BunifuDropdown comboNewStudent;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom1;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent1;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration1;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedTime1;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDate1;
     }
 }
