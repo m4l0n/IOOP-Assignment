@@ -109,13 +109,13 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@roomtype", RoomType);
-                    cmd.Parameters.AddWithValue("@date", Date);
-                    cmd.Parameters.AddWithValue("@time", Time);
-                    cmd.Parameters.AddWithValue("@student", NumStudents);
-                    cmd.Parameters.AddWithValue("@duration", Duration);
-                    cmd.Parameters.AddWithValue("@reservationid", ReservationID);
-                    cmd.Parameters.AddWithValue("@studentid", StudentID);
+                    cmd.Parameters.AddWithValue("@roomtype", req.RoomType);
+                    cmd.Parameters.AddWithValue("@date", req.Date);
+                    cmd.Parameters.AddWithValue("@time", req.Time);
+                    cmd.Parameters.AddWithValue("@student", req.NumStudents);
+                    cmd.Parameters.AddWithValue("@duration", req.Duration);
+                    cmd.Parameters.AddWithValue("@reservationid", req.ReservationID);
+                    cmd.Parameters.AddWithValue("@studentid", req.StudentID);
 
                     result = cmd.ExecuteNonQuery(); //Add Request to Request Table
                 }

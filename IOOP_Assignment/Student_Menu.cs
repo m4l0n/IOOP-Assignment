@@ -287,33 +287,43 @@ namespace IOOP_Assignment
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
-
-            string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
-            lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
-            lblPreviewTime1.Text = timeReserve.Value.ToShortTimeString();
-            lblPreviewDuration1.Text = comboDuration.GetItemText(comboDuration.SelectedItem);
-            lblPreviewRoomType1.Text = roomtype;
-            lblPreviewStudent1.Text = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
-            Reservation res = new Reservation
+            if (comboDuration.SelectedIndex != -1
+                && comboRoom.SelectedIndex != -1
+                && comboStudentNo.SelectedIndex != -1)
             {
-                RoomType = roomtype,
-                Date = dateReserve.Value.ToString("MM/dd/yyyy")
-            };
-
-            Reservation.assignedRoom = res.assignRoom(res);
-            lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
-            lblRoomType.Text = roomtype;
-
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select Capacity from [dbo].[Room] where [Room Type]=@roomtype", con))
+                string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
+                lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
+                lblPreviewTime1.Text = timeReserve.Value.ToShortTimeString();
+                lblPreviewDuration1.Text = comboDuration.GetItemText(comboDuration.SelectedItem);
+                lblPreviewRoomType1.Text = roomtype;
+                lblPreviewStudent1.Text = comboStudentNo.GetItemText(comboStudentNo.SelectedItem);
+                Reservation res = new Reservation
                 {
-                    cmd.Parameters.AddWithValue("@roomtype", roomtype);
-                    lblCapacity.Text = cmd.ExecuteScalar().ToString();
-                }
+                    RoomType = roomtype,
+                    Date = dateReserve.Value.ToString("MM/dd/yyyy")
+                };
 
+                Reservation.assignedRoom = res.assignRoom(res);
+                lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
+                lblRoomType.Text = roomtype;
+
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("select Capacity from [dbo].[Room] where [Room Type]=@roomtype", con))
+                    {
+                        cmd.Parameters.AddWithValue("@roomtype", roomtype);
+                        lblCapacity.Text = cmd.ExecuteScalar().ToString();
+                    }
+
+                }
+                bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
+
+            }
+            else
+            {
+                bunifuSnackbar1.Show(this, "All fields are required to fill, Please make sure all fields are filled.",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
             }
         }
 
@@ -428,40 +438,90 @@ namespace IOOP_Assignment
 
         private void btnEditConfirm_Click(object sender, EventArgs e)
         {
-            int row = tableReservationEdit.CurrentRow.Index;
-            DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
-                "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            string date = dt.ToString("MM/dd/yyyy");
-
-            Request req = new Request
+            if (chkboxDate.Checked == false
+                && chkboxRoom.Checked == false
+                && chkboxTime.Checked == false
+                && chkboxDuration.Checked == false)
             {
-                ReservationID = Convert.ToInt32(tableReservationEdit[0, row].Value),
-                RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
-                NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
-                Date = date,
-                Time = Convert.ToString(tableReservationEdit[5, row].Value),
-                Duration = Convert.ToString(tableReservationEdit[6, row].Value),
-            };
+                bunifuSnackbar1.Show(this, "No changes made, redirecting to Edit Page.",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
 
-            if (chkboxDate.Checked) req.Date = dateNewReserved.Value.ToShortDateString();
-            if (chkboxRoom.Checked)
-            {
-                req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
-                req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));
-            }
-            if (chkboxTime.Checked) req.Time = newTimeRes.Value.ToShortTimeString();
-            if (chkboxDuration.Checked) req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
-
-            int result = req.addRequest(req);
-            if (result != 0)
-            {
-                bunifuSnackbar1.Show(this, "You have successfully requested for a change on your reservation. Librarians will " +
-                    "check on it soon.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                bunifuPages2.SetPage(2);
             }
             else
             {
-                bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
-                    "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                int roomvalidate = 0;   //Use as count to validate Room and Student combobox
+                int durationvalidate = 0; //Use as count to validate Duration combobox
+
+                if (chkboxRoom.Checked)
+                {
+                    if (comboNewRoom.SelectedIndex != -1
+                        && comboNewStudent.SelectedIndex != -1)
+                    {
+                        roomvalidate = 1;
+                    }
+                }
+                else
+                {
+                    roomvalidate = 1;
+                }
+
+                if (chkboxDuration.Checked)
+                {
+                    if (comboNewRoom.SelectedIndex != -1)
+                    {
+                        durationvalidate = 1;
+                    }
+                }
+                else
+                {
+                    durationvalidate = 1;
+                }
+
+                if (roomvalidate == 1
+                    && durationvalidate == 1)
+                {
+                    int row = tableReservationEdit.CurrentRow.Index;
+                    DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
+                        "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    string date = dt.ToString("MM/dd/yyyy");
+
+                    Request req = new Request
+                    {
+                        ReservationID = Convert.ToInt32(tableReservationEdit[0, row].Value),
+                        RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
+                        NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
+                        Date = date,
+                        Time = Convert.ToString(tableReservationEdit[5, row].Value),
+                        Duration = Convert.ToString(tableReservationEdit[6, row].Value),
+                    };
+
+                    if (chkboxDate.Checked) req.Date = dateNewReserved.Value.ToShortDateString();
+                    if (chkboxRoom.Checked)
+                    {
+                        req.RoomType = comboNewRoom.GetItemText(comboNewRoom.SelectedItem);
+                        req.NumStudents = Convert.ToInt32(comboNewStudent.GetItemText(comboNewStudent.SelectedItem));
+                    }
+                    if (chkboxTime.Checked) req.Time = newTimeRes.Value.ToShortTimeString();
+                    if (chkboxDuration.Checked) req.Duration = comboNewDuration.GetItemText(comboNewDuration.SelectedItem);
+
+                    int result = req.addRequest(req);
+                    if (result != 0)
+                    {
+                        bunifuSnackbar1.Show(this, "You have successfully requested for a change on your reservation. Librarians will " +
+                            "check on it soon.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                    }
+                    else
+                    {
+                        bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
+                            "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                    }
+                }
+                else
+                {
+                    bunifuSnackbar1.Show(this, "Please make sure ticked field is filled.",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                }
             }
         }
 

@@ -3002,6 +3002,7 @@ namespace IOOP_Assignment
             this.comboNewDuration.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
             this.comboNewDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNewDuration.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewDuration.Enabled = false;
             this.comboNewDuration.FillDropDown = true;
             this.comboNewDuration.FillIndicator = false;
             this.comboNewDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
