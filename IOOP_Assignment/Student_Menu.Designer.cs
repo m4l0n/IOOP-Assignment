@@ -200,6 +200,7 @@ namespace IOOP_Assignment
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuPanel1.SuspendLayout();
@@ -254,6 +255,9 @@ namespace IOOP_Assignment
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(268, 578);
             this.bunifuPanel1.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPanel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPanel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPanel1, "");
             // 
             // btnEdit
             // 
@@ -342,6 +346,9 @@ namespace IOOP_Assignment
             this.btnEdit.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEdit.TextMarginLeft = 0;
             this.btnEdit.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnEdit, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEdit, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEdit, "");
             this.btnEdit.UseDefaultRadiusAndThickness = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEditRes_Click);
             // 
@@ -432,6 +439,9 @@ namespace IOOP_Assignment
             this.btnRoomRes.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRoomRes.TextMarginLeft = 0;
             this.btnRoomRes.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnRoomRes, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnRoomRes, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnRoomRes, "");
             this.btnRoomRes.UseDefaultRadiusAndThickness = true;
             this.btnRoomRes.Click += new System.EventHandler(this.btnRoomRes_Click);
             // 
@@ -522,6 +532,9 @@ namespace IOOP_Assignment
             this.btnDashboard.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDashboard.TextMarginLeft = 0;
             this.btnDashboard.TextPadding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnDashboard, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDashboard, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDashboard, "");
             this.btnDashboard.UseDefaultRadiusAndThickness = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
@@ -535,6 +548,9 @@ namespace IOOP_Assignment
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox1, "");
             // 
             // bunifuSeparator1
             // 
@@ -550,6 +566,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(226, 14);
             this.bunifuSeparator1.TabIndex = 5;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator1, "");
             // 
             // bunifuPages2
             // 
@@ -570,6 +589,9 @@ namespace IOOP_Assignment
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPages2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPages2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPages2, "");
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 1F;
@@ -601,6 +623,9 @@ namespace IOOP_Assignment
             this.dashboardPage.Size = new System.Drawing.Size(761, 550);
             this.dashboardPage.TabIndex = 0;
             this.dashboardPage.Text = "Dashboard";
+            this.bunifuToolTip1.SetToolTip(this.dashboardPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dashboardPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dashboardPage, "");
             this.dashboardPage.UseVisualStyleBackColor = true;
             // 
             // bunifuShadowPanel6
@@ -625,6 +650,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel6.Size = new System.Drawing.Size(721, 242);
             this.bunifuShadowPanel6.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel6.TabIndex = 35;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel6, "");
             // 
             // bunifuLabel20
             // 
@@ -641,6 +669,9 @@ namespace IOOP_Assignment
             this.bunifuLabel20.Text = "Your Reservation Table";
             this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel20, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel20, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel20, "");
             // 
             // resDataGridView
             // 
@@ -715,6 +746,9 @@ namespace IOOP_Assignment
             this.resDataGridView.Size = new System.Drawing.Size(675, 166);
             this.resDataGridView.TabIndex = 34;
             this.resDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.bunifuToolTip1.SetToolTip(this.resDataGridView, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.resDataGridView, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.resDataGridView, "");
             this.resDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.resDataGridView_RowPostPaint);
             // 
             // colResID
@@ -808,6 +842,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel2.Size = new System.Drawing.Size(167, 59);
             this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel2.TabIndex = 29;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel2, "");
             // 
             // bunifuPictureBox1
             // 
@@ -823,6 +860,9 @@ namespace IOOP_Assignment
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 26;
             this.bunifuPictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPictureBox1, "");
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // lblName
@@ -842,6 +882,9 @@ namespace IOOP_Assignment
             this.lblName.TabIndex = 22;
             this.lblName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblName, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblName, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblName, "");
             // 
             // bunifuLabel2
             // 
@@ -861,6 +904,9 @@ namespace IOOP_Assignment
             this.bunifuLabel2.Text = "Student";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel2, "");
             // 
             // bunifuShadowPanel1
             // 
@@ -890,6 +936,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel1.Size = new System.Drawing.Size(721, 193);
             this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel1.TabIndex = 27;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel1, "");
             // 
             // lblRandom
             // 
@@ -898,6 +947,9 @@ namespace IOOP_Assignment
             this.lblRandom.Name = "lblRandom";
             this.lblRandom.Size = new System.Drawing.Size(0, 13);
             this.lblRandom.TabIndex = 7;
+            this.bunifuToolTip1.SetToolTip(this.lblRandom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblRandom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblRandom, "");
             // 
             // bunifuPanel2
             // 
@@ -913,6 +965,9 @@ namespace IOOP_Assignment
             this.bunifuPanel2.ShowBorders = true;
             this.bunifuPanel2.Size = new System.Drawing.Size(214, 52);
             this.bunifuPanel2.TabIndex = 6;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPanel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPanel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPanel2, "");
             // 
             // bunifuLabel10
             // 
@@ -930,6 +985,9 @@ namespace IOOP_Assignment
             this.bunifuLabel10.Text = "View Below for the List";
             this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel10, "");
             // 
             // bunifuLabel9
             // 
@@ -946,6 +1004,9 @@ namespace IOOP_Assignment
             this.bunifuLabel9.Text = "active reservation(s)";
             this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel9, "");
             // 
             // lblActiveRes
             // 
@@ -961,6 +1022,9 @@ namespace IOOP_Assignment
             this.lblActiveRes.TabIndex = 4;
             this.lblActiveRes.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblActiveRes.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblActiveRes, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblActiveRes, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblActiveRes, "");
             // 
             // bunifuLabel7
             // 
@@ -978,6 +1042,9 @@ namespace IOOP_Assignment
             this.bunifuLabel7.Text = "You have ";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel7, "");
             // 
             // lblHi
             // 
@@ -994,6 +1061,9 @@ namespace IOOP_Assignment
             this.lblHi.TabIndex = 2;
             this.lblHi.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblHi.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblHi, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblHi, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblHi, "");
             // 
             // bunifuLabel4
             // 
@@ -1010,6 +1080,9 @@ namespace IOOP_Assignment
             this.bunifuLabel4.Text = "Total Active Reservations";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel4, "");
             // 
             // bunifuPictureBox2
             // 
@@ -1025,6 +1098,9 @@ namespace IOOP_Assignment
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox2.TabIndex = 0;
             this.bunifuPictureBox2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPictureBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPictureBox2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPictureBox2, "");
             this.bunifuPictureBox2.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // bunifuLabel6
@@ -1043,6 +1119,9 @@ namespace IOOP_Assignment
             this.bunifuLabel6.Text = "Your account and system overview";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel6, "");
             // 
             // overviewLabel
             // 
@@ -1059,6 +1138,9 @@ namespace IOOP_Assignment
             this.overviewLabel.Text = "Dashboard";
             this.overviewLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.overviewLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.overviewLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.overviewLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.overviewLabel, "");
             // 
             // reservationPage
             // 
@@ -1077,6 +1159,9 @@ namespace IOOP_Assignment
             this.reservationPage.Size = new System.Drawing.Size(761, 550);
             this.reservationPage.TabIndex = 1;
             this.reservationPage.Text = "Reservation";
+            this.bunifuToolTip1.SetToolTip(this.reservationPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.reservationPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.reservationPage, "");
             this.reservationPage.UseVisualStyleBackColor = true;
             // 
             // bunifuShadowPanel9
@@ -1109,6 +1194,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel9.Size = new System.Drawing.Size(413, 352);
             this.bunifuShadowPanel9.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel9.TabIndex = 54;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel9, "");
             // 
             // timeReserve
             // 
@@ -1133,6 +1221,9 @@ namespace IOOP_Assignment
             this.timeReserve.Name = "timeReserve";
             this.timeReserve.Size = new System.Drawing.Size(220, 32);
             this.timeReserve.TabIndex = 49;
+            this.bunifuToolTip1.SetToolTip(this.timeReserve, "1. Click and enter hh (hour) intended\r\n2. Click and enter mm (minutes) intended");
+            this.bunifuToolTip1.SetToolTipIcon(this.timeReserve, ((System.Drawing.Image)(resources.GetObject("timeReserve.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.timeReserve, "How to Enter Time");
             this.timeReserve.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
             // 
             // lblStudent
@@ -1149,6 +1240,9 @@ namespace IOOP_Assignment
             this.lblStudent.Text = "Number of Students:";
             this.lblStudent.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblStudent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblStudent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblStudent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblStudent, "");
             // 
             // lblDate
             // 
@@ -1165,6 +1259,9 @@ namespace IOOP_Assignment
             this.lblDate.Text = "Reservation Date:";
             this.lblDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblDate, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblDate, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblDate, "");
             // 
             // lblDuration
             // 
@@ -1180,6 +1277,9 @@ namespace IOOP_Assignment
             this.lblDuration.Text = "Reservation Duration:";
             this.lblDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblDuration, "");
             // 
             // lblRoom
             // 
@@ -1195,6 +1295,9 @@ namespace IOOP_Assignment
             this.lblRoom.Text = "Reservation Room:";
             this.lblRoom.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblRoom.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblRoom, "");
             // 
             // comboStudentNo
             // 
@@ -1237,6 +1340,9 @@ namespace IOOP_Assignment
             this.comboStudentNo.Text = "Select Number of Students";
             this.comboStudentNo.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboStudentNo.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboStudentNo, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboStudentNo, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboStudentNo, "");
             // 
             // dateReserve
             // 
@@ -1261,6 +1367,9 @@ namespace IOOP_Assignment
             this.dateReserve.Name = "dateReserve";
             this.dateReserve.Size = new System.Drawing.Size(220, 32);
             this.dateReserve.TabIndex = 37;
+            this.bunifuToolTip1.SetToolTip(this.dateReserve, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dateReserve, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dateReserve, "");
             this.dateReserve.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
             this.dateReserve.ValueChanged += new System.EventHandler(this.dateReserve_ValueChanged);
             // 
@@ -1317,6 +1426,9 @@ namespace IOOP_Assignment
             this.comboDuration.Text = "Select Duration";
             this.comboDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboDuration.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboDuration, "");
             // 
             // comboRoom
             // 
@@ -1359,6 +1471,9 @@ namespace IOOP_Assignment
             this.comboRoom.Text = "Select Room Type";
             this.comboRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboRoom.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboRoom, "");
             this.comboRoom.SelectedIndexChanged += new System.EventHandler(this.comboRoom_SelectedIndexChanged);
             // 
             // lblTime
@@ -1375,6 +1490,9 @@ namespace IOOP_Assignment
             this.lblTime.Text = "Reservation Time:";
             this.lblTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblTime, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTime, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTime, "");
             // 
             // bunifuShadowPanel8
             // 
@@ -1397,6 +1515,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel8.Size = new System.Drawing.Size(326, 176);
             this.bunifuShadowPanel8.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel8.TabIndex = 53;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel8, "");
             // 
             // tableAvailableRoom
             // 
@@ -1462,6 +1583,9 @@ namespace IOOP_Assignment
             this.tableAvailableRoom.Size = new System.Drawing.Size(299, 148);
             this.tableAvailableRoom.TabIndex = 40;
             this.tableAvailableRoom.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.bunifuToolTip1.SetToolTip(this.tableAvailableRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.tableAvailableRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.tableAvailableRoom, "");
             // 
             // columnAvailableRoomType
             // 
@@ -1498,6 +1622,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel7.Size = new System.Drawing.Size(326, 176);
             this.bunifuShadowPanel7.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel7.TabIndex = 52;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel7, "");
             // 
             // pictureBox2
             // 
@@ -1508,6 +1635,9 @@ namespace IOOP_Assignment
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox2, "");
             // 
             // bunifuLabel19
             // 
@@ -1523,6 +1653,9 @@ namespace IOOP_Assignment
             this.bunifuLabel19.Text = "Available Rooms on Selected Date:";
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel19, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel19, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel19, "");
             // 
             // btnPreview
             // 
@@ -1611,6 +1744,9 @@ namespace IOOP_Assignment
             this.btnPreview.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPreview.TextMarginLeft = 0;
             this.btnPreview.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnPreview, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnPreview, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnPreview, "");
             this.btnPreview.UseDefaultRadiusAndThickness = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
@@ -1701,6 +1837,9 @@ namespace IOOP_Assignment
             this.btnCancel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancel.TextMarginLeft = 0;
             this.btnCancel.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnCancel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCancel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCancel, "");
             this.btnCancel.UseDefaultRadiusAndThickness = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -1720,6 +1859,9 @@ namespace IOOP_Assignment
             this.bunifuLabel15.Text = "Discussion Room Reservation Form";
             this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel15, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel15, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel15, "");
             // 
             // bunifuLabel16
             // 
@@ -1736,6 +1878,9 @@ namespace IOOP_Assignment
             this.bunifuLabel16.Text = "Room Reservation";
             this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel16.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel16, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel16, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel16, "");
             // 
             // bunifuShadowPanel3
             // 
@@ -1760,6 +1905,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel3.Size = new System.Drawing.Size(167, 59);
             this.bunifuShadowPanel3.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel3.TabIndex = 30;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel3, "");
             // 
             // bunifuPictureBox3
             // 
@@ -1775,6 +1923,9 @@ namespace IOOP_Assignment
             this.bunifuPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox3.TabIndex = 26;
             this.bunifuPictureBox3.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPictureBox3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPictureBox3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPictureBox3, "");
             this.bunifuPictureBox3.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // lblName2
@@ -1794,6 +1945,9 @@ namespace IOOP_Assignment
             this.lblName2.TabIndex = 22;
             this.lblName2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblName2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblName2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblName2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblName2, "");
             // 
             // bunifuLabel12
             // 
@@ -1813,6 +1967,9 @@ namespace IOOP_Assignment
             this.bunifuLabel12.Text = "Student";
             this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel12, "");
             // 
             // editPage
             // 
@@ -1832,6 +1989,9 @@ namespace IOOP_Assignment
             this.editPage.Size = new System.Drawing.Size(761, 550);
             this.editPage.TabIndex = 2;
             this.editPage.Text = "Edit";
+            this.bunifuToolTip1.SetToolTip(this.editPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.editPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.editPage, "");
             this.editPage.UseVisualStyleBackColor = true;
             // 
             // tableReservationEdit
@@ -1908,6 +2068,9 @@ namespace IOOP_Assignment
             this.tableReservationEdit.Size = new System.Drawing.Size(678, 166);
             this.tableReservationEdit.TabIndex = 38;
             this.tableReservationEdit.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.bunifuToolTip1.SetToolTip(this.tableReservationEdit, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.tableReservationEdit, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.tableReservationEdit, "");
             // 
             // colResIDEdit
             // 
@@ -1991,6 +2154,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator7.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
             this.bunifuSeparator7.Size = new System.Drawing.Size(13, 122);
             this.bunifuSeparator7.TabIndex = 10;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator7, "");
             // 
             // cbkboxSecurityCancel
             // 
@@ -2001,6 +2167,9 @@ namespace IOOP_Assignment
             this.cbkboxSecurityCancel.Size = new System.Drawing.Size(282, 25);
             this.cbkboxSecurityCancel.TabIndex = 37;
             this.cbkboxSecurityCancel.Text = "Confirm your Cancellation Request";
+            this.bunifuToolTip1.SetToolTip(this.cbkboxSecurityCancel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.cbkboxSecurityCancel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.cbkboxSecurityCancel, "");
             this.cbkboxSecurityCancel.UseVisualStyleBackColor = true;
             this.cbkboxSecurityCancel.CheckedChanged += new System.EventHandler(this.cbkboxSecurityCancel_CheckedChanged);
             // 
@@ -2018,6 +2187,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator6.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator6.Size = new System.Drawing.Size(761, 14);
             this.bunifuSeparator6.TabIndex = 10;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator6, "");
             // 
             // lblInfo
             // 
@@ -2034,6 +2206,9 @@ namespace IOOP_Assignment
             this.lblInfo.Text = "Please select a Reservation that you would like to modify or cancel";
             this.lblInfo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblInfo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblInfo, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblInfo, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblInfo, "");
             // 
             // btnCancelReserve
             // 
@@ -2123,6 +2298,9 @@ namespace IOOP_Assignment
             this.btnCancelReserve.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancelReserve.TextMarginLeft = 0;
             this.btnCancelReserve.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnCancelReserve, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCancelReserve, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCancelReserve, "");
             this.btnCancelReserve.UseDefaultRadiusAndThickness = true;
             this.btnCancelReserve.Click += new System.EventHandler(this.btnCancelReserve_Click);
             // 
@@ -2213,6 +2391,9 @@ namespace IOOP_Assignment
             this.btnEditReserve.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEditReserve.TextMarginLeft = 0;
             this.btnEditReserve.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnEditReserve, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEditReserve, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEditReserve, "");
             this.btnEditReserve.UseDefaultRadiusAndThickness = true;
             this.btnEditReserve.Click += new System.EventHandler(this.btnEditReserve_Click);
             // 
@@ -2232,6 +2413,9 @@ namespace IOOP_Assignment
             this.bunifuLabel17.Text = "Modify or Cancel Your Reservation";
             this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel17.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel17, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel17, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel17, "");
             // 
             // bunifuLabel18
             // 
@@ -2248,6 +2432,9 @@ namespace IOOP_Assignment
             this.bunifuLabel18.Text = "Edit Reservation";
             this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel18.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel18, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel18, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel18, "");
             // 
             // bunifuShadowPanel4
             // 
@@ -2272,6 +2459,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel4.Size = new System.Drawing.Size(167, 59);
             this.bunifuShadowPanel4.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel4.TabIndex = 30;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel4, "");
             // 
             // bunifuPictureBox4
             // 
@@ -2287,6 +2477,9 @@ namespace IOOP_Assignment
             this.bunifuPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox4.TabIndex = 26;
             this.bunifuPictureBox4.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuPictureBox4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuPictureBox4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuPictureBox4, "");
             this.bunifuPictureBox4.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // lblName3
@@ -2306,6 +2499,9 @@ namespace IOOP_Assignment
             this.lblName3.TabIndex = 22;
             this.lblName3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblName3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblName3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblName3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblName3, "");
             // 
             // bunifuLabel14
             // 
@@ -2325,6 +2521,9 @@ namespace IOOP_Assignment
             this.bunifuLabel14.Text = "Student";
             this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel14, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel14, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel14, "");
             // 
             // previewPage
             // 
@@ -2339,6 +2538,9 @@ namespace IOOP_Assignment
             this.previewPage.Size = new System.Drawing.Size(761, 550);
             this.previewPage.TabIndex = 3;
             this.previewPage.Text = "Preview";
+            this.bunifuToolTip1.SetToolTip(this.previewPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.previewPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.previewPage, "");
             this.previewPage.UseVisualStyleBackColor = true;
             // 
             // bunifuLabel13
@@ -2356,6 +2558,9 @@ namespace IOOP_Assignment
             this.bunifuLabel13.Text = "Reservation Preview";
             this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel13.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel13, "");
             // 
             // bunifuShadowPanel11
             // 
@@ -2389,6 +2594,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel11.Size = new System.Drawing.Size(430, 283);
             this.bunifuShadowPanel11.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel11.TabIndex = 49;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel11, "");
             // 
             // lblPreviewRoomNumber1
             // 
@@ -2405,6 +2613,9 @@ namespace IOOP_Assignment
             this.lblPreviewRoomNumber1.Text = "A01";
             this.lblPreviewRoomNumber1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomNumber1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewRoomNumber1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewRoomNumber1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewRoomNumber1, "");
             // 
             // lblPreviewRoomType1
             // 
@@ -2421,6 +2632,9 @@ namespace IOOP_Assignment
             this.lblPreviewRoomType1.Text = "Amber";
             this.lblPreviewRoomType1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomType1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewRoomType1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewRoomType1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewRoomType1, "");
             // 
             // lblPreviewStudent1
             // 
@@ -2437,6 +2651,9 @@ namespace IOOP_Assignment
             this.lblPreviewStudent1.Text = "8";
             this.lblPreviewStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewStudent1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewStudent1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewStudent1, "");
             // 
             // lblPreviewDuration1
             // 
@@ -2453,6 +2670,9 @@ namespace IOOP_Assignment
             this.lblPreviewDuration1.Text = "2 Hours";
             this.lblPreviewDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewDuration1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewDuration1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewDuration1, "");
             // 
             // lblPreviewTime1
             // 
@@ -2469,6 +2689,9 @@ namespace IOOP_Assignment
             this.lblPreviewTime1.Text = "10:00 AM";
             this.lblPreviewTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewTime1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewTime1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewTime1, "");
             // 
             // lblPreviewDate1
             // 
@@ -2485,6 +2708,9 @@ namespace IOOP_Assignment
             this.lblPreviewDate1.Text = "24 June 2021";
             this.lblPreviewDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewDate1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewDate1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewDate1, "");
             // 
             // lblPreviewRoomNumber0
             // 
@@ -2500,6 +2726,9 @@ namespace IOOP_Assignment
             this.lblPreviewRoomNumber0.Text = "Room Assigned:";
             this.lblPreviewRoomNumber0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomNumber0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewRoomNumber0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewRoomNumber0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewRoomNumber0, "");
             // 
             // lblPreviewStudent0
             // 
@@ -2515,6 +2744,9 @@ namespace IOOP_Assignment
             this.lblPreviewStudent0.Text = "Number of Students:";
             this.lblPreviewStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewStudent0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewStudent0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewStudent0, "");
             // 
             // lblPreviewDate0
             // 
@@ -2530,6 +2762,9 @@ namespace IOOP_Assignment
             this.lblPreviewDate0.Text = "Reservation Date:";
             this.lblPreviewDate0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDate0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewDate0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewDate0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewDate0, "");
             // 
             // lblPreviewDuration0
             // 
@@ -2545,6 +2780,9 @@ namespace IOOP_Assignment
             this.lblPreviewDuration0.Text = "Reservation Duration:";
             this.lblPreviewDuration0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewDuration0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewDuration0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewDuration0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewDuration0, "");
             // 
             // lblPreviewRoomType0
             // 
@@ -2560,6 +2798,9 @@ namespace IOOP_Assignment
             this.lblPreviewRoomType0.Text = "Reservation Room Type:";
             this.lblPreviewRoomType0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewRoomType0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewRoomType0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewRoomType0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewRoomType0, "");
             // 
             // lblPreviewTime0
             // 
@@ -2575,6 +2816,9 @@ namespace IOOP_Assignment
             this.lblPreviewTime0.Text = "Reservation Time:";
             this.lblPreviewTime0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPreviewTime0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblPreviewTime0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPreviewTime0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPreviewTime0, "");
             // 
             // bunifuShadowPanel5
             // 
@@ -2601,6 +2845,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel5.Size = new System.Drawing.Size(430, 120);
             this.bunifuShadowPanel5.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel5.TabIndex = 7;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel5, "");
             // 
             // lblCapacity
             // 
@@ -2618,6 +2865,9 @@ namespace IOOP_Assignment
             this.lblCapacity.Text = "10";
             this.lblCapacity.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCapacity.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblCapacity, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblCapacity, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblCapacity, "");
             // 
             // lblRoomType
             // 
@@ -2635,6 +2885,9 @@ namespace IOOP_Assignment
             this.lblRoomType.Text = "Amber";
             this.lblRoomType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblRoomType.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblRoomType, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblRoomType, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblRoomType, "");
             // 
             // bunifuLabel5
             // 
@@ -2650,6 +2903,9 @@ namespace IOOP_Assignment
             this.bunifuLabel5.Text = "Room Capacity";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel5, "");
             // 
             // bunifuSeparator9
             // 
@@ -2665,6 +2921,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator9.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
             this.bunifuSeparator9.Size = new System.Drawing.Size(13, 105);
             this.bunifuSeparator9.TabIndex = 57;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator9, "");
             // 
             // bunifuLabel1
             // 
@@ -2681,6 +2940,9 @@ namespace IOOP_Assignment
             this.bunifuLabel1.Text = "Selected Room Type";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel1, "");
             // 
             // btnPreviewConfirm
             // 
@@ -2769,6 +3031,9 @@ namespace IOOP_Assignment
             this.btnPreviewConfirm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPreviewConfirm.TextMarginLeft = 0;
             this.btnPreviewConfirm.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnPreviewConfirm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnPreviewConfirm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnPreviewConfirm, "");
             this.btnPreviewConfirm.UseDefaultRadiusAndThickness = true;
             this.btnPreviewConfirm.Click += new System.EventHandler(this.btnPreviewConfirm_Click);
             // 
@@ -2859,6 +3124,9 @@ namespace IOOP_Assignment
             this.btnPreviewCancel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPreviewCancel.TextMarginLeft = 0;
             this.btnPreviewCancel.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnPreviewCancel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnPreviewCancel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnPreviewCancel, "");
             this.btnPreviewCancel.UseDefaultRadiusAndThickness = true;
             this.btnPreviewCancel.Click += new System.EventHandler(this.btnPreviewCancel_Click);
             // 
@@ -2903,6 +3171,9 @@ namespace IOOP_Assignment
             this.formPage.Size = new System.Drawing.Size(761, 550);
             this.formPage.TabIndex = 4;
             this.formPage.Text = "Form";
+            this.bunifuToolTip1.SetToolTip(this.formPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.formPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.formPage, "");
             this.formPage.UseVisualStyleBackColor = true;
             // 
             // lblReservedRoom1
@@ -2920,6 +3191,9 @@ namespace IOOP_Assignment
             this.lblReservedRoom1.Text = "Room";
             this.lblReservedRoom1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedRoom1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom1, "");
             // 
             // lblReservedStudent1
             // 
@@ -2936,6 +3210,9 @@ namespace IOOP_Assignment
             this.lblReservedStudent1.Text = "Students";
             this.lblReservedStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent1, "");
             // 
             // lblReservedDuration1
             // 
@@ -2952,6 +3229,9 @@ namespace IOOP_Assignment
             this.lblReservedDuration1.Text = "Duration";
             this.lblReservedDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration1, "");
             // 
             // lblReservedTime1
             // 
@@ -2968,6 +3248,9 @@ namespace IOOP_Assignment
             this.lblReservedTime1.Text = "Time";
             this.lblReservedTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedTime1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime1, "");
             // 
             // lblReservedDate1
             // 
@@ -2984,6 +3267,9 @@ namespace IOOP_Assignment
             this.lblReservedDate1.Text = "Date";
             this.lblReservedDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDate1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate1, "");
             // 
             // comboNewDuration
             // 
@@ -3039,6 +3325,9 @@ namespace IOOP_Assignment
             this.comboNewDuration.Text = "Select New Duration";
             this.comboNewDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboNewDuration.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewDuration, "");
             // 
             // comboNewStudent
             // 
@@ -3082,6 +3371,9 @@ namespace IOOP_Assignment
             this.comboNewStudent.Text = "Select New Number of Students";
             this.comboNewStudent.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboNewStudent.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewStudent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewStudent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewStudent, "");
             // 
             // btnEditConfirm
             // 
@@ -3170,6 +3462,9 @@ namespace IOOP_Assignment
             this.btnEditConfirm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEditConfirm.TextMarginLeft = 0;
             this.btnEditConfirm.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnEditConfirm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEditConfirm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEditConfirm, "");
             this.btnEditConfirm.UseDefaultRadiusAndThickness = true;
             this.btnEditConfirm.Click += new System.EventHandler(this.btnEditConfirm_Click);
             // 
@@ -3187,6 +3482,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator8.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
             this.bunifuSeparator8.Size = new System.Drawing.Size(15, 89);
             this.bunifuSeparator8.TabIndex = 56;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator8, "");
             // 
             // newTimeRes
             // 
@@ -3212,6 +3510,9 @@ namespace IOOP_Assignment
             this.newTimeRes.Name = "newTimeRes";
             this.newTimeRes.Size = new System.Drawing.Size(220, 32);
             this.newTimeRes.TabIndex = 55;
+            this.bunifuToolTip1.SetToolTip(this.newTimeRes, "1. Click and enter hh (hour) intended\r\n2. Click and enter mm (minutes) intended");
+            this.bunifuToolTip1.SetToolTipIcon(this.newTimeRes, ((System.Drawing.Image)(resources.GetObject("newTimeRes.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.newTimeRes, "How to Enter Time");
             this.newTimeRes.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
             // 
             // bunifuShadowPanel10
@@ -3235,6 +3536,9 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel10.Size = new System.Drawing.Size(299, 163);
             this.bunifuShadowPanel10.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel10.TabIndex = 54;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel10, "");
             // 
             // pictureBox3
             // 
@@ -3245,6 +3549,9 @@ namespace IOOP_Assignment
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox3, "");
             // 
             // lblNewDuration
             // 
@@ -3260,6 +3567,9 @@ namespace IOOP_Assignment
             this.lblNewDuration.Text = "New Duration:";
             this.lblNewDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDuration, "");
             // 
             // lblNewStudent
             // 
@@ -3275,6 +3585,9 @@ namespace IOOP_Assignment
             this.lblNewStudent.Text = "New Number of Students:";
             this.lblNewStudent.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewStudent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewStudent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewStudent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewStudent, "");
             // 
             // chkboxDuration
             // 
@@ -3285,6 +3598,9 @@ namespace IOOP_Assignment
             this.chkboxDuration.Size = new System.Drawing.Size(133, 23);
             this.chkboxDuration.TabIndex = 48;
             this.chkboxDuration.Text = "Change Duration";
+            this.bunifuToolTip1.SetToolTip(this.chkboxDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDuration, "");
             this.chkboxDuration.UseVisualStyleBackColor = true;
             this.chkboxDuration.CheckedChanged += new System.EventHandler(this.chkboxDuration_CheckedChanged);
             // 
@@ -3302,6 +3618,9 @@ namespace IOOP_Assignment
             this.lblReservedStudent0.Text = "Reserved Number of Students:";
             this.lblReservedStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent0, "");
             // 
             // lblReservedDuration0
             // 
@@ -3317,6 +3636,9 @@ namespace IOOP_Assignment
             this.lblReservedDuration0.Text = "Reserved Duration:";
             this.lblReservedDuration0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedDuration0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration0, "");
             // 
             // btnEditCancel
             // 
@@ -3405,6 +3727,9 @@ namespace IOOP_Assignment
             this.btnEditCancel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEditCancel.TextMarginLeft = 0;
             this.btnEditCancel.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnEditCancel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEditCancel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEditCancel, "");
             this.btnEditCancel.UseDefaultRadiusAndThickness = true;
             this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
             // 
@@ -3455,6 +3780,9 @@ namespace IOOP_Assignment
             this.comboNewRoom.Text = "Select New Room Type";
             this.comboNewRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboNewRoom.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewRoom, "");
             this.comboNewRoom.SelectedIndexChanged += new System.EventHandler(this.comboNewRoom_SelectedIndexChanged);
             // 
             // dateNewReserved
@@ -3481,6 +3809,9 @@ namespace IOOP_Assignment
             this.dateNewReserved.Name = "dateNewReserved";
             this.dateNewReserved.Size = new System.Drawing.Size(220, 32);
             this.dateNewReserved.TabIndex = 14;
+            this.bunifuToolTip1.SetToolTip(this.dateNewReserved, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dateNewReserved, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dateNewReserved, "");
             this.dateNewReserved.Value = new System.DateTime(2021, 6, 10, 0, 39, 0, 0);
             // 
             // bunifuSeparator5
@@ -3497,6 +3828,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator5.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator5.Size = new System.Drawing.Size(756, 10);
             this.bunifuSeparator5.TabIndex = 13;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator5, "");
             // 
             // bunifuSeparator4
             // 
@@ -3512,6 +3846,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator4.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator4.Size = new System.Drawing.Size(756, 19);
             this.bunifuSeparator4.TabIndex = 12;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator4, "");
             // 
             // bunifuSeparator3
             // 
@@ -3527,6 +3864,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator3.Size = new System.Drawing.Size(756, 18);
             this.bunifuSeparator3.TabIndex = 11;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator3, "");
             // 
             // bunifuSeparator2
             // 
@@ -3542,6 +3882,9 @@ namespace IOOP_Assignment
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator2.Size = new System.Drawing.Size(756, 27);
             this.bunifuSeparator2.TabIndex = 10;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator2, "");
             // 
             // chkboxTime
             // 
@@ -3552,6 +3895,9 @@ namespace IOOP_Assignment
             this.chkboxTime.Size = new System.Drawing.Size(108, 23);
             this.chkboxTime.TabIndex = 9;
             this.chkboxTime.Text = "Change Time";
+            this.bunifuToolTip1.SetToolTip(this.chkboxTime, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxTime, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxTime, "");
             this.chkboxTime.UseVisualStyleBackColor = true;
             this.chkboxTime.CheckedChanged += new System.EventHandler(this.chkboxTime_CheckedChanged);
             // 
@@ -3564,6 +3910,9 @@ namespace IOOP_Assignment
             this.chkboxRoom.Size = new System.Drawing.Size(270, 23);
             this.chkboxRoom.TabIndex = 8;
             this.chkboxRoom.Text = "Change Room and Number of Students";
+            this.bunifuToolTip1.SetToolTip(this.chkboxRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxRoom, "");
             this.chkboxRoom.UseVisualStyleBackColor = true;
             this.chkboxRoom.CheckedChanged += new System.EventHandler(this.chkboxRoom_CheckedChanged);
             // 
@@ -3576,6 +3925,9 @@ namespace IOOP_Assignment
             this.chkboxDate.Size = new System.Drawing.Size(108, 23);
             this.chkboxDate.TabIndex = 7;
             this.chkboxDate.Text = "Change Date";
+            this.bunifuToolTip1.SetToolTip(this.chkboxDate, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDate, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDate, "");
             this.chkboxDate.UseVisualStyleBackColor = true;
             this.chkboxDate.CheckedChanged += new System.EventHandler(this.chkboxDate_CheckedChanged);
             // 
@@ -3595,6 +3947,9 @@ namespace IOOP_Assignment
     "ilability.";
             this.lblNotice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNotice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNotice, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNotice, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNotice, "");
             // 
             // lblNewTime
             // 
@@ -3610,6 +3965,9 @@ namespace IOOP_Assignment
             this.lblNewTime.Text = "New Time:";
             this.lblNewTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewTime, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewTime, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewTime, "");
             // 
             // lblNewRoom
             // 
@@ -3625,6 +3983,9 @@ namespace IOOP_Assignment
             this.lblNewRoom.Text = "New Room:";
             this.lblNewRoom.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewRoom.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewRoom, "");
             // 
             // lblNewDate
             // 
@@ -3640,6 +4001,9 @@ namespace IOOP_Assignment
             this.lblNewDate.Text = "New Date:";
             this.lblNewDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNewDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewDate, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDate, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDate, "");
             // 
             // lblReservedTime0
             // 
@@ -3655,6 +4019,9 @@ namespace IOOP_Assignment
             this.lblReservedTime0.Text = "Reserved Time:";
             this.lblReservedTime0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedTime0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedTime0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime0, "");
             // 
             // lblReservedRoom0
             // 
@@ -3670,6 +4037,9 @@ namespace IOOP_Assignment
             this.lblReservedRoom0.Text = "Reserved Room:";
             this.lblReservedRoom0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedRoom0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom0, "");
             // 
             // lblReservedDate0
             // 
@@ -3685,6 +4055,9 @@ namespace IOOP_Assignment
             this.lblReservedDate0.Text = "Reserved Date:";
             this.lblReservedDate0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblReservedDate0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDate0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate0, "");
             // 
             // bunifuLabel3
             // 
@@ -3701,6 +4074,9 @@ namespace IOOP_Assignment
             this.bunifuLabel3.Text = "Student Portal";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel3, "");
             // 
             // bunifuFormDock1
             // 
@@ -3762,6 +4138,9 @@ namespace IOOP_Assignment
             this.shapeClose.Size = new System.Drawing.Size(13, 13);
             this.shapeClose.TabIndex = 30;
             this.shapeClose.Text = "bunifuShapes1";
+            this.bunifuToolTip1.SetToolTip(this.shapeClose, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.shapeClose, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.shapeClose, "");
             this.shapeClose.Click += new System.EventHandler(this.shapeClose_Click);
             // 
             // bunifuShapes2
@@ -3779,6 +4158,9 @@ namespace IOOP_Assignment
             this.bunifuShapes2.Size = new System.Drawing.Size(13, 13);
             this.bunifuShapes2.TabIndex = 31;
             this.bunifuShapes2.Text = "bunifuShapes2";
+            this.bunifuToolTip1.SetToolTip(this.bunifuShapes2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShapes2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShapes2, "");
             this.bunifuShapes2.Click += new System.EventHandler(this.shapeMinimize_Click);
             // 
             // bunifuShapes3
@@ -3796,6 +4178,9 @@ namespace IOOP_Assignment
             this.bunifuShapes3.Size = new System.Drawing.Size(13, 13);
             this.bunifuShapes3.TabIndex = 32;
             this.bunifuShapes3.Text = "bunifuShapes3";
+            this.bunifuToolTip1.SetToolTip(this.bunifuShapes3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShapes3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShapes3, "");
             // 
             // bunifuElipse3
             // 
@@ -3870,6 +4255,41 @@ namespace IOOP_Assignment
             this.bunifuSnackbar1.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = false;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // reservationSystem_DBDataSet
             // 
@@ -4100,5 +4520,6 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedTime1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDate1;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }
