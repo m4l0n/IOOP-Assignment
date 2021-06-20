@@ -441,28 +441,7 @@ namespace IOOP_Assignment
             }
             else
             {
-                int roomvalidate = 0;   //Use as count to validate Room and Student combobox
-                int durationvalidate = 0; //Use as count to validate Duration combobox
-
-                if (chkboxRoom.Checked)
-                {
-                    if (comboNewRoom.SelectedIndex != -1 && comboNewStudent.SelectedIndex != -1)
-                    {
-                        roomvalidate = 1;
-                    }
-                }
-                else roomvalidate = 1;
-
-                if (chkboxDuration.Checked)
-                {
-                    if (comboNewRoom.SelectedIndex != -1)
-                    {
-                        durationvalidate = 1;
-                    }
-                }
-                else durationvalidate = 1;
-
-                if (roomvalidate == 1 && durationvalidate == 1)
+                if (ValidateControls(panelEdit))
                 {
                     int row = tableReservationEdit.CurrentRow.Index;
                     DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
@@ -491,19 +470,16 @@ namespace IOOP_Assignment
                     int result = req.addRequest(req);
                     if (result != 0)
                     {
-                        bunifuSnackbar1.Show(this, "You have successfully requested for a change on your reservation. Librarians will " +
-                            "check on it soon.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                        bunifuSnackbar1.Show(this, "You have successfully requested for a change on your reservation. " +
+                            "Librarians will check on it soon.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                        await Task.Delay(2000);
+                        bunifuPages2.SetPage(0);
                     }
                     else
                     {
-                        bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact the system" +
-                            "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
+                        bunifuSnackbar1.Show(this, "Something went wrong while trying to make a request. Please contact " +
+                            "the system administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
                     }
-                }
-                else
-                {
-                    bunifuSnackbar1.Show(this, "Please make sure all checked options are filled.",
-                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
                 }
             }
         }

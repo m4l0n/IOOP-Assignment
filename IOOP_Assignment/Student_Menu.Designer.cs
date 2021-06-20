@@ -158,6 +158,16 @@ namespace IOOP_Assignment
             this.btnPreviewConfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPreviewCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.formPage = new System.Windows.Forms.TabPage();
+            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.shapeClose = new Bunifu.UI.WinForms.BunifuShapes();
+            this.bunifuShapes2 = new Bunifu.UI.WinForms.BunifuShapes();
+            this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.panelEdit = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblReservedRoom1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblReservedStudent1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblReservedDuration1 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -192,15 +202,6 @@ namespace IOOP_Assignment
             this.lblReservedTime0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblReservedRoom0 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblReservedDate0 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.shapeClose = new Bunifu.UI.WinForms.BunifuShapes();
-            this.bunifuShapes2 = new Bunifu.UI.WinForms.BunifuShapes();
-            this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.reservationSystem_DBDataSet = new IOOP_Assignment.ReservationSystem_DBDataSet();
             this.reservationSystemDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuPanel1.SuspendLayout();
@@ -230,6 +231,7 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel11.SuspendLayout();
             this.bunifuShadowPanel5.SuspendLayout();
             this.formPage.SuspendLayout();
+            this.panelEdit.SuspendLayout();
             this.bunifuShadowPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationSystem_DBDataSet)).BeginInit();
@@ -582,10 +584,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.reservationPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "reservationPage";
-            this.bunifuPages2.PageTitle = "Reservation";
+            this.bunifuPages2.Page = this.formPage;
+            this.bunifuPages2.PageIndex = 4;
+            this.bunifuPages2.PageName = "formPage";
+            this.bunifuPages2.PageTitle = "Form";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -1338,6 +1340,7 @@ namespace IOOP_Assignment
             this.comboStudentNo.Name = "comboStudentNo";
             this.comboStudentNo.Size = new System.Drawing.Size(220, 32);
             this.comboStudentNo.TabIndex = 48;
+            this.comboStudentNo.Text = null;
             this.comboStudentNo.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboStudentNo.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboStudentNo, "");
@@ -1423,6 +1426,7 @@ namespace IOOP_Assignment
             this.comboDuration.Name = "comboDuration";
             this.comboDuration.Size = new System.Drawing.Size(220, 32);
             this.comboDuration.TabIndex = 46;
+            this.comboDuration.Text = null;
             this.comboDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboDuration.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboDuration, "");
@@ -1467,6 +1471,7 @@ namespace IOOP_Assignment
             this.comboRoom.Name = "comboRoom";
             this.comboRoom.Size = new System.Drawing.Size(220, 32);
             this.comboRoom.TabIndex = 39;
+            this.comboRoom.Text = null;
             this.comboRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboRoom.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboRoom, "");
@@ -3130,39 +3135,7 @@ namespace IOOP_Assignment
             // 
             // formPage
             // 
-            this.formPage.Controls.Add(this.lblReservedRoom1);
-            this.formPage.Controls.Add(this.lblReservedStudent1);
-            this.formPage.Controls.Add(this.lblReservedDuration1);
-            this.formPage.Controls.Add(this.lblReservedTime1);
-            this.formPage.Controls.Add(this.lblReservedDate1);
-            this.formPage.Controls.Add(this.comboNewDuration);
-            this.formPage.Controls.Add(this.comboNewStudent);
-            this.formPage.Controls.Add(this.btnEditConfirm);
-            this.formPage.Controls.Add(this.bunifuSeparator8);
-            this.formPage.Controls.Add(this.newTimeRes);
-            this.formPage.Controls.Add(this.bunifuShadowPanel10);
-            this.formPage.Controls.Add(this.lblNewDuration);
-            this.formPage.Controls.Add(this.lblNewStudent);
-            this.formPage.Controls.Add(this.chkboxDuration);
-            this.formPage.Controls.Add(this.lblReservedStudent0);
-            this.formPage.Controls.Add(this.lblReservedDuration0);
-            this.formPage.Controls.Add(this.btnEditCancel);
-            this.formPage.Controls.Add(this.comboNewRoom);
-            this.formPage.Controls.Add(this.dateNewReserved);
-            this.formPage.Controls.Add(this.bunifuSeparator5);
-            this.formPage.Controls.Add(this.bunifuSeparator4);
-            this.formPage.Controls.Add(this.bunifuSeparator3);
-            this.formPage.Controls.Add(this.bunifuSeparator2);
-            this.formPage.Controls.Add(this.chkboxTime);
-            this.formPage.Controls.Add(this.chkboxRoom);
-            this.formPage.Controls.Add(this.chkboxDate);
-            this.formPage.Controls.Add(this.lblNotice);
-            this.formPage.Controls.Add(this.lblNewTime);
-            this.formPage.Controls.Add(this.lblNewRoom);
-            this.formPage.Controls.Add(this.lblNewDate);
-            this.formPage.Controls.Add(this.lblReservedTime0);
-            this.formPage.Controls.Add(this.lblReservedRoom0);
-            this.formPage.Controls.Add(this.lblReservedDate0);
+            this.formPage.Controls.Add(this.panelEdit);
             this.formPage.Location = new System.Drawing.Point(4, 4);
             this.formPage.Name = "formPage";
             this.formPage.Padding = new System.Windows.Forms.Padding(3);
@@ -3173,889 +3146,6 @@ namespace IOOP_Assignment
             this.bunifuToolTip1.SetToolTipIcon(this.formPage, null);
             this.bunifuToolTip1.SetToolTipTitle(this.formPage, "");
             this.formPage.UseVisualStyleBackColor = true;
-            // 
-            // lblReservedRoom1
-            // 
-            this.lblReservedRoom1.AllowParentOverrides = false;
-            this.lblReservedRoom1.AutoEllipsis = false;
-            this.lblReservedRoom1.CursorType = null;
-            this.lblReservedRoom1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblReservedRoom1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedRoom1.Location = new System.Drawing.Point(475, 41);
-            this.lblReservedRoom1.Name = "lblReservedRoom1";
-            this.lblReservedRoom1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedRoom1.Size = new System.Drawing.Size(46, 23);
-            this.lblReservedRoom1.TabIndex = 64;
-            this.lblReservedRoom1.Text = "Room";
-            this.lblReservedRoom1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedRoom1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom1, "");
-            // 
-            // lblReservedStudent1
-            // 
-            this.lblReservedStudent1.AllowParentOverrides = false;
-            this.lblReservedStudent1.AutoEllipsis = false;
-            this.lblReservedStudent1.CursorType = null;
-            this.lblReservedStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblReservedStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedStudent1.Location = new System.Drawing.Point(573, 13);
-            this.lblReservedStudent1.Name = "lblReservedStudent1";
-            this.lblReservedStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedStudent1.Size = new System.Drawing.Size(67, 23);
-            this.lblReservedStudent1.TabIndex = 63;
-            this.lblReservedStudent1.Text = "Students";
-            this.lblReservedStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent1, "");
-            // 
-            // lblReservedDuration1
-            // 
-            this.lblReservedDuration1.AllowParentOverrides = false;
-            this.lblReservedDuration1.AutoEllipsis = false;
-            this.lblReservedDuration1.CursorType = null;
-            this.lblReservedDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedDuration1.Location = new System.Drawing.Point(173, 71);
-            this.lblReservedDuration1.Name = "lblReservedDuration1";
-            this.lblReservedDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDuration1.Size = new System.Drawing.Size(67, 23);
-            this.lblReservedDuration1.TabIndex = 62;
-            this.lblReservedDuration1.Text = "Duration";
-            this.lblReservedDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration1, "");
-            // 
-            // lblReservedTime1
-            // 
-            this.lblReservedTime1.AllowParentOverrides = false;
-            this.lblReservedTime1.AutoEllipsis = false;
-            this.lblReservedTime1.CursorType = null;
-            this.lblReservedTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblReservedTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedTime1.Location = new System.Drawing.Point(145, 42);
-            this.lblReservedTime1.Name = "lblReservedTime1";
-            this.lblReservedTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedTime1.Size = new System.Drawing.Size(37, 23);
-            this.lblReservedTime1.TabIndex = 61;
-            this.lblReservedTime1.Text = "Time";
-            this.lblReservedTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedTime1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime1, "");
-            // 
-            // lblReservedDate1
-            // 
-            this.lblReservedDate1.AllowParentOverrides = false;
-            this.lblReservedDate1.AutoEllipsis = false;
-            this.lblReservedDate1.CursorType = null;
-            this.lblReservedDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblReservedDate1.Location = new System.Drawing.Point(144, 13);
-            this.lblReservedDate1.Name = "lblReservedDate1";
-            this.lblReservedDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDate1.Size = new System.Drawing.Size(36, 23);
-            this.lblReservedDate1.TabIndex = 60;
-            this.lblReservedDate1.Text = "Date";
-            this.lblReservedDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedDate1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate1, "");
-            // 
-            // comboNewDuration
-            // 
-            this.comboNewDuration.BackColor = System.Drawing.Color.Transparent;
-            this.comboNewDuration.BackgroundColor = System.Drawing.Color.White;
-            this.comboNewDuration.BorderColor = System.Drawing.Color.Silver;
-            this.comboNewDuration.BorderRadius = 1;
-            this.comboNewDuration.Color = System.Drawing.Color.Silver;
-            this.comboNewDuration.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboNewDuration.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewDuration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.comboNewDuration.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewDuration.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.comboNewDuration.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboNewDuration.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboNewDuration.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.comboNewDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboNewDuration.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewDuration.Enabled = false;
-            this.comboNewDuration.FillDropDown = true;
-            this.comboNewDuration.FillIndicator = false;
-            this.comboNewDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboNewDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboNewDuration.ForeColor = System.Drawing.Color.Black;
-            this.comboNewDuration.FormattingEnabled = true;
-            this.comboNewDuration.Icon = null;
-            this.comboNewDuration.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewDuration.IndicatorColor = System.Drawing.Color.Gray;
-            this.comboNewDuration.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewDuration.ItemBackColor = System.Drawing.Color.White;
-            this.comboNewDuration.ItemBorderColor = System.Drawing.Color.White;
-            this.comboNewDuration.ItemForeColor = System.Drawing.Color.Black;
-            this.comboNewDuration.ItemHeight = 26;
-            this.comboNewDuration.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.comboNewDuration.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboNewDuration.Items.AddRange(new object[] {
-            "1 hour",
-            "1 hour 30 Minutes",
-            "2 hours",
-            "2 hours  30 Minutes",
-            "3 hours",
-            "3 hours  30 Minutes",
-            "4 hours",
-            "4 hours  30 Minutes",
-            "5 hours",
-            "5 hours  30 Minutes",
-            "6 hours"});
-            this.comboNewDuration.ItemTopMargin = 3;
-            this.comboNewDuration.Location = new System.Drawing.Point(539, 415);
-            this.comboNewDuration.Name = "comboNewDuration";
-            this.comboNewDuration.Size = new System.Drawing.Size(207, 32);
-            this.comboNewDuration.TabIndex = 59;
-            this.comboNewDuration.Text = "Select New Duration";
-            this.comboNewDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewDuration.TextLeftMargin = 5;
-            this.bunifuToolTip1.SetToolTip(this.comboNewDuration, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboNewDuration, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboNewDuration, "");
-            // 
-            // comboNewStudent
-            // 
-            this.comboNewStudent.BackColor = System.Drawing.Color.Transparent;
-            this.comboNewStudent.BackgroundColor = System.Drawing.Color.White;
-            this.comboNewStudent.BorderColor = System.Drawing.Color.Silver;
-            this.comboNewStudent.BorderRadius = 1;
-            this.comboNewStudent.Color = System.Drawing.Color.Silver;
-            this.comboNewStudent.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboNewStudent.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewStudent.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.comboNewStudent.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewStudent.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.comboNewStudent.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboNewStudent.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboNewStudent.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.comboNewStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboNewStudent.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewStudent.Enabled = false;
-            this.comboNewStudent.FillDropDown = true;
-            this.comboNewStudent.FillIndicator = false;
-            this.comboNewStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboNewStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboNewStudent.ForeColor = System.Drawing.Color.Black;
-            this.comboNewStudent.FormattingEnabled = true;
-            this.comboNewStudent.Icon = null;
-            this.comboNewStudent.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewStudent.IndicatorColor = System.Drawing.Color.Gray;
-            this.comboNewStudent.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewStudent.ItemBackColor = System.Drawing.Color.White;
-            this.comboNewStudent.ItemBorderColor = System.Drawing.Color.White;
-            this.comboNewStudent.ItemForeColor = System.Drawing.Color.Black;
-            this.comboNewStudent.ItemHeight = 26;
-            this.comboNewStudent.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.comboNewStudent.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboNewStudent.ItemTopMargin = 3;
-            this.comboNewStudent.Location = new System.Drawing.Point(217, 294);
-            this.comboNewStudent.Name = "comboNewStudent";
-            this.comboNewStudent.Size = new System.Drawing.Size(220, 32);
-            this.comboNewStudent.TabIndex = 58;
-            this.comboNewStudent.Text = "Select New Number of Students";
-            this.comboNewStudent.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewStudent.TextLeftMargin = 5;
-            this.bunifuToolTip1.SetToolTip(this.comboNewStudent, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboNewStudent, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboNewStudent, "");
-            // 
-            // btnEditConfirm
-            // 
-            this.btnEditConfirm.AllowAnimations = true;
-            this.btnEditConfirm.AllowMouseEffects = true;
-            this.btnEditConfirm.AllowToggling = false;
-            this.btnEditConfirm.AnimationSpeed = 200;
-            this.btnEditConfirm.AutoGenerateColors = false;
-            this.btnEditConfirm.AutoRoundBorders = false;
-            this.btnEditConfirm.AutoSizeLeftIcon = true;
-            this.btnEditConfirm.AutoSizeRightIcon = true;
-            this.btnEditConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditConfirm.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnEditConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditConfirm.BackgroundImage")));
-            this.btnEditConfirm.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditConfirm.ButtonText = "Confirm";
-            this.btnEditConfirm.ButtonTextMarginLeft = 0;
-            this.btnEditConfirm.ColorContrastOnClick = 45;
-            this.btnEditConfirm.ColorContrastOnHover = 45;
-            this.btnEditConfirm.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.btnEditConfirm.CustomizableEdges = borderEdges10;
-            this.btnEditConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEditConfirm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnEditConfirm.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnEditConfirm.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnEditConfirm.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnEditConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnEditConfirm.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditConfirm.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnEditConfirm.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnEditConfirm.IconMarginLeft = 11;
-            this.btnEditConfirm.IconPadding = 10;
-            this.btnEditConfirm.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditConfirm.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnEditConfirm.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnEditConfirm.IconSize = 25;
-            this.btnEditConfirm.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditConfirm.IdleBorderRadius = 20;
-            this.btnEditConfirm.IdleBorderThickness = 1;
-            this.btnEditConfirm.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditConfirm.IdleIconLeftImage = null;
-            this.btnEditConfirm.IdleIconRightImage = null;
-            this.btnEditConfirm.IndicateFocus = false;
-            this.btnEditConfirm.Location = new System.Drawing.Point(592, 492);
-            this.btnEditConfirm.Name = "btnEditConfirm";
-            this.btnEditConfirm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnEditConfirm.OnDisabledState.BorderRadius = 20;
-            this.btnEditConfirm.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditConfirm.OnDisabledState.BorderThickness = 1;
-            this.btnEditConfirm.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnEditConfirm.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnEditConfirm.OnDisabledState.IconLeftImage = null;
-            this.btnEditConfirm.OnDisabledState.IconRightImage = null;
-            this.btnEditConfirm.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnEditConfirm.onHoverState.BorderRadius = 20;
-            this.btnEditConfirm.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditConfirm.onHoverState.BorderThickness = 1;
-            this.btnEditConfirm.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnEditConfirm.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEditConfirm.onHoverState.IconLeftImage = null;
-            this.btnEditConfirm.onHoverState.IconRightImage = null;
-            this.btnEditConfirm.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditConfirm.OnIdleState.BorderRadius = 20;
-            this.btnEditConfirm.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditConfirm.OnIdleState.BorderThickness = 1;
-            this.btnEditConfirm.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditConfirm.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnEditConfirm.OnIdleState.IconLeftImage = null;
-            this.btnEditConfirm.OnIdleState.IconRightImage = null;
-            this.btnEditConfirm.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnEditConfirm.OnPressedState.BorderRadius = 20;
-            this.btnEditConfirm.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditConfirm.OnPressedState.BorderThickness = 1;
-            this.btnEditConfirm.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnEditConfirm.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnEditConfirm.OnPressedState.IconLeftImage = null;
-            this.btnEditConfirm.OnPressedState.IconRightImage = null;
-            this.btnEditConfirm.Size = new System.Drawing.Size(150, 39);
-            this.btnEditConfirm.TabIndex = 57;
-            this.btnEditConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEditConfirm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEditConfirm.TextMarginLeft = 0;
-            this.btnEditConfirm.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuToolTip1.SetToolTip(this.btnEditConfirm, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnEditConfirm, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnEditConfirm, "");
-            this.btnEditConfirm.UseDefaultRadiusAndThickness = true;
-            this.btnEditConfirm.Click += new System.EventHandler(this.btnEditConfirm_Click);
-            // 
-            // bunifuSeparator8
-            // 
-            this.bunifuSeparator8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator8.BackgroundImage")));
-            this.bunifuSeparator8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator8.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator8.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator8.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator8.LineThickness = 1;
-            this.bunifuSeparator8.Location = new System.Drawing.Point(380, 376);
-            this.bunifuSeparator8.Name = "bunifuSeparator8";
-            this.bunifuSeparator8.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator8.Size = new System.Drawing.Size(15, 89);
-            this.bunifuSeparator8.TabIndex = 56;
-            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator8, "");
-            // 
-            // newTimeRes
-            // 
-            this.newTimeRes.BackColor = System.Drawing.Color.Transparent;
-            this.newTimeRes.BorderRadius = 1;
-            this.newTimeRes.Color = System.Drawing.Color.Silver;
-            this.newTimeRes.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.newTimeRes.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.newTimeRes.DisabledColor = System.Drawing.Color.Gray;
-            this.newTimeRes.DisplayWeekNumbers = false;
-            this.newTimeRes.DPHeight = 0;
-            this.newTimeRes.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.newTimeRes.Enabled = false;
-            this.newTimeRes.FillDatePicker = false;
-            this.newTimeRes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.newTimeRes.ForeColor = System.Drawing.Color.Black;
-            this.newTimeRes.Icon = ((System.Drawing.Image)(resources.GetObject("newTimeRes.Icon")));
-            this.newTimeRes.IconColor = System.Drawing.Color.Gray;
-            this.newTimeRes.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.newTimeRes.LeftTextMargin = 5;
-            this.newTimeRes.Location = new System.Drawing.Point(123, 415);
-            this.newTimeRes.MinimumSize = new System.Drawing.Size(4, 32);
-            this.newTimeRes.Name = "newTimeRes";
-            this.newTimeRes.Size = new System.Drawing.Size(220, 32);
-            this.newTimeRes.TabIndex = 55;
-            this.bunifuToolTip1.SetToolTip(this.newTimeRes, "1. Click and enter hh (hour) intended\r\n2. Click and enter mm (minutes) intended");
-            this.bunifuToolTip1.SetToolTipIcon(this.newTimeRes, ((System.Drawing.Image)(resources.GetObject("newTimeRes.ToolTipIcon"))));
-            this.bunifuToolTip1.SetToolTipTitle(this.newTimeRes, "How to Enter Time");
-            this.newTimeRes.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
-            // 
-            // bunifuShadowPanel10
-            // 
-            this.bunifuShadowPanel10.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel10.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuShadowPanel10.BorderRadius = 20;
-            this.bunifuShadowPanel10.BorderThickness = 1;
-            this.bunifuShadowPanel10.Controls.Add(this.pictureBox3);
-            this.bunifuShadowPanel10.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel10.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel10.Location = new System.Drawing.Point(456, 197);
-            this.bunifuShadowPanel10.Name = "bunifuShadowPanel10";
-            this.bunifuShadowPanel10.PanelColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel10.PanelColor2 = System.Drawing.Color.White;
-            this.bunifuShadowPanel10.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel10.ShadowDept = 2;
-            this.bunifuShadowPanel10.ShadowDepth = 3;
-            this.bunifuShadowPanel10.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel10.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel10.Size = new System.Drawing.Size(299, 163);
-            this.bunifuShadowPanel10.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel10.TabIndex = 54;
-            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel10, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel10, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel10, "");
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(278, 136);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 51;
-            this.pictureBox3.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.pictureBox3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox3, "");
-            // 
-            // lblNewDuration
-            // 
-            this.lblNewDuration.AllowParentOverrides = false;
-            this.lblNewDuration.AutoEllipsis = false;
-            this.lblNewDuration.CursorType = null;
-            this.lblNewDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewDuration.Location = new System.Drawing.Point(433, 421);
-            this.lblNewDuration.Name = "lblNewDuration";
-            this.lblNewDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNewDuration.Size = new System.Drawing.Size(100, 20);
-            this.lblNewDuration.TabIndex = 51;
-            this.lblNewDuration.Text = "New Duration:";
-            this.lblNewDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNewDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNewDuration, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDuration, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDuration, "");
-            // 
-            // lblNewStudent
-            // 
-            this.lblNewStudent.AllowParentOverrides = false;
-            this.lblNewStudent.AutoEllipsis = false;
-            this.lblNewStudent.CursorType = null;
-            this.lblNewStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewStudent.Location = new System.Drawing.Point(34, 299);
-            this.lblNewStudent.Name = "lblNewStudent";
-            this.lblNewStudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNewStudent.Size = new System.Drawing.Size(177, 20);
-            this.lblNewStudent.TabIndex = 49;
-            this.lblNewStudent.Text = "New Number of Students:";
-            this.lblNewStudent.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNewStudent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNewStudent, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNewStudent, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNewStudent, "");
-            // 
-            // chkboxDuration
-            // 
-            this.chkboxDuration.AutoSize = true;
-            this.chkboxDuration.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chkboxDuration.Location = new System.Drawing.Point(433, 385);
-            this.chkboxDuration.Name = "chkboxDuration";
-            this.chkboxDuration.Size = new System.Drawing.Size(133, 23);
-            this.chkboxDuration.TabIndex = 48;
-            this.chkboxDuration.Text = "Change Duration";
-            this.bunifuToolTip1.SetToolTip(this.chkboxDuration, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDuration, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDuration, "");
-            this.chkboxDuration.UseVisualStyleBackColor = true;
-            this.chkboxDuration.CheckedChanged += new System.EventHandler(this.chkboxDuration_CheckedChanged);
-            // 
-            // lblReservedStudent0
-            // 
-            this.lblReservedStudent0.AllowParentOverrides = false;
-            this.lblReservedStudent0.AutoEllipsis = false;
-            this.lblReservedStudent0.CursorType = null;
-            this.lblReservedStudent0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedStudent0.Location = new System.Drawing.Point(357, 14);
-            this.lblReservedStudent0.Name = "lblReservedStudent0";
-            this.lblReservedStudent0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedStudent0.Size = new System.Drawing.Size(208, 20);
-            this.lblReservedStudent0.TabIndex = 46;
-            this.lblReservedStudent0.Text = "Reserved Number of Students:";
-            this.lblReservedStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent0, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent0, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent0, "");
-            // 
-            // lblReservedDuration0
-            // 
-            this.lblReservedDuration0.AllowParentOverrides = false;
-            this.lblReservedDuration0.AutoEllipsis = false;
-            this.lblReservedDuration0.CursorType = null;
-            this.lblReservedDuration0.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDuration0.Location = new System.Drawing.Point(34, 73);
-            this.lblReservedDuration0.Name = "lblReservedDuration0";
-            this.lblReservedDuration0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDuration0.Size = new System.Drawing.Size(131, 20);
-            this.lblReservedDuration0.TabIndex = 45;
-            this.lblReservedDuration0.Text = "Reserved Duration:";
-            this.lblReservedDuration0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDuration0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration0, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration0, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration0, "");
-            // 
-            // btnEditCancel
-            // 
-            this.btnEditCancel.AllowAnimations = true;
-            this.btnEditCancel.AllowMouseEffects = true;
-            this.btnEditCancel.AllowToggling = false;
-            this.btnEditCancel.AnimationSpeed = 200;
-            this.btnEditCancel.AutoGenerateColors = false;
-            this.btnEditCancel.AutoRoundBorders = false;
-            this.btnEditCancel.AutoSizeLeftIcon = true;
-            this.btnEditCancel.AutoSizeRightIcon = true;
-            this.btnEditCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditCancel.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnEditCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditCancel.BackgroundImage")));
-            this.btnEditCancel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditCancel.ButtonText = "Cancel";
-            this.btnEditCancel.ButtonTextMarginLeft = 0;
-            this.btnEditCancel.ColorContrastOnClick = 45;
-            this.btnEditCancel.ColorContrastOnHover = 45;
-            this.btnEditCancel.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.btnEditCancel.CustomizableEdges = borderEdges11;
-            this.btnEditCancel.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEditCancel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnEditCancel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnEditCancel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnEditCancel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnEditCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEditCancel.ForeColor = System.Drawing.Color.White;
-            this.btnEditCancel.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditCancel.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnEditCancel.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnEditCancel.IconMarginLeft = 11;
-            this.btnEditCancel.IconPadding = 10;
-            this.btnEditCancel.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditCancel.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnEditCancel.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnEditCancel.IconSize = 25;
-            this.btnEditCancel.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditCancel.IdleBorderRadius = 20;
-            this.btnEditCancel.IdleBorderThickness = 1;
-            this.btnEditCancel.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditCancel.IdleIconLeftImage = null;
-            this.btnEditCancel.IdleIconRightImage = null;
-            this.btnEditCancel.IndicateFocus = false;
-            this.btnEditCancel.Location = new System.Drawing.Point(415, 492);
-            this.btnEditCancel.Name = "btnEditCancel";
-            this.btnEditCancel.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnEditCancel.OnDisabledState.BorderRadius = 20;
-            this.btnEditCancel.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditCancel.OnDisabledState.BorderThickness = 1;
-            this.btnEditCancel.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnEditCancel.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnEditCancel.OnDisabledState.IconLeftImage = null;
-            this.btnEditCancel.OnDisabledState.IconRightImage = null;
-            this.btnEditCancel.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnEditCancel.onHoverState.BorderRadius = 20;
-            this.btnEditCancel.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditCancel.onHoverState.BorderThickness = 1;
-            this.btnEditCancel.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnEditCancel.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEditCancel.onHoverState.IconLeftImage = null;
-            this.btnEditCancel.onHoverState.IconRightImage = null;
-            this.btnEditCancel.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditCancel.OnIdleState.BorderRadius = 20;
-            this.btnEditCancel.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditCancel.OnIdleState.BorderThickness = 1;
-            this.btnEditCancel.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditCancel.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnEditCancel.OnIdleState.IconLeftImage = null;
-            this.btnEditCancel.OnIdleState.IconRightImage = null;
-            this.btnEditCancel.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnEditCancel.OnPressedState.BorderRadius = 20;
-            this.btnEditCancel.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnEditCancel.OnPressedState.BorderThickness = 1;
-            this.btnEditCancel.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnEditCancel.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnEditCancel.OnPressedState.IconLeftImage = null;
-            this.btnEditCancel.OnPressedState.IconRightImage = null;
-            this.btnEditCancel.Size = new System.Drawing.Size(150, 39);
-            this.btnEditCancel.TabIndex = 43;
-            this.btnEditCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEditCancel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEditCancel.TextMarginLeft = 0;
-            this.btnEditCancel.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuToolTip1.SetToolTip(this.btnEditCancel, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnEditCancel, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnEditCancel, "");
-            this.btnEditCancel.UseDefaultRadiusAndThickness = true;
-            this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
-            // 
-            // comboNewRoom
-            // 
-            this.comboNewRoom.BackColor = System.Drawing.Color.Transparent;
-            this.comboNewRoom.BackgroundColor = System.Drawing.Color.White;
-            this.comboNewRoom.BorderColor = System.Drawing.Color.Silver;
-            this.comboNewRoom.BorderRadius = 1;
-            this.comboNewRoom.Color = System.Drawing.Color.Silver;
-            this.comboNewRoom.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboNewRoom.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewRoom.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.comboNewRoom.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboNewRoom.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.comboNewRoom.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboNewRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboNewRoom.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.comboNewRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboNewRoom.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewRoom.Enabled = false;
-            this.comboNewRoom.FillDropDown = true;
-            this.comboNewRoom.FillIndicator = false;
-            this.comboNewRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboNewRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboNewRoom.ForeColor = System.Drawing.Color.Black;
-            this.comboNewRoom.FormattingEnabled = true;
-            this.comboNewRoom.Icon = null;
-            this.comboNewRoom.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewRoom.IndicatorColor = System.Drawing.Color.Gray;
-            this.comboNewRoom.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboNewRoom.ItemBackColor = System.Drawing.Color.White;
-            this.comboNewRoom.ItemBorderColor = System.Drawing.Color.White;
-            this.comboNewRoom.ItemForeColor = System.Drawing.Color.Black;
-            this.comboNewRoom.ItemHeight = 26;
-            this.comboNewRoom.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.comboNewRoom.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboNewRoom.Items.AddRange(new object[] {
-            "Amber",
-            "Blackthorn",
-            "Cedar",
-            "Daphne"});
-            this.comboNewRoom.ItemTopMargin = 3;
-            this.comboNewRoom.Location = new System.Drawing.Point(217, 237);
-            this.comboNewRoom.Name = "comboNewRoom";
-            this.comboNewRoom.Size = new System.Drawing.Size(220, 32);
-            this.comboNewRoom.TabIndex = 16;
-            this.comboNewRoom.Text = "Select New Room Type";
-            this.comboNewRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboNewRoom.TextLeftMargin = 5;
-            this.bunifuToolTip1.SetToolTip(this.comboNewRoom, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboNewRoom, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboNewRoom, "");
-            this.comboNewRoom.SelectedIndexChanged += new System.EventHandler(this.comboNewRoom_SelectedIndexChanged);
-            // 
-            // dateNewReserved
-            // 
-            this.dateNewReserved.BackColor = System.Drawing.Color.Transparent;
-            this.dateNewReserved.BorderRadius = 1;
-            this.dateNewReserved.Color = System.Drawing.Color.Silver;
-            this.dateNewReserved.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.dateNewReserved.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dateNewReserved.DisabledColor = System.Drawing.Color.Gray;
-            this.dateNewReserved.DisplayWeekNumbers = false;
-            this.dateNewReserved.DPHeight = 0;
-            this.dateNewReserved.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateNewReserved.Enabled = false;
-            this.dateNewReserved.FillDatePicker = false;
-            this.dateNewReserved.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateNewReserved.ForeColor = System.Drawing.Color.Black;
-            this.dateNewReserved.Icon = ((System.Drawing.Image)(resources.GetObject("dateNewReserved.Icon")));
-            this.dateNewReserved.IconColor = System.Drawing.Color.Gray;
-            this.dateNewReserved.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dateNewReserved.LeftTextMargin = 5;
-            this.dateNewReserved.Location = new System.Drawing.Point(123, 147);
-            this.dateNewReserved.MinimumSize = new System.Drawing.Size(4, 32);
-            this.dateNewReserved.Name = "dateNewReserved";
-            this.dateNewReserved.Size = new System.Drawing.Size(220, 32);
-            this.dateNewReserved.TabIndex = 14;
-            this.bunifuToolTip1.SetToolTip(this.dateNewReserved, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.dateNewReserved, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.dateNewReserved, "");
-            this.dateNewReserved.Value = new System.DateTime(2021, 6, 10, 0, 39, 0, 0);
-            // 
-            // bunifuSeparator5
-            // 
-            this.bunifuSeparator5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator5.BackgroundImage")));
-            this.bunifuSeparator5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator5.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator5.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator5.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator5.LineThickness = 1;
-            this.bunifuSeparator5.Location = new System.Drawing.Point(2, 362);
-            this.bunifuSeparator5.Name = "bunifuSeparator5";
-            this.bunifuSeparator5.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator5.Size = new System.Drawing.Size(756, 10);
-            this.bunifuSeparator5.TabIndex = 13;
-            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator5, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator5, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator5, "");
-            // 
-            // bunifuSeparator4
-            // 
-            this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator4.BackgroundImage")));
-            this.bunifuSeparator4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator4.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator4.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator4.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(3, 96);
-            this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator4.Size = new System.Drawing.Size(756, 19);
-            this.bunifuSeparator4.TabIndex = 12;
-            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator4, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator4, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator4, "");
-            // 
-            // bunifuSeparator3
-            // 
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
-            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(2, 182);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator3.Size = new System.Drawing.Size(756, 18);
-            this.bunifuSeparator3.TabIndex = 11;
-            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator3, "");
-            // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
-            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(3, 456);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator2.Size = new System.Drawing.Size(756, 27);
-            this.bunifuSeparator2.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator2, "");
-            // 
-            // chkboxTime
-            // 
-            this.chkboxTime.AutoSize = true;
-            this.chkboxTime.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chkboxTime.Location = new System.Drawing.Point(34, 385);
-            this.chkboxTime.Name = "chkboxTime";
-            this.chkboxTime.Size = new System.Drawing.Size(108, 23);
-            this.chkboxTime.TabIndex = 9;
-            this.chkboxTime.Text = "Change Time";
-            this.bunifuToolTip1.SetToolTip(this.chkboxTime, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.chkboxTime, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.chkboxTime, "");
-            this.chkboxTime.UseVisualStyleBackColor = true;
-            this.chkboxTime.CheckedChanged += new System.EventHandler(this.chkboxTime_CheckedChanged);
-            // 
-            // chkboxRoom
-            // 
-            this.chkboxRoom.AutoSize = true;
-            this.chkboxRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chkboxRoom.Location = new System.Drawing.Point(34, 206);
-            this.chkboxRoom.Name = "chkboxRoom";
-            this.chkboxRoom.Size = new System.Drawing.Size(270, 23);
-            this.chkboxRoom.TabIndex = 8;
-            this.chkboxRoom.Text = "Change Room and Number of Students";
-            this.bunifuToolTip1.SetToolTip(this.chkboxRoom, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.chkboxRoom, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.chkboxRoom, "");
-            this.chkboxRoom.UseVisualStyleBackColor = true;
-            this.chkboxRoom.CheckedChanged += new System.EventHandler(this.chkboxRoom_CheckedChanged);
-            // 
-            // chkboxDate
-            // 
-            this.chkboxDate.AutoSize = true;
-            this.chkboxDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chkboxDate.Location = new System.Drawing.Point(34, 121);
-            this.chkboxDate.Name = "chkboxDate";
-            this.chkboxDate.Size = new System.Drawing.Size(108, 23);
-            this.chkboxDate.TabIndex = 7;
-            this.chkboxDate.Text = "Change Date";
-            this.bunifuToolTip1.SetToolTip(this.chkboxDate, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDate, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDate, "");
-            this.chkboxDate.UseVisualStyleBackColor = true;
-            this.chkboxDate.CheckedChanged += new System.EventHandler(this.chkboxDate_CheckedChanged);
-            // 
-            // lblNotice
-            // 
-            this.lblNotice.AllowParentOverrides = false;
-            this.lblNotice.AutoEllipsis = false;
-            this.lblNotice.AutoSize = false;
-            this.lblNotice.CursorType = null;
-            this.lblNotice.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNotice.Location = new System.Drawing.Point(25, 482);
-            this.lblNotice.Name = "lblNotice";
-            this.lblNotice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNotice.Size = new System.Drawing.Size(318, 68);
-            this.lblNotice.TabIndex = 6;
-            this.lblNotice.Text = "Note: Please be aware that any changes made might not be approved due to room ava" +
-    "ilability.";
-            this.lblNotice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNotice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNotice, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNotice, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNotice, "");
-            // 
-            // lblNewTime
-            // 
-            this.lblNewTime.AllowParentOverrides = false;
-            this.lblNewTime.AutoEllipsis = false;
-            this.lblNewTime.CursorType = null;
-            this.lblNewTime.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewTime.Location = new System.Drawing.Point(34, 421);
-            this.lblNewTime.Name = "lblNewTime";
-            this.lblNewTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNewTime.Size = new System.Drawing.Size(72, 20);
-            this.lblNewTime.TabIndex = 5;
-            this.lblNewTime.Text = "New Time:";
-            this.lblNewTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNewTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNewTime, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNewTime, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNewTime, "");
-            // 
-            // lblNewRoom
-            // 
-            this.lblNewRoom.AllowParentOverrides = false;
-            this.lblNewRoom.AutoEllipsis = false;
-            this.lblNewRoom.CursorType = null;
-            this.lblNewRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewRoom.Location = new System.Drawing.Point(34, 249);
-            this.lblNewRoom.Name = "lblNewRoom";
-            this.lblNewRoom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNewRoom.Size = new System.Drawing.Size(79, 20);
-            this.lblNewRoom.TabIndex = 4;
-            this.lblNewRoom.Text = "New Room:";
-            this.lblNewRoom.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNewRoom.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNewRoom, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNewRoom, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNewRoom, "");
-            // 
-            // lblNewDate
-            // 
-            this.lblNewDate.AllowParentOverrides = false;
-            this.lblNewDate.AutoEllipsis = false;
-            this.lblNewDate.CursorType = null;
-            this.lblNewDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewDate.Location = new System.Drawing.Point(34, 151);
-            this.lblNewDate.Name = "lblNewDate";
-            this.lblNewDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNewDate.Size = new System.Drawing.Size(71, 20);
-            this.lblNewDate.TabIndex = 3;
-            this.lblNewDate.Text = "New Date:";
-            this.lblNewDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblNewDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblNewDate, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDate, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDate, "");
-            // 
-            // lblReservedTime0
-            // 
-            this.lblReservedTime0.AllowParentOverrides = false;
-            this.lblReservedTime0.AutoEllipsis = false;
-            this.lblReservedTime0.CursorType = null;
-            this.lblReservedTime0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedTime0.Location = new System.Drawing.Point(34, 43);
-            this.lblReservedTime0.Name = "lblReservedTime0";
-            this.lblReservedTime0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedTime0.Size = new System.Drawing.Size(103, 20);
-            this.lblReservedTime0.TabIndex = 2;
-            this.lblReservedTime0.Text = "Reserved Time:";
-            this.lblReservedTime0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedTime0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedTime0, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime0, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime0, "");
-            // 
-            // lblReservedRoom0
-            // 
-            this.lblReservedRoom0.AllowParentOverrides = false;
-            this.lblReservedRoom0.AutoEllipsis = false;
-            this.lblReservedRoom0.CursorType = null;
-            this.lblReservedRoom0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedRoom0.Location = new System.Drawing.Point(357, 43);
-            this.lblReservedRoom0.Name = "lblReservedRoom0";
-            this.lblReservedRoom0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedRoom0.Size = new System.Drawing.Size(110, 20);
-            this.lblReservedRoom0.TabIndex = 1;
-            this.lblReservedRoom0.Text = "Reserved Room:";
-            this.lblReservedRoom0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedRoom0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom0, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom0, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom0, "");
-            // 
-            // lblReservedDate0
-            // 
-            this.lblReservedDate0.AllowParentOverrides = false;
-            this.lblReservedDate0.AutoEllipsis = false;
-            this.lblReservedDate0.CursorType = null;
-            this.lblReservedDate0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblReservedDate0.Location = new System.Drawing.Point(34, 14);
-            this.lblReservedDate0.Name = "lblReservedDate0";
-            this.lblReservedDate0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReservedDate0.Size = new System.Drawing.Size(102, 20);
-            this.lblReservedDate0.TabIndex = 0;
-            this.lblReservedDate0.Text = "Reserved Date:";
-            this.lblReservedDate0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblReservedDate0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblReservedDate0, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate0, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate0, "");
             // 
             // bunifuLabel3
             // 
@@ -4289,6 +3379,936 @@ namespace IOOP_Assignment
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
+            // panelEdit
+            // 
+            this.panelEdit.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panelEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelEdit.BackgroundImage")));
+            this.panelEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelEdit.BorderColor = System.Drawing.Color.Transparent;
+            this.panelEdit.BorderRadius = 3;
+            this.panelEdit.BorderThickness = 1;
+            this.panelEdit.Controls.Add(this.lblReservedRoom1);
+            this.panelEdit.Controls.Add(this.lblReservedStudent1);
+            this.panelEdit.Controls.Add(this.lblReservedDuration1);
+            this.panelEdit.Controls.Add(this.lblReservedTime1);
+            this.panelEdit.Controls.Add(this.lblReservedDate1);
+            this.panelEdit.Controls.Add(this.comboNewDuration);
+            this.panelEdit.Controls.Add(this.comboNewStudent);
+            this.panelEdit.Controls.Add(this.btnEditConfirm);
+            this.panelEdit.Controls.Add(this.bunifuSeparator8);
+            this.panelEdit.Controls.Add(this.newTimeRes);
+            this.panelEdit.Controls.Add(this.bunifuShadowPanel10);
+            this.panelEdit.Controls.Add(this.lblNewDuration);
+            this.panelEdit.Controls.Add(this.lblNewStudent);
+            this.panelEdit.Controls.Add(this.chkboxDuration);
+            this.panelEdit.Controls.Add(this.lblReservedStudent0);
+            this.panelEdit.Controls.Add(this.lblReservedDuration0);
+            this.panelEdit.Controls.Add(this.btnEditCancel);
+            this.panelEdit.Controls.Add(this.comboNewRoom);
+            this.panelEdit.Controls.Add(this.dateNewReserved);
+            this.panelEdit.Controls.Add(this.bunifuSeparator5);
+            this.panelEdit.Controls.Add(this.bunifuSeparator4);
+            this.panelEdit.Controls.Add(this.bunifuSeparator3);
+            this.panelEdit.Controls.Add(this.bunifuSeparator2);
+            this.panelEdit.Controls.Add(this.chkboxTime);
+            this.panelEdit.Controls.Add(this.chkboxRoom);
+            this.panelEdit.Controls.Add(this.chkboxDate);
+            this.panelEdit.Controls.Add(this.lblNotice);
+            this.panelEdit.Controls.Add(this.lblNewTime);
+            this.panelEdit.Controls.Add(this.lblNewRoom);
+            this.panelEdit.Controls.Add(this.lblNewDate);
+            this.panelEdit.Controls.Add(this.lblReservedTime0);
+            this.panelEdit.Controls.Add(this.lblReservedRoom0);
+            this.panelEdit.Controls.Add(this.lblReservedDate0);
+            this.panelEdit.Location = new System.Drawing.Point(6, 5);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.ShowBorders = true;
+            this.panelEdit.Size = new System.Drawing.Size(749, 540);
+            this.panelEdit.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.panelEdit, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelEdit, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelEdit, "");
+            // 
+            // lblReservedRoom1
+            // 
+            this.lblReservedRoom1.AllowParentOverrides = false;
+            this.lblReservedRoom1.AutoEllipsis = false;
+            this.lblReservedRoom1.CursorType = null;
+            this.lblReservedRoom1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedRoom1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedRoom1.Location = new System.Drawing.Point(463, 30);
+            this.lblReservedRoom1.Name = "lblReservedRoom1";
+            this.lblReservedRoom1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedRoom1.Size = new System.Drawing.Size(46, 23);
+            this.lblReservedRoom1.TabIndex = 97;
+            this.lblReservedRoom1.Text = "Room";
+            this.lblReservedRoom1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedRoom1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom1, "");
+            // 
+            // lblReservedStudent1
+            // 
+            this.lblReservedStudent1.AllowParentOverrides = false;
+            this.lblReservedStudent1.AutoEllipsis = false;
+            this.lblReservedStudent1.CursorType = null;
+            this.lblReservedStudent1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedStudent1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedStudent1.Location = new System.Drawing.Point(561, 2);
+            this.lblReservedStudent1.Name = "lblReservedStudent1";
+            this.lblReservedStudent1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedStudent1.Size = new System.Drawing.Size(67, 23);
+            this.lblReservedStudent1.TabIndex = 96;
+            this.lblReservedStudent1.Text = "Students";
+            this.lblReservedStudent1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedStudent1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent1, "");
+            // 
+            // lblReservedDuration1
+            // 
+            this.lblReservedDuration1.AllowParentOverrides = false;
+            this.lblReservedDuration1.AutoEllipsis = false;
+            this.lblReservedDuration1.CursorType = null;
+            this.lblReservedDuration1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDuration1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedDuration1.Location = new System.Drawing.Point(161, 60);
+            this.lblReservedDuration1.Name = "lblReservedDuration1";
+            this.lblReservedDuration1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDuration1.Size = new System.Drawing.Size(67, 23);
+            this.lblReservedDuration1.TabIndex = 95;
+            this.lblReservedDuration1.Text = "Duration";
+            this.lblReservedDuration1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDuration1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration1, "");
+            // 
+            // lblReservedTime1
+            // 
+            this.lblReservedTime1.AllowParentOverrides = false;
+            this.lblReservedTime1.AutoEllipsis = false;
+            this.lblReservedTime1.CursorType = null;
+            this.lblReservedTime1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedTime1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedTime1.Location = new System.Drawing.Point(133, 31);
+            this.lblReservedTime1.Name = "lblReservedTime1";
+            this.lblReservedTime1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedTime1.Size = new System.Drawing.Size(37, 23);
+            this.lblReservedTime1.TabIndex = 94;
+            this.lblReservedTime1.Text = "Time";
+            this.lblReservedTime1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedTime1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedTime1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime1, "");
+            // 
+            // lblReservedDate1
+            // 
+            this.lblReservedDate1.AllowParentOverrides = false;
+            this.lblReservedDate1.AutoEllipsis = false;
+            this.lblReservedDate1.CursorType = null;
+            this.lblReservedDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDate1.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblReservedDate1.Location = new System.Drawing.Point(132, 2);
+            this.lblReservedDate1.Name = "lblReservedDate1";
+            this.lblReservedDate1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDate1.Size = new System.Drawing.Size(36, 23);
+            this.lblReservedDate1.TabIndex = 93;
+            this.lblReservedDate1.Text = "Date";
+            this.lblReservedDate1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDate1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDate1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate1, "");
+            // 
+            // comboNewDuration
+            // 
+            this.comboNewDuration.BackColor = System.Drawing.Color.Transparent;
+            this.comboNewDuration.BackgroundColor = System.Drawing.Color.White;
+            this.comboNewDuration.BorderColor = System.Drawing.Color.Silver;
+            this.comboNewDuration.BorderRadius = 1;
+            this.comboNewDuration.Color = System.Drawing.Color.Silver;
+            this.comboNewDuration.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboNewDuration.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewDuration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboNewDuration.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewDuration.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboNewDuration.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboNewDuration.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNewDuration.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboNewDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNewDuration.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewDuration.Enabled = false;
+            this.comboNewDuration.FillDropDown = true;
+            this.comboNewDuration.FillIndicator = false;
+            this.comboNewDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboNewDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboNewDuration.ForeColor = System.Drawing.Color.Black;
+            this.comboNewDuration.FormattingEnabled = true;
+            this.comboNewDuration.Icon = null;
+            this.comboNewDuration.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewDuration.IndicatorColor = System.Drawing.Color.Gray;
+            this.comboNewDuration.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewDuration.ItemBackColor = System.Drawing.Color.White;
+            this.comboNewDuration.ItemBorderColor = System.Drawing.Color.White;
+            this.comboNewDuration.ItemForeColor = System.Drawing.Color.Black;
+            this.comboNewDuration.ItemHeight = 26;
+            this.comboNewDuration.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.comboNewDuration.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewDuration.Items.AddRange(new object[] {
+            "1 hour",
+            "1 hour 30 Minutes",
+            "2 hours",
+            "2 hours  30 Minutes",
+            "3 hours",
+            "3 hours  30 Minutes",
+            "4 hours",
+            "4 hours  30 Minutes",
+            "5 hours",
+            "5 hours  30 Minutes",
+            "6 hours"});
+            this.comboNewDuration.ItemTopMargin = 3;
+            this.comboNewDuration.Location = new System.Drawing.Point(527, 404);
+            this.comboNewDuration.Name = "comboNewDuration";
+            this.comboNewDuration.Size = new System.Drawing.Size(207, 32);
+            this.comboNewDuration.TabIndex = 92;
+            this.comboNewDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewDuration.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewDuration, ((System.Drawing.Image)(resources.GetObject("comboNewDuration.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewDuration, "Select New Duration");
+            // 
+            // comboNewStudent
+            // 
+            this.comboNewStudent.BackColor = System.Drawing.Color.Transparent;
+            this.comboNewStudent.BackgroundColor = System.Drawing.Color.White;
+            this.comboNewStudent.BorderColor = System.Drawing.Color.Silver;
+            this.comboNewStudent.BorderRadius = 1;
+            this.comboNewStudent.Color = System.Drawing.Color.Silver;
+            this.comboNewStudent.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboNewStudent.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewStudent.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboNewStudent.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewStudent.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboNewStudent.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboNewStudent.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNewStudent.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboNewStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNewStudent.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewStudent.Enabled = false;
+            this.comboNewStudent.FillDropDown = true;
+            this.comboNewStudent.FillIndicator = false;
+            this.comboNewStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboNewStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboNewStudent.ForeColor = System.Drawing.Color.Black;
+            this.comboNewStudent.FormattingEnabled = true;
+            this.comboNewStudent.Icon = null;
+            this.comboNewStudent.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewStudent.IndicatorColor = System.Drawing.Color.Gray;
+            this.comboNewStudent.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewStudent.ItemBackColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemBorderColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemForeColor = System.Drawing.Color.Black;
+            this.comboNewStudent.ItemHeight = 26;
+            this.comboNewStudent.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.comboNewStudent.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewStudent.ItemTopMargin = 3;
+            this.comboNewStudent.Location = new System.Drawing.Point(205, 283);
+            this.comboNewStudent.Name = "comboNewStudent";
+            this.comboNewStudent.Size = new System.Drawing.Size(220, 32);
+            this.comboNewStudent.TabIndex = 91;
+            this.comboNewStudent.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewStudent.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewStudent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewStudent, ((System.Drawing.Image)(resources.GetObject("comboNewStudent.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewStudent, "Select New Number of Students");
+            // 
+            // btnEditConfirm
+            // 
+            this.btnEditConfirm.AllowAnimations = true;
+            this.btnEditConfirm.AllowMouseEffects = true;
+            this.btnEditConfirm.AllowToggling = false;
+            this.btnEditConfirm.AnimationSpeed = 200;
+            this.btnEditConfirm.AutoGenerateColors = false;
+            this.btnEditConfirm.AutoRoundBorders = false;
+            this.btnEditConfirm.AutoSizeLeftIcon = true;
+            this.btnEditConfirm.AutoSizeRightIcon = true;
+            this.btnEditConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditConfirm.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnEditConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditConfirm.BackgroundImage")));
+            this.btnEditConfirm.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditConfirm.ButtonText = "Confirm";
+            this.btnEditConfirm.ButtonTextMarginLeft = 0;
+            this.btnEditConfirm.ColorContrastOnClick = 45;
+            this.btnEditConfirm.ColorContrastOnHover = 45;
+            this.btnEditConfirm.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.btnEditConfirm.CustomizableEdges = borderEdges10;
+            this.btnEditConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditConfirm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnEditConfirm.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnEditConfirm.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnEditConfirm.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnEditConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnEditConfirm.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditConfirm.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnEditConfirm.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnEditConfirm.IconMarginLeft = 11;
+            this.btnEditConfirm.IconPadding = 10;
+            this.btnEditConfirm.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditConfirm.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnEditConfirm.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnEditConfirm.IconSize = 25;
+            this.btnEditConfirm.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditConfirm.IdleBorderRadius = 20;
+            this.btnEditConfirm.IdleBorderThickness = 1;
+            this.btnEditConfirm.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditConfirm.IdleIconLeftImage = null;
+            this.btnEditConfirm.IdleIconRightImage = null;
+            this.btnEditConfirm.IndicateFocus = false;
+            this.btnEditConfirm.Location = new System.Drawing.Point(580, 481);
+            this.btnEditConfirm.Name = "btnEditConfirm";
+            this.btnEditConfirm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnEditConfirm.OnDisabledState.BorderRadius = 20;
+            this.btnEditConfirm.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditConfirm.OnDisabledState.BorderThickness = 1;
+            this.btnEditConfirm.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnEditConfirm.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnEditConfirm.OnDisabledState.IconLeftImage = null;
+            this.btnEditConfirm.OnDisabledState.IconRightImage = null;
+            this.btnEditConfirm.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnEditConfirm.onHoverState.BorderRadius = 20;
+            this.btnEditConfirm.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditConfirm.onHoverState.BorderThickness = 1;
+            this.btnEditConfirm.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnEditConfirm.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnEditConfirm.onHoverState.IconLeftImage = null;
+            this.btnEditConfirm.onHoverState.IconRightImage = null;
+            this.btnEditConfirm.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditConfirm.OnIdleState.BorderRadius = 20;
+            this.btnEditConfirm.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditConfirm.OnIdleState.BorderThickness = 1;
+            this.btnEditConfirm.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditConfirm.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnEditConfirm.OnIdleState.IconLeftImage = null;
+            this.btnEditConfirm.OnIdleState.IconRightImage = null;
+            this.btnEditConfirm.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnEditConfirm.OnPressedState.BorderRadius = 20;
+            this.btnEditConfirm.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditConfirm.OnPressedState.BorderThickness = 1;
+            this.btnEditConfirm.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnEditConfirm.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnEditConfirm.OnPressedState.IconLeftImage = null;
+            this.btnEditConfirm.OnPressedState.IconRightImage = null;
+            this.btnEditConfirm.Size = new System.Drawing.Size(150, 39);
+            this.btnEditConfirm.TabIndex = 90;
+            this.btnEditConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEditConfirm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditConfirm.TextMarginLeft = 0;
+            this.btnEditConfirm.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnEditConfirm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEditConfirm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEditConfirm, "");
+            this.btnEditConfirm.UseDefaultRadiusAndThickness = true;
+            this.btnEditConfirm.Click += new System.EventHandler(this.btnEditConfirm_Click);
+            // 
+            // bunifuSeparator8
+            // 
+            this.bunifuSeparator8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator8.BackgroundImage")));
+            this.bunifuSeparator8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator8.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator8.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator8.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator8.LineThickness = 1;
+            this.bunifuSeparator8.Location = new System.Drawing.Point(368, 365);
+            this.bunifuSeparator8.Name = "bunifuSeparator8";
+            this.bunifuSeparator8.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator8.Size = new System.Drawing.Size(15, 89);
+            this.bunifuSeparator8.TabIndex = 89;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator8, "");
+            // 
+            // newTimeRes
+            // 
+            this.newTimeRes.BackColor = System.Drawing.Color.Transparent;
+            this.newTimeRes.BorderRadius = 1;
+            this.newTimeRes.Color = System.Drawing.Color.Silver;
+            this.newTimeRes.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.newTimeRes.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.newTimeRes.DisabledColor = System.Drawing.Color.Gray;
+            this.newTimeRes.DisplayWeekNumbers = false;
+            this.newTimeRes.DPHeight = 0;
+            this.newTimeRes.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.newTimeRes.Enabled = false;
+            this.newTimeRes.FillDatePicker = false;
+            this.newTimeRes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.newTimeRes.ForeColor = System.Drawing.Color.Black;
+            this.newTimeRes.Icon = ((System.Drawing.Image)(resources.GetObject("newTimeRes.Icon")));
+            this.newTimeRes.IconColor = System.Drawing.Color.Gray;
+            this.newTimeRes.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.newTimeRes.LeftTextMargin = 5;
+            this.newTimeRes.Location = new System.Drawing.Point(111, 404);
+            this.newTimeRes.MinimumSize = new System.Drawing.Size(4, 32);
+            this.newTimeRes.Name = "newTimeRes";
+            this.newTimeRes.Size = new System.Drawing.Size(220, 32);
+            this.newTimeRes.TabIndex = 88;
+            this.bunifuToolTip1.SetToolTip(this.newTimeRes, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.newTimeRes, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.newTimeRes, "");
+            this.newTimeRes.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
+            // 
+            // bunifuShadowPanel10
+            // 
+            this.bunifuShadowPanel10.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel10.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuShadowPanel10.BorderRadius = 20;
+            this.bunifuShadowPanel10.BorderThickness = 1;
+            this.bunifuShadowPanel10.Controls.Add(this.pictureBox3);
+            this.bunifuShadowPanel10.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel10.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel10.Location = new System.Drawing.Point(444, 186);
+            this.bunifuShadowPanel10.Name = "bunifuShadowPanel10";
+            this.bunifuShadowPanel10.PanelColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel10.PanelColor2 = System.Drawing.Color.White;
+            this.bunifuShadowPanel10.ShadowColor = System.Drawing.Color.DarkGray;
+            this.bunifuShadowPanel10.ShadowDept = 2;
+            this.bunifuShadowPanel10.ShadowDepth = 3;
+            this.bunifuShadowPanel10.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel10.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel10.Size = new System.Drawing.Size(299, 163);
+            this.bunifuShadowPanel10.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel10.TabIndex = 87;
+            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel10, "");
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(11, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(278, 136);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox3, "");
+            // 
+            // lblNewDuration
+            // 
+            this.lblNewDuration.AllowParentOverrides = false;
+            this.lblNewDuration.AutoEllipsis = false;
+            this.lblNewDuration.CursorType = null;
+            this.lblNewDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNewDuration.Location = new System.Drawing.Point(421, 410);
+            this.lblNewDuration.Name = "lblNewDuration";
+            this.lblNewDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNewDuration.Size = new System.Drawing.Size(100, 20);
+            this.lblNewDuration.TabIndex = 86;
+            this.lblNewDuration.Text = "New Duration:";
+            this.lblNewDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNewDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDuration, "");
+            // 
+            // lblNewStudent
+            // 
+            this.lblNewStudent.AllowParentOverrides = false;
+            this.lblNewStudent.AutoEllipsis = false;
+            this.lblNewStudent.CursorType = null;
+            this.lblNewStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNewStudent.Location = new System.Drawing.Point(22, 288);
+            this.lblNewStudent.Name = "lblNewStudent";
+            this.lblNewStudent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNewStudent.Size = new System.Drawing.Size(177, 20);
+            this.lblNewStudent.TabIndex = 85;
+            this.lblNewStudent.Text = "New Number of Students:";
+            this.lblNewStudent.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNewStudent.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewStudent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewStudent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewStudent, "");
+            // 
+            // chkboxDuration
+            // 
+            this.chkboxDuration.AutoSize = true;
+            this.chkboxDuration.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkboxDuration.Location = new System.Drawing.Point(421, 374);
+            this.chkboxDuration.Name = "chkboxDuration";
+            this.chkboxDuration.Size = new System.Drawing.Size(133, 23);
+            this.chkboxDuration.TabIndex = 84;
+            this.chkboxDuration.Text = "Change Duration";
+            this.bunifuToolTip1.SetToolTip(this.chkboxDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDuration, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDuration, "");
+            this.chkboxDuration.UseVisualStyleBackColor = true;
+            this.chkboxDuration.CheckedChanged += new System.EventHandler(this.chkboxDuration_CheckedChanged);
+            // 
+            // lblReservedStudent0
+            // 
+            this.lblReservedStudent0.AllowParentOverrides = false;
+            this.lblReservedStudent0.AutoEllipsis = false;
+            this.lblReservedStudent0.CursorType = null;
+            this.lblReservedStudent0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedStudent0.Location = new System.Drawing.Point(345, 3);
+            this.lblReservedStudent0.Name = "lblReservedStudent0";
+            this.lblReservedStudent0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedStudent0.Size = new System.Drawing.Size(208, 20);
+            this.lblReservedStudent0.TabIndex = 83;
+            this.lblReservedStudent0.Text = "Reserved Number of Students:";
+            this.lblReservedStudent0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedStudent0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedStudent0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedStudent0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedStudent0, "");
+            // 
+            // lblReservedDuration0
+            // 
+            this.lblReservedDuration0.AllowParentOverrides = false;
+            this.lblReservedDuration0.AutoEllipsis = false;
+            this.lblReservedDuration0.CursorType = null;
+            this.lblReservedDuration0.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDuration0.Location = new System.Drawing.Point(22, 62);
+            this.lblReservedDuration0.Name = "lblReservedDuration0";
+            this.lblReservedDuration0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDuration0.Size = new System.Drawing.Size(131, 20);
+            this.lblReservedDuration0.TabIndex = 82;
+            this.lblReservedDuration0.Text = "Reserved Duration:";
+            this.lblReservedDuration0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDuration0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDuration0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDuration0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDuration0, "");
+            // 
+            // btnEditCancel
+            // 
+            this.btnEditCancel.AllowAnimations = true;
+            this.btnEditCancel.AllowMouseEffects = true;
+            this.btnEditCancel.AllowToggling = false;
+            this.btnEditCancel.AnimationSpeed = 200;
+            this.btnEditCancel.AutoGenerateColors = false;
+            this.btnEditCancel.AutoRoundBorders = false;
+            this.btnEditCancel.AutoSizeLeftIcon = true;
+            this.btnEditCancel.AutoSizeRightIcon = true;
+            this.btnEditCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditCancel.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnEditCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditCancel.BackgroundImage")));
+            this.btnEditCancel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditCancel.ButtonText = "Cancel";
+            this.btnEditCancel.ButtonTextMarginLeft = 0;
+            this.btnEditCancel.ColorContrastOnClick = 45;
+            this.btnEditCancel.ColorContrastOnHover = 45;
+            this.btnEditCancel.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.btnEditCancel.CustomizableEdges = borderEdges11;
+            this.btnEditCancel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditCancel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnEditCancel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnEditCancel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnEditCancel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnEditCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEditCancel.ForeColor = System.Drawing.Color.White;
+            this.btnEditCancel.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditCancel.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnEditCancel.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnEditCancel.IconMarginLeft = 11;
+            this.btnEditCancel.IconPadding = 10;
+            this.btnEditCancel.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditCancel.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnEditCancel.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnEditCancel.IconSize = 25;
+            this.btnEditCancel.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditCancel.IdleBorderRadius = 20;
+            this.btnEditCancel.IdleBorderThickness = 1;
+            this.btnEditCancel.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditCancel.IdleIconLeftImage = null;
+            this.btnEditCancel.IdleIconRightImage = null;
+            this.btnEditCancel.IndicateFocus = false;
+            this.btnEditCancel.Location = new System.Drawing.Point(403, 481);
+            this.btnEditCancel.Name = "btnEditCancel";
+            this.btnEditCancel.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnEditCancel.OnDisabledState.BorderRadius = 20;
+            this.btnEditCancel.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditCancel.OnDisabledState.BorderThickness = 1;
+            this.btnEditCancel.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnEditCancel.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnEditCancel.OnDisabledState.IconLeftImage = null;
+            this.btnEditCancel.OnDisabledState.IconRightImage = null;
+            this.btnEditCancel.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnEditCancel.onHoverState.BorderRadius = 20;
+            this.btnEditCancel.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditCancel.onHoverState.BorderThickness = 1;
+            this.btnEditCancel.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnEditCancel.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnEditCancel.onHoverState.IconLeftImage = null;
+            this.btnEditCancel.onHoverState.IconRightImage = null;
+            this.btnEditCancel.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditCancel.OnIdleState.BorderRadius = 20;
+            this.btnEditCancel.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditCancel.OnIdleState.BorderThickness = 1;
+            this.btnEditCancel.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditCancel.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnEditCancel.OnIdleState.IconLeftImage = null;
+            this.btnEditCancel.OnIdleState.IconRightImage = null;
+            this.btnEditCancel.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnEditCancel.OnPressedState.BorderRadius = 20;
+            this.btnEditCancel.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnEditCancel.OnPressedState.BorderThickness = 1;
+            this.btnEditCancel.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnEditCancel.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnEditCancel.OnPressedState.IconLeftImage = null;
+            this.btnEditCancel.OnPressedState.IconRightImage = null;
+            this.btnEditCancel.Size = new System.Drawing.Size(150, 39);
+            this.btnEditCancel.TabIndex = 81;
+            this.btnEditCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEditCancel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditCancel.TextMarginLeft = 0;
+            this.btnEditCancel.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnEditCancel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnEditCancel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnEditCancel, "");
+            this.btnEditCancel.UseDefaultRadiusAndThickness = true;
+            this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
+            // 
+            // comboNewRoom
+            // 
+            this.comboNewRoom.BackColor = System.Drawing.Color.Transparent;
+            this.comboNewRoom.BackgroundColor = System.Drawing.Color.White;
+            this.comboNewRoom.BorderColor = System.Drawing.Color.Silver;
+            this.comboNewRoom.BorderRadius = 1;
+            this.comboNewRoom.Color = System.Drawing.Color.Silver;
+            this.comboNewRoom.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboNewRoom.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewRoom.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboNewRoom.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboNewRoom.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboNewRoom.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboNewRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNewRoom.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboNewRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNewRoom.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewRoom.Enabled = false;
+            this.comboNewRoom.FillDropDown = true;
+            this.comboNewRoom.FillIndicator = false;
+            this.comboNewRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboNewRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboNewRoom.ForeColor = System.Drawing.Color.Black;
+            this.comboNewRoom.FormattingEnabled = true;
+            this.comboNewRoom.Icon = null;
+            this.comboNewRoom.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewRoom.IndicatorColor = System.Drawing.Color.Gray;
+            this.comboNewRoom.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboNewRoom.ItemBackColor = System.Drawing.Color.White;
+            this.comboNewRoom.ItemBorderColor = System.Drawing.Color.White;
+            this.comboNewRoom.ItemForeColor = System.Drawing.Color.Black;
+            this.comboNewRoom.ItemHeight = 26;
+            this.comboNewRoom.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.comboNewRoom.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.comboNewRoom.Items.AddRange(new object[] {
+            "Amber",
+            "Blackthorn",
+            "Cedar",
+            "Daphne"});
+            this.comboNewRoom.ItemTopMargin = 3;
+            this.comboNewRoom.Location = new System.Drawing.Point(205, 226);
+            this.comboNewRoom.Name = "comboNewRoom";
+            this.comboNewRoom.Size = new System.Drawing.Size(220, 32);
+            this.comboNewRoom.TabIndex = 80;
+            this.comboNewRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboNewRoom.TextLeftMargin = 5;
+            this.bunifuToolTip1.SetToolTip(this.comboNewRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboNewRoom, ((System.Drawing.Image)(resources.GetObject("comboNewRoom.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboNewRoom, "Select New Room Type");
+            this.comboNewRoom.SelectedIndexChanged += new System.EventHandler(this.comboNewRoom_SelectedIndexChanged);
+            // 
+            // dateNewReserved
+            // 
+            this.dateNewReserved.BackColor = System.Drawing.Color.Transparent;
+            this.dateNewReserved.BorderRadius = 1;
+            this.dateNewReserved.Color = System.Drawing.Color.Silver;
+            this.dateNewReserved.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dateNewReserved.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dateNewReserved.DisabledColor = System.Drawing.Color.Gray;
+            this.dateNewReserved.DisplayWeekNumbers = false;
+            this.dateNewReserved.DPHeight = 0;
+            this.dateNewReserved.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateNewReserved.Enabled = false;
+            this.dateNewReserved.FillDatePicker = false;
+            this.dateNewReserved.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateNewReserved.ForeColor = System.Drawing.Color.Black;
+            this.dateNewReserved.Icon = ((System.Drawing.Image)(resources.GetObject("dateNewReserved.Icon")));
+            this.dateNewReserved.IconColor = System.Drawing.Color.Gray;
+            this.dateNewReserved.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dateNewReserved.LeftTextMargin = 5;
+            this.dateNewReserved.Location = new System.Drawing.Point(111, 136);
+            this.dateNewReserved.MinimumSize = new System.Drawing.Size(4, 32);
+            this.dateNewReserved.Name = "dateNewReserved";
+            this.dateNewReserved.Size = new System.Drawing.Size(220, 32);
+            this.dateNewReserved.TabIndex = 79;
+            this.bunifuToolTip1.SetToolTip(this.dateNewReserved, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dateNewReserved, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dateNewReserved, "");
+            this.dateNewReserved.Value = new System.DateTime(2021, 6, 10, 0, 39, 0, 0);
+            // 
+            // bunifuSeparator5
+            // 
+            this.bunifuSeparator5.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator5.BackgroundImage")));
+            this.bunifuSeparator5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator5.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator5.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator5.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator5.LineThickness = 1;
+            this.bunifuSeparator5.Location = new System.Drawing.Point(-10, 351);
+            this.bunifuSeparator5.Name = "bunifuSeparator5";
+            this.bunifuSeparator5.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator5.Size = new System.Drawing.Size(756, 10);
+            this.bunifuSeparator5.TabIndex = 78;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator5, "");
+            // 
+            // bunifuSeparator4
+            // 
+            this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator4.BackgroundImage")));
+            this.bunifuSeparator4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator4.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator4.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator4.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator4.LineThickness = 1;
+            this.bunifuSeparator4.Location = new System.Drawing.Point(-9, 85);
+            this.bunifuSeparator4.Name = "bunifuSeparator4";
+            this.bunifuSeparator4.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator4.Size = new System.Drawing.Size(756, 19);
+            this.bunifuSeparator4.TabIndex = 77;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator4, "");
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
+            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator3.LineThickness = 1;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(-10, 171);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator3.Size = new System.Drawing.Size(756, 18);
+            this.bunifuSeparator3.TabIndex = 76;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator3, "");
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(-9, 445);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(756, 27);
+            this.bunifuSeparator2.TabIndex = 75;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator2, "");
+            // 
+            // chkboxTime
+            // 
+            this.chkboxTime.AutoSize = true;
+            this.chkboxTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkboxTime.Location = new System.Drawing.Point(22, 374);
+            this.chkboxTime.Name = "chkboxTime";
+            this.chkboxTime.Size = new System.Drawing.Size(108, 23);
+            this.chkboxTime.TabIndex = 74;
+            this.chkboxTime.Text = "Change Time";
+            this.bunifuToolTip1.SetToolTip(this.chkboxTime, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxTime, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxTime, "");
+            this.chkboxTime.UseVisualStyleBackColor = true;
+            this.chkboxTime.CheckedChanged += new System.EventHandler(this.chkboxTime_CheckedChanged);
+            // 
+            // chkboxRoom
+            // 
+            this.chkboxRoom.AutoSize = true;
+            this.chkboxRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkboxRoom.Location = new System.Drawing.Point(22, 195);
+            this.chkboxRoom.Name = "chkboxRoom";
+            this.chkboxRoom.Size = new System.Drawing.Size(270, 23);
+            this.chkboxRoom.TabIndex = 73;
+            this.chkboxRoom.Text = "Change Room and Number of Students";
+            this.bunifuToolTip1.SetToolTip(this.chkboxRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxRoom, "");
+            this.chkboxRoom.UseVisualStyleBackColor = true;
+            this.chkboxRoom.CheckedChanged += new System.EventHandler(this.chkboxRoom_CheckedChanged);
+            // 
+            // chkboxDate
+            // 
+            this.chkboxDate.AutoSize = true;
+            this.chkboxDate.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkboxDate.Location = new System.Drawing.Point(22, 110);
+            this.chkboxDate.Name = "chkboxDate";
+            this.chkboxDate.Size = new System.Drawing.Size(108, 23);
+            this.chkboxDate.TabIndex = 72;
+            this.chkboxDate.Text = "Change Date";
+            this.bunifuToolTip1.SetToolTip(this.chkboxDate, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkboxDate, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.chkboxDate, "");
+            this.chkboxDate.UseVisualStyleBackColor = true;
+            this.chkboxDate.CheckedChanged += new System.EventHandler(this.chkboxDate_CheckedChanged);
+            // 
+            // lblNotice
+            // 
+            this.lblNotice.AllowParentOverrides = false;
+            this.lblNotice.AutoEllipsis = false;
+            this.lblNotice.AutoSize = false;
+            this.lblNotice.CursorType = null;
+            this.lblNotice.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNotice.Location = new System.Drawing.Point(13, 471);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNotice.Size = new System.Drawing.Size(318, 68);
+            this.lblNotice.TabIndex = 71;
+            this.lblNotice.Text = "Note: Please be aware that any changes made might not be approved due to room ava" +
+    "ilability.";
+            this.lblNotice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNotice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNotice, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNotice, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNotice, "");
+            // 
+            // lblNewTime
+            // 
+            this.lblNewTime.AllowParentOverrides = false;
+            this.lblNewTime.AutoEllipsis = false;
+            this.lblNewTime.CursorType = null;
+            this.lblNewTime.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNewTime.Location = new System.Drawing.Point(22, 410);
+            this.lblNewTime.Name = "lblNewTime";
+            this.lblNewTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNewTime.Size = new System.Drawing.Size(72, 20);
+            this.lblNewTime.TabIndex = 70;
+            this.lblNewTime.Text = "New Time:";
+            this.lblNewTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNewTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewTime, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewTime, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewTime, "");
+            // 
+            // lblNewRoom
+            // 
+            this.lblNewRoom.AllowParentOverrides = false;
+            this.lblNewRoom.AutoEllipsis = false;
+            this.lblNewRoom.CursorType = null;
+            this.lblNewRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNewRoom.Location = new System.Drawing.Point(22, 238);
+            this.lblNewRoom.Name = "lblNewRoom";
+            this.lblNewRoom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNewRoom.Size = new System.Drawing.Size(79, 20);
+            this.lblNewRoom.TabIndex = 69;
+            this.lblNewRoom.Text = "New Room:";
+            this.lblNewRoom.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNewRoom.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewRoom, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewRoom, "");
+            // 
+            // lblNewDate
+            // 
+            this.lblNewDate.AllowParentOverrides = false;
+            this.lblNewDate.AutoEllipsis = false;
+            this.lblNewDate.CursorType = null;
+            this.lblNewDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNewDate.Location = new System.Drawing.Point(22, 140);
+            this.lblNewDate.Name = "lblNewDate";
+            this.lblNewDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNewDate.Size = new System.Drawing.Size(71, 20);
+            this.lblNewDate.TabIndex = 68;
+            this.lblNewDate.Text = "New Date:";
+            this.lblNewDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNewDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblNewDate, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNewDate, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNewDate, "");
+            // 
+            // lblReservedTime0
+            // 
+            this.lblReservedTime0.AllowParentOverrides = false;
+            this.lblReservedTime0.AutoEllipsis = false;
+            this.lblReservedTime0.CursorType = null;
+            this.lblReservedTime0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedTime0.Location = new System.Drawing.Point(22, 32);
+            this.lblReservedTime0.Name = "lblReservedTime0";
+            this.lblReservedTime0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedTime0.Size = new System.Drawing.Size(103, 20);
+            this.lblReservedTime0.TabIndex = 67;
+            this.lblReservedTime0.Text = "Reserved Time:";
+            this.lblReservedTime0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedTime0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedTime0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedTime0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedTime0, "");
+            // 
+            // lblReservedRoom0
+            // 
+            this.lblReservedRoom0.AllowParentOverrides = false;
+            this.lblReservedRoom0.AutoEllipsis = false;
+            this.lblReservedRoom0.CursorType = null;
+            this.lblReservedRoom0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedRoom0.Location = new System.Drawing.Point(345, 32);
+            this.lblReservedRoom0.Name = "lblReservedRoom0";
+            this.lblReservedRoom0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedRoom0.Size = new System.Drawing.Size(110, 20);
+            this.lblReservedRoom0.TabIndex = 66;
+            this.lblReservedRoom0.Text = "Reserved Room:";
+            this.lblReservedRoom0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedRoom0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedRoom0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedRoom0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedRoom0, "");
+            // 
+            // lblReservedDate0
+            // 
+            this.lblReservedDate0.AllowParentOverrides = false;
+            this.lblReservedDate0.AutoEllipsis = false;
+            this.lblReservedDate0.CursorType = null;
+            this.lblReservedDate0.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblReservedDate0.Location = new System.Drawing.Point(22, 3);
+            this.lblReservedDate0.Name = "lblReservedDate0";
+            this.lblReservedDate0.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblReservedDate0.Size = new System.Drawing.Size(102, 20);
+            this.lblReservedDate0.TabIndex = 65;
+            this.lblReservedDate0.Text = "Reserved Date:";
+            this.lblReservedDate0.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblReservedDate0.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblReservedDate0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblReservedDate0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblReservedDate0, "");
+            // 
             // reservationSystem_DBDataSet
             // 
             this.reservationSystem_DBDataSet.DataSetName = "ReservationSystem_DBDataSet";
@@ -4356,7 +4376,8 @@ namespace IOOP_Assignment
             this.bunifuShadowPanel5.ResumeLayout(false);
             this.bunifuShadowPanel5.PerformLayout();
             this.formPage.ResumeLayout(false);
-            this.formPage.PerformLayout();
+            this.panelEdit.ResumeLayout(false);
+            this.panelEdit.PerformLayout();
             this.bunifuShadowPanel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationSystem_DBDataSet)).EndInit();
@@ -4453,34 +4474,7 @@ namespace IOOP_Assignment
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private System.Windows.Forms.TabPage formPage;
-        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel10;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private Bunifu.UI.WinForms.BunifuLabel lblNewDuration;
-        private Bunifu.UI.WinForms.BunifuLabel lblNewStudent;
-        private System.Windows.Forms.CheckBox chkboxDuration;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent0;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration0;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditCancel;
-        private Bunifu.UI.WinForms.BunifuDropdown comboNewRoom;
-        private Bunifu.UI.WinForms.BunifuDatePicker dateNewReserved;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator5;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
-        private System.Windows.Forms.CheckBox chkboxTime;
-        private System.Windows.Forms.CheckBox chkboxRoom;
-        private System.Windows.Forms.CheckBox chkboxDate;
-        private Bunifu.UI.WinForms.BunifuLabel lblNotice;
-        private Bunifu.UI.WinForms.BunifuLabel lblNewTime;
-        private Bunifu.UI.WinForms.BunifuLabel lblNewRoom;
-        private Bunifu.UI.WinForms.BunifuLabel lblNewDate;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedTime0;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom0;
-        private Bunifu.UI.WinForms.BunifuLabel lblReservedDate0;
         private Bunifu.UI.WinForms.BunifuDatePicker timeReserve;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
-        private Bunifu.UI.WinForms.BunifuDatePicker newTimeRes;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditConfirm;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel lblCapacity;
         private Bunifu.UI.WinForms.BunifuLabel lblRoomType;
@@ -4511,13 +4505,41 @@ namespace IOOP_Assignment
         private System.Windows.Forms.DataGridViewTextBoxColumn colDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAvailableRoom;
-        private Bunifu.UI.WinForms.BunifuDropdown comboNewDuration;
-        private Bunifu.UI.WinForms.BunifuDropdown comboNewStudent;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private Bunifu.UI.WinForms.BunifuPanel panelEdit;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedTime1;
         private Bunifu.UI.WinForms.BunifuLabel lblReservedDate1;
-        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private Bunifu.UI.WinForms.BunifuDropdown comboNewDuration;
+        private Bunifu.UI.WinForms.BunifuDropdown comboNewStudent;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditConfirm;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
+        private Bunifu.UI.WinForms.BunifuDatePicker newTimeRes;
+        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel10;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private Bunifu.UI.WinForms.BunifuLabel lblNewDuration;
+        private Bunifu.UI.WinForms.BunifuLabel lblNewStudent;
+        private System.Windows.Forms.CheckBox chkboxDuration;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedStudent0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDuration0;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEditCancel;
+        private Bunifu.UI.WinForms.BunifuDropdown comboNewRoom;
+        private Bunifu.UI.WinForms.BunifuDatePicker dateNewReserved;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator5;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
+        private System.Windows.Forms.CheckBox chkboxTime;
+        private System.Windows.Forms.CheckBox chkboxRoom;
+        private System.Windows.Forms.CheckBox chkboxDate;
+        private Bunifu.UI.WinForms.BunifuLabel lblNotice;
+        private Bunifu.UI.WinForms.BunifuLabel lblNewTime;
+        private Bunifu.UI.WinForms.BunifuLabel lblNewRoom;
+        private Bunifu.UI.WinForms.BunifuLabel lblNewDate;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedTime0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedRoom0;
+        private Bunifu.UI.WinForms.BunifuLabel lblReservedDate0;
     }
 }

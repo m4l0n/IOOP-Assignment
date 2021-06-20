@@ -115,7 +115,7 @@ namespace IOOP_Assignment
                     cmd.Parameters.AddWithValue("@student", req.NumStudents);
                     cmd.Parameters.AddWithValue("@duration", req.Duration);
                     cmd.Parameters.AddWithValue("@reservationid", req.ReservationID);
-                    cmd.Parameters.AddWithValue("@studentid", req.StudentID);
+                    cmd.Parameters.AddWithValue("@studentid", User.tpNumber);
 
                     result = cmd.ExecuteNonQuery(); //Add Request to Request Table
                 }
@@ -132,7 +132,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@reservationid", ReservationID);
+                    cmd.Parameters.AddWithValue("@reservationid", req.ReservationID);
 
                     result = cmd.ExecuteNonQuery(); //Delete reservation from Reservation Table
                 }
