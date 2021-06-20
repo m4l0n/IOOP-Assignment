@@ -1,4 +1,4 @@
-# IOOP-Assignment
+# Discussion Room Reservation System
 
 Introduction to Object-Oriented Programming (CT044-3-1)
 Asia Pacific University
