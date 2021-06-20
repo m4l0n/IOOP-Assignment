@@ -23,16 +23,27 @@ namespace IOOP_Assignment
         private string roomNumber;
         private int resID;
         public static string assignedRoom;
-
+        /// <value>Property <c>RoomType</c> represents the Room Type used when making a reservation for rooms</value>
         public string RoomType { get => roomType; set => roomType = value; }
+        /// <value>Property <c>RoomType</c> represents the Date used when making a reservation for rooms</value>
         public string Date { get => date; set => date = value; }
+        /// <value>Property <c>RoomType</c> represents the room type used when making a reservation for rooms</value>
         public string Time { get => time; set => time = value; }
+        /// <value>Property <c>RoomType</c> represents the Time used when making a reservation for rooms</value>
         public int NumStudents { get => numStudents; set => numStudents = value; }
+        /// <value>Property <c>StudentID</c> represents the TPNumber of the user who is making a reservation for rooms</value>
         public string StudentID { get => studentID; set => studentID = value; }
+        /// <value>Property <c>RoomType</c> represents the Duration used when making a reservation for rooms</value>
         public string Duration { get => duration; set => duration = value; }
+        /// <value>Property <c>RoomType</c> represents the Room Number used when making a reservation for rooms</value>
         public string RoomNumber { get => roomNumber; set => roomNumber = value; }
+        /// <value>Property <c>RoomType</c> represents the ReservationID used when making a reservation for rooms</value>
         public int ResID { get => resID; set => resID = value; }
-
+        /// <summary>
+        /// This method obtains the Reservation data of a Student from Database
+        /// </summary>
+        /// <returns>A list of Reservation objects which include Reservations data from Database. Each row represents
+        /// an object</returns>
         public List<Reservation> getResData()
         {
             /*
@@ -95,7 +106,12 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method obtains all the reservation data base on the selected date and room type to display on Daily Report 
+        /// </summary>
+        /// <param name="d">string Date</param>
+        /// <param name="rt">string roomType</param>
+        /// <returns>A list of Reservation objects which include all Reservations data. Each row represents an object</returns>
         public List<Reservation> getDailyReport(string d, string rt)
         {
             date = d;
@@ -152,7 +168,12 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method is the algorithm to automatically assign a room number according to the selected room type, based on
+        /// availability on the selected date
+        /// </summary>
+        /// <param name="res">Reservation object</param>
+        /// <returns>The room number which is available on the selected date</returns>
         public string assignRoom(Reservation res)   //Method to assign a Room Number
         {
             string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
@@ -177,7 +198,11 @@ namespace IOOP_Assignment
                 return assignedRoom;
             }
         }
-
+        /// <summary>
+        /// This method adds a reservation record from the user into the database
+        /// </summary>
+        /// <param name="res">Reservation object</param>
+        /// <returns>The number of rows updated in the database</returns>
         public int addReservation(Reservation res)
         {
             string query = "insert into [dbo].Reservation values (@roomtype, @date, @time, @student, @duration, " +

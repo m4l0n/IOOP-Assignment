@@ -24,6 +24,5 @@ namespace IOOP_Assignment.Validator
                 .Matches("[a-z]").WithMessage("Password must contain one or more lowercase letters!")
                 .Matches(@"\d").WithMessage("Password must contain one or more digits.");
         }
-
     }
 }

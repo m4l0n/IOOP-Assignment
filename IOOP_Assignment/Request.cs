@@ -23,16 +23,29 @@ namespace IOOP_Assignment
         private string duration;
         private int reservationID;
         private string studentID;
-
+        /// <value>Property <c>RoomType</c> represents the room type used when making a request to modify reservation</value>
         public string RoomType { get => roomType; set => roomType = value; }
+        /// <value>Property <c>Date</c> represents the Date used when making a request to modify reservation</value>
         public string Date { get => date; set => date = value; }
+        /// <value>Property <c>Time</c> represents the Time used when making a request to modify reservation</value>
         public string Time { get => time; set => time = value; }
+        /// <value>Property <c>NumStudents</c> represents the Number of Students used when making a request to 
+        /// modify reservation</value>
         public int NumStudents { get => numStudents; set => numStudents = value; }
+        /// <value>Property <c>StudentID</c> represents the TPNumber of the user who is modifying the reservation</value>
         public string StudentID { get => studentID; set => studentID = value; }
+        /// <value>Property <c>Duration</c> represents the Duration used when making a request to modify reservation</value>
         public string Duration { get => duration; set => duration = value; }
+        /// <value>Property <c>ReservationID</c> represents the ReservationID of the reservation that the student
+        /// intend to modify</value>
         public int ReservationID { get => reservationID; set => reservationID = value; }
+        /// <value>Property <c>RequestID</c> represents the RequestID used when making a request to modify reservation</value>
         public int RequestID { get => requestID; set => requestID = value; }
-
+        /// <summary>
+        /// This method is used to obtain the list of Requests awaiting librarian's actions from the Database
+        /// </summary>
+        /// <returns>A list of Request objects which include all the Request data, each object representing a row from the
+        /// SQL result</returns>
         public List<Request> getReqData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
@@ -73,7 +86,12 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method is the algorithm to automatically assign a room number according to the selected room type, based on
+        /// availability on the selected date
+        /// </summary>
+        /// <param name="req">Request object</param>
+        /// <returns>The room number which is available on the selected date</returns>
         public string assignRoom(Request req)   //Method to assign a Room Number
         {
             string query = "SELECT SUBSTRING((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
@@ -98,7 +116,11 @@ namespace IOOP_Assignment
                 return assignedRoom;
             }
         }
-
+        /// <summary>
+        /// This method is used to add a Request record from the students into the Database
+        /// </summary>
+        /// <param name="req">Request object</param>
+        /// <returns>The number of rows updated in the database</returns>
         public int addRequest(Request req)
         {
             string query = "INSERT INTO [dbo].Request VALUES(@roomtype, @date, @time, @student, @duration, @reservationid," +
@@ -122,10 +144,14 @@ namespace IOOP_Assignment
             }
             return result;
         }
-
+        /// <summary>
+        /// This method is used to delete a Reservation record from the Database
+        /// </summary>
+        /// <param name="req">Request object containing ReservationID</param>
+        /// <returns>The number of rows updated in the database</returns>
         public int deleteReservation(Request req)
         {
-            string query = "DELETE FROM [dbo].Reservation WHERE[ReservationID] = @reservationid";
+            string query = "DELETE FROM [dbo].Reservation WHERE[ReservationID]=@reservationid";
             int result;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {

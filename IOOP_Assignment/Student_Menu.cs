@@ -56,6 +56,7 @@ namespace IOOP_Assignment
                 }
             }
             formatTables();
+            //Delete the Notification from Database
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
@@ -195,6 +196,9 @@ namespace IOOP_Assignment
                     break;
             }
         }
+        /// <summary>
+        /// This method format the style of the DataGridViews
+        /// </summary>
         private void formatTables()
         {
             //Bunifu DataGridView Style Formatting
@@ -222,7 +226,11 @@ namespace IOOP_Assignment
             tableAvailableRoom.Columns["columnAvailableRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableAvailableRoom.Columns["columnAvailableRoom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-
+        /// <summary>
+        /// This method checks if there are any actions taken on their Request made to modify their reservations. If yes,
+        /// sends a notification to notify the user.
+        /// </summary>
+        /// <param name="studID">Student ID (TP Number)</param>
         private void checkNotification(string studID)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
@@ -260,23 +268,11 @@ namespace IOOP_Assignment
                 "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string datee = dt.ToString("MM/dd/yyyy");
 
-            Reservation req = new Reservation
-            {
-                ResID = Convert.ToInt32(tableReservationEdit[0, row].Value),
-                RoomType = Convert.ToString(tableReservationEdit[1, row].Value),
-                RoomNumber = Convert.ToString(tableReservationEdit[2, row].Value),
-                NumStudents = Convert.ToInt32(tableReservationEdit[3, row].Value),
-                Time = Convert.ToString(tableReservationEdit[5, row].Value),
-                Duration = Convert.ToString(tableReservationEdit[6, row].Value),
-
-            };
-
             lblReservedDate1.Text = datee;
-            lblReservedDuration1.Text = req.Duration;
-            lblReservedTime1.Text = req.Time;
-            lblReservedRoom1.Text = req.RoomType;
-            lblReservedStudent1.Text = req.NumStudents.ToString();
-
+            lblReservedDuration1.Text = Convert.ToString(tableReservationEdit[6, row].Value);
+            lblReservedTime1.Text = Convert.ToString(tableReservationEdit[5, row].Value);
+            lblReservedRoom1.Text = Convert.ToString(tableReservationEdit[1, row].Value);
+            lblReservedStudent1.Text = Convert.ToString(tableReservationEdit[3, row].Value);
 
             bunifuPages2.SetPage(4);    //Redirect to Edit Form Page
         }
@@ -288,7 +284,7 @@ namespace IOOP_Assignment
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            if (ValidateControls(panelReservationControl))
+            if (ValidateControls(panelReservationControl))  //Validate all Controls in Panel
             {
                 string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
                 lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
@@ -346,7 +342,12 @@ namespace IOOP_Assignment
                     "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
             }
         }
-
+        /// <summary>
+        /// This method checks the status of every room type on a selected date
+        /// </summary>
+        /// <param name="roomType">string array Room Type</param>
+        /// <param name="d">string date</param>
+        /// <returns>An array which contains the status of every room type</returns>
         private string[] getRoomStatus(string[] roomType, string d)
         {
             int reservedRoom;
@@ -362,7 +363,7 @@ namespace IOOP_Assignment
                     i + "' and Date='" + d + "'", con))
                     {
                         reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
-                        reservedNum[counter] = reservedRoom;
+                        reservedNum[counter] = reservedRoom;    //Parallel Arrays
                     }
                     counter += 1;
                 }
@@ -374,6 +375,7 @@ namespace IOOP_Assignment
 
             return roomStatus;
         }
+
         private void dateReserve_ValueChanged(object sender, EventArgs e)
         {
             tableAvailableRoom.Rows.Clear();
@@ -431,17 +433,16 @@ namespace IOOP_Assignment
 
         private async void btnEditConfirm_Click(object sender, EventArgs e)
         {
-            if (chkboxDate.Checked == false && chkboxRoom.Checked == false && chkboxTime.Checked == false 
-                && chkboxDuration.Checked == false)
+            if (!chkboxDate.Checked && !chkboxRoom.Checked && !chkboxTime.Checked && !chkboxDuration.Checked)
             {
                 bunifuSnackbar1.Show(this, "No changes made, you will be redirected back to Dashboard.",
                     Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000);
-                await Task.Delay(2000);
+                await Task.Delay(2000); //Holds the thread for 2 seconds before executing the following code
                 bunifuPages2.SetPage(2);
             }
             else
             {
-                if (ValidateControls(panelEdit))
+                if (ValidateControls(panelEdit))   //Validate all Controls in Panel 
                 {
                     int row = tableReservationEdit.CurrentRow.Index;
                     DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
@@ -514,7 +515,9 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method obtains user's profile details and display on respective labels
+        /// </summary>
         private void fillProfileDetails()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
@@ -543,6 +546,11 @@ namespace IOOP_Assignment
                 lblActiveRes.Text = activeReservation.ToString();
             }
         }
+        /// <summary>
+        /// This method is used to validate all the controls in a Panel on whether each of those has a selected item / text.
+        /// </summary>
+        /// <param name="panel">Panel control object</param>
+        /// <returns>Boolean. True of all controls passes the validation, False if a control fails the validation</returns>
         private bool ValidateControls(Panel panel)
         {
             foreach (Control c in panel.Controls)

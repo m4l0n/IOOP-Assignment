@@ -110,12 +110,14 @@ namespace IOOP_Assignment
                 this.WindowState = FormWindowState.Minimized;
             }
         }
-
+        /// <summary>
+        /// This method is used to register the user into the system
+        /// </summary>
         private async void registerUser()
         {
+            int result2;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                int result2;
                 using (SqlCommand cmd = new SqlCommand("insert into [dbo].[User] values (@tpNum,@name,@email,@pass," +
                     "'Student')", con))
                 {
@@ -126,20 +128,22 @@ namespace IOOP_Assignment
                     cmd.Parameters.AddWithValue("@pass", User.regPass);
                     result2 = cmd.ExecuteNonQuery();
                 }
-                if (result2 != 0)
-                {
-                    lblRegSuccess.Show();
-                    await Task.Delay(2000);
-                    bunifuPages1.PageIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            if (result2 != 0)
+            {
+                lblRegSuccess.Show();
+                await Task.Delay(2000);
+                bunifuPages1.PageIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Unable to Register! Please contact the system administration for support", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// This method is used to validate the login credentials.
+        /// </summary>
         private void loginUser()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))

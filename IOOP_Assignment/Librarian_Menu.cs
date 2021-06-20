@@ -21,6 +21,9 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+        /// <summary>
+        ///  customiseDesign(), hideSubMenu() & showSubMenu() shows and hide the Report panel buttons at the side menu.
+        /// </summary>
         private void customiseDesign()
         {
             panelReportSubMenu.Visible = false;
@@ -56,27 +59,28 @@ namespace IOOP_Assignment
         private void monthlyReportButton_Click(object sender, EventArgs e)
         {
             bunifuPages2.PageIndex = 3;
-            //Code...
             hideSubMenu();
         }
 
         private void dailyReportBtn_Click(object sender, EventArgs e)
         {
             bunifuPages2.PageIndex = 2;
-            //Code...
             hideSubMenu();
         }
 
         private void bunifuShapes1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   //Close button
         }
 
         private void bunifuShapes2_Click(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
-                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Minimized;   //Minimise button
         }
+        /// <summary>
+        /// Following three methods shows a Snackbar with a message regarding each Cards in dashboard
+        /// </summary>
         private void totalUsersInfoButton_Click(object sender, EventArgs e)
         {
             bunifuSnackbar1.Show(this, "This card shows the total users registered in the system.",
@@ -156,7 +160,9 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method obtains values and displays Line Graph on Dashboard
+        /// </summary>
         private void showGraph()
         {
             using (ReservationSystemEntities db = new ReservationSystemEntities())
@@ -214,9 +220,11 @@ namespace IOOP_Assignment
                 }
             }
         }
+        /// <summary>
+        /// This method format the style of the DataGridViews
+        /// </summary>
         private void formatTables()
         {
-            //Bunifu DataGridView Style Formatting
             dailyReportTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dailyReportTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dailyReportTable.Columns["colResID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -264,7 +272,12 @@ namespace IOOP_Assignment
                 }
             }
         }
-
+        /// <summary>
+        /// This method gets the room status (Available/Unavailable) on a selected date
+        /// </summary>
+        /// <param name="rt">string roomType</param>
+        /// <param name="d">string date</param>
+        /// <returns>The status of the selected roomType on a selected Date</returns>
         private string getRoomStatus(string rt, string d)
         {
             int reservedRoom;
@@ -431,18 +444,20 @@ namespace IOOP_Assignment
             if (cbmBlackThorn.Checked) cbmBlackThorn.Checked = false;
             else cbmBlackThorn.Checked = true;
         }
-
         private void lblCedar_Click(object sender, EventArgs e)
         {
             if (cbmCedar.Checked) cbmCedar.Checked = false;
             else cbmCedar.Checked = true;
         }
-
         private void lblDaphne_Click(object sender, EventArgs e)
         {
             if (cbmDaphne.Checked) cbmDaphne.Checked = false;
             else cbmDaphne.Checked = true;
         }
+        /// <summary>
+        /// This method obtains user's profile details and display on respective labels
+        /// </summary>
+        /// <param name="tdy_date">The current date, used to display the Reservations on the day itself</param>
         private void fillProfileDetails(string tdy_date)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
@@ -470,7 +485,6 @@ namespace IOOP_Assignment
                 lblNameL2.Text = User.name;
                 lblNameL3.Text = User.name;
                 lblNameL4.Text = User.name;
-
             }
         }
     }
