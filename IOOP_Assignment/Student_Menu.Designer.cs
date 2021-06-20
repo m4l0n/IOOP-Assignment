@@ -87,7 +87,7 @@ namespace IOOP_Assignment
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.overviewLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.reservationPage = new System.Windows.Forms.TabPage();
-            this.bunifuShadowPanel9 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.panelReservationControl = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.timeReserve = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.lblStudent = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblDate = new Bunifu.UI.WinForms.BunifuLabel();
@@ -215,7 +215,7 @@ namespace IOOP_Assignment
             this.bunifuPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
             this.reservationPage.SuspendLayout();
-            this.bunifuShadowPanel9.SuspendLayout();
+            this.panelReservationControl.SuspendLayout();
             this.bunifuShadowPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableAvailableRoom)).BeginInit();
             this.bunifuShadowPanel7.SuspendLayout();
@@ -582,10 +582,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(264, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.dashboardPage;
-            this.bunifuPages2.PageIndex = 0;
-            this.bunifuPages2.PageName = "dashboardPage";
-            this.bunifuPages2.PageTitle = "Dashboard";
+            this.bunifuPages2.Page = this.reservationPage;
+            this.bunifuPages2.PageIndex = 1;
+            this.bunifuPages2.PageName = "reservationPage";
+            this.bunifuPages2.PageTitle = "Reservation";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -1144,7 +1144,7 @@ namespace IOOP_Assignment
             // 
             // reservationPage
             // 
-            this.reservationPage.Controls.Add(this.bunifuShadowPanel9);
+            this.reservationPage.Controls.Add(this.panelReservationControl);
             this.reservationPage.Controls.Add(this.bunifuShadowPanel8);
             this.reservationPage.Controls.Add(this.bunifuShadowPanel7);
             this.reservationPage.Controls.Add(this.bunifuLabel19);
@@ -1164,39 +1164,39 @@ namespace IOOP_Assignment
             this.bunifuToolTip1.SetToolTipTitle(this.reservationPage, "");
             this.reservationPage.UseVisualStyleBackColor = true;
             // 
-            // bunifuShadowPanel9
+            // panelReservationControl
             // 
-            this.bunifuShadowPanel9.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel9.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuShadowPanel9.BorderRadius = 20;
-            this.bunifuShadowPanel9.BorderThickness = 1;
-            this.bunifuShadowPanel9.Controls.Add(this.timeReserve);
-            this.bunifuShadowPanel9.Controls.Add(this.lblStudent);
-            this.bunifuShadowPanel9.Controls.Add(this.lblDate);
-            this.bunifuShadowPanel9.Controls.Add(this.lblDuration);
-            this.bunifuShadowPanel9.Controls.Add(this.lblRoom);
-            this.bunifuShadowPanel9.Controls.Add(this.comboStudentNo);
-            this.bunifuShadowPanel9.Controls.Add(this.dateReserve);
-            this.bunifuShadowPanel9.Controls.Add(this.comboDuration);
-            this.bunifuShadowPanel9.Controls.Add(this.comboRoom);
-            this.bunifuShadowPanel9.Controls.Add(this.lblTime);
-            this.bunifuShadowPanel9.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel9.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel9.Location = new System.Drawing.Point(6, 103);
-            this.bunifuShadowPanel9.Name = "bunifuShadowPanel9";
-            this.bunifuShadowPanel9.PanelColor = System.Drawing.Color.White;
-            this.bunifuShadowPanel9.PanelColor2 = System.Drawing.Color.White;
-            this.bunifuShadowPanel9.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel9.ShadowDept = 2;
-            this.bunifuShadowPanel9.ShadowDepth = 3;
-            this.bunifuShadowPanel9.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel9.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel9.Size = new System.Drawing.Size(413, 352);
-            this.bunifuShadowPanel9.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel9.TabIndex = 54;
-            this.bunifuToolTip1.SetToolTip(this.bunifuShadowPanel9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuShadowPanel9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuShadowPanel9, "");
+            this.panelReservationControl.BackColor = System.Drawing.Color.Transparent;
+            this.panelReservationControl.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.panelReservationControl.BorderRadius = 20;
+            this.panelReservationControl.BorderThickness = 1;
+            this.panelReservationControl.Controls.Add(this.timeReserve);
+            this.panelReservationControl.Controls.Add(this.lblStudent);
+            this.panelReservationControl.Controls.Add(this.lblDate);
+            this.panelReservationControl.Controls.Add(this.lblDuration);
+            this.panelReservationControl.Controls.Add(this.lblRoom);
+            this.panelReservationControl.Controls.Add(this.comboStudentNo);
+            this.panelReservationControl.Controls.Add(this.dateReserve);
+            this.panelReservationControl.Controls.Add(this.comboDuration);
+            this.panelReservationControl.Controls.Add(this.comboRoom);
+            this.panelReservationControl.Controls.Add(this.lblTime);
+            this.panelReservationControl.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.panelReservationControl.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.panelReservationControl.Location = new System.Drawing.Point(6, 103);
+            this.panelReservationControl.Name = "panelReservationControl";
+            this.panelReservationControl.PanelColor = System.Drawing.Color.White;
+            this.panelReservationControl.PanelColor2 = System.Drawing.Color.White;
+            this.panelReservationControl.ShadowColor = System.Drawing.Color.DarkGray;
+            this.panelReservationControl.ShadowDept = 2;
+            this.panelReservationControl.ShadowDepth = 3;
+            this.panelReservationControl.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.panelReservationControl.ShadowTopLeftVisible = false;
+            this.panelReservationControl.Size = new System.Drawing.Size(413, 352);
+            this.panelReservationControl.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.panelReservationControl.TabIndex = 54;
+            this.bunifuToolTip1.SetToolTip(this.panelReservationControl, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelReservationControl, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelReservationControl, "");
             // 
             // timeReserve
             // 
@@ -1316,6 +1316,7 @@ namespace IOOP_Assignment
             this.comboStudentNo.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
             this.comboStudentNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboStudentNo.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboStudentNo.Enabled = false;
             this.comboStudentNo.FillDropDown = true;
             this.comboStudentNo.FillIndicator = false;
             this.comboStudentNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1337,12 +1338,11 @@ namespace IOOP_Assignment
             this.comboStudentNo.Name = "comboStudentNo";
             this.comboStudentNo.Size = new System.Drawing.Size(220, 32);
             this.comboStudentNo.TabIndex = 48;
-            this.comboStudentNo.Text = "Select Number of Students";
             this.comboStudentNo.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboStudentNo.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboStudentNo, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboStudentNo, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboStudentNo, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboStudentNo, ((System.Drawing.Image)(resources.GetObject("comboStudentNo.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboStudentNo, "Select Number of Students");
             // 
             // dateReserve
             // 
@@ -1423,12 +1423,11 @@ namespace IOOP_Assignment
             this.comboDuration.Name = "comboDuration";
             this.comboDuration.Size = new System.Drawing.Size(220, 32);
             this.comboDuration.TabIndex = 46;
-            this.comboDuration.Text = "Select Duration";
             this.comboDuration.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboDuration.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboDuration, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboDuration, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboDuration, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboDuration, ((System.Drawing.Image)(resources.GetObject("comboDuration.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboDuration, "Select Duration");
             // 
             // comboRoom
             // 
@@ -1468,12 +1467,11 @@ namespace IOOP_Assignment
             this.comboRoom.Name = "comboRoom";
             this.comboRoom.Size = new System.Drawing.Size(220, 32);
             this.comboRoom.TabIndex = 39;
-            this.comboRoom.Text = "Select Room Type";
             this.comboRoom.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboRoom.TextLeftMargin = 5;
             this.bunifuToolTip1.SetToolTip(this.comboRoom, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.comboRoom, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.comboRoom, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.comboRoom, ((System.Drawing.Image)(resources.GetObject("comboRoom.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.comboRoom, "Select Room Type");
             this.comboRoom.SelectedIndexChanged += new System.EventHandler(this.comboRoom_SelectedIndexChanged);
             // 
             // lblTime
@@ -4336,8 +4334,8 @@ namespace IOOP_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
             this.reservationPage.ResumeLayout(false);
             this.reservationPage.PerformLayout();
-            this.bunifuShadowPanel9.ResumeLayout(false);
-            this.bunifuShadowPanel9.PerformLayout();
+            this.panelReservationControl.ResumeLayout(false);
+            this.panelReservationControl.PerformLayout();
             this.bunifuShadowPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableAvailableRoom)).EndInit();
             this.bunifuShadowPanel7.ResumeLayout(false);
@@ -4450,7 +4448,7 @@ namespace IOOP_Assignment
         private System.Windows.Forms.Label lblRandom;
         private Bunifu.UI.WinForms.BunifuDataGridView tableReservationEdit;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel9;
+        private Bunifu.UI.WinForms.BunifuShadowPanel panelReservationControl;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel8;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;

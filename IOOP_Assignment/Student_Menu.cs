@@ -162,6 +162,7 @@ namespace IOOP_Assignment
 
         private void comboRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboStudentNo.Enabled = true;
             switch (comboRoom.SelectedIndex)
             {
                 case 0:
@@ -287,9 +288,7 @@ namespace IOOP_Assignment
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            if (comboDuration.SelectedIndex != -1
-                && comboRoom.SelectedIndex != -1
-                && comboStudentNo.SelectedIndex != -1)
+            if (ValidateControls(panelReservationControl))
             {
                 string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
                 lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
@@ -318,12 +317,6 @@ namespace IOOP_Assignment
 
                 }
                 bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
-
-            }
-            else
-            {
-                bunifuSnackbar1.Show(this, "All fields are required to fill, Please make sure all fields are filled.",
-                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
             }
         }
 
@@ -573,6 +566,23 @@ namespace IOOP_Assignment
                 lblHi.Text = "Hi " + User.name + ",";
                 lblActiveRes.Text = activeReservation.ToString();
             }
+        }
+        private bool ValidateControls(Panel panel)
+        {
+            foreach (Control c in panel.Controls)
+            {
+                c.Focus();
+                if (c is Bunifu.UI.WinForms.BunifuDropdown && c.Enabled)
+                {
+                    if (string.IsNullOrEmpty(c.Text))
+                    {
+                        bunifuSnackbar1.Show(this, "Please make sure that all fields are filled!",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000);
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }
