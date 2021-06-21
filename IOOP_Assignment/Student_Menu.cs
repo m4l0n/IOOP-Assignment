@@ -130,7 +130,7 @@ namespace IOOP_Assignment
             comboStudentNo.SelectedItem = null;
             comboStudentNo.Enabled = false;
             dateReserve.ResetText();
-            timeReserve.ResetText();
+            timeReserve.Value = DateTime.Parse("10:00 AM");
         }
 
         private void comboRoom_SelectedIndexChanged(object sender, EventArgs e)
