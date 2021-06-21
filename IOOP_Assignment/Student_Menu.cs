@@ -122,6 +122,7 @@ namespace IOOP_Assignment
             comboDuration.SelectedItem = null;
             comboRoom.SelectedItem = null;
             comboStudentNo.SelectedItem = null;
+            comboStudentNo.Enabled = false;
             dateReserve.ResetText();
             timeReserve.ResetText();
         }
