@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -73,6 +68,7 @@ namespace IOOP_Assignment
             dateReserve.Value = DateTime.Now.AddDays(2);
             dateReserve.MinDate = DateTime.Now.AddDays(2); //Limiting Reservation date
         }
+
         private void btnEditRes_Click(object sender, EventArgs e)
         {
             bunifuPages2.PageIndex = 2;    //Redirect to Reservation Modification
@@ -82,6 +78,7 @@ namespace IOOP_Assignment
         {
             bunifuPages2.SetPage(1);
         }
+
         private void shapeMinimize_Click(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
@@ -89,6 +86,7 @@ namespace IOOP_Assignment
                 this.WindowState = FormWindowState.Minimized;   //Minimise Form
             }
         }
+
         private void resDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             //Auto Increment first column
@@ -145,6 +143,7 @@ namespace IOOP_Assignment
                         comboStudentNo.Items.Add(i);
                     }
                     break;
+
                 case 1:
                     comboStudentNo.Items.Clear();
                     for (int i = 1; i <= 8; i++)
@@ -152,6 +151,7 @@ namespace IOOP_Assignment
                         comboStudentNo.Items.Add(i);
                     }
                     break;
+
                 case 2:
                     comboStudentNo.Items.Clear();
                     for (int i = 1; i <= 4; i++)
@@ -159,6 +159,7 @@ namespace IOOP_Assignment
                         comboStudentNo.Items.Add(i);
                     }
                     break;
+
                 case 3:
                     comboStudentNo.Items.Clear();
                     for (int i = 1; i <= 2; i++)
@@ -168,6 +169,7 @@ namespace IOOP_Assignment
                     break;
             }
         }
+
         /// <summary>
         /// This method format the style of the DataGridViews
         /// </summary>
@@ -198,6 +200,7 @@ namespace IOOP_Assignment
             tableAvailableRoom.Columns["columnAvailableRoomType"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tableAvailableRoom.Columns["columnAvailableRoom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
+
         /// <summary>
         /// This method checks if there are any actions taken on their Request made to modify their reservations. If yes,
         /// sends a notification to notify the user.
@@ -290,7 +293,7 @@ namespace IOOP_Assignment
         private void btnPreviewConfirm_Click(object sender, EventArgs e)
         {
             lblPreviewRoomNumber1.Text = Reservation.assignedRoom;
-            
+
             Reservation res = new Reservation
             {
                 Date = dateReserve.Value.ToShortDateString(),
@@ -316,6 +319,7 @@ namespace IOOP_Assignment
                     "administrator for support.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000);
             }
         }
+
         /// <summary>
         /// This method checks the status of every room type on a selected date
         /// </summary>
@@ -327,7 +331,7 @@ namespace IOOP_Assignment
             int reservedRoom;
             int counter = 0;
             int[] reservedNum = new int[4];
-            string[] roomStatus = { "Unavailable", "Unavailable" , "Unavailable" , "Unavailable" };
+            string[] roomStatus = { "Unavailable", "Unavailable", "Unavailable", "Unavailable" };
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
@@ -381,6 +385,7 @@ namespace IOOP_Assignment
                         comboNewStudent.Items.Add(i);
                     }
                     break;
+
                 case 1:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 8; i++)
@@ -388,6 +393,7 @@ namespace IOOP_Assignment
                         comboNewStudent.Items.Add(i);
                     }
                     break;
+
                 case 2:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 4; i++)
@@ -395,6 +401,7 @@ namespace IOOP_Assignment
                         comboNewStudent.Items.Add(i);
                     }
                     break;
+
                 case 3:
                     comboNewStudent.Items.Clear();
                     for (int i = 1; i <= 2; i++)
@@ -416,7 +423,7 @@ namespace IOOP_Assignment
             }
             else
             {
-                if (ValidateControls(panelEdit))   //Validate all Controls in Panel 
+                if (ValidateControls(panelEdit))   //Validate all Controls in Panel
                 {
                     int row = tableReservationEdit.CurrentRow.Index;
                     DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
@@ -489,6 +496,7 @@ namespace IOOP_Assignment
                 }
             }
         }
+
         /// <summary>
         /// This method obtains user's profile details and display on respective labels
         /// </summary>
@@ -520,6 +528,7 @@ namespace IOOP_Assignment
                 lblActiveRes.Text = activeReservation.ToString();
             }
         }
+
         /// <summary>
         /// This method is used to validate all the controls in a Panel on whether each of those has a selected item / text.
         /// </summary>
@@ -542,6 +551,7 @@ namespace IOOP_Assignment
             }
             return true;
         }
+
         /// <summary>
         /// This method updates the DataGridView, fills the table with data
         /// </summary>

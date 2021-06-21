@@ -2,15 +2,12 @@
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IOOP_Assignment
@@ -21,6 +18,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+
         /// <summary>
         ///  customiseDesign(), hideSubMenu() & showSubMenu() shows and hide the Report panel buttons at the side menu.
         /// </summary>
@@ -28,11 +26,13 @@ namespace IOOP_Assignment
         {
             panelReportSubMenu.Visible = false;
         }
+
         private void hideSubMenu()
         {
             if (panelReportSubMenu.Visible == true)
                 panelReportSubMenu.Visible = false;
         }
+
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -42,6 +42,7 @@ namespace IOOP_Assignment
             }
             else subMenu.Visible = false;
         }
+
         private void btnDashboardPage_Click(object sender, EventArgs e)
         {
             bunifuPages2.PageIndex = 0;
@@ -51,6 +52,7 @@ namespace IOOP_Assignment
         {
             bunifuPages2.PageIndex = 1;
         }
+
         private void reportBtn_Click(object sender, EventArgs e)
         {
             showSubMenu(panelReportSubMenu);
@@ -78,6 +80,7 @@ namespace IOOP_Assignment
             if (this.WindowState != FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Minimized;   //Minimise button
         }
+
         /// <summary>
         /// Following three methods shows a Snackbar with a message regarding each Cards in dashboard
         /// </summary>
@@ -138,6 +141,7 @@ namespace IOOP_Assignment
                 monthlyUtilizationDataGridView.DataSource = dataTable;
             }
         }
+
         /// <summary>
         /// This method obtains values and displays Line Graph on Dashboard
         /// </summary>
@@ -198,6 +202,7 @@ namespace IOOP_Assignment
                 }
             }
         }
+
         /// <summary>
         /// This method updates the DataGridView, fills the table with data
         /// </summary>
@@ -226,6 +231,7 @@ namespace IOOP_Assignment
                 }
             }
         }
+
         /// <summary>
         /// This method format the style of the DataGridViews
         /// </summary>
@@ -278,6 +284,7 @@ namespace IOOP_Assignment
                 }
             }
         }
+
         /// <summary>
         /// This method gets the room status (Available/Unavailable) on a selected date
         /// </summary>
@@ -302,15 +309,19 @@ namespace IOOP_Assignment
                 case "Amber":
                     if (reservedRoom < 5) status = "Available";
                     break;
+
                 case "Blackthorn":
                     if (reservedRoom < 1) status = "Available";
                     break;
+
                 case "Cedar":
                     if (reservedRoom < 6) status = "Available";
                     break;
+
                 case "Daphne":
                     if (reservedRoom < 5) status = "Available";
                     break;
+
                 default:
                     status = "Unavailable";
                     break;
@@ -355,7 +366,7 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd3 = new SqlCommand("delete from [dbo].Request where RequestID='" + req.RequestID + "'", con))
                 {
                     cmd3.ExecuteNonQuery();
-                }   
+                }
             }
             bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             //Update Label and Table after Request Approval
@@ -387,7 +398,7 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd2 = new SqlCommand("delete from[dbo].Request where RequestID='" + req.RequestID + "'", con))
                 {
                     cmd2.ExecuteNonQuery();
-                }   
+                }
             }
             bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             //Update Label and Table after Request Rejection
@@ -448,6 +459,7 @@ namespace IOOP_Assignment
                 monthlyUtilizationDataGridView.DataSource = dataTable;
             }
         }
+
         private void lblAmber_Click(object sender, EventArgs e)
         {
             if (cbmAmber.Checked) cbmAmber.Checked = false;
@@ -459,16 +471,19 @@ namespace IOOP_Assignment
             if (cbmBlackThorn.Checked) cbmBlackThorn.Checked = false;
             else cbmBlackThorn.Checked = true;
         }
+
         private void lblCedar_Click(object sender, EventArgs e)
         {
             if (cbmCedar.Checked) cbmCedar.Checked = false;
             else cbmCedar.Checked = true;
         }
+
         private void lblDaphne_Click(object sender, EventArgs e)
         {
             if (cbmDaphne.Checked) cbmDaphne.Checked = false;
             else cbmDaphne.Checked = true;
         }
+
         /// <summary>
         /// This method obtains user's profile details and display on respective labels
         /// </summary>
