@@ -575,7 +575,7 @@ namespace IOOP_Assignment
             // bunifuPages2
             // 
             this.bunifuPages2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.bunifuPages2.AllowTransitions = false;
+            this.bunifuPages2.AllowTransitions = true;
             this.bunifuPages2.Controls.Add(this.dashboardPage);
             this.bunifuPages2.Controls.Add(this.reservationPage);
             this.bunifuPages2.Controls.Add(this.editPage);
@@ -584,10 +584,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(263, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.reservationPage;
-            this.bunifuPages2.PageIndex = 1;
-            this.bunifuPages2.PageName = "reservationPage";
-            this.bunifuPages2.PageTitle = "Reservation";
+            this.bunifuPages2.Page = this.formPage;
+            this.bunifuPages2.PageIndex = 4;
+            this.bunifuPages2.PageName = "formPage";
+            this.bunifuPages2.PageTitle = "Form";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;

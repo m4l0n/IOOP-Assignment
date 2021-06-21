@@ -405,7 +405,7 @@ namespace IOOP_Assignment
                 bunifuSnackbar1.Show(this, "No changes made, you will be redirected back to Dashboard.",
                     Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000);
                 await Task.Delay(2000); //Holds the thread for 2 seconds before executing the following code
-                bunifuPages2.SetPage(2);
+                bunifuPages2.SetPage(0);
             }
             else
             {
