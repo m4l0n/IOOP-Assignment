@@ -44,11 +44,17 @@ namespace IOOP_Assignment
 
             //Converts DatePicker to TimePicker
             timeReserve.Format = DateTimePickerFormat.Custom;
-            timeReserve.CustomFormat = "HH:mm tt";
+            timeReserve.CustomFormat = "hh:mm tt";
             timeReserve.ShowUpDown = true;
+            timeReserve.Value = DateTime.Parse("10:00 AM");
+            timeReserve.MinDate = DateTime.Parse("10:00 AM");
+            timeReserve.MaxDate = DateTime.Parse("10:00 PM");
             newTimeRes.Format = DateTimePickerFormat.Custom;
-            newTimeRes.CustomFormat = "HH:mm tt";
+            newTimeRes.CustomFormat = "hh:mm tt";
             newTimeRes.ShowUpDown = true;
+            timeReserve.Value = DateTime.Parse("10:00 AM");
+            timeReserve.MinDate = DateTime.Parse("10:00 AM");
+            timeReserve.MaxDate = DateTime.Parse("10:00 PM");
         }
 
         private void shapeClose_Click(object sender, EventArgs e)
@@ -124,7 +130,7 @@ namespace IOOP_Assignment
             comboStudentNo.SelectedItem = null;
             comboStudentNo.Enabled = false;
             dateReserve.ResetText();
-            timeReserve.ResetText();
+            timeReserve.Value = DateTime.Parse("10:00 AM");
         }
 
         private void comboRoom_SelectedIndexChanged(object sender, EventArgs e)
