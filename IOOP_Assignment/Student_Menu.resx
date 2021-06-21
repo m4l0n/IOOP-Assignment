@@ -23922,21 +23922,21 @@
   </data>
   <data name="comboNewDuration.ToolTipIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADRSURBVEhL7ZQ7CgIxFEWnEfzUii5IC5eklroRXY8Witq4EW30nmAgGYLmV86Bw+TlkZthPmk6
-        cnlnGk1ocYzJ/FuYHWx5SQL6pvIZSHpPU2Vyk4TMTeWzkPSupspkLQn55UpmM5QnGQrGo+RRFTGWZ9kO
-        v8uprEJ7k6rhENpgJqswkRdJMFd3TK8I9yXbQHfD4pe8kQQ9pHu3jJmjV/SZ8qwJWZrKhzl6RT+aPSpG
-        sicPcv8dM0ev6KggAGEnbb1lQrj9JOzCVKMJLY6xI5Wm+QDP3YJuwaAEVAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAANFJREFUSEvt
+        lDsKAjEURacR/NSKLkgLl6SWuhFdjxaK2rgRbfSeYCAZguZXzoHD5OWRm2E+aTpyeWcaTWhxjMn8W5gd
+        bHlJAvqm8hlIek9TZXKThMxN5bOQ9K6mymQtCfnlSmYzlCcZCsaj5FEVMZZn2Q6/y6msQnuTquEQ2mAm
+        qzCRF0kwV3dMrwj3JdtAd8Pil7yRBD2ke7eMmaNX9JnyrAlZmsqHOXpFP5o9KkayJw9y/x0zR6/oqCAA
+        YSdtvWVCuP0k7MJUowktjrEjlab5AM/dgm7BoARUAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="comboNewStudent.ToolTipIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADsSURBVEhLvdKtCgJBFIbh9ScaBIPehMEqFsFksFmN3omXIFgsBi/A5G0oBoteg0Usgr5ncGAY
-        ht0z++MHT5h1zvlW2CQyjZ/SU8ccV9yxRBOF4y7+eAoVpS32RRXFLPalFhVZ7AsWVV5gIw8XCA1qyKzq
-        Mw4Na6gTGtZQxw4MzSk9I+Qu0CbqvnxNeQtm5pSRG+Ty2px02UBmLuaUkSfkct+cKsge9i+L0tPGDm9I
-        QRfaRL3UAXJ5i5o8UCSqYIAXZOCICTpoYYxQogokUzxgB102od9cmelhhTPkCxMn2ISWukpNJUvd/Lsg
-        Sb5qNLe4cBuc6AAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAOxJREFUSEu9
+        0q0KAkEUhuH1JxoEg96EwSoWwWSwWY3eiZcgWCwGL8DkbSgGi16DRSyCvmdwYBiG3TP74wdPmHXO+VbY
+        JDKNn9JTxxxX3LFEE4XjLv54ChWlLfZFFcUs9qUWFVnsCxZVXmAjDxcIDWrIrOozDg1rqBMa1lDHDgzN
+        KT0j5C7QJuq+fE15C2bmlJEb5PLanHTZQGYu5pSRJ+Ry35wqyB72L4vS08YOb0hBF9pEvdQBcnmLmjxQ
+        JKpggBdk4IgJOmhhjFCiCiRTPGAHXTah31yZ6WGFM+QLEyfYhJa6Sk0lS938uyBJvmo0t7hwG5zoAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="btnEditConfirm.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
