@@ -100,13 +100,12 @@ namespace IOOP_Assignment
                 "where [Room Type] = '" + req.RoomType + "' and Date = '" + req.Date + "' " +
                 "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
             string assignedRoom;
-            string takenRooms;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     con.Open();
-                    takenRooms = cmd.ExecuteScalar().ToString();
+                    string takenRooms = cmd.ExecuteScalar().ToString();
                     takenRooms = takenRooms.Replace(",", "','");
                     string query2 = "SELECT TOP 1 [Room Number] FROM [dbo].Room WHERE [Room Number] NOT IN " +
                         "('" + takenRooms + "') and [Room Type]='" + req.RoomType + "'";

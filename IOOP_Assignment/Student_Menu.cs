@@ -259,7 +259,7 @@ namespace IOOP_Assignment
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            if (ValidateControls(panelReservationControl))  //Validate all Controls in Panel
+            if (validateControls(panelReservationControl))  //Validate all Controls in Panel
             {
                 string roomtype = comboRoom.GetItemText(comboRoom.SelectedItem);
                 lblPreviewDate1.Text = dateReserve.Value.ToShortDateString();
@@ -311,7 +311,7 @@ namespace IOOP_Assignment
                 "Click on 'Edit Reservation' on the side panel.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
                 updateTable();
                 int activeRes = Convert.ToInt32(lblActiveRes.Text);
-                lblActiveRes.Text = (activeRes += 1).ToString();
+                lblActiveRes.Text = (activeRes + 1).ToString();
             }
             else
             {
@@ -328,7 +328,6 @@ namespace IOOP_Assignment
         /// <returns>An array which contains the status of every room type</returns>
         private string[] getRoomStatus(string[] roomType, string d)
         {
-            int reservedRoom;
             int counter = 0;
             int[] reservedNum = new int[4];
             string[] roomStatus = { "Unavailable", "Unavailable", "Unavailable", "Unavailable" };
@@ -340,7 +339,7 @@ namespace IOOP_Assignment
                     using (SqlCommand cmd = new SqlCommand("select count(*) from [dbo].Reservation where [Room Type]='" +
                     i + "' and Date='" + d + "'", con))
                     {
-                        reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
+                        int reservedRoom = Convert.ToInt32(cmd.ExecuteScalar());
                         reservedNum[counter] = reservedRoom;    //Parallel Arrays
                     }
                     counter += 1;
@@ -365,11 +364,8 @@ namespace IOOP_Assignment
             for (int i = 0; i <= 3; i++)
             {
                 tableAvailableRoom.Rows.Add(
-                    new object[]
-                    {
                         roomType[i],
-                        roomStatus[i],
-                    });
+                        roomStatus[i]);
                 if (roomStatus[i] == "Available") comboRoom.Items.Add(roomType[i]);
             }
         }
@@ -423,7 +419,7 @@ namespace IOOP_Assignment
             }
             else
             {
-                if (ValidateControls(panelEdit))   //Validate all Controls in Panel
+                if (validateControls(panelEdit))   //Validate all Controls in Panel
                 {
                     int row = tableReservationEdit.CurrentRow.Index;
                     DateTime dt = DateTime.ParseExact(Convert.ToString(tableReservationEdit[4, row].Value),
@@ -534,7 +530,7 @@ namespace IOOP_Assignment
         /// </summary>
         /// <param name="panel">Panel control object</param>
         /// <returns>Boolean. True of all controls passes the validation, False if a control fails the validation</returns>
-        private bool ValidateControls(Panel panel)
+        private bool validateControls(Panel panel)
         {
             foreach (Control c in panel.Controls)
             {

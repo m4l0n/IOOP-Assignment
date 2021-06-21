@@ -29,13 +29,13 @@ namespace IOOP_Assignment
 
         private void hideSubMenu()
         {
-            if (panelReportSubMenu.Visible == true)
+            if (panelReportSubMenu.Visible)
                 panelReportSubMenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
         {
-            if (subMenu.Visible == false)
+            if (!subMenu.Visible)
             {
                 hideSubMenu();
                 subMenu.Visible = true;
@@ -109,33 +109,32 @@ namespace IOOP_Assignment
             formatTables();
             updateTable();
             //Dropdown for monthly utilization report
-            DateTime Now = DateTime.Now;
-            int year = int.Parse(Now.ToString("yyyy"));
-            string month = Now.ToString("MMMM");
-            int min_year = year - 20;
-            int max_year = year + 20;
-            int item_year = min_year;
-            while (item_year < max_year)
+            DateTime dateNow = DateTime.Now;
+            int year = int.Parse(dateNow.ToString("yyyy"));
+            string month = dateNow.ToString("MMMM");
+            int minYear = year - 20;
+            int maxYear = year + 20;
+            int itemYear = minYear;
+            while (itemYear < maxYear)
             {
-                ddmYear.Items.Add(item_year.ToString());
-                item_year += 1;
+                ddmYear.Items.Add(itemYear.ToString());
+                itemYear += 1;
             }
             ddmMonth.SelectedIndex = ddmMonth.FindStringExact(month);
             ddmYear.SelectedIndex = 20;
 
             //Displays at Overview
-            string tdy_date = Now.ToString("M/d/yyyy");
+            string tdyDate = dateNow.ToString("M/d/yyyy");
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
-                fillProfileDetails(tdy_date);
+                fillProfileDetails(tdyDate);
 
                 //Columns for Monthly Utilization Review
-                SqlDataAdapter sql5 = new SqlDataAdapter($"select [Room Number], Count(Date) as [Number of Reservations], " +
-                    $"replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')," +
-                    $"'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours'," +
-                    $"'hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where [Room Type]=''" +
-                    $" group by [Room Number]", con);
-                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql5);
+                SqlDataAdapter sql5 = new SqlDataAdapter("select [Room Number], Count(Date) as [Number of Reservations], " +
+                    "replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')," +
+                    "'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes'),'.5 hours'," +
+                    "'hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] where [Room Type]=''" +
+                    " group by [Room Number]", con);
                 DataTable dataTable = new DataTable();
                 sql5.Fill(dataTable);
                 monthlyUtilizationDataGridView.DataSource = dataTable;
@@ -217,24 +216,21 @@ namespace IOOP_Assignment
                 foreach (var req in reqList)
                 {
                     requestDataGridView.Rows.Add(
-                        new object[]
-                        {
-                            req.RequestID,
-                            req.StudentID,
-                            req.RoomType,
-                            req.Date,
-                            req.Time,
-                            req.NumStudents,
-                            req.Duration,
-                            req.ReservationID,
-                        });
+                        req.RequestID,
+                        req.StudentID,
+                        req.RoomType,
+                        req.Date,
+                        req.Time,
+                        req.NumStudents,
+                        req.Duration,
+                        req.ReservationID);
                 }
             }
         }
 
-        /// <summary>
+        /// <summary>                            
         /// This method format the style of the DataGridViews
-        /// </summary>
+        /// </summary>                           
         private void formatTables()
         {
             dailyReportTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -371,7 +367,7 @@ namespace IOOP_Assignment
             bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             //Update Label and Table after Request Approval
             int unattendedReq = Convert.ToInt32(lblUnattendReq.Text);
-            lblUnattendReq.Text = (unattendedReq -= 1).ToString();
+            lblUnattendReq.Text = (unattendedReq - 1).ToString();
             updateTable();
         }
 
@@ -403,16 +399,16 @@ namespace IOOP_Assignment
             bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
             //Update Label and Table after Request Rejection
             int unattendedReq = Convert.ToInt32(lblUnattendReq.Text);
-            lblUnattendReq.Text = (unattendedReq -= 1).ToString();
+            lblUnattendReq.Text = (unattendedReq - 1).ToString();
             updateTable();
         }
 
         private void btnSearchMonthly_Click(object sender, EventArgs e)
         {
             monthlyUtilizationDataGridView.DataSource = null;
-            string month_name = ddmMonth.SelectedItem.ToString();
+            string monthName = ddmMonth.SelectedItem.ToString();
             int year1 = Int32.Parse(ddmYear.SelectedItem.ToString());
-            int month1 = ddmMonth.FindStringExact(month_name) + 1;
+            int month1 = ddmMonth.FindStringExact(monthName) + 1;
             int month2 = month1 + 1;
             int year2 = year1;
 
@@ -425,19 +421,18 @@ namespace IOOP_Assignment
             string date2 = $"{month2}-1-{year2}";
             string roomtype = "";
 
-            if (cbmAmber.Checked == true)
-                roomtype += "[Room Type]='Amber'";
-            if (cbmBlackThorn.Checked == true)
+            if (cbmAmber.Checked) roomtype += "[Room Type]='Amber'";
+            if (cbmBlackThorn.Checked)
             {
                 if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='BlackThorn'";
             }
-            if (cbmCedar.Checked == true)
+            if (cbmCedar.Checked)
             {
                 if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='Cedar'";
             }
-            if (cbmDaphne.Checked == true)
+            if (cbmDaphne.Checked)
             {
                 if (roomtype != "") roomtype += " or ";
                 roomtype += "[Room Type]='Daphne'";
@@ -448,12 +443,11 @@ namespace IOOP_Assignment
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                SqlDataAdapter sql = new SqlDataAdapter($"select [Room Number], Count(Date) as [Number of Reservations], " +
-                    $"replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')" +
-                    $",'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes')," +
-                    $"'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] " +
+                SqlDataAdapter sql = new SqlDataAdapter("select [Room Number], Count(Date) as [Number of Reservations], " +
+                    "replace(replace(replace(concat(cast(sum(Cast(replace(replace(replace(replace(duration,'30 minutes','.5')" +
+                    ",'hours',''),'hour',''),' ','') as float)) as varchar),' hours'),'0.5 hours','30 minutes')," +
+                    "'.5 hours','hours 30 minutes'),'1 hours','1 hour') as [Total Duration Used] from [dbo].[Reservation] " +
                     $"where date between '{date1}' and '{date2}' and {roomtype} group by [Room Number]", con);
-                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sql);
                 DataTable dataTable = new DataTable();
                 sql.Fill(dataTable);
                 monthlyUtilizationDataGridView.DataSource = dataTable;
@@ -462,39 +456,35 @@ namespace IOOP_Assignment
 
         private void lblAmber_Click(object sender, EventArgs e)
         {
-            if (cbmAmber.Checked) cbmAmber.Checked = false;
-            else cbmAmber.Checked = true;
+            cbmAmber.Checked = !cbmAmber.Checked;
         }
 
         private void lblBThorn_Click(object sender, EventArgs e)
         {
-            if (cbmBlackThorn.Checked) cbmBlackThorn.Checked = false;
-            else cbmBlackThorn.Checked = true;
+            cbmBlackThorn.Checked = !cbmBlackThorn.Checked;
         }
 
         private void lblCedar_Click(object sender, EventArgs e)
         {
-            if (cbmCedar.Checked) cbmCedar.Checked = false;
-            else cbmCedar.Checked = true;
+            cbmCedar.Checked = !cbmCedar.Checked;
         }
 
         private void lblDaphne_Click(object sender, EventArgs e)
         {
-            if (cbmDaphne.Checked) cbmDaphne.Checked = false;
-            else cbmDaphne.Checked = true;
+            cbmDaphne.Checked = !cbmDaphne.Checked;
         }
 
         /// <summary>
         /// This method obtains user's profile details and display on respective labels
         /// </summary>
-        /// <param name="tdy_date">The current date, used to display the Reservations on the day itself</param>
-        private void fillProfileDetails(string tdy_date)
+        /// <param name="tdyDate">The current date, used to display the Reservations on the day itself</param>
+        private void fillProfileDetails(string tdyDate)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
-                using (SqlCommand sql = new SqlCommand($"Select count(Date) from [dbo].[Reservation] " +
-                    $"where Date='{tdy_date}'", con))
+                using (SqlCommand sql = new SqlCommand("Select count(Date) from [dbo].[Reservation] " +
+                    $"where Date='{tdyDate}'", con))
                 {
                     lblReservationTdy.Text = sql.ExecuteScalar().ToString();
                 }

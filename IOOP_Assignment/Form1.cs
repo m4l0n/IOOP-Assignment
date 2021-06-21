@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using FluentValidation.Results;
+using IOOP_Assignment.Validator;
+using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FluentValidation.Results;
-using IOOP_Assignment.Validator;
 
 namespace IOOP_Assignment
 {
@@ -36,7 +30,7 @@ namespace IOOP_Assignment
             ValidationResult result = validator.Validate(registration);
             if (!result.IsValid)    //Data invalid format
             {
-                foreach(ValidationFailure failure in result.Errors)
+                foreach (ValidationFailure failure in result.Errors)
                 {
                     bunifuSnackbar1.Show(this, failure.ErrorMessage,
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 4000);
@@ -56,18 +50,11 @@ namespace IOOP_Assignment
 
         private void showPwToggle_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
-            if (showPwToggle.Checked)
-            {
-                passwordTxtBox.PasswordChar = '\0';
-            }
-            else
-            {
-                passwordTxtBox.PasswordChar = '●';
-            }
+            passwordTxtBox.PasswordChar = showPwToggle.Checked ? '\0' : '●';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {          
+        {
             User.loginEmail = emailTxtBox.Text;
             User.loginPass = passwordTxtBox.Text;
             User login = new User();
@@ -110,6 +97,7 @@ namespace IOOP_Assignment
                 this.WindowState = FormWindowState.Minimized;
             }
         }
+
         /// <summary>
         /// This method is used to register the user into the system
         /// </summary>
@@ -141,6 +129,7 @@ namespace IOOP_Assignment
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         /// <summary>
         /// This method is used to validate the login credentials.
         /// </summary>

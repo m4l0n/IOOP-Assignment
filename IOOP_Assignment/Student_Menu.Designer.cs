@@ -584,10 +584,10 @@ namespace IOOP_Assignment
             this.bunifuPages2.Location = new System.Drawing.Point(263, 14);
             this.bunifuPages2.Multiline = true;
             this.bunifuPages2.Name = "bunifuPages2";
-            this.bunifuPages2.Page = this.formPage;
-            this.bunifuPages2.PageIndex = 4;
-            this.bunifuPages2.PageName = "formPage";
-            this.bunifuPages2.PageTitle = "Form";
+            this.bunifuPages2.Page = this.previewPage;
+            this.bunifuPages2.PageIndex = 3;
+            this.bunifuPages2.PageName = "previewPage";
+            this.bunifuPages2.PageTitle = "Preview";
             this.bunifuPages2.SelectedIndex = 0;
             this.bunifuPages2.Size = new System.Drawing.Size(769, 576);
             this.bunifuPages2.TabIndex = 2;
@@ -1223,7 +1223,7 @@ namespace IOOP_Assignment
             this.timeReserve.Name = "timeReserve";
             this.timeReserve.Size = new System.Drawing.Size(220, 32);
             this.timeReserve.TabIndex = 49;
-            this.bunifuToolTip1.SetToolTip(this.timeReserve, "1. Click and enter hh (hour) intended\r\n2. Click and enter mm (minutes) intended");
+            this.bunifuToolTip1.SetToolTip(this.timeReserve, "1. Click and enter HH (hour) intended\r\n2. Click and enter mm (minutes) intended");
             this.bunifuToolTip1.SetToolTipIcon(this.timeReserve, ((System.Drawing.Image)(resources.GetObject("timeReserve.ToolTipIcon"))));
             this.bunifuToolTip1.SetToolTipTitle(this.timeReserve, "How to Enter Time");
             this.timeReserve.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
@@ -3531,9 +3531,9 @@ namespace IOOP_Assignment
             this.newTimeRes.Name = "newTimeRes";
             this.newTimeRes.Size = new System.Drawing.Size(220, 32);
             this.newTimeRes.TabIndex = 88;
-            this.bunifuToolTip1.SetToolTip(this.newTimeRes, "1. Click and enter hh (hour) intended\r\n2. Click and enter mm (minutes) intended\r\n" +
+            this.bunifuToolTip1.SetToolTip(this.newTimeRes, "1. Click and enter HH (hour) intended\r\n2. Click and enter mm (minutes) intended\r\n" +
         "");
-            this.bunifuToolTip1.SetToolTipIcon(this.newTimeRes, null);
+            this.bunifuToolTip1.SetToolTipIcon(this.newTimeRes, ((System.Drawing.Image)(resources.GetObject("newTimeRes.ToolTipIcon"))));
             this.bunifuToolTip1.SetToolTipTitle(this.newTimeRes, "How to Enter Time");
             this.newTimeRes.Value = new System.DateTime(2021, 6, 3, 0, 2, 0, 0);
             // 
