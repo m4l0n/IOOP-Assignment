@@ -69,7 +69,7 @@ namespace IOOP_Assignment
         }
         private void btnEditRes_Click(object sender, EventArgs e)
         {
-            bunifuPages2.SetPage(2);    //Redirect to Reservation Modification
+            bunifuPages2.PageIndex = 2;    //Redirect to Reservation Modification
         }
 
         private void btnPreviewCancel_Click(object sender, EventArgs e)
@@ -120,11 +120,8 @@ namespace IOOP_Assignment
         private void btnCancel_Click(object sender, EventArgs e)
         {
             comboDuration.SelectedItem = null;
-            comboDuration.Text = "Select Duration";
             comboRoom.SelectedItem = null;
-            comboRoom.Text = "Select Room Type";
             comboStudentNo.SelectedItem = null;
-            comboStudentNo.Text = "Select Number of Students";
             dateReserve.ResetText();
             timeReserve.ResetText();
         }
@@ -278,7 +275,6 @@ namespace IOOP_Assignment
                         cmd.Parameters.AddWithValue("@roomtype", roomtype);
                         lblCapacity.Text = cmd.ExecuteScalar().ToString();
                     }
-
                 }
                 bunifuPages2.SetPage(3);    //Redirect to Reservation Preview
             }
