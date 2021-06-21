@@ -22,39 +22,7 @@ namespace IOOP_Assignment
 
         private void Student_Menu_Shown(object sender, EventArgs e)
         {
-            Reservation res = new Reservation();
-            List<Reservation> resList = res.getResData();   //returns resList as List of Objects
-            if (resList != null)
-            {
-                foreach (var ress in resList)    //Fills the table with data
-                {
-                    resDataGridView.Rows.Add(
-                        new object[]
-                        {
-                            "",
-                            ress.RoomType,
-                            ress.RoomNumber,
-                            ress.NumStudents,
-                            ress.Date,
-                            ress.Time,
-                            ress.Duration,
-                        });
-                }
-                foreach (var ress in resList)    //Fills the table with data
-                {
-                    tableReservationEdit.Rows.Add(
-                        new object[]
-                        {
-                            ress.ResID,
-                            ress.RoomType,
-                            ress.RoomNumber,
-                            ress.NumStudents,
-                            ress.Date,
-                            ress.Time,
-                            ress.Duration,
-                        });
-                }
-            }
+            updateTable();
             formatTables();
             //Delete the Notification from Database
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
@@ -335,6 +303,9 @@ namespace IOOP_Assignment
             {
                 bunifuSnackbar1.Show(this, "You have successfully booked a slot for the Discussion Room! To modify the details, " +
                 "Click on 'Edit Reservation' on the side panel.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
+                updateTable();
+                int activeRes = Convert.ToInt32(lblActiveRes.Text);
+                lblActiveRes.Text = (activeRes += 1).ToString();
             }
             else
             {
@@ -567,6 +538,47 @@ namespace IOOP_Assignment
                 }
             }
             return true;
+        }
+        /// <summary>
+        /// This method updates the DataGridView, fills the table with data
+        /// </summary>
+        private void updateTable()
+        {
+            resDataGridView.Rows.Clear();
+            tableReservationEdit.Rows.Clear();
+            Reservation res = new Reservation();
+            List<Reservation> resList = res.getResData();   //returns resList as List of Objects
+            if (resList != null)
+            {
+                foreach (var ress in resList)    //Fills the table with data
+                {
+                    resDataGridView.Rows.Add(
+                        new object[]
+                        {
+                            "",
+                            ress.RoomType,
+                            ress.RoomNumber,
+                            ress.NumStudents,
+                            ress.Date,
+                            ress.Time,
+                            ress.Duration,
+                        });
+                }
+                foreach (var ress in resList)    //Fills the table with data
+                {
+                    tableReservationEdit.Rows.Add(
+                        new object[]
+                        {
+                            ress.ResID,
+                            ress.RoomType,
+                            ress.RoomNumber,
+                            ress.NumStudents,
+                            ress.Date,
+                            ress.Time,
+                            ress.Duration,
+                        });
+                }
+            }
         }
     }
 }

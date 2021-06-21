@@ -104,7 +104,7 @@ namespace IOOP_Assignment
             customiseDesign();
             showGraph();
             formatTables();
-
+            updateTable();
             //Dropdown for monthly utilization report
             DateTime Now = DateTime.Now;
             int year = int.Parse(Now.ToString("yyyy"));
@@ -136,28 +136,6 @@ namespace IOOP_Assignment
                 DataTable dataTable = new DataTable();
                 sql5.Fill(dataTable);
                 monthlyUtilizationDataGridView.DataSource = dataTable;
-            }
-
-            //Display Request Data in Request Table
-            Request reqData = new Request();
-            List<Request> reqList = reqData.getReqData();
-            if (reqList != null)
-            {
-                foreach (var req in reqList)
-                {
-                    requestDataGridView.Rows.Add(
-                        new object[]
-                        {
-                            req.RequestID,
-                            req.StudentID,
-                            req.RoomType,
-                            req.Date,
-                            req.Time,
-                            req.NumStudents,
-                            req.Duration,
-                            req.ReservationID,
-                        });
-                }
             }
         }
         /// <summary>
@@ -216,6 +194,34 @@ namespace IOOP_Assignment
                             res.Time,
                             res.Duration,
                             res.StudentID,
+                        });
+                }
+            }
+        }
+        /// <summary>
+        /// This method updates the DataGridView, fills the table with data
+        /// </summary>
+        private void updateTable()
+        {
+            requestDataGridView.Rows.Clear();
+            //Display Request Data in Request Table
+            Request reqData = new Request();
+            List<Request> reqList = reqData.getReqData();
+            if (reqList != null)
+            {
+                foreach (var req in reqList)
+                {
+                    requestDataGridView.Rows.Add(
+                        new object[]
+                        {
+                            req.RequestID,
+                            req.StudentID,
+                            req.RoomType,
+                            req.Date,
+                            req.Time,
+                            req.NumStudents,
+                            req.Duration,
+                            req.ReservationID,
                         });
                 }
             }
@@ -352,23 +358,29 @@ namespace IOOP_Assignment
                 }   
             }
             bunifuSnackbar1.Show(this, "Request is Accepted.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
-            requestDataGridView.Rows.RemoveAt(row);
+            //Update Label and Table after Request Approval
+            int unattendedReq = Convert.ToInt32(lblUnattendReq.Text);
+            lblUnattendReq.Text = (unattendedReq -= 1).ToString();
+            updateTable();
         }
 
         private void btnDenyReq_Click(object sender, EventArgs e)
         {
             int row = requestDataGridView.CurrentRow.Index;
+            DateTime dt = DateTime.ParseExact(Convert.ToString(requestDataGridView[3, row].Value),
+                "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string datee = dt.ToString("MM/dd/yyyy");
             Request req = new Request
             {
                 RequestID = Convert.ToInt32(requestDataGridView[0, row].Value),
-                StudentID = Convert.ToString(requestDataGridView[1, row].Value)
-
+                StudentID = Convert.ToString(requestDataGridView[1, row].Value),
+                Date = datee,
             };
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("insert into [dbo].RequestStatus values ('REJECTED','" +
-                req.StudentID + "','" + req.RequestID + "')", con))
+                req.StudentID + "','" + req.Date + "')", con))
                 {
                     cmd.ExecuteNonQuery();
                 }
@@ -378,7 +390,10 @@ namespace IOOP_Assignment
                 }   
             }
             bunifuSnackbar1.Show(this, "Request is Denied.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 4000);
-            requestDataGridView.Rows.RemoveAt(row);
+            //Update Label and Table after Request Rejection
+            int unattendedReq = Convert.ToInt32(lblUnattendReq.Text);
+            lblUnattendReq.Text = (unattendedReq -= 1).ToString();
+            updateTable();
         }
 
         private void btnSearchMonthly_Click(object sender, EventArgs e)

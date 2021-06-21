@@ -151,16 +151,22 @@ namespace IOOP_Assignment
         /// <returns>The number of rows updated in the database</returns>
         public int deleteReservation(Request req)
         {
-            string query = "DELETE FROM [dbo].Reservation WHERE[ReservationID]=@reservationid";
+            string query = "DELETE FROM [dbo].Request WHERE [ReservationID]=@reservationid";
+            string query2 = "DELETE FROM [dbo].Reservation WHERE [ReservationID]=@reservationid";
             int result;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@reservationid", req.ReservationID);
-
-                    result = cmd.ExecuteNonQuery(); //Delete reservation from Reservation Table
+                    //Deletes any existing records from the table first due to Foreign Key constraints
+                    cmd.Parameters.AddWithValue("@reservationid", req.ReservationID);   
+                    cmd.ExecuteNonQuery();
+                }
+                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                {
+                    cmd2.Parameters.AddWithValue("@reservationid", req.ReservationID);
+                    result = cmd2.ExecuteNonQuery(); //Delete reservation from Reservation Table
                 }
             }
             return result;
