@@ -183,7 +183,7 @@ namespace IOOP_Assignment
             string query = "select substring((select ',' + [Room Number] AS 'data()' FROM[dbo].Reservation " +
                 "where [Room Type] = '" + res.RoomType + "' and Date = '" + res.Date + "' " +
                 "FOR XML PATH('')),2,9999) AS [Room Numbers]";  //Concatenate all rows in result into a single string
-            string assignedRoom;
+
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
                 using (SqlCommand cmd = new SqlCommand(query, con))

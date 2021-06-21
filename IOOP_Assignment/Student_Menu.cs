@@ -484,6 +484,8 @@ namespace IOOP_Assignment
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000);
                     tableReservationEdit.Rows.RemoveAt(row);
                     resDataGridView.Rows.RemoveAt(row);
+                    int activeRes = Convert.ToInt32(lblActiveRes.Text);
+                    lblActiveRes.Text = (activeRes - 1).ToString();
                 }
                 else
                 {
