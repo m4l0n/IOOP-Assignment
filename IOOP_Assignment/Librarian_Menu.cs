@@ -307,7 +307,7 @@ namespace IOOP_Assignment
                     break;
 
                 case "Blackthorn":
-                    if (reservedRoom < 1) status = "Available";
+                    if (reservedRoom < 4) status = "Available";
                     break;
 
                 case "Cedar":

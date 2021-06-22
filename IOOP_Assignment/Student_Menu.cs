@@ -19,6 +19,7 @@ namespace IOOP_Assignment
         {
             updateTable();
             formatTables();
+            checkNotification(User.tpNumber);
             //Delete the Notification from Database
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
             {
@@ -34,7 +35,6 @@ namespace IOOP_Assignment
 
         private void Student_Menu_Load(object sender, EventArgs e)
         {
-            checkNotification(User.tpNumber);
             fillProfileDetails();
 
             //Converts DatePicker to TimePicker
@@ -531,7 +531,7 @@ namespace IOOP_Assignment
         /// This method is used to validate all the controls in a Panel on whether each of those has a selected item / text.
         /// </summary>
         /// <param name="panel">Panel control object</param>
-        /// <returns>Boolean. True of all controls passes the validation, False if a control fails the validation</returns>
+        /// <returns>Boolean. True if all controls passes the validation, False if a control fails the validation</returns>
         private bool validateControls(Panel panel)
         {
             foreach (Control c in panel.Controls)
